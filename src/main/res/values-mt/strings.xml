@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Ipprova b\'xejn</string>  
+  <string name="txt_try_free_trial_desc">Prova b\'xejn ta\' 3 ijiem, Tista\' tikkanċella l-abbonament f\'kull ħin - permezz tal-app Google Play</string>  
+  <string name="txt_premium_title">Ikseb Aċċess Illimitat għal Karatteristiċi Premium</string>  
+  <string name="txt_premium_offer">100% esperjenza mingħajr reklami b\'tniżżil illimitat, 10x Veloċità Mgħaġġla.</string>  
+  <string name="txt_premium_offer_1">Ebda reklami, u aktar</string>  
+  <string name="txt_premium_offer_2">Azzjonijiet istantanji wara s-sejħa</string>  
+  <string name="txt_premium_offer_3">Backup</string>  
+  <string name="txt_premium_offer_4">App Lock bil-PIN</string>  
+  <string name="txt_premium_monthly_package">Offerta Pjan ta\' Kull Xahar</string>  
+  <string name="txt_premium_yearly_package">Offerta Pjan Annwali</string>  
+  <string name="txt_save">Ħlief</string>  
+  <string name="txt_month">Xahar</string>  
+  <string name="txt_year">Sena</string>  
+  <string name="txt_yearly_premium">Pro Kull sena</string>  
+  <string name="txt_already_yearly_premium">Diġà Pro Yearly</string>  
+  <string name="txt_monthly_premium">Pro Kull Xahar</string>  
+  <string name="txt_already_monthly_premium">Diġà Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Il-kontenut ma jistax jitgħabba. Iċċekkja l-konnessjoni tiegħek</string>  
+  <string name="txt_later">Aktar tard</string>  
+  <string name="txt_premium_title_1">Ikseb aċċess illimitat għal</string>
+  <string name="txt_premium_title_2">Karatteristiċi premium</string>
+  <string name="txt_free_trial_desc">Tista \'tikkanċella l-abbonament f\'kull ħin - permezz tal-app Google Play</string>
+  <string name="txt_3day_free_trial">Prova b\'xejn ta \'3 ijiem</string>
+  <string name="txt_continue">Kompli</string>
+</resources>

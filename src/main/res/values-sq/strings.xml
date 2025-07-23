@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Provojeni falas</string>  
+  <string name="txt_try_free_trial_desc">Provë 3-ditore falas. Mund ta anuloni abonimin në çdo kohë - nëpërmjet aplikacionit Google Play</string>  
+  <string name="txt_premium_title">Merrni akses të pakufizuar në veçoritë Premium</string>  
+  <string name="txt_premium_offer">Përvojë 100% pa reklama me shkarkime të pakufizuara, shpejtësi të shpejtë 10x.</string>  
+  <string name="txt_premium_offer_1">Pa reklama dhe më shumë</string>  
+  <string name="txt_premium_offer_2">Veprimet e menjëhershme pas thirrjes</string>  
+  <string name="txt_premium_offer_3">Rezervimi</string>  
+  <string name="txt_premium_offer_4">Kyçja e aplikacionit me PIN</string>  
+  <string name="txt_premium_monthly_package">Oferta e planit mujor</string>  
+  <string name="txt_premium_yearly_package">Oferta e planit vjetor</string>  
+  <string name="txt_save">Ruaj</string>  
+  <string name="txt_month">Muaj</string>  
+  <string name="txt_year">Viti</string>  
+  <string name="txt_yearly_premium">Pro Vjetore</string>  
+  <string name="txt_already_yearly_premium">Tashmë Pro Vjetore</string>  
+  <string name="txt_monthly_premium">Pro Mujore</string>  
+  <string name="txt_already_monthly_premium">Tashmë Pro Mujore</string>  
+  <string name="txt_timeout_billing_load">Përmbajtja nuk mund të ngarkohet. Kontrolloni lidhjen tuaj</string>  
+  <string name="txt_later">Më vonë</string>  
+  <string name="txt_premium_title_1">Merrni qasje të pakufizuar në</string>
+  <string name="txt_premium_title_2">Karakteristikat e primit</string>
+  <string name="txt_free_trial_desc">Ju mund të anuloni pajtimin në çdo kohë - përmes aplikacionit Google Play</string>
+  <string name="txt_3day_free_trial">Gjyq falas 3-ditor</string>
+  <string name="txt_continue">Vazhdoj</string>
+</resources>

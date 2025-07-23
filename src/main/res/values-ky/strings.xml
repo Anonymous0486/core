@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Аны бекер колдонуп көрүңүз</string>  
+  <string name="txt_try_free_trial_desc">3 күндүк акысыз сыноо, Жазылууну каалаган убакта жокко чыгара аласыз - Google Play колдонмосу аркылуу</string>  
+  <string name="txt_premium_title">Premium функцияларына чексиз мүмкүнчүлүк алыңыз</string>  
+  <string name="txt_premium_offer">Чексиз жүктөө менен 100% Жарнамасыз тажрыйба, 10x Fast Speed.</string>  
+  <string name="txt_premium_offer_1">Жарнамалар жок жана башкалар</string>  
+  <string name="txt_premium_offer_2">Чалуудан кийинки ыкчам аракеттер</string>  
+  <string name="txt_premium_offer_3">Камдык көчүрмө</string>  
+  <string name="txt_premium_offer_4">PIN менен колдонмо кулпу</string>  
+  <string name="txt_premium_monthly_package">Айлык планды сунуштоо</string>  
+  <string name="txt_premium_yearly_package">Жылдык планды сунуштоо</string>  
+  <string name="txt_save">Сактоо</string>  
+  <string name="txt_month">Ай</string>  
+  <string name="txt_year">Жыл</string>  
+  <string name="txt_yearly_premium">Pro Yearly</string>  
+  <string name="txt_already_yearly_premium">Жыл сайын Pro</string>  
+  <string name="txt_monthly_premium">Pro Monthly</string>  
+  <string name="txt_already_monthly_premium">Уже Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Мазмунду жүктөө мүмкүн эмес. Байланышыңызды текшериңиз</string>  
+  <string name="txt_later">Кийинчерээк</string>  
+  <string name="txt_premium_title_1">Чексиз кирүү</string>
+  <string name="txt_premium_title_2">Премиум өзгөчөлүктөрү</string>
+  <string name="txt_free_trial_desc">Сиз каалаган убакта, сиз каалаган убакта жокко чыгарсаңыз болот - Google Play колдонмосу аркылуу</string>
+  <string name="txt_3day_free_trial">Акысыз 3 күндүк сыноо</string>
+  <string name="txt_continue">Улантыңыз</string>
+</resources>

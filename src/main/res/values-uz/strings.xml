@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Bepul sinab ko\'ring</string>  
+  <string name="txt_try_free_trial_desc">3 kunlik bepul sinov muddati, obunani istalgan vaqtda bekor qilishingiz mumkin - Google Play ilovasi orqali</string>  
+  <string name="txt_premium_title">Premium funksiyalarga cheksiz kirish huquqiga ega bo\'ling</string>  
+  <string name="txt_premium_offer">Cheksiz yuklab olish bilan 100% reklamasiz tajriba, 10x Tezkorlik.</string>  
+  <string name="txt_premium_offer_1">Reklamasiz va boshqalar</string>  
+  <string name="txt_premium_offer_2">Qo\'ng\'iroqdan keyingi tezkor harakatlar</string>  
+  <string name="txt_premium_offer_3">Zaxira</string>  
+  <string name="txt_premium_offer_4">Ilovani PIN kod bilan bloklash</string>  
+  <string name="txt_premium_monthly_package">Oylik rejani taklif qiling</string>  
+  <string name="txt_premium_yearly_package">Yillik rejani taklif qiling</string>  
+  <string name="txt_save">Saqlash</string>  
+  <string name="txt_month">Oy</string>  
+  <string name="txt_year">Yil</string>  
+  <string name="txt_yearly_premium">Yillik Pro</string>  
+  <string name="txt_already_yearly_premium">Allaqachon Yillik Pro</string>  
+  <string name="txt_monthly_premium">Pro oylik</string>  
+  <string name="txt_already_monthly_premium">Allaqachon oylik pro</string>  
+  <string name="txt_timeout_billing_load">Kontentni yuklab bo‘lmaydi. Ulanishingizni tekshiring</string>  
+  <string name="txt_later">Keyinchalik</string>  
+  <string name="txt_premium_title_1">Cheksiz kirish huquqini oling</string>
+  <string name="txt_premium_title_2">Premium xususiyatlari</string>
+  <string name="txt_free_trial_desc">Siz har qanday vaqtda Google Play ilovasi orqali obunani bekor qilishingiz mumkin</string>
+  <string name="txt_3day_free_trial">Bepul 3 kunlik sinov</string>
+  <string name="txt_continue">Davom eting</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">جربه مجانًا</string>  
+  <string name="txt_try_free_trial_desc">نسخة تجريبية مجانية مدتها 3 أيام، يمكنك إلغاء الاشتراك في أي وقت - عبر تطبيق Google Play</string>  
+  <string name="txt_premium_title">احصل على وصول غير محدود إلى الميزات المميزة</string>  
+  <string name="txt_premium_offer">تجربة خالية من الإعلانات بنسبة 100% مع تنزيل غير محدود وسرعة 10x.</string>  
+  <string name="txt_premium_offer_1">لا إعلانات، وأكثر من ذلك</string>  
+  <string name="txt_premium_offer_2">إجراءات فورية بعد المكالمة</string>  
+  <string name="txt_premium_offer_3">النسخ الاحتياطي</string>  
+  <string name="txt_premium_offer_4">قفل التطبيق مع PIN</string>  
+  <string name="txt_premium_monthly_package">تقديم الخطة الشهرية</string>  
+  <string name="txt_premium_yearly_package">تقديم الخطة السنوية</string>  
+  <string name="txt_save">يحفظ</string>  
+  <string name="txt_month">شهر</string>  
+  <string name="txt_year">سنة</string>  
+  <string name="txt_yearly_premium">برو سنويا</string>  
+  <string name="txt_already_yearly_premium">بالفعل برو سنويا</string>  
+  <string name="txt_monthly_premium">برو الشهرية</string>  
+  <string name="txt_already_monthly_premium">بالفعل برو الشهرية</string>  
+  <string name="txt_timeout_billing_load">لا يمكن تحميل المحتوى. تحقق من اتصالك</string>  
+  <string name="txt_later">لاحقاً</string>  
+  <string name="txt_premium_title_1">الحصول على وصول غير محدود إلى</string>
+  <string name="txt_premium_title_2">ميزات مميزة</string>
+  <string name="txt_free_trial_desc">يمكنك إلغاء الاشتراك في أي وقت - عبر تطبيق Google Play</string>
+  <string name="txt_3day_free_trial">محاكمة مجانية لمدة 3 أيام</string>
+  <string name="txt_continue">يكمل</string>
+</resources>

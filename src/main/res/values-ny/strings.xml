@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Yesani kwaulere</string>  
+  <string name="txt_try_free_trial_desc">Kuyesa kwaulere kwamasiku atatu, Mutha kuletsa kulembetsa nthawi iliyonse - kudzera pa pulogalamu ya Google Play</string>  
+  <string name="txt_premium_title">Pezani Zopanda Malire Zopezeka pa Premium</string>  
+  <string name="txt_premium_offer">100% yopanda zotsatsa ndikutsitsa kopanda malire, 10x Kuthamanga Kwambiri.</string>  
+  <string name="txt_premium_offer_1">Palibe zotsatsa, ndi zina zambiri</string>  
+  <string name="txt_premium_offer_2">Zochita pompopompo poyimba foni</string>  
+  <string name="txt_premium_offer_3">Zosunga zobwezeretsera</string>  
+  <string name="txt_premium_offer_4">App Lock yokhala ndi PIN</string>  
+  <string name="txt_premium_monthly_package">Perekani Mapulani a Mwezi ndi Mwezi</string>  
+  <string name="txt_premium_yearly_package">Perekani Ndondomeko Yapachaka</string>  
+  <string name="txt_save">Sungani</string>  
+  <string name="txt_month">Mwezi</string>  
+  <string name="txt_year">Chaka</string>  
+  <string name="txt_yearly_premium">Pro pachaka</string>  
+  <string name="txt_already_yearly_premium">Kale Pro Yearly</string>  
+  <string name="txt_monthly_premium">Pro Monthly</string>  
+  <string name="txt_already_monthly_premium">Kale Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Zomwe zili mkati sizingakwezedwe. Onani kulumikizana kwanu</string>  
+  <string name="txt_later">Osati pano</string>  
+  <string name="txt_premium_title_1">Pezani mwayi wopanda malire</string>
+  <string name="txt_premium_title_2">Mawonekedwe a Premium</string>
+  <string name="txt_free_trial_desc">Mutha kuletsa kulembetsa nthawi iliyonse - kudzera pa Google Play Prode</string>
+  <string name="txt_3day_free_trial">Mayesero Aulere 3</string>
+  <string name="txt_continue">Pitiliza</string>
+</resources>

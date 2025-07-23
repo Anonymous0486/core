@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Whakamātauria kore utu</string>  
+  <string name="txt_try_free_trial_desc">3-ra whakamatautau kore utu, Ka taea e koe te whakakore i te ohaurunga i nga wa katoa - ma te taupānga Google Play</string>  
+  <string name="txt_premium_title">Tikina te urunga mutunga kore ki nga waahanga utu nui</string>  
+  <string name="txt_premium_offer">100% He wheako kore utu me te tango mutunga kore, 10x Tere Tere.</string>  
+  <string name="txt_premium_offer_1">Kaore he panui, me etahi atu</string>  
+  <string name="txt_premium_offer_2">Nga mahi i muri i te waeatanga inamata</string>  
+  <string name="txt_premium_offer_3">Pūrua</string>  
+  <string name="txt_premium_offer_4">Maukati Taupānga me te PIN</string>  
+  <string name="txt_premium_monthly_package">Tuku Mahere Marama</string>  
+  <string name="txt_premium_yearly_package">Tuku Mahere Tau</string>  
+  <string name="txt_save">Tiaki</string>  
+  <string name="txt_month">Marama</string>  
+  <string name="txt_year">Tau</string>  
+  <string name="txt_yearly_premium">Pro Tau</string>  
+  <string name="txt_already_yearly_premium">Kua Pro Tau</string>  
+  <string name="txt_monthly_premium">Pro Marama</string>  
+  <string name="txt_already_monthly_premium">Kua Pro Marama</string>  
+  <string name="txt_timeout_billing_load">Kaore e taea te uta i nga ihirangi. Tirohia to hononga</string>  
+  <string name="txt_later">A taihoa ake</string>  
+  <string name="txt_premium_title_1">Tikina te Urunga Koreutu ki</string>
+  <string name="txt_premium_title_2">Nga Taonga Premium</string>
+  <string name="txt_free_trial_desc">Ka taea e koe te whakakore i te ohaurunga i nga wa katoa - ma te Google Play taupānga</string>
+  <string name="txt_3day_free_trial">Whakamātautau 3-ra</string>
+  <string name="txt_continue">Tonu</string>
+</resources>

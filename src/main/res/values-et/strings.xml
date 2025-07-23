@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Proovige tasuta</string>  
+  <string name="txt_try_free_trial_desc">3-päevane tasuta prooviperiood. Saate tellimuse igal ajal tühistada – Google Play rakenduse kaudu</string>  
+  <string name="txt_premium_title">Hankige piiramatu juurdepääs Premium-funktsioonidele</string>  
+  <string name="txt_premium_offer">100% reklaamideta kogemus piiramatu allalaadimisega, 10x kiire kiirus.</string>  
+  <string name="txt_premium_offer_1">Ei mingeid reklaame ja palju muud</string>  
+  <string name="txt_premium_offer_2">Kiired kõnejärgsed toimingud</string>  
+  <string name="txt_premium_offer_3">Varundamine</string>  
+  <string name="txt_premium_offer_4">Rakenduse lukk PIN-koodiga</string>  
+  <string name="txt_premium_monthly_package">Pakkumise kuuplaan</string>  
+  <string name="txt_premium_yearly_package">Pakkuge aastaplaani</string>  
+  <string name="txt_save">Salvesta</string>  
+  <string name="txt_month">Kuu</string>  
+  <string name="txt_year">Aasta</string>  
+  <string name="txt_yearly_premium">Pro Aastane</string>  
+  <string name="txt_already_yearly_premium">Juba Pro Yearly</string>  
+  <string name="txt_monthly_premium">Pro Monthly</string>  
+  <string name="txt_already_monthly_premium">Juba Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Sisu ei saa laadida. Kontrollige ühendust</string>  
+  <string name="txt_later">Hiljem</string>  
+  <string name="txt_premium_title_1">Saada piiramatu juurdepääs</string>
+  <string name="txt_premium_title_2">Esmaklassilised funktsioonid</string>
+  <string name="txt_free_trial_desc">Saate tellimuse igal ajal tühistada - rakenduse Google Play kaudu</string>
+  <string name="txt_3day_free_trial">Tasuta 3-päevane proov</string>
+  <string name="txt_continue">Jätkuma</string>
+</resources>

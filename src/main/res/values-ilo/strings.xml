@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Padasen dayta Libre</string>  
+  <string name="txt_try_free_trial_desc">3-aldaw a libre a pagsubok, Mabalinmo a kanselaen ti suskripsion iti aniaman nga oras - babaen ti Google Play app</string>  
+  <string name="txt_premium_title">Mangala iti Awan Limitado a Pannakagun-od kadagiti Premium a Tampok</string>  
+  <string name="txt_premium_offer">100% Ads-free a padas nga addaan iti awan limitasionna a panag-download, 10x Napartak a Kapartak.</string>  
+  <string name="txt_premium_offer_1">Awan dagiti anunsio, ken dadduma pay</string>  
+  <string name="txt_premium_offer_2">Dagus nga aramid kalpasan ti panagtawag</string>  
+  <string name="txt_premium_offer_3">Backup ti panag-backup</string>  
+  <string name="txt_premium_offer_4">App Lock nga addaan iti PIN</string>  
+  <string name="txt_premium_monthly_package">Mangitukon iti Binulan a Plano</string>  
+  <string name="txt_premium_yearly_package">Mangitukon iti Tinawen a Plano</string>  
+  <string name="txt_save">Ispalen</string>  
+  <string name="txt_month">Bulan</string>  
+  <string name="txt_year">Tawen</string>  
+  <string name="txt_yearly_premium">Pro Tinawen</string>  
+  <string name="txt_already_yearly_premium">Sigud a Pro Tinawen</string>  
+  <string name="txt_monthly_premium">Pro Binulan</string>  
+  <string name="txt_already_monthly_premium">Sigud nga Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Saan a mabalin a maikarga ti linaon. Kitaem ti koneksionmo</string>  
+  <string name="txt_later">Damdama</string>  
+  <string name="txt_premium_title_1">Makagun-od iti awan limitasionna a pannakagun-od iti .</string>
+  <string name="txt_premium_title_2">Premium a tampok .</string>
+  <string name="txt_free_trial_desc">Mabalinmo a kanselaen ti suskripsion aniaman nga oras - babaen ti Google Play App .</string>
+  <string name="txt_3day_free_trial">Libre nga 3-aldaw a pagsubok .</string>
+  <string name="txt_continue">Ituloy</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">በነጻ ይሞክሩት።</string>  
+  <string name="txt_try_free_trial_desc">የ3-ቀን ነጻ ሙከራ፣ በማንኛውም ጊዜ የደንበኝነት ምዝገባን መሰረዝ ይችላሉ - በGoogle Play መተግበሪያ</string>  
+  <string name="txt_premium_title">ለፕሪሚየም ባህሪያት ያልተገደበ መዳረሻ ያግኙ</string>  
+  <string name="txt_premium_offer">100% ከማስታወቂያ-ነጻ ተሞክሮ ያልተገደበ ማውረድ፣ 10x ፈጣን ፍጥነት።</string>  
+  <string name="txt_premium_offer_1">ምንም ማስታወቂያዎች የሉም፣ እና ተጨማሪ</string>  
+  <string name="txt_premium_offer_2">ከጥሪ በኋላ ፈጣን እርምጃዎች</string>  
+  <string name="txt_premium_offer_3">ምትኬ</string>  
+  <string name="txt_premium_offer_4">መተግበሪያ ቆልፍ ከፒን ጋር</string>  
+  <string name="txt_premium_monthly_package">ወርሃዊ እቅድ ያቅርቡ</string>  
+  <string name="txt_premium_yearly_package">ዓመታዊ ዕቅድ ያቅርቡ</string>  
+  <string name="txt_save">አስቀምጥ</string>  
+  <string name="txt_month">ወር</string>  
+  <string name="txt_year">አመት</string>  
+  <string name="txt_yearly_premium">ፕሮ በየአመቱ</string>  
+  <string name="txt_already_yearly_premium">አስቀድሞ Pro በየዓመቱ</string>  
+  <string name="txt_monthly_premium">ፕሮ ወርሃዊ</string>  
+  <string name="txt_already_monthly_premium">አስቀድሞ Pro ወርሃዊ</string>  
+  <string name="txt_timeout_billing_load">ይዘት ሊጫን አይችልም። ግንኙነትዎን ያረጋግጡ</string>  
+  <string name="txt_later">በኋላ</string>  
+  <string name="txt_premium_title_1">ያልተገደበ መዳረሻ ያግኙ</string>
+  <string name="txt_premium_title_2">ፕሪሚየም ባህሪዎች</string>
+  <string name="txt_free_trial_desc">የደንበኝነት ምዝገባውን በማንኛውም ጊዜ ይቅር ማለት ይችላሉ - በ Google Play መተግበሪያ በኩል</string>
+  <string name="txt_3day_free_trial">ነፃ የ 3 ቀናት ሙከራ</string>
+  <string name="txt_continue">ቀጥል</string>
+</resources>

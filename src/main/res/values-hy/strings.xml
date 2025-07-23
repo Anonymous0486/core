@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Փորձեք այն անվճար</string>  
+  <string name="txt_try_free_trial_desc">3-օրյա անվճար փորձաշրջան, Դուք կարող եք ցանկացած ժամանակ չեղարկել բաժանորդագրությունը՝ Google Play հավելվածի միջոցով</string>  
+  <string name="txt_premium_title">Ստացեք անսահմանափակ մուտք դեպի Պրեմիում գործառույթներ</string>  
+  <string name="txt_premium_offer">100% առանց գովազդի փորձ՝ անսահմանափակ ներբեռնմամբ, 10x արագ արագությամբ:</string>  
+  <string name="txt_premium_offer_1">Ոչ մի գովազդ և ավելին</string>  
+  <string name="txt_premium_offer_2">Ակնթարթային հետզանգի գործողություններ</string>  
+  <string name="txt_premium_offer_3">Կրկնօրինակում</string>  
+  <string name="txt_premium_offer_4">Հավելվածի կողպում PIN-ով</string>  
+  <string name="txt_premium_monthly_package">Առաջարկեք ամսական պլան</string>  
+  <string name="txt_premium_yearly_package">Առաջարկեք տարեկան պլան</string>  
+  <string name="txt_save">Պահպանել</string>  
+  <string name="txt_month">Ամիս</string>  
+  <string name="txt_year">Տարի</string>  
+  <string name="txt_yearly_premium">Pro Տարեկան</string>  
+  <string name="txt_already_yearly_premium">Արդեն Pro Տարեկան</string>  
+  <string name="txt_monthly_premium">Pro Ամսական</string>  
+  <string name="txt_already_monthly_premium">Արդեն Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Բովանդակությունը չի կարող բեռնվել: Ստուգեք ձեր կապը</string>  
+  <string name="txt_later">Ավելի ուշ</string>  
+  <string name="txt_premium_title_1">Ստացեք անսահմանափակ մուտք դեպի</string>
+  <string name="txt_premium_title_2">Պրեմիում հատկություններ</string>
+  <string name="txt_free_trial_desc">Կարող եք ցանկացած պահի չեղարկել բաժանորդագրությունը `Google Play ծրագրի միջոցով</string>
+  <string name="txt_3day_free_trial">Անվճար 3-օրյա փորձություն</string>
+  <string name="txt_continue">Շարունակել</string>
+</resources>

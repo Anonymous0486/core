@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Besykje it fergees</string>  
+  <string name="txt_try_free_trial_desc">3-dagen fergese proef, Jo kinne op elk momint abonnemint annulearje - fia de Google Play-app</string>  
+  <string name="txt_premium_title">Krij ûnbeheinde tagong ta Premium-funksjes</string>  
+  <string name="txt_premium_offer">100% advertinsjefrije ûnderfining mei ûnbeheinde download, 10x snelle snelheid.</string>  
+  <string name="txt_premium_offer_1">Gjin advertinsjes, en mear</string>  
+  <string name="txt_premium_offer_2">Instant post-oprop aksjes</string>  
+  <string name="txt_premium_offer_3">Reservekopy</string>  
+  <string name="txt_premium_offer_4">App Lock mei PIN</string>  
+  <string name="txt_premium_monthly_package">Moanlikse plan oanbiede</string>  
+  <string name="txt_premium_yearly_package">Oanbiede jierplan</string>  
+  <string name="txt_save">Rêde</string>  
+  <string name="txt_month">Moanne</string>  
+  <string name="txt_year">Jier</string>  
+  <string name="txt_yearly_premium">Pro jierliks</string>  
+  <string name="txt_already_yearly_premium">Al Pro Jierliks</string>  
+  <string name="txt_monthly_premium">Pro Monthly</string>  
+  <string name="txt_already_monthly_premium">Al Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Ynhâld kin net laden wurde. Kontrolearje jo ferbining</string>  
+  <string name="txt_later">Letter</string>  
+  <string name="txt_premium_title_1">Krij unbeheind tagong ta</string>
+  <string name="txt_premium_title_2">Premium funksjes</string>
+  <string name="txt_free_trial_desc">Jo kinne op elk momint abonnemint annulearje - fia de Google Play-app</string>
+  <string name="txt_3day_free_trial">Fergese proef fan 3 dagen</string>
+  <string name="txt_continue">Trochgean</string>
+</resources>

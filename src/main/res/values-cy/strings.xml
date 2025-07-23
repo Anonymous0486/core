@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Rhowch gynnig arni am ddim</string>  
+  <string name="txt_try_free_trial_desc">Treial 3 diwrnod am ddim, Gallwch ganslo tanysgrifiad unrhyw bryd - trwy ap Google Play</string>  
+  <string name="txt_premium_title">Sicrhewch Fynediad Anghyfyngedig i Nodweddion Premiwm</string>  
+  <string name="txt_premium_offer">Profiad 100% heb Hysbysebion gyda lawrlwytho diderfyn, Cyflymder Cyflym 10x.</string>  
+  <string name="txt_premium_offer_1">Dim hysbysebion, a mwy</string>  
+  <string name="txt_premium_offer_2">Gweithrediadau ar ôl galwad ar unwaith</string>  
+  <string name="txt_premium_offer_3">Wrth gefn</string>  
+  <string name="txt_premium_offer_4">App Lock gyda PIN</string>  
+  <string name="txt_premium_monthly_package">Cynnig Cynllun Misol</string>  
+  <string name="txt_premium_yearly_package">Cynnig Cynllun Blynyddol</string>  
+  <string name="txt_save">Arbed</string>  
+  <string name="txt_month">Mis</string>  
+  <string name="txt_year">Blwyddyn</string>  
+  <string name="txt_yearly_premium">Pro Blynyddol</string>  
+  <string name="txt_already_yearly_premium">Eisoes Pro Blynyddol</string>  
+  <string name="txt_monthly_premium">Pro Misol</string>  
+  <string name="txt_already_monthly_premium">Eisoes Pro Misol</string>  
+  <string name="txt_timeout_billing_load">Ni ellir llwytho cynnwys. Gwiriwch eich cysylltiad</string>  
+  <string name="txt_later">Yn ddiweddarach</string>  
+  <string name="txt_premium_title_1">Cael mynediad diderfyn i</string>
+  <string name="txt_premium_title_2">Nodweddion Premiwm</string>
+  <string name="txt_free_trial_desc">Gallwch ganslo tanysgrifiad unrhyw bryd - trwy\'r app Google Play</string>
+  <string name="txt_3day_free_trial">Treial 3 diwrnod am ddim</string>
+  <string name="txt_continue">Parhawn</string>
+</resources>

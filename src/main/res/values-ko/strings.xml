@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">무료로 사용해 보세요</string>  
+  <string name="txt_try_free_trial_desc">3일 무료 평가판, Google Play 앱을 통해 언제든지 구독을 취소할 수 있습니다.</string>  
+  <string name="txt_premium_title">프리미엄 기능에 무제한으로 액세스하세요</string>  
+  <string name="txt_premium_offer">무제한 다운로드, 10배 빠른 속도로 100% 광고 없는 환경을 경험하세요.</string>  
+  <string name="txt_premium_offer_1">광고 없음 등</string>  
+  <string name="txt_premium_offer_2">즉각적인 통화 후 조치</string>  
+  <string name="txt_premium_offer_3">지원</string>  
+  <string name="txt_premium_offer_4">PIN으로 앱 잠금</string>  
+  <string name="txt_premium_monthly_package">월간 요금제 제공</string>  
+  <string name="txt_premium_yearly_package">연간 요금제 제공</string>  
+  <string name="txt_save">구하다</string>  
+  <string name="txt_month">월</string>  
+  <string name="txt_year">년도</string>  
+  <string name="txt_yearly_premium">프로 연간</string>  
+  <string name="txt_already_yearly_premium">이미 매년 프로</string>  
+  <string name="txt_monthly_premium">프로 월간</string>  
+  <string name="txt_already_monthly_premium">이미 Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">콘텐츠를 로드할 수 없습니다. 연결을 확인하세요</string>  
+  <string name="txt_later">나중에</string>  
+  <string name="txt_premium_title_1">무제한 액세스를 받으십시오</string>
+  <string name="txt_premium_title_2">프리미엄 기능</string>
+  <string name="txt_free_trial_desc">Google Play 앱을 통해 언제든지 구독을 취소 할 수 있습니다.</string>
+  <string name="txt_3day_free_trial">무료 3 일간의 시험</string>
+  <string name="txt_continue">계속하다</string>
+</resources>

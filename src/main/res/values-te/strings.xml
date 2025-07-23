@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">దీన్ని ఉచితంగా ప్రయత్నించండి</string>  
+  <string name="txt_try_free_trial_desc">3 రోజుల ఉచిత ట్రయల్, మీరు ఎప్పుడైనా సభ్యత్వాన్ని రద్దు చేయవచ్చు - Google Play యాప్ ద్వారా</string>  
+  <string name="txt_premium_title">ప్రీమియం ఫీచర్‌లకు అపరిమిత యాక్సెస్‌ను పొందండి</string>  
+  <string name="txt_premium_offer">అపరిమిత డౌన్‌లోడ్, 10x వేగవంతమైన వేగంతో 100% ప్రకటనలు లేని అనుభవం.</string>  
+  <string name="txt_premium_offer_1">ప్రకటనలు లేవు మరియు మరిన్ని</string>  
+  <string name="txt_premium_offer_2">తక్షణ పోస్ట్-కాల్ చర్యలు</string>  
+  <string name="txt_premium_offer_3">బ్యాకప్</string>  
+  <string name="txt_premium_offer_4">పిన్‌తో యాప్ లాక్</string>  
+  <string name="txt_premium_monthly_package">నెలవారీ ప్లాన్‌ని ఆఫర్ చేయండి</string>  
+  <string name="txt_premium_yearly_package">వార్షిక ప్రణాళికను ఆఫర్ చేయండి</string>  
+  <string name="txt_save">సేవ్ చేయండి</string>  
+  <string name="txt_month">నెల</string>  
+  <string name="txt_year">సంవత్సరం</string>  
+  <string name="txt_yearly_premium">ప్రో సంవత్సరానికి</string>  
+  <string name="txt_already_yearly_premium">ఇప్పటికే సంవత్సరానికి ప్రో</string>  
+  <string name="txt_monthly_premium">ప్రో మంత్లీ</string>  
+  <string name="txt_already_monthly_premium">ఇప్పటికే ప్రో మంత్లీ</string>  
+  <string name="txt_timeout_billing_load">కంటెంట్ లోడ్ చేయబడదు. మీ కనెక్షన్‌ని తనిఖీ చేయండి</string>  
+  <string name="txt_later">తరువాత</string>  
+  <string name="txt_premium_title_1">దీనికి అపరిమిత ప్రాప్యతను పొందండి</string>
+  <string name="txt_premium_title_2">ప్రీమియం లక్షణాలు</string>
+  <string name="txt_free_trial_desc">మీరు ఎప్పుడైనా చందాను రద్దు చేయవచ్చు - Google Play అనువర్తనం ద్వారా</string>
+  <string name="txt_3day_free_trial">ఉచిత 3-రోజుల ట్రయల్</string>
+  <string name="txt_continue">కొనసాగించండి</string>
+</resources>

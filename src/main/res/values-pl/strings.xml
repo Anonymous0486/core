@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Wypróbuj za darmo</string>  
+  <string name="txt_try_free_trial_desc">3-dniowy bezpłatny okres próbny. Możesz anulować subskrypcję w dowolnym momencie - poprzez aplikację Google Play</string>  
+  <string name="txt_premium_title">Uzyskaj nieograniczony dostęp do funkcji premium</string>  
+  <string name="txt_premium_offer">100% doświadczenia bez reklam z nieograniczonym pobieraniem, 10-krotną szybkością.</string>  
+  <string name="txt_premium_offer_1">Brak reklam i nie tylko</string>  
+  <string name="txt_premium_offer_2">Natychmiastowe działania po połączeniu</string>  
+  <string name="txt_premium_offer_3">Kopia zapasowa</string>  
+  <string name="txt_premium_offer_4">Blokada aplikacji za pomocą PIN-u</string>  
+  <string name="txt_premium_monthly_package">Oferta planu miesięcznego</string>  
+  <string name="txt_premium_yearly_package">Oferta planu rocznego</string>  
+  <string name="txt_save">Ratować</string>  
+  <string name="txt_month">Miesiąc</string>  
+  <string name="txt_year">Rok</string>  
+  <string name="txt_yearly_premium">Pro roczne</string>  
+  <string name="txt_already_yearly_premium">Już Pro roczny</string>  
+  <string name="txt_monthly_premium">Miesięcznik Pro</string>  
+  <string name="txt_already_monthly_premium">Już Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Nie można załadować treści. Sprawdź swoje połączenie</string>  
+  <string name="txt_later">Później</string>  
+  <string name="txt_premium_title_1">Uzyskaj nieograniczony dostęp do</string>
+  <string name="txt_premium_title_2">Funkcje premium</string>
+  <string name="txt_free_trial_desc">Możesz anulować subskrypcję w dowolnym momencie - za pośrednictwem aplikacji Google Play</string>
+  <string name="txt_3day_free_trial">Bezpłatny 3-dniowy proces</string>
+  <string name="txt_continue">Kontynuować</string>
+</resources>

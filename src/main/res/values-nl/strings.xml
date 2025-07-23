@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Probeer het gratis</string>  
+  <string name="txt_try_free_trial_desc">Gratis proefperiode van 3 dagen. U kunt het abonnement op elk gewenst moment opzeggen via de Google Play-app</string>  
+  <string name="txt_premium_title">Krijg onbeperkte toegang tot premiumfuncties</string>  
+  <string name="txt_premium_offer">100% advertentievrije ervaring met onbeperkt downloaden, 10x hoge snelheid.</string>  
+  <string name="txt_premium_offer_1">Geen advertenties en meer</string>  
+  <string name="txt_premium_offer_2">Directe acties na het gesprek</string>  
+  <string name="txt_premium_offer_3">Back-up</string>  
+  <string name="txt_premium_offer_4">App-vergrendeling met pincode</string>  
+  <string name="txt_premium_monthly_package">Aanbieding maandabonnement</string>  
+  <string name="txt_premium_yearly_package">Aanbieding jaarabonnement</string>  
+  <string name="txt_save">Redden</string>  
+  <string name="txt_month">Maand</string>  
+  <string name="txt_year">Jaar</string>  
+  <string name="txt_yearly_premium">Pro Jaarlijks</string>  
+  <string name="txt_already_yearly_premium">Al Pro Jaarlijks</string>  
+  <string name="txt_monthly_premium">Pro Maandelijks</string>  
+  <string name="txt_already_monthly_premium">Al Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Inhoud kan niet worden geladen. Controleer uw verbinding</string>  
+  <string name="txt_later">Later</string>  
+  <string name="txt_premium_title_1">Krijg onbeperkte toegang tot</string>
+  <string name="txt_premium_title_2">Premium -functies</string>
+  <string name="txt_free_trial_desc">U kunt het abonnement op elk gewenst moment annuleren - via de Google Play -app</string>
+  <string name="txt_3day_free_trial">Gratis 3-daagse proef</string>
+  <string name="txt_continue">Doorgaan</string>
+</resources>

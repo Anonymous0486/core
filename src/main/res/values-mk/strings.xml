@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Пробајте го бесплатно</string>  
+  <string name="txt_try_free_trial_desc">3-дневен бесплатен пробен период, може да ја откажете претплатата во секое време - преку апликацијата Google Play</string>  
+  <string name="txt_premium_title">Добијте неограничен пристап до премиум функциите</string>  
+  <string name="txt_premium_offer">100% искуство без реклами со неограничено преземање, 10x брза брзина.</string>  
+  <string name="txt_premium_offer_1">Без реклами, и многу повеќе</string>  
+  <string name="txt_premium_offer_2">Инстант акции по повикот</string>  
+  <string name="txt_premium_offer_3">Резервна копија</string>  
+  <string name="txt_premium_offer_4">Заклучување апликација со PIN</string>  
+  <string name="txt_premium_monthly_package">Понуда месечен план</string>  
+  <string name="txt_premium_yearly_package">Понудете годишен план</string>  
+  <string name="txt_save">Зачувај</string>  
+  <string name="txt_month">Месец</string>  
+  <string name="txt_year">Година</string>  
+  <string name="txt_yearly_premium">Про годишно</string>  
+  <string name="txt_already_yearly_premium">Веќе про годишно</string>  
+  <string name="txt_monthly_premium">Про месечно</string>  
+  <string name="txt_already_monthly_premium">Веќе Про месечно</string>  
+  <string name="txt_timeout_billing_load">Содржината не може да се вчита. Проверете ја вашата врска</string>  
+  <string name="txt_later">Подоцна</string>  
+  <string name="txt_premium_title_1">Добијте неограничен пристап до</string>
+  <string name="txt_premium_title_2">Премиум карактеристики</string>
+  <string name="txt_free_trial_desc">Можете да ја откажете претплатата во секое време - преку апликацијата Google Play</string>
+  <string name="txt_3day_free_trial">Бесплатно 3-дневно судење</string>
+  <string name="txt_continue">Продолжете</string>
+</resources>

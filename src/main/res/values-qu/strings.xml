@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Prueba Gratis</string>  
+  <string name="txt_try_free_trial_desc">3-p\'unchawkuna mana qullqiyuq prueba, Suscripción mayk\'aqllapas qulluyta atikunki - Google Play ruwana kaqnintakama</string>  
+  <string name="txt_premium_title">Mana K\'itiyuq Yaykuna Premium Ruwaykunaman tariy</string>  
+  <string name="txt_premium_offer">100% Mana willakuyniyuq experiencia mana k\'uchuyuq uraykachiywan, 10x Utqaylla Utqaylla.</string>  
+  <string name="txt_premium_offer_1">Mana anunciokuna, hinaspa aswan achka</string>  
+  <string name="txt_premium_offer_2">Chaylla llamkaymanta qipa ruwaykuna</string>  
+  <string name="txt_premium_offer_3">Copia de seguridad</string>  
+  <string name="txt_premium_offer_4">App Bloqueo nisqa PIN nisqawan</string>  
+  <string name="txt_premium_monthly_package">Plan Mensual nisqamanta haywariy</string>  
+  <string name="txt_premium_yearly_package">Plan Anual nisqamanta haywariy</string>  
+  <string name="txt_save">Waqaychay</string>  
+  <string name="txt_month">Killa</string>  
+  <string name="txt_year">Wata</string>  
+  <string name="txt_yearly_premium">Pro Watamanta</string>  
+  <string name="txt_already_yearly_premium">Ya Pro Anual</string>  
+  <string name="txt_monthly_premium">Pro Killamanta</string>  
+  <string name="txt_already_monthly_premium">Ya Pro Mensual</string>  
+  <string name="txt_timeout_billing_load">Contenido nisqataqa manam cargayta atikunmanchu. T’inkisqaykita qhaway</string>  
+  <string name="txt_later">Chaymanta</string>  
+  <string name="txt_premium_title_1">Mana k\'itiyuq yaykuyta tariy .</string>
+  <string name="txt_premium_title_2">Premium nisqa ruwaykuna .</string>
+  <string name="txt_free_trial_desc">Suscripcionta mayk\'aqllapas chinkachiyta atikunki - Google Play App kaqnintakama .</string>
+  <string name="txt_3day_free_trial">Gratis 3 p\'unchaw prueba .</string>
+  <string name="txt_continue">Qatiq</string>
+</resources>

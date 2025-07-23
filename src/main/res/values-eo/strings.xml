@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Provu ĝin Senpage</string>  
+  <string name="txt_try_free_trial_desc">3-taga senpaga provo, Vi povas nuligi abonon iam ajn - per la app Google Play</string>  
+  <string name="txt_premium_title">Akiru Senliman Aliron al Superaj Trajtoj</string>  
+  <string name="txt_premium_offer">100% Senreklama sperto kun senlima elŝutado, 10x Rapida Rapido.</string>  
+  <string name="txt_premium_offer_1">Neniuj reklamoj, kaj pli</string>  
+  <string name="txt_premium_offer_2">Tuj postvokaj agoj</string>  
+  <string name="txt_premium_offer_3">Rezervo</string>  
+  <string name="txt_premium_offer_4">App Lock kun PIN</string>  
+  <string name="txt_premium_monthly_package">Proponu Monatan Planon</string>  
+  <string name="txt_premium_yearly_package">Proponu Jaran Planon</string>  
+  <string name="txt_save">Konservu</string>  
+  <string name="txt_month">Monato</string>  
+  <string name="txt_year">Jaro</string>  
+  <string name="txt_yearly_premium">Pro Jara</string>  
+  <string name="txt_already_yearly_premium">Jam Pro Jara</string>  
+  <string name="txt_monthly_premium">Pro Monata</string>  
+  <string name="txt_already_monthly_premium">Jam Pro Monata</string>  
+  <string name="txt_timeout_billing_load">Enhavo ne povas esti ŝargita. Kontrolu vian konekton</string>  
+  <string name="txt_later">Poste</string>  
+  <string name="txt_premium_title_1">Akiru senliman aliron al</string>
+  <string name="txt_premium_title_2">Premiumaj Trajtoj</string>
+  <string name="txt_free_trial_desc">Vi povas nuligi abonon iam ajn - per la Google Play -programo</string>
+  <string name="txt_3day_free_trial">Senpaga 3-taga provo</string>
+  <string name="txt_continue">Daŭrigu</string>
+</resources>

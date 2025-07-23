@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Tee kpɔ Femaxee</string>  
+  <string name="txt_try_free_trial_desc">3-ŋkekewo dodokpɔ femaxee, Àte ŋu ate fli ɖe nudɔdɔ me ɣesiaɣi - to Google Play dɔwɔnua dzi</string>  
+  <string name="txt_premium_title">Na Mɔ Seɖoƒe Manɔmee Nakpɔ Premium Features</string>  
+  <string name="txt_premium_offer">100% Ads-maxɔmaxɔ nuteƒekpɔkpɔ kple seɖoƒemanɔsitɔ ƒe kɔpiwɔwɔ, 10x Fast Speed.</string>  
+  <string name="txt_premium_offer_1">Boblododo aɖeke meli o, kple bubuwo</string>  
+  <string name="txt_premium_offer_2">Nuwɔna siwo wowɔna enumake le kaƒoƒo megbe</string>  
+  <string name="txt_premium_offer_3">Kpekpeɖeŋunana</string>  
+  <string name="txt_premium_offer_4">App Lock kple PIN</string>  
+  <string name="txt_premium_monthly_package">Na Ɣleti Sia Ɣleti ƒe Ðoɖowɔɖi</string>  
+  <string name="txt_premium_yearly_package">Na Ƒe Sia Ƒe ƒe Ðoɖowɔɖi</string>  
+  <string name="txt_save">Dzrae ɖo</string>  
+  <string name="txt_month">Ɣleti</string>  
+  <string name="txt_year">Ƒe</string>  
+  <string name="txt_yearly_premium">Pro Ƒe Sia Ƒe</string>  
+  <string name="txt_already_yearly_premium">Pro Ƒe sia Ƒe xoxo</string>  
+  <string name="txt_monthly_premium">Pro Ɣleti sia Ɣleti</string>  
+  <string name="txt_already_monthly_premium">Pro Ɣleti sia Ɣleti xoxo</string>  
+  <string name="txt_timeout_billing_load">Womate ŋu atsɔ emenyawo ade agba me o. Kpɔ wò kadodoa ɖa</string>  
+  <string name="txt_later">Emegbe</string>  
+  <string name="txt_premium_title_1">Na mɔnukpɔkpɔ si seɖoƒe meli na o nava .</string>
+  <string name="txt_premium_title_2">Premium Features .</string>
+  <string name="txt_free_trial_desc">Àte ŋu ate fli ɖe nudɔdɔ me ɣesiaɣi - to Google Play ƒe dɔwɔnua dzi .</string>
+  <string name="txt_3day_free_trial">Ŋkeke 3 ƒe ʋɔnudɔdrɔ̃ femaxee .</string>
+  <string name="txt_continue">Yi edzi</string>
+</resources>

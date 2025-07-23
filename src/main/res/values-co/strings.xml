@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Pruvate gratis</string>  
+  <string name="txt_try_free_trial_desc">Pruvazione gratuita di 3 ghjorni, Pudete annullà l\'abbonamentu in ogni momentu - attraversu l\'app Google Play</string>  
+  <string name="txt_premium_title">Ottene Accessu Illimitatu à Funzioni Premium</string>  
+  <string name="txt_premium_offer">Esperienza 100% senza annunzii cù scaricamentu illimitatu, 10x Velocità veloce.</string>  
+  <string name="txt_premium_offer_1">Nisun annunziu, è più</string>  
+  <string name="txt_premium_offer_2">Azzione immediata post-call</string>  
+  <string name="txt_premium_offer_3">Backup</string>  
+  <string name="txt_premium_offer_4">App Lock cù PIN</string>  
+  <string name="txt_premium_monthly_package">Offerta Pianu Mensu</string>  
+  <string name="txt_premium_yearly_package">Offre Pianu Annuale</string>  
+  <string name="txt_save">Salvà</string>  
+  <string name="txt_month">Mese</string>  
+  <string name="txt_year">Annu</string>  
+  <string name="txt_yearly_premium">Pro Annuale</string>  
+  <string name="txt_already_yearly_premium">Digià Pro Annuale</string>  
+  <string name="txt_monthly_premium">Pro Monthly</string>  
+  <string name="txt_already_monthly_premium">Dighjà Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">U cuntenutu ùn pò micca esse caricatu. Verificate a vostra cunnessione</string>  
+  <string name="txt_later">Dopu</string>  
+  <string name="txt_premium_title_1">Uttene accessu illimitatu à</string>
+  <string name="txt_premium_title_2">Funzioni premium</string>
+  <string name="txt_free_trial_desc">Pudete annullà l\'abbonamentu in ogni mumentu - Via u Google Play App</string>
+  <string name="txt_3day_free_trial">Prughjettu di 3 ghjorni gratuiti</string>
+  <string name="txt_continue">Cuntinuà</string>
+</resources>

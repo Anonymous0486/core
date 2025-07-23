@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Ijaribu Bure</string>  
+  <string name="txt_try_free_trial_desc">Jaribio la siku 3 bila malipo, Unaweza kughairi usajili wakati wowote - kupitia programu ya Google Play</string>  
+  <string name="txt_premium_title">Pata Ufikiaji Bila Kikomo kwa Vipengele vya Kulipiwa</string>  
+  <string name="txt_premium_offer">100% ya matumizi bila matangazo na upakuaji usio na kikomo, Kasi ya Haraka mara 10.</string>  
+  <string name="txt_premium_offer_1">Hakuna matangazo, na zaidi</string>  
+  <string name="txt_premium_offer_2">Vitendo vya baada ya simu ya papo hapo</string>  
+  <string name="txt_premium_offer_3">Hifadhi nakala</string>  
+  <string name="txt_premium_offer_4">App Lock na PIN</string>  
+  <string name="txt_premium_monthly_package">Toa Mpango wa Kila Mwezi</string>  
+  <string name="txt_premium_yearly_package">Toa Mpango wa Kila Mwaka</string>  
+  <string name="txt_save">Hifadhi</string>  
+  <string name="txt_month">Mwezi</string>  
+  <string name="txt_year">Mwaka</string>  
+  <string name="txt_yearly_premium">Pro kila mwaka</string>  
+  <string name="txt_already_yearly_premium">Tayari Pro Kila mwaka</string>  
+  <string name="txt_monthly_premium">Pro Monthly</string>  
+  <string name="txt_already_monthly_premium">Tayari Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Maudhui hayawezi kupakiwa. Angalia muunganisho wako</string>  
+  <string name="txt_later">Baadaye</string>  
+  <string name="txt_premium_title_1">Pata ufikiaji usio na kikomo wa</string>
+  <string name="txt_premium_title_2">Vipengele vya Premium</string>
+  <string name="txt_free_trial_desc">Unaweza kufuta usajili wakati wowote - kupitia programu ya Google Play</string>
+  <string name="txt_3day_free_trial">Jaribio la bure la siku 3</string>
+  <string name="txt_continue">Endelea</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Sɔ hwɛ Free</string>  
+  <string name="txt_try_free_trial_desc">3-days free trial, Wubetumi atwa nkrataahyɛ mu bere biara - denam Google Play app no ​​so</string>  
+  <string name="txt_premium_title">Nya Premium Features a Anohyeto Nni Mu</string>  
+  <string name="txt_premium_offer">100% Ads-free osuahu a anohyeto nni mu downloading, 10x Fast Speed.</string>  
+  <string name="txt_premium_offer_1">Dawurubɔ biara nni hɔ, ne nea ɛkeka ho</string>  
+  <string name="txt_premium_offer_2">Nneyɛe a wɔyɛ no ntɛm ara wɔ frɛ akyi</string>  
+  <string name="txt_premium_offer_3">Backup a wɔde yɛ adwuma</string>  
+  <string name="txt_premium_offer_4">App Lock a ɛwɔ PIN so</string>  
+  <string name="txt_premium_monthly_package">Fa Ɔsram Biara Nhyehyɛe Ma</string>  
+  <string name="txt_premium_yearly_package">Fa Afe Biara Nhyehyɛe Ma</string>  
+  <string name="txt_save">Kora</string>  
+  <string name="txt_month">Bosome</string>  
+  <string name="txt_year">Afe</string>  
+  <string name="txt_yearly_premium">Pro Afe biara</string>  
+  <string name="txt_already_yearly_premium">Dedaw Pro Afe biara</string>  
+  <string name="txt_monthly_premium">Pro Ɔsram biara</string>  
+  <string name="txt_already_monthly_premium">Dedaw Pro Ɔsram biara</string>  
+  <string name="txt_timeout_billing_load">Wɔrentumi mfa nsɛm a ɛwɔ mu no nhyɛ mu. Hwɛ wo nkitahodi no</string>  
+  <string name="txt_later">Akyire</string>  
+  <string name="txt_premium_title_1">Nya kwan a anohyeto nni mu so .</string>
+  <string name="txt_premium_title_2">Premium Nneɛma a Ɛwɔ Hɔ .</string>
+  <string name="txt_free_trial_desc">Wubetumi atwa subscription no mu bere biara - denam Google Play app no so .</string>
+  <string name="txt_3day_free_trial">Nnafua 3 sɔhwɛ a wontua hwee .</string>
+  <string name="txt_continue">Toa so</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Cubalah Percuma</string>  
+  <string name="txt_try_free_trial_desc">Percubaan percuma 3 hari, Anda boleh membatalkan langganan pada bila-bila masa - melalui apl Google Play</string>  
+  <string name="txt_premium_title">Dapatkan Akses Tanpa Had kepada Ciri Premium</string>  
+  <string name="txt_premium_offer">100% pengalaman bebas iklan dengan muat turun tanpa had, 10x Kelajuan Pantas.</string>  
+  <string name="txt_premium_offer_1">Tiada iklan, dan banyak lagi</string>  
+  <string name="txt_premium_offer_2">Tindakan pasca panggilan segera</string>  
+  <string name="txt_premium_offer_3">Sandaran</string>  
+  <string name="txt_premium_offer_4">Kunci Apl dengan PIN</string>  
+  <string name="txt_premium_monthly_package">Menawarkan Rancangan Bulanan</string>  
+  <string name="txt_premium_yearly_package">Menawarkan Rancangan Tahunan</string>  
+  <string name="txt_save">Jimat</string>  
+  <string name="txt_month">Bulan</string>  
+  <string name="txt_year">Tahun</string>  
+  <string name="txt_yearly_premium">Pro Tahunan</string>  
+  <string name="txt_already_yearly_premium">Sudah Pro Tahunan</string>  
+  <string name="txt_monthly_premium">Pro Bulanan</string>  
+  <string name="txt_already_monthly_premium">Sudah Pro Bulanan</string>  
+  <string name="txt_timeout_billing_load">Kandungan tidak boleh dimuatkan. Semak sambungan anda</string>  
+  <string name="txt_later">Kemudian</string>  
+  <string name="txt_premium_title_1">Dapatkan akses tanpa had ke</string>
+  <string name="txt_premium_title_2">Ciri -ciri premium</string>
+  <string name="txt_free_trial_desc">Anda boleh membatalkan langganan pada bila -bila masa - melalui aplikasi Google Play</string>
+  <string name="txt_3day_free_trial">Percubaan 3 hari percuma</string>
+  <string name="txt_continue">Teruskan</string>
+</resources>

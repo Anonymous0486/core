@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Bain triail as saor in aisce,</string>  
+  <string name="txt_try_free_trial_desc">Triail saor in aisce 3 lá, Is féidir leat síntiús a chealú am ar bith - tríd an aip Google Play</string>  
+  <string name="txt_premium_title">Faigh Rochtain Neamhtheoranta ar Ghnéithe Préimhe</string>  
+  <string name="txt_premium_offer">Taithí 100% saor ó fhógraí le híoslódáil neamhtheoranta, 10x Fast Speed.</string>  
+  <string name="txt_premium_offer_1">Gan fógraí, agus níos mó</string>  
+  <string name="txt_premium_offer_2">Gníomhartha iarghlao ar an toirt</string>  
+  <string name="txt_premium_offer_3">Cúltaca</string>  
+  <string name="txt_premium_offer_4">App Lock le PIN</string>  
+  <string name="txt_premium_monthly_package">Tairiscint Plean Míosúil</string>  
+  <string name="txt_premium_yearly_package">Tairiscint Plean Bliantúil</string>  
+  <string name="txt_save">Sábháil</string>  
+  <string name="txt_month">Mí</string>  
+  <string name="txt_year">Bliain</string>  
+  <string name="txt_yearly_premium">Pro Bliantúil</string>  
+  <string name="txt_already_yearly_premium">Cheana féin Pro Bliantúil</string>  
+  <string name="txt_monthly_premium">Pro Míosúil</string>  
+  <string name="txt_already_monthly_premium">Cheana féin Pro Míosúil</string>  
+  <string name="txt_timeout_billing_load">Ní féidir ábhar a lódáil. Seiceáil do cheangal</string>  
+  <string name="txt_later">Ina dhiaidh sin</string>  
+  <string name="txt_premium_title_1">Faigh rochtain neamhtheoranta ar</string>
+  <string name="txt_premium_title_2">Gnéithe Préimhe</string>
+  <string name="txt_free_trial_desc">Is féidir leat síntiús a chealú am ar bith - tríd an aip Google Play</string>
+  <string name="txt_3day_free_trial">Triail 3 lá saor in aisce</string>
+  <string name="txt_continue">Lean ort</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">פּרוּווט עס פריי</string>  
+  <string name="txt_try_free_trial_desc">3-טאָג פריי פּראָצעס, איר קענען באָטל מאַכן אַבאָנעמענט עניטיים - דורך די Google פּלייַ אַפּ</string>  
+  <string name="txt_premium_title">באַקומען אַנלימאַטאַד אַקסעס צו פּרעמיום פֿעיִקייטן</string>  
+  <string name="txt_premium_offer">100% אַדס-פריי דערפאַרונג מיט אַנלימאַטאַד דאַונלאָודינג, 10 קס שנעל ספּיד.</string>  
+  <string name="txt_premium_offer_1">קיין אַדס, און מער</string>  
+  <string name="txt_premium_offer_2">רעגע אַקשאַנז נאָך רופן</string>  
+  <string name="txt_premium_offer_3">באַקקופּ</string>  
+  <string name="txt_premium_offer_4">אַפּ לאַק מיט PIN</string>  
+  <string name="txt_premium_monthly_package">פאָרשלאָגן כוידעשלעך פּלאַן</string>  
+  <string name="txt_premium_yearly_package">פאָרשלאָגן יערלעך פּלאַן</string>  
+  <string name="txt_save">היט</string>  
+  <string name="txt_month">חודש</string>  
+  <string name="txt_year">יאָר</string>  
+  <string name="txt_yearly_premium">פּראָ יאָריק</string>  
+  <string name="txt_already_yearly_premium">שוין פּראָ יאָריק</string>  
+  <string name="txt_monthly_premium">פּראָ כוידעשלעך</string>  
+  <string name="txt_already_monthly_premium">שוין פּראָ כוידעשלעך</string>  
+  <string name="txt_timeout_billing_load">אינהאַלט קענען ניט זיין לאָודיד. קוק דיין קשר</string>  
+  <string name="txt_later">שפּעטער</string>  
+  <string name="txt_premium_title_1">באַקומען אַנלימאַטאַד אַקסעס צו</string>
+  <string name="txt_premium_title_2">פּרעמיע פֿעיִקייטן</string>
+  <string name="txt_free_trial_desc">איר קענען באָטל מאַכן אַבאָנעמענט עניטיים - דורך די Google פּלייַ אַפּ</string>
+  <string name="txt_3day_free_trial">Free 3-טאָג פּראָצעס</string>
+  <string name="txt_continue">מאַמשעכ זייַן</string>
+</resources>

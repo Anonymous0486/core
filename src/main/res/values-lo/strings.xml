@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">ລອງໃຊ້ມັນຟຣີ</string>  
+  <string name="txt_try_free_trial_desc">ການທົດລອງໃຊ້ຟຣີ 3 ມື້, ທ່ານສາມາດຍົກເລີກການສະໝັກໃຊ້ໄດ້ທຸກເວລາ - ຜ່ານແອັບ Google Play</string>  
+  <string name="txt_premium_title">ເຂົ້າເຖິງຄຸນສົມບັດພຣີມຽມແບບບໍ່ຈຳກັດ</string>  
+  <string name="txt_premium_offer">ປະສົບການແບບບໍ່ມີໂຄສະນາ 100% ດ້ວຍການດາວໂຫຼດບໍ່ຈຳກັດ, ຄວາມໄວ 10x.</string>  
+  <string name="txt_premium_offer_1">ບໍ່ມີໂຄສະນາ, ແລະອື່ນໆ</string>  
+  <string name="txt_premium_offer_2">ການປະຕິບັດຫຼັງການໂທທັນທີ</string>  
+  <string name="txt_premium_offer_3">ສຳຮອງ</string>  
+  <string name="txt_premium_offer_4">ລັອກແອັບດ້ວຍ PIN</string>  
+  <string name="txt_premium_monthly_package">ສະເໜີແຜນລາຍເດືອນ</string>  
+  <string name="txt_premium_yearly_package">ສະເໜີແຜນລາຍປີ</string>  
+  <string name="txt_save">ບັນທຶກ</string>  
+  <string name="txt_month">ເດືອນ</string>  
+  <string name="txt_year">ປີ</string>  
+  <string name="txt_yearly_premium">ໂປໂມຊັ່ນປະຈຳປີ</string>  
+  <string name="txt_already_yearly_premium">ໂປຣປີແລ້ວ</string>  
+  <string name="txt_monthly_premium">ໂປຣທຸກເດືອນ</string>  
+  <string name="txt_already_monthly_premium">ໂປຣປະຈຳເດືອນແລ້ວ</string>  
+  <string name="txt_timeout_billing_load">ບໍ່ສາມາດໂຫຼດເນື້ອຫາໄດ້. ກວດເບິ່ງການເຊື່ອມຕໍ່ຂອງທ່ານ</string>  
+  <string name="txt_later">ມື້ຕໍ່ມາ</string>  
+  <string name="txt_premium_title_1">ໄດ້ຮັບການເຂົ້າເຖິງບໍ່ຈໍາກັດ</string>
+  <string name="txt_premium_title_2">ຄຸນນະສົມບັດທີ່ນິຍົມ</string>
+  <string name="txt_free_trial_desc">ທ່ານສາມາດຍົກເລີກການສະຫມັກໄດ້ທຸກເວລາ - ຜ່ານ Google Play App</string>
+  <string name="txt_3day_free_trial">ການທົດລອງຟຣີ 3 ວັນ</string>
+  <string name="txt_continue">ດໍາເນີນຕໍ່ໄປ</string>
+</resources>

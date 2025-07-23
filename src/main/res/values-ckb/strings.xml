@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">تاقی بکەرەوە بەخۆڕایی</string>  
+  <string name="txt_try_free_trial_desc">تاقیکردنەوەیەکی بێبەرامبەری ٣ ڕۆژە، دەتوانیت لە هەر کاتێکدا بەشداریکردن هەڵبوەشێنیتەوە - لە ڕێگەی ئەپی گووگڵ پلەیەوە</string>  
+  <string name="txt_premium_title">دەستڕاگەیشتنێکی بێسنوور بە تایبەتمەندییە پریمیۆمەکان بەدەستبهێنە</string>  
+  <string name="txt_premium_offer">ئەزموونی 100% بێ ڕێکلام لەگەڵ دابەزاندنی بێ سنوور، خێرایی خێرا 10x.</string>  
+  <string name="txt_premium_offer_1">بێ ڕیکلام، و زۆر شتی تر</string>  
+  <string name="txt_premium_offer_2">کردارە خێراکانی دوای پەیوەندیکردن</string>  
+  <string name="txt_premium_offer_3">پاشەکەوتکردن</string>  
+  <string name="txt_premium_offer_4">App Lock بە PIN</string>  
+  <string name="txt_premium_monthly_package">پلانی مانگانە پێشکەش بکە</string>  
+  <string name="txt_premium_yearly_package">پلانی ساڵانە پێشکەش بکە</string>  
+  <string name="txt_save">هەڵگرتن</string>  
+  <string name="txt_month">مانگ</string>  
+  <string name="txt_year">ساڵ</string>  
+  <string name="txt_yearly_premium">پڕۆ ساڵانە</string>  
+  <string name="txt_already_yearly_premium">لە ئێستاوە پرۆ ساڵانە</string>  
+  <string name="txt_monthly_premium">پڕۆ مانگانە</string>  
+  <string name="txt_already_monthly_premium">لە ئێستاوە پرۆ مانگانە</string>  
+  <string name="txt_timeout_billing_load">ناوەڕۆک ناتوانرێت بار بکرێت. پەیوەندیەکەت بپشکنە</string>  
+  <string name="txt_later">دواتر</string>  
+  <string name="txt_premium_title_1">دەستگەیشتن بە بێ سنوور بەدەست بهێنە</string>
+  <string name="txt_premium_title_2">تایبەتمەندیەکانی پریمیۆم</string>
+  <string name="txt_free_trial_desc">دەتوانیت لە هەر کاتێکدا بەشداریکردن هەڵبوەشێنیتەوە - لە ڕێگەی ئەپی گووگڵ پلەی</string>
+  <string name="txt_3day_free_trial">تاقیکردنەوەی ٣ ڕۆژە بەخۆڕایی</string>
+  <string name="txt_continue">بەردەوام بوون</string>
+</resources>

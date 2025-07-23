@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Próbáld ki ingyen</string>  
+  <string name="txt_try_free_trial_desc">3 napos ingyenes próbaidőszak. Az előfizetést bármikor lemondhatja – a Google Play alkalmazáson keresztül</string>  
+  <string name="txt_premium_title">Korlátlan hozzáférést kap a prémium szolgáltatásokhoz</string>  
+  <string name="txt_premium_offer">100%-ban hirdetésmentes élmény korlátlan letöltéssel, 10-szeres gyorsasággal.</string>  
+  <string name="txt_premium_offer_1">Nincsenek hirdetések, és több</string>  
+  <string name="txt_premium_offer_2">Azonnali hívás utáni műveletek</string>  
+  <string name="txt_premium_offer_3">Biztonsági mentés</string>  
+  <string name="txt_premium_offer_4">Alkalmazászár PIN-kóddal</string>  
+  <string name="txt_premium_monthly_package">Ajánlat havi terv</string>  
+  <string name="txt_premium_yearly_package">Ajánlat éves terv</string>  
+  <string name="txt_save">Megtakarítás</string>  
+  <string name="txt_month">Hónap</string>  
+  <string name="txt_year">Év</string>  
+  <string name="txt_yearly_premium">Pro Évente</string>  
+  <string name="txt_already_yearly_premium">Már Pro Yearly</string>  
+  <string name="txt_monthly_premium">Pro Monthly</string>  
+  <string name="txt_already_monthly_premium">Már Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">A tartalom nem tölthető be. Ellenőrizze a kapcsolatot</string>  
+  <string name="txt_later">Később</string>  
+  <string name="txt_premium_title_1">Korlátlan hozzáférést kapjon a</string>
+  <string name="txt_premium_title_2">Prémium funkciók</string>
+  <string name="txt_free_trial_desc">Bármikor lemondhatja az előfizetést - a Google Play alkalmazáson keresztül</string>
+  <string name="txt_3day_free_trial">Ingyenes 3 napos próba</string>
+  <string name="txt_continue">Folytatódik</string>
+</resources>

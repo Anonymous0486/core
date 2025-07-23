@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">ھەقسىز سىناپ بېقىڭ</string>  
+  <string name="txt_try_free_trial_desc">3 كۈنلۈك ھەقسىز سىناق ، سىز Google Play دېتالى ئارقىلىق مۇشتەرىلىكنى خالىغان ۋاقىتتا بىكار قىلالايسىز</string>  
+  <string name="txt_premium_title">يۇقىرى ئىقتىدارلارغا چەكلىمىسىز ئېرىشىش</string>  
+  <string name="txt_premium_offer">چەكلىمىسىز چۈشۈرۈش بىلەن% 100 ئېلانسىز تەجرىبە ، 10x تېز سۈرئەت.</string>  
+  <string name="txt_premium_offer_1">ئېلان يوق</string>  
+  <string name="txt_premium_offer_2">چاقىرىشتىن كېيىنكى ھەرىكەت</string>  
+  <string name="txt_premium_offer_3">زاپاسلاش</string>  
+  <string name="txt_premium_offer_4">PIN بىلەن App Lock</string>  
+  <string name="txt_premium_monthly_package">ئايلىق پىلان بىلەن تەمىنلەڭ</string>  
+  <string name="txt_premium_yearly_package">يىللىق پىلان بىلەن تەمىنلەڭ</string>  
+  <string name="txt_save">ساقلاش</string>  
+  <string name="txt_month">ئاي</string>  
+  <string name="txt_year">يىل</string>  
+  <string name="txt_yearly_premium">Pro Yearly</string>  
+  <string name="txt_already_yearly_premium">ئاللىبۇرۇن Pro يىللىق</string>  
+  <string name="txt_monthly_premium">Pro Monthly</string>  
+  <string name="txt_already_monthly_premium">ئاللىبۇرۇن Pro ئايلىق</string>  
+  <string name="txt_timeout_billing_load">مەزمۇننى يۈكلەشكە بولمايدۇ. ئۇلىنىشىڭىزنى تەكشۈرۈڭ</string>  
+  <string name="txt_later">كېيىنچە</string>  
+  <string name="txt_premium_title_1">چەكسىز زىيارەت قىلىڭ</string>
+  <string name="txt_premium_title_2">ئالىي ئىقتىدار</string>
+  <string name="txt_free_trial_desc">سىز ھەر ۋاقىت بىزنى خالىغان ۋاقىتتا بىكار قىلالايسىز - Google Play دېتالى ئارقىلىق</string>
+  <string name="txt_3day_free_trial">ھەقسىز 3 كۈنلۈك سىناق</string>
+  <string name="txt_continue">داۋاملاشتۇرۇش</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Mugt synap görüň</string>  
+  <string name="txt_try_free_trial_desc">3 günlük mugt synag, Islän wagtyňyz abunalygy ýatyryp bilersiňiz - Google Play programmasy arkaly</string>  
+  <string name="txt_premium_title">Premium aýratynlyklaryna çäksiz giriş alyň</string>  
+  <string name="txt_premium_offer">Çäklendirilmedik göçürip almak bilen 100% mahabatsyz tejribe, 10x çalt tizlik.</string>  
+  <string name="txt_premium_offer_1">Mahabat we ş.m.</string>  
+  <string name="txt_premium_offer_2">Çagyryşdan soňky dessine hereketler</string>  
+  <string name="txt_premium_offer_3">Uptiýaçlyk</string>  
+  <string name="txt_premium_offer_4">PIN bilen programma gulpy</string>  
+  <string name="txt_premium_monthly_package">Aýlyk meýilnamany teklip ediň</string>  
+  <string name="txt_premium_yearly_package">Lyyllyk meýilnamany teklip ediň</string>  
+  <string name="txt_save">Saklaň</string>  
+  <string name="txt_month">Aý</string>  
+  <string name="txt_year">.Yl</string>  
+  <string name="txt_yearly_premium">Pro ýyllyk</string>  
+  <string name="txt_already_yearly_premium">Eýýäm Pro ýyllyk</string>  
+  <string name="txt_monthly_premium">Pro aýlyk</string>  
+  <string name="txt_already_monthly_premium">Eýýäm Pro aýlyk</string>  
+  <string name="txt_timeout_billing_load">Mazmuny ýükläp bolmaz. Baglanyşygyňyzy barlaň</string>  
+  <string name="txt_later">Soňrak</string>  
+  <string name="txt_premium_title_1">Çäklendirilmedik giriş</string>
+  <string name="txt_premium_title_2">Premium aýratynlyklary</string>
+  <string name="txt_free_trial_desc">Islän wagtyňyz abuna ýazylyşy, Google Oýna programmasy arkaly abuna ýazyp bilersiňiz</string>
+  <string name="txt_3day_free_trial">3 günlük mugt synag</string>
+  <string name="txt_continue">Dowam et</string>
+</resources>

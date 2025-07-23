@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Probao gratis</string>  
+  <string name="txt_try_free_trial_desc">Proba gratuíta de 3 días. Podes cancelar a subscrición en calquera momento a través da aplicación Google Play</string>  
+  <string name="txt_premium_title">Obtén acceso ilimitado ás funcións Premium</string>  
+  <string name="txt_premium_offer">Experiencia 100% sen anuncios con descarga ilimitada, velocidade rápida 10x.</string>  
+  <string name="txt_premium_offer_1">Sen anuncios e moito máis</string>  
+  <string name="txt_premium_offer_2">Accións instantáneas despois da chamada</string>  
+  <string name="txt_premium_offer_3">Copia de seguranza</string>  
+  <string name="txt_premium_offer_4">Bloqueo de aplicacións con PIN</string>  
+  <string name="txt_premium_monthly_package">Oferta Plan Mensual</string>  
+  <string name="txt_premium_yearly_package">Oferta Plan Anual</string>  
+  <string name="txt_save">Gardar</string>  
+  <string name="txt_month">Mes</string>  
+  <string name="txt_year">Ano</string>  
+  <string name="txt_yearly_premium">Pro Anual</string>  
+  <string name="txt_already_yearly_premium">Xa Pro Anual</string>  
+  <string name="txt_monthly_premium">Pro mensual</string>  
+  <string name="txt_already_monthly_premium">Xa Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Non se pode cargar o contido. Comproba a túa conexión</string>  
+  <string name="txt_later">Máis tarde</string>  
+  <string name="txt_premium_title_1">Obtén acceso ilimitado a</string>
+  <string name="txt_premium_title_2">Características premium</string>
+  <string name="txt_free_trial_desc">Podes cancelar a subscrición en calquera momento: a través da aplicación Google Play</string>
+  <string name="txt_3day_free_trial">Ensaio gratuíto de 3 días</string>
+  <string name="txt_continue">Continuar</string>
+</resources>

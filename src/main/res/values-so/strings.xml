@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Isku day Bilaash</string>  
+  <string name="txt_try_free_trial_desc">Tijaabada bilaashka ah ee 3-maalmood ah, Waxaad joojin kartaa is-diiwaangelinta wakhti kasta - adoo isticmaalaya abka Google Play</string>  
+  <string name="txt_premium_title">Hel Gelitaanka Aan Xadka Lahayn ee Tilmaamaha Qiimaha Sare</string>  
+  <string name="txt_premium_offer">100% waayo-aragnimo xayeysiis-la\'aan ah oo leh soo dejin aan xadidnayn, 10x Xawaaraha Dhakhso ah.</string>  
+  <string name="txt_premium_offer_1">Xayeysiis ma jiro, iyo in ka badan</string>  
+  <string name="txt_premium_offer_2">Ficilada degdega ah ee wicitaanka kadib</string>  
+  <string name="txt_premium_offer_3">Kaabta</string>  
+  <string name="txt_premium_offer_4">App quful leh PIN</string>  
+  <string name="txt_premium_monthly_package">Bixi Qorshaha Bisha</string>  
+  <string name="txt_premium_yearly_package">Bixi Qorshaha Sannadlaha ah</string>  
+  <string name="txt_save">Badbaadin</string>  
+  <string name="txt_month">Bisha</string>  
+  <string name="txt_year">Sannadka</string>  
+  <string name="txt_yearly_premium">Pro Sannadle</string>  
+  <string name="txt_already_yearly_premium">Horeba Pro Sannadle</string>  
+  <string name="txt_monthly_premium">Bishii Pro</string>  
+  <string name="txt_already_monthly_premium">Durba Pro bille</string>  
+  <string name="txt_timeout_billing_load">Waxa ku jira lama rari karo Hubi xidhiidhkaaga</string>  
+  <string name="txt_later">Daaheya</string>  
+  <string name="txt_premium_title_1">Hel Helitaan aan xadidneyn</string>
+  <string name="txt_premium_title_2">Astaamaha Premium</string>
+  <string name="txt_free_trial_desc">Waad joojin kartaa rukhsad waqti kasta - adoo maraya barnaamijka Google Playge</string>
+  <string name="txt_3day_free_trial">Lacag la\'aan 3-maalmood oo bilaash ah</string>
+  <string name="txt_continue">Socon</string>
+</resources>

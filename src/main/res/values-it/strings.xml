@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Provalo gratuitamente</string>  
+  <string name="txt_try_free_trial_desc">Prova gratuita di 3 giorni. Puoi annullare l\'abbonamento in qualsiasi momento tramite l\'app Google Play</string>  
+  <string name="txt_premium_title">Ottieni accesso illimitato alle funzionalità Premium</string>  
+  <string name="txt_premium_offer">Esperienza senza pubblicità al 100% con download illimitato, velocità 10 volte superiore.</string>  
+  <string name="txt_premium_offer_1">Nessuna pubblicità e altro ancora</string>  
+  <string name="txt_premium_offer_2">Azioni post-chiamata istantanee</string>  
+  <string name="txt_premium_offer_3">Backup</string>  
+  <string name="txt_premium_offer_4">Blocco dell\'app con PIN</string>  
+  <string name="txt_premium_monthly_package">Offerta piano mensile</string>  
+  <string name="txt_premium_yearly_package">Offerta piano annuale</string>  
+  <string name="txt_save">Salva</string>  
+  <string name="txt_month">Mese</string>  
+  <string name="txt_year">Anno</string>  
+  <string name="txt_yearly_premium">Pro annuale</string>  
+  <string name="txt_already_yearly_premium">Già Pro annuale</string>  
+  <string name="txt_monthly_premium">Mensile professionale</string>  
+  <string name="txt_already_monthly_premium">Già Pro mensile</string>  
+  <string name="txt_timeout_billing_load">Impossibile caricare il contenuto. Controlla la tua connessione</string>  
+  <string name="txt_later">Dopo</string>  
+  <string name="txt_premium_title_1">Ottieni accesso illimitato a</string>
+  <string name="txt_premium_title_2">Caratteristiche premium</string>
+  <string name="txt_free_trial_desc">È possibile annullare l\'abbonamento in qualsiasi momento - tramite l\'app Google Play</string>
+  <string name="txt_3day_free_trial">Prova di 3 giorni gratuita</string>
+  <string name="txt_continue">Continuare</string>
+</resources>

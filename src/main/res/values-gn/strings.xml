@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Eñeha\'ã Gratis</string>  
+  <string name="txt_try_free_trial_desc">3 ára prueba gratuita, Ikatu oñembogue suscripción oimeha ára - app Google Play rupive</string>  
+  <string name="txt_premium_title">Ehupyty Jeike Ilimitado umi Característica Premium-pe</string>  
+  <string name="txt_premium_offer">100% Experiencia libre de anuncios orekóva descarga ilimitado, 10x Velocidad Pya’e.</string>  
+  <string name="txt_premium_offer_1">Ndaipóri anuncio, ha hetave mba’e</string>  
+  <string name="txt_premium_offer_2">Umi tembiapo ñehenói rire instantáneo</string>  
+  <string name="txt_premium_offer_3">Copia de seguridad rehegua</string>  
+  <string name="txt_premium_offer_4">App Bloqueo PIN reheve</string>  
+  <string name="txt_premium_monthly_package">Oikuave’ẽ Plan Mensual</string>  
+  <string name="txt_premium_yearly_package">Oikuave’ẽ Plan Anual</string>  
+  <string name="txt_save">Pysyrõ</string>  
+  <string name="txt_month">Jasy</string>  
+  <string name="txt_year">Ary</string>  
+  <string name="txt_yearly_premium">Pro Anualmente rehegua</string>  
+  <string name="txt_already_yearly_premium">Ya Pro Anualmente</string>  
+  <string name="txt_monthly_premium">Pro Mensual rehegua</string>  
+  <string name="txt_already_monthly_premium">Ya Pro Mensual</string>  
+  <string name="txt_timeout_billing_load">Contenido ndaikatúi ojekarga. Ehecháke ne joaju</string>  
+  <string name="txt_later">Ka\'aruve</string>  
+  <string name="txt_premium_title_1">Ojehupyty jeike ilimitádova .</string>
+  <string name="txt_premium_title_2">Umi mba’e ojehechava’ekue premium .</string>
+  <string name="txt_free_trial_desc">Ikatu rembogue suscripción oimeha ára - Google Play app rupive .</string>
+  <string name="txt_3day_free_trial">Juicio Gratis 3 Días rehegua .</string>
+  <string name="txt_continue">Mbojoapy</string>
+</resources>

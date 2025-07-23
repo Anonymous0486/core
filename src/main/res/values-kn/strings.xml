@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">ಇದನ್ನು ಉಚಿತವಾಗಿ ಪ್ರಯತ್ನಿಸಿ</string>  
+  <string name="txt_try_free_trial_desc">3-ದಿನಗಳ ಉಚಿತ ಪ್ರಯೋಗ, ನೀವು ಯಾವುದೇ ಸಮಯದಲ್ಲಿ ಚಂದಾದಾರಿಕೆಯನ್ನು ರದ್ದುಗೊಳಿಸಬಹುದು - Google Play ಅಪ್ಲಿಕೇಶನ್ ಮೂಲಕ</string>  
+  <string name="txt_premium_title">ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯಗಳಿಗೆ ಅನಿಯಮಿತ ಪ್ರವೇಶವನ್ನು ಪಡೆಯಿರಿ</string>  
+  <string name="txt_premium_offer">ಅನಿಯಮಿತ ಡೌನ್‌ಲೋಡ್‌ನೊಂದಿಗೆ 100% ಜಾಹೀರಾತು-ಮುಕ್ತ ಅನುಭವ, 10x ವೇಗ.</string>  
+  <string name="txt_premium_offer_1">ಯಾವುದೇ ಜಾಹೀರಾತುಗಳಿಲ್ಲ, ಮತ್ತು ಇನ್ನಷ್ಟು</string>  
+  <string name="txt_premium_offer_2">ತತ್‌ಕ್ಷಣದ ನಂತರದ ಕರೆ ಕ್ರಮಗಳು</string>  
+  <string name="txt_premium_offer_3">ಬ್ಯಾಕಪ್</string>  
+  <string name="txt_premium_offer_4">ಪಿನ್‌ನೊಂದಿಗೆ ಅಪ್ಲಿಕೇಶನ್ ಲಾಕ್</string>  
+  <string name="txt_premium_monthly_package">ಮಾಸಿಕ ಯೋಜನೆಯನ್ನು ನೀಡಿ</string>  
+  <string name="txt_premium_yearly_package">ವಾರ್ಷಿಕ ಯೋಜನೆಯನ್ನು ನೀಡಿ</string>  
+  <string name="txt_save">ಉಳಿಸಿ</string>  
+  <string name="txt_month">ತಿಂಗಳು</string>  
+  <string name="txt_year">ವರ್ಷ</string>  
+  <string name="txt_yearly_premium">ಪ್ರೊ ವಾರ್ಷಿಕ</string>  
+  <string name="txt_already_yearly_premium">ಈಗಾಗಲೇ ವರ್ಷಕ್ಕೊಮ್ಮೆ ಪ್ರೊ</string>  
+  <string name="txt_monthly_premium">ಪ್ರೊ ಮಾಸಿಕ</string>  
+  <string name="txt_already_monthly_premium">ಈಗಾಗಲೇ ಪ್ರೊ ಮಾಸಿಕ</string>  
+  <string name="txt_timeout_billing_load">ವಿಷಯವನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುವುದಿಲ್ಲ. ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ</string>  
+  <string name="txt_later">ನಂತರದ</string>  
+  <string name="txt_premium_title_1">ಗೆ ಅನಿಯಮಿತ ಪ್ರವೇಶವನ್ನು ಪಡೆಯಿರಿ</string>
+  <string name="txt_premium_title_2">ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯಗಳು</string>
+  <string name="txt_free_trial_desc">ನೀವು ಯಾವಾಗ ಬೇಕಾದರೂ ಚಂದಾದಾರಿಕೆಯನ್ನು ರದ್ದುಗೊಳಿಸಬಹುದು - Google Play ಅಪ್ಲಿಕೇಶನ್ ಮೂಲಕ</string>
+  <string name="txt_3day_free_trial">ಉಚಿತ 3-ದಿನದ ಪ್ರಯೋಗ</string>
+  <string name="txt_continue">ಮುಂದುವರಿಸು</string>
+</resources>

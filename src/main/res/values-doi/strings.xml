@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">ट्राई इट फ्री</string>  
+  <string name="txt_try_free_trial_desc">3 दिनें दा मुफ्त परीक्षण, तुस कुसै बी समें सदस्यता रद्द करी सकदे ओ - गूगल प्ले ऐप दे राहें</string>  
+  <string name="txt_premium_title">प्रीमियम फीचरें तगर असीमित पहुंच हासल करो</string>  
+  <string name="txt_premium_offer">असीमित डाउनलोडिंग कन्नै 100% विज्ञापन-मुक्त अनुभव, 10x तेज़ गति।</string>  
+  <string name="txt_premium_offer_1">कोई विज्ञापन नहीं, ते होर वी</string>  
+  <string name="txt_premium_offer_2">तुरंत पोस्ट-कॉल कार्रवाई</string>  
+  <string name="txt_premium_offer_3">बैकअप लेना</string>  
+  <string name="txt_premium_offer_4">पिन कन्नै ऐप लॉक करो</string>  
+  <string name="txt_premium_monthly_package">मासिक योजना दी पेशकश करो</string>  
+  <string name="txt_premium_yearly_package">सालाना योजना दी पेशकश करो</string>  
+  <string name="txt_save">बचाओ</string>  
+  <string name="txt_month">म्हीना</string>  
+  <string name="txt_year">ब\'रा</string>  
+  <string name="txt_yearly_premium">प्रो सालाना</string>  
+  <string name="txt_already_yearly_premium">पहले से ही प्रो सालाना</string>  
+  <string name="txt_monthly_premium">प्रो मासिक</string>  
+  <string name="txt_already_monthly_premium">पहले से ही प्रो मासिक</string>  
+  <string name="txt_timeout_billing_load">सामग्री लोड नेईं कीती जाई सकदी। अपना कनेक्शन चेक करो</string>  
+  <string name="txt_later">बाद च</string>  
+  <string name="txt_premium_title_1">असीमित पहुँच पाओ</string>
+  <string name="txt_premium_title_2">प्रीमियम फीचर ऐ</string>
+  <string name="txt_free_trial_desc">तुस कुसै बी समें सदस्यता रद्द करी सकदे ओ - गूगल प्ले ऐप दे राहें</string>
+  <string name="txt_3day_free_trial">मुफ्त 3 दिन दा परीक्षण</string>
+  <string name="txt_continue">जारी रक्खना</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Pulsuz cəhd edin</string>  
+  <string name="txt_try_free_trial_desc">3 günlük pulsuz sınaq, Siz istənilən vaxt abunəliyi ləğv edə bilərsiniz - Google Play tətbiqi vasitəsilə</string>  
+  <string name="txt_premium_title">Premium Xüsusiyyətlərə Limitsiz Giriş əldə edin</string>  
+  <string name="txt_premium_offer">Limitsiz yükləmə ilə 100% reklamsız təcrübə, 10x sürətli.</string>  
+  <string name="txt_premium_offer_1">Reklam yoxdur və daha çox</string>  
+  <string name="txt_premium_offer_2">Zəngdən sonrakı ani hərəkətlər</string>  
+  <string name="txt_premium_offer_3">Yedəkləmə</string>  
+  <string name="txt_premium_offer_4">PIN ilə tətbiq kilidi</string>  
+  <string name="txt_premium_monthly_package">Aylıq Plan təklif edin</string>  
+  <string name="txt_premium_yearly_package">İllik Plan təklif edin</string>  
+  <string name="txt_save">Saxla</string>  
+  <string name="txt_month">Ay</string>  
+  <string name="txt_year">Il</string>  
+  <string name="txt_yearly_premium">Pro İllik</string>  
+  <string name="txt_already_yearly_premium">Artıq İllik Pro</string>  
+  <string name="txt_monthly_premium">Pro Aylıq</string>  
+  <string name="txt_already_monthly_premium">Artıq Pro Aylıq</string>  
+  <string name="txt_timeout_billing_load">Məzmun yüklənə bilməz. Bağlantınızı yoxlayın</string>  
+  <string name="txt_later">Sonradan</string>  
+  <string name="txt_premium_title_1">Limitsiz giriş əldə edin</string>
+  <string name="txt_premium_title_2">Premium xüsusiyyətləri</string>
+  <string name="txt_free_trial_desc">Abunəliyi istədiyiniz zaman ləğv edə bilərsiniz - Google Play tətbiqi vasitəsilə</string>
+  <string name="txt_3day_free_trial">Pulsuz 3 günlük sınaq</string>
+  <string name="txt_continue">Davam etmək</string>
+</resources>

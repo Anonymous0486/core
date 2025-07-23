@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Probeer dit gratis</string>  
+  <string name="txt_try_free_trial_desc">3-dae gratis proeftydperk, Jy kan intekening enige tyd kanselleer - via die Google Play-toepassing</string>  
+  <string name="txt_premium_title">Kry onbeperkte toegang tot premium-kenmerke</string>  
+  <string name="txt_premium_offer">100% advertensievrye ervaring met onbeperkte aflaai, 10x vinnige spoed.</string>  
+  <string name="txt_premium_offer_1">Geen advertensies, en meer</string>  
+  <string name="txt_premium_offer_2">Onmiddellike na-oproep-aksies</string>  
+  <string name="txt_premium_offer_3">Rugsteun</string>  
+  <string name="txt_premium_offer_4">Toepassingslot met PIN</string>  
+  <string name="txt_premium_monthly_package">Bied maandelikse plan aan</string>  
+  <string name="txt_premium_yearly_package">Bied jaarplan aan</string>  
+  <string name="txt_save">Stoor</string>  
+  <string name="txt_month">Maand</string>  
+  <string name="txt_year">Jaar</string>  
+  <string name="txt_yearly_premium">Pro Jaarliks</string>  
+  <string name="txt_already_yearly_premium">Reeds Pro Jaarliks</string>  
+  <string name="txt_monthly_premium">Pro Maandeliks</string>  
+  <string name="txt_already_monthly_premium">Reeds Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Inhoud kan nie gelaai word nie. Gaan jou verbinding na</string>  
+  <string name="txt_later">Later</string>  
+  <string name="txt_premium_title_1">Kry onbeperkte toegang tot</string>
+  <string name="txt_premium_title_2">Premium funksies</string>
+  <string name="txt_free_trial_desc">U kan enige tyd kanselleer - via die Google Play -app</string>
+  <string name="txt_3day_free_trial">Gratis 3-dae proeflopie</string>
+  <string name="txt_continue">Aanhou</string>
+</resources>

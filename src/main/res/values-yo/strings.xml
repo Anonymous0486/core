@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Gbiyanju o Ọfẹ</string>  
+  <string name="txt_try_free_trial_desc">Idanwo ọfẹ ọjọ mẹta, O le fagile ṣiṣe alabapin nigbakugba - nipasẹ ohun elo Google Play</string>  
+  <string name="txt_premium_title">Gba Wiwọle ailopin si Awọn ẹya Ere</string>  
+  <string name="txt_premium_offer">Iriri laisi ipolowo 100% pẹlu igbasilẹ ailopin, Iyara 10x.</string>  
+  <string name="txt_premium_offer_1">Ko si awọn ipolowo, ati diẹ sii</string>  
+  <string name="txt_premium_offer_2">Awọn iṣe lẹhin ipe lẹsẹkẹsẹ</string>  
+  <string name="txt_premium_offer_3">Afẹyinti</string>  
+  <string name="txt_premium_offer_4">Titiipa App pẹlu PIN</string>  
+  <string name="txt_premium_monthly_package">Pese Oṣooṣu Eto</string>  
+  <string name="txt_premium_yearly_package">Pese Eto Ọdọọdun</string>  
+  <string name="txt_save">Fipamọ</string>  
+  <string name="txt_month">Osu</string>  
+  <string name="txt_year">Odun</string>  
+  <string name="txt_yearly_premium">Pro Ọdọọdun</string>  
+  <string name="txt_already_yearly_premium">Tẹlẹ Pro Ọdọọdun</string>  
+  <string name="txt_monthly_premium">Pro oṣooṣu</string>  
+  <string name="txt_already_monthly_premium">Tẹlẹ Pro oṣooṣu</string>  
+  <string name="txt_timeout_billing_load">Akoonu ko le ṣe kojọpọ. Ṣayẹwo asopọ rẹ</string>  
+  <string name="txt_later">Laipẹ</string>  
+  <string name="txt_premium_title_1">Gba iwọle ailopin si</string>
+  <string name="txt_premium_title_2">Awọn ẹya Ere</string>
+  <string name="txt_free_trial_desc">O le fagile iforukọsilẹ nigbakugba - Nipasẹ App Play</string>
+  <string name="txt_3day_free_trial">Igbiyanju ọjọ 3 ọfẹ</string>
+  <string name="txt_continue">Tẹsiwaju</string>
+</resources>

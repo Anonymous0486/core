@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">အခမဲ့စမ်းကြည့်ပါ။</string>  
+  <string name="txt_try_free_trial_desc">၃ ရက် အခမဲ့ အစမ်းသုံးခြင်း၊ စာရင်းသွင်းမှုကို Google Play အက်ပ်မှတစ်ဆင့် အချိန်မရွေး ပယ်ဖျက်နိုင်သည်။</string>  
+  <string name="txt_premium_title">ပရီမီယံ ဝန်ဆောင်မှုများကို အကန့်အသတ်မရှိ ဝင်ရောက်ကြည့်ရှုလိုက်ပါ။</string>  
+  <string name="txt_premium_offer">အကန့်အသတ်မရှိဒေါင်းလုဒ်ဆွဲခြင်း၊ 10x မြန်သောအမြန်နှုန်းဖြင့် 100% ကြော်ငြာမပါဘဲ အတွေ့အကြုံ။</string>  
+  <string name="txt_premium_offer_1">ကြော်ငြာမရှိ၊ နှင့် အခြားအရာများ</string>  
+  <string name="txt_premium_offer_2">ဖုန်းခေါ်ဆိုမှု အပြီးလုပ်ဆောင်မှုများ</string>  
+  <string name="txt_premium_offer_3">မိတ္တူ</string>  
+  <string name="txt_premium_offer_4">PIN ဖြင့် အက်ပ်လော့ခ်</string>  
+  <string name="txt_premium_monthly_package">လစဉ်အစီအစဉ်ကို ကမ်းလှမ်းပါ။</string>  
+  <string name="txt_premium_yearly_package">နှစ်အလိုက် အစီအစဉ်ကို ကမ်းလှမ်းပါ။</string>  
+  <string name="txt_save">သိမ်းဆည်းပါ။</string>  
+  <string name="txt_month">လ</string>  
+  <string name="txt_year">တစ်နှစ်</string>  
+  <string name="txt_yearly_premium">Pro နှစ်အလိုက်</string>  
+  <string name="txt_already_yearly_premium">နှစ်အလိုက် Pro ပြီးပြီ။</string>  
+  <string name="txt_monthly_premium">Pro လစဉ်</string>  
+  <string name="txt_already_monthly_premium">လစဉ် Pro ပြီးပြီ။</string>  
+  <string name="txt_timeout_billing_load">အကြောင်းအရာကို တင်၍မရပါ။ သင်၏ချိတ်ဆက်မှုကိုစစ်ဆေးပါ။</string>  
+  <string name="txt_later">နေှာင်းစွာ</string>  
+  <string name="txt_premium_title_1">အကန့်အသတ်မရှိဝင်ရောက်ခွင့်ရယူပါ</string>
+  <string name="txt_premium_title_2">ပရီမီယံအင်္ဂါရပ်များ</string>
+  <string name="txt_free_trial_desc">Google Play အက်ပလီကေးရှင်းမှတစ်ဆင့်သင်စာရင်းသွင်းခြင်းကိုအချိန်မရွေးဖျက်သိမ်းနိုင်သည်</string>
+  <string name="txt_3day_free_trial">အခမဲ့ 3 ရက်ကြာရုံးတင်စစ်ဆေး</string>
+  <string name="txt_continue">ဆက်လက်နေ</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Cobalah Gratis</string>  
+  <string name="txt_try_free_trial_desc">Uji coba gratis 3 hari, Anda dapat membatalkan langganan kapan saja - melalui aplikasi Google Play</string>  
+  <string name="txt_premium_title">Dapatkan Akses Tanpa Batas ke Fitur Premium</string>  
+  <string name="txt_premium_offer">Pengalaman 100% bebas iklan dengan pengunduhan tanpa batas, Kecepatan Cepat 10x.</string>  
+  <string name="txt_premium_offer_1">Tidak ada iklan, dan banyak lagi</string>  
+  <string name="txt_premium_offer_2">Tindakan pasca-panggilan instan</string>  
+  <string name="txt_premium_offer_3">Cadangan</string>  
+  <string name="txt_premium_offer_4">Kunci Aplikasi dengan PIN</string>  
+  <string name="txt_premium_monthly_package">Tawarkan Paket Bulanan</string>  
+  <string name="txt_premium_yearly_package">Tawarkan Paket Tahunan</string>  
+  <string name="txt_save">Menyimpan</string>  
+  <string name="txt_month">Bulan</string>  
+  <string name="txt_year">Tahun</string>  
+  <string name="txt_yearly_premium">Pro Tahunan</string>  
+  <string name="txt_already_yearly_premium">Sudah Pro Tahunan</string>  
+  <string name="txt_monthly_premium">Pro Bulanan</string>  
+  <string name="txt_already_monthly_premium">Sudah Pro Bulanan</string>  
+  <string name="txt_timeout_billing_load">Konten tidak dapat dimuat. Periksa koneksi Anda</string>  
+  <string name="txt_later">Nanti</string>  
+  <string name="txt_premium_title_1">Dapatkan akses tak terbatas ke</string>
+  <string name="txt_premium_title_2">Fitur Premium</string>
+  <string name="txt_free_trial_desc">Anda dapat membatalkan langganan kapan saja - melalui aplikasi Google Play</string>
+  <string name="txt_3day_free_trial">Uji coba 3 hari gratis</string>
+  <string name="txt_continue">Melanjutkan</string>
+</resources>

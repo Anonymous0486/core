@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">ทดลองใช้ฟรี</string>  
+  <string name="txt_try_free_trial_desc">ทดลองใช้ฟรี 3 วัน คุณสามารถยกเลิกการสมัครสมาชิกได้ตลอดเวลา - ผ่านแอป Google Play</string>  
+  <string name="txt_premium_title">รับสิทธิ์เข้าถึงฟีเจอร์พรีเมียมไม่จำกัด</string>  
+  <string name="txt_premium_offer">ประสบการณ์ไร้โฆษณา 100% พร้อมการดาวน์โหลดไม่จำกัด ความเร็วที่รวดเร็ว 10 เท่า</string>  
+  <string name="txt_premium_offer_1">ไม่มีโฆษณา และอื่นๆ อีกมากมาย</string>  
+  <string name="txt_premium_offer_2">การดำเนินการหลังการโทรทันที</string>  
+  <string name="txt_premium_offer_3">สำรองข้อมูล</string>  
+  <string name="txt_premium_offer_4">ล็อคแอปด้วย PIN</string>  
+  <string name="txt_premium_monthly_package">เสนอแผนรายเดือน</string>  
+  <string name="txt_premium_yearly_package">เสนอแผนรายปี</string>  
+  <string name="txt_save">บันทึก</string>  
+  <string name="txt_month">เดือน</string>  
+  <string name="txt_year">ปี</string>  
+  <string name="txt_yearly_premium">โปรรายปี</string>  
+  <string name="txt_already_yearly_premium">โปรรายปีแล้ว</string>  
+  <string name="txt_monthly_premium">โปรรายเดือน</string>  
+  <string name="txt_already_monthly_premium">แล้วโปรรายเดือน</string>  
+  <string name="txt_timeout_billing_load">ไม่สามารถโหลดเนื้อหาได้ ตรวจสอบการเชื่อมต่อของคุณ</string>  
+  <string name="txt_later">ภายหลัง</string>  
+  <string name="txt_premium_title_1">รับการเข้าถึงไม่ จำกัด</string>
+  <string name="txt_premium_title_2">คุณสมบัติพรีเมี่ยม</string>
+  <string name="txt_free_trial_desc">คุณสามารถยกเลิกการสมัครสมาชิกได้ตลอดเวลา - ผ่านแอพ Google Play</string>
+  <string name="txt_3day_free_trial">ทดลองใช้ฟรี 3 วัน</string>
+  <string name="txt_continue">ดำเนินการต่อ</string>
+</resources>

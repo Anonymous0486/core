@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">চেষ্টা কৰক বিনামূলীয়াকৈ</string>  
+  <string name="txt_try_free_trial_desc">3-দিনৰ বিনামূলীয়া পৰীক্ষামূলক, আপুনি যিকোনো সময়তে চাবস্ক্ৰিপচন বাতিল কৰিব পাৰে - Google Play এপৰ জৰিয়তে</string>  
+  <string name="txt_premium_title">প্ৰিমিয়াম বৈশিষ্ট্যসমূহৰ বাবে সীমাহীন অভিগম লাভ কৰক</string>  
+  <string name="txt_premium_offer">সীমাহীন ডাউনলোডৰ সৈতে ১০০% বিজ্ঞাপনমুক্ত অভিজ্ঞতা, ১০x দ্ৰুত গতি।</string>  
+  <string name="txt_premium_offer_1">কোনো বিজ্ঞাপন নাই, আৰু অধিক</string>  
+  <string name="txt_premium_offer_2">তৎক্ষণাত কলৰ পিছৰ কাৰ্য্য</string>  
+  <string name="txt_premium_offer_3">বেকআপ</string>  
+  <string name="txt_premium_offer_4">পিনৰ সৈতে এপ লক</string>  
+  <string name="txt_premium_monthly_package">মাহেকীয়া পৰিকল্পনা আগবঢ়াওক</string>  
+  <string name="txt_premium_yearly_package">বাৰ্ষিক পৰিকল্পনা আগবঢ়াওক</string>  
+  <string name="txt_save">সঞ্চয় কৰা</string>  
+  <string name="txt_month">মাহ</string>  
+  <string name="txt_year">বছৰ</string>  
+  <string name="txt_yearly_premium">প্ৰ\' বাৰ্ষিক</string>  
+  <string name="txt_already_yearly_premium">ইতিমধ্যে প্ৰ\' বাৰ্ষিক</string>  
+  <string name="txt_monthly_premium">প্ৰ\' মাহেকীয়া</string>  
+  <string name="txt_already_monthly_premium">ইতিমধ্যে প্ৰ\' মান্থলী</string>  
+  <string name="txt_timeout_billing_load">বিষয়বস্তু লোড কৰিব নোৱাৰি। আপোনাৰ সংযোগ পৰীক্ষা কৰক</string>  
+  <string name="txt_later">পাছত</string>  
+  <string name="txt_premium_title_1">সীমাহীন প্ৰৱেশ লাভ কৰক</string>
+  <string name="txt_premium_title_2">প্ৰিমিয়াম বৈশিষ্ট্যসমূহ</string>
+  <string name="txt_free_trial_desc">আপুনি যিকোনো সময়তে চাবস্ক্ৰিপচন বাতিল কৰিব পাৰে - Google Play App ৰ জৰিয়তে</string>
+  <string name="txt_3day_free_trial">বিনামূলীয়া 3-দিনীয়া পৰীক্ষামূলক</string>
+  <string name="txt_continue">অব্যাহত ৰাখক</string>
+</resources>

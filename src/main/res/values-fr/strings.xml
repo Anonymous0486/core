@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Essayez-le gratuitement</string>  
+  <string name="txt_try_free_trial_desc">Essai gratuit de 3 jours, vous pouvez annuler l\'abonnement à tout moment - via l\'application Google Play</string>  
+  <string name="txt_premium_title">Obtenez un accès illimité aux fonctionnalités Premium</string>  
+  <string name="txt_premium_offer">Expérience 100 % sans publicité avec téléchargement illimité, vitesse rapide 10x.</string>  
+  <string name="txt_premium_offer_1">Pas de publicité, et plus encore</string>  
+  <string name="txt_premium_offer_2">Actions post-appel instantanées</string>  
+  <string name="txt_premium_offer_3">Sauvegarde</string>  
+  <string name="txt_premium_offer_4">Verrouillage d\'application avec code PIN</string>  
+  <string name="txt_premium_monthly_package">Offrez un forfait mensuel</string>  
+  <string name="txt_premium_yearly_package">Offrez un forfait annuel</string>  
+  <string name="txt_save">Sauvegarder</string>  
+  <string name="txt_month">Mois</string>  
+  <string name="txt_year">Année</string>  
+  <string name="txt_yearly_premium">Professionnel Annuel</string>  
+  <string name="txt_already_yearly_premium">Déjà Pro Annuel</string>  
+  <string name="txt_monthly_premium">Pro mensuel</string>  
+  <string name="txt_already_monthly_premium">Déjà Pro Mensuel</string>  
+  <string name="txt_timeout_billing_load">Le contenu ne peut pas être chargé. Vérifiez votre connexion</string>  
+  <string name="txt_later">Plus tard</string>  
+  <string name="txt_premium_title_1">Obtenir un accès illimité à</string>
+  <string name="txt_premium_title_2">Caractéristiques premium</string>
+  <string name="txt_free_trial_desc">Vous pouvez annuler l\'abonnement à tout moment - via l\'application Google Play</string>
+  <string name="txt_3day_free_trial">Essai gratuit de 3 jours</string>
+  <string name="txt_continue">Continuer</string>
+</resources>

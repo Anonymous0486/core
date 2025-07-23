@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">এটি বিনামূল্যে চেষ্টা করুন</string>  
+  <string name="txt_try_free_trial_desc">3-দিনের বিনামূল্যের ট্রায়াল, আপনি যেকোনও সময় সাবস্ক্রিপশন বাতিল করতে পারেন - Google Play অ্যাপের মাধ্যমে</string>  
+  <string name="txt_premium_title">প্রিমিয়াম বৈশিষ্ট্যগুলিতে সীমাহীন অ্যাক্সেস পান৷</string>  
+  <string name="txt_premium_offer">100% সীমাহীন ডাউনলোডিং, 10x দ্রুত গতি সহ বিজ্ঞাপন-মুক্ত অভিজ্ঞতা।</string>  
+  <string name="txt_premium_offer_1">কোন বিজ্ঞাপন, এবং আরো</string>  
+  <string name="txt_premium_offer_2">তাত্ক্ষণিক পোস্ট-কল অ্যাকশন</string>  
+  <string name="txt_premium_offer_3">ব্যাকআপ</string>  
+  <string name="txt_premium_offer_4">পিন সহ অ্যাপ লক</string>  
+  <string name="txt_premium_monthly_package">মাসিক পরিকল্পনা অফার</string>  
+  <string name="txt_premium_yearly_package">বার্ষিক পরিকল্পনা অফার</string>  
+  <string name="txt_save">সংরক্ষণ করুন</string>  
+  <string name="txt_month">মাস</string>  
+  <string name="txt_year">বছর</string>  
+  <string name="txt_yearly_premium">প্রো বার্ষিক</string>  
+  <string name="txt_already_yearly_premium">ইতিমধ্যেই প্রো বার্ষিক</string>  
+  <string name="txt_monthly_premium">প্রো মাসিক</string>  
+  <string name="txt_already_monthly_premium">ইতিমধ্যেই প্রো মাসিক</string>  
+  <string name="txt_timeout_billing_load">বিষয়বস্তু লোড করা যাবে না. আপনার সংযোগ পরীক্ষা করুন</string>  
+  <string name="txt_later">পরে</string>  
+  <string name="txt_premium_title_1">সীমাহীন অ্যাক্সেস পান</string>
+  <string name="txt_premium_title_2">প্রিমিয়াম বৈশিষ্ট্য</string>
+  <string name="txt_free_trial_desc">আপনি যে কোনও সময় সাবস্ক্রিপশন বাতিল করতে পারেন - গুগল প্লে অ্যাপের মাধ্যমে</string>
+  <string name="txt_3day_free_trial">বিনামূল্যে 3 দিনের ট্রায়াল</string>
+  <string name="txt_continue">চালিয়ে যান</string>
+</resources>

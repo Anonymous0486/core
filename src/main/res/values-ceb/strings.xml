@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Sulayi kini nga Libre</string>  
+  <string name="txt_try_free_trial_desc">3 ka adlaw nga libre nga pagsulay, Mahimo nimong kanselahon ang suskrisyon bisan kanus-a - pinaagi sa Google Play app</string>  
+  <string name="txt_premium_title">Pagkuha ug Unlimited nga Access sa Premium Features</string>  
+  <string name="txt_premium_offer">100% Ads-free nga kasinatian nga adunay walay kutub nga pag-download, 10x Fast Speed.</string>  
+  <string name="txt_premium_offer_1">Walay mga ad, ug uban pa</string>  
+  <string name="txt_premium_offer_2">Diha-diha nga post-call nga mga aksyon</string>  
+  <string name="txt_premium_offer_3">Pag-backup</string>  
+  <string name="txt_premium_offer_4">App Lock nga adunay PIN</string>  
+  <string name="txt_premium_monthly_package">Itanyag ang Bulanan nga Plano</string>  
+  <string name="txt_premium_yearly_package">Itanyag ang Tuig nga Plano</string>  
+  <string name="txt_save">Tipigi</string>  
+  <string name="txt_month">Bulan</string>  
+  <string name="txt_year">Tuig</string>  
+  <string name="txt_yearly_premium">Pro Tuig</string>  
+  <string name="txt_already_yearly_premium">Pro Yearly na</string>  
+  <string name="txt_monthly_premium">Pro Bulanan</string>  
+  <string name="txt_already_monthly_premium">Pro Monthly na</string>  
+  <string name="txt_timeout_billing_load">Ang sulod dili makarga. Susiha ang imong koneksyon</string>  
+  <string name="txt_later">Unya</string>  
+  <string name="txt_premium_title_1">Pagkuha walay kutub nga pag-access sa</string>
+  <string name="txt_premium_title_2">Mga Features sa Premium</string>
+  <string name="txt_free_trial_desc">Mahimo nimong kanselahon ang suskrisyon bisan unsang oras - pinaagi sa Google Play App</string>
+  <string name="txt_3day_free_trial">Libre nga 3-adlaw nga Pagsulay</string>
+  <string name="txt_continue">Magpadayon</string>
+</resources>

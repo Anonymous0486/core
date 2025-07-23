@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Yizame Mahala</string>  
+  <string name="txt_try_free_trial_desc">Iintsuku ezi-3 zesilingo sasimahla, unokurhoxisa umrhumo nangaliphi na ixesha - ngeapp kaGoogle Play</string>  
+  <string name="txt_premium_title">Fumana ukufikelela okungenamkhawulo kwiiNkcazo zeNtlawulo</string>  
+  <string name="txt_premium_offer">I-100% yamava angenazintengiso kunye nokukhuphela okungenamkhawulo, i-10x Fast Speed.</string>  
+  <string name="txt_premium_offer_1">Akukho ntengiso, kunye nokunye</string>  
+  <string name="txt_premium_offer_2">Iintshukumo zasemva kokufowuna ngoko nangoko</string>  
+  <string name="txt_premium_offer_3">NONE</string>  
+  <string name="txt_premium_offer_4">Isitshixo sosetyenziso ngePIN</string>  
+  <string name="txt_premium_monthly_package">Nikela ngocwangciso lweNyanga</string>  
+  <string name="txt_premium_yearly_package">Nikela Ucwangciso Lonyaka</string>  
+  <string name="txt_save">Gcina</string>  
+  <string name="txt_month">Inyanga</string>  
+  <string name="txt_year">Unyaka</string>  
+  <string name="txt_yearly_premium">Pro ngonyaka</string>  
+  <string name="txt_already_yearly_premium">Sele Pro ngonyaka</string>  
+  <string name="txt_monthly_premium">Pro Monthly</string>  
+  <string name="txt_already_monthly_premium">Sele Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Umxholo awunakulayishwa. Jonga uqhagamshelwano lwakho</string>  
+  <string name="txt_later">Kamva</string>  
+  <string name="txt_premium_title_1">Fumana ukufikelela okungenamkhawulo kwi</string>
+  <string name="txt_premium_title_2">IIMPAWU ZOKUGQIBELA</string>
+  <string name="txt_free_trial_desc">Ungarhoxisa ubhaliso naliphi ixesha-nge-Google Play App</string>
+  <string name="txt_3day_free_trial">Isimahla emi-3 yeentsuku ezintathu</string>
+  <string name="txt_continue">Qhubeka</string>
+</resources>

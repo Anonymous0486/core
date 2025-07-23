@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Спробуйте безкоштовно</string>  
+  <string name="txt_try_free_trial_desc">3-денна безкоштовна пробна версія. Ви можете будь-коли скасувати підписку через додаток Google Play</string>  
+  <string name="txt_premium_title">Отримайте необмежений доступ до преміум-функцій</string>  
+  <string name="txt_premium_offer">На 100% без реклами з необмеженим завантаженням, 10-кратною швидкістю.</string>  
+  <string name="txt_premium_offer_1">Без реклами та багато іншого</string>  
+  <string name="txt_premium_offer_2">Миттєві дії після виклику</string>  
+  <string name="txt_premium_offer_3">Резервне копіювання</string>  
+  <string name="txt_premium_offer_4">Блокування програми за допомогою PIN-коду</string>  
+  <string name="txt_premium_monthly_package">Пропонуйте місячний план</string>  
+  <string name="txt_premium_yearly_package">Пропонуйте річний план</string>  
+  <string name="txt_save">Зберегти</string>  
+  <string name="txt_month">Місяць</string>  
+  <string name="txt_year">Рік</string>  
+  <string name="txt_yearly_premium">Профі щорічно</string>  
+  <string name="txt_already_yearly_premium">Вже професійний рік</string>  
+  <string name="txt_monthly_premium">Про щомісяця</string>  
+  <string name="txt_already_monthly_premium">Вже Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Неможливо завантажити вміст. Перевірте підключення</string>  
+  <string name="txt_later">Пізніше</string>  
+  <string name="txt_premium_title_1">Отримати необмежений доступ до</string>
+  <string name="txt_premium_title_2">Преміальні функції</string>
+  <string name="txt_free_trial_desc">Ви можете скасувати підписку в будь -який час - через додаток Google Play</string>
+  <string name="txt_3day_free_trial">Безкоштовна 3-денна пробна версія</string>
+  <string name="txt_continue">Продовжувати</string>
+</resources>

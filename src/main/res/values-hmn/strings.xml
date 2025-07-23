@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Sim nws dawb</string>  
+  <string name="txt_try_free_trial_desc">3-hnub pub dawb mus sib hais, Koj tuaj yeem thim rov qab txhua lub sijhawm - ntawm Google Play app</string>  
+  <string name="txt_premium_title">Tau txais Unlimited Access to Premium Features</string>  
+  <string name="txt_premium_offer">100% Ads-dawb kev paub nrog unlimited downloading, 10x ceev ceev.</string>  
+  <string name="txt_premium_offer_1">Tsis muaj kev tshaj tawm, thiab lwm yam</string>  
+  <string name="txt_premium_offer_2">Instant post hu ua</string>  
+  <string name="txt_premium_offer_3">Thaub qab</string>  
+  <string name="txt_premium_offer_4">App Xauv nrog PIN</string>  
+  <string name="txt_premium_monthly_package">Muab Kev Npaj Txhua Hli</string>  
+  <string name="txt_premium_yearly_package">Muab Kev Npaj Txhua Xyoo</string>  
+  <string name="txt_save">Txuag</string>  
+  <string name="txt_month">Lub hli</string>  
+  <string name="txt_year">Xyoo</string>  
+  <string name="txt_yearly_premium">Pro Txhua Xyoo</string>  
+  <string name="txt_already_yearly_premium">Twb Pro Xyoo</string>  
+  <string name="txt_monthly_premium">Pro Lub Hlis</string>  
+  <string name="txt_already_monthly_premium">Twb Pro hli</string>  
+  <string name="txt_timeout_billing_load">Cov ntsiab lus tsis tuaj yeem thauj khoom. Tshawb xyuas koj qhov kev sib txuas</string>  
+  <string name="txt_later">Tom qab</string>  
+  <string name="txt_premium_title_1">Tau txais unlimited nkag mus</string>
+  <string name="txt_premium_title_2">Hwm cov nta</string>
+  <string name="txt_free_trial_desc">Koj tuaj yeem tshem tawm cov npe sau npe txhua lub sijhawm - ntawm Google Play app</string>
+  <string name="txt_3day_free_trial">Dawb 3-hnub mus sib hais</string>
+  <string name="txt_continue">Mus txua ntxiv</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Edza Mahara</string>  
+  <string name="txt_try_free_trial_desc">3-mazuva emahara kuyedzwa, Unogona kudzima kunyorera chero nguva - kuburikidza neGoogle Play app</string>  
+  <string name="txt_premium_title">Wana Unlimited Kuwana kune Premium Zvimiro</string>  
+  <string name="txt_premium_offer">100% Ads-yemahara ruzivo neasina muganho kurodha, 10x Fast Speed.</string>  
+  <string name="txt_premium_offer_1">Hapana ads, nezvimwe</string>  
+  <string name="txt_premium_offer_2">Instant post-call actions</string>  
+  <string name="txt_premium_offer_3">Backup</string>  
+  <string name="txt_premium_offer_4">App Lock ine PIN</string>  
+  <string name="txt_premium_monthly_package">Govera Kuronga Kwemwedzi Nemwedzi</string>  
+  <string name="txt_premium_yearly_package">Govera Hurongwa Hwegore</string>  
+  <string name="txt_save">Sevha</string>  
+  <string name="txt_month">Mwedzi</string>  
+  <string name="txt_year">Gore</string>  
+  <string name="txt_yearly_premium">Pro Yearly</string>  
+  <string name="txt_already_yearly_premium">Atova Pro Yearly</string>  
+  <string name="txt_monthly_premium">Pro Monthly</string>  
+  <string name="txt_already_monthly_premium">Atova Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Zvemukati hazvigone kurodha. Tarisa uone kubatana kwako</string>  
+  <string name="txt_later">Gare gare</string>  
+  <string name="txt_premium_title_1">Tora isina muganho yekuwana</string>
+  <string name="txt_premium_title_2">Premium maficha</string>
+  <string name="txt_free_trial_desc">Unogona kudzima kunyorera chero nguva - kuburikidza neGoogle Play App</string>
+  <string name="txt_3day_free_trial">Yemahara 3-Zuva Kutongwa</string>
+  <string name="txt_continue">Enderera</string>
+</resources>

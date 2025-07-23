@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Үнэгүй туршаад үзээрэй</string>  
+  <string name="txt_try_free_trial_desc">3 хоногийн үнэгүй туршилт, Та хүссэн үедээ Google Play програмаар дамжуулан захиалгаа цуцлах боломжтой</string>  
+  <string name="txt_premium_title">Дээд зэрэглэлийн онцлогуудад хязгааргүй хандалт аваарай</string>  
+  <string name="txt_premium_offer">Хязгааргүй татаж авах 100% заргүй туршлага, 10 дахин хурдан.</string>  
+  <string name="txt_premium_offer_1">Зар сурталчилгаа байхгүй ба бусад</string>  
+  <string name="txt_premium_offer_2">Дуудлагын дараах шуурхай үйлдлүүд</string>  
+  <string name="txt_premium_offer_3">Нөөц</string>  
+  <string name="txt_premium_offer_4">ПИН код бүхий програмын түгжээ</string>  
+  <string name="txt_premium_monthly_package">Сарын төлөвлөгөөг санал болгох</string>  
+  <string name="txt_premium_yearly_package">Жилийн төлөвлөгөөг санал болгох</string>  
+  <string name="txt_save">Хадгалах</string>  
+  <string name="txt_month">Сар</string>  
+  <string name="txt_year">Жил</string>  
+  <string name="txt_yearly_premium">Жил бүр Pro</string>  
+  <string name="txt_already_yearly_premium">Жил бүр аль хэдийн Pro</string>  
+  <string name="txt_monthly_premium">Сар бүр Pro</string>  
+  <string name="txt_already_monthly_premium">Аль хэдийн сар бүр Pro</string>  
+  <string name="txt_timeout_billing_load">Агуулгыг ачаалах боломжгүй. Холболтоо шалгана уу</string>  
+  <string name="txt_later">Сүүлд</string>  
+  <string name="txt_premium_title_1">Хязгааргүй нэвтрэх эрх авах</string>
+  <string name="txt_premium_title_2">Дээд зэрэглэлийн боломжууд</string>
+  <string name="txt_free_trial_desc">Та хэзээ ч захиалгыг цуцлах боломжтой - Google Play Play App-ээр дамжуулан</string>
+  <string name="txt_3day_free_trial">3 хоногийн үнэгүй туршилт</string>
+  <string name="txt_continue">Ургэлжлэх</string>
+</resources>

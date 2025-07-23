@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">निःशुल्कं प्रयतस्व</string>  
+  <string name="txt_try_free_trial_desc">३-दिनानां निःशुल्कपरीक्षणं, भवान् कदापि सदस्यतां रद्दं कर्तुं शक्नोति - Google Play app मार्गेण</string>  
+  <string name="txt_premium_title">प्रीमियमविशेषतासु असीमितप्रवेशं प्राप्नुवन्तु</string>  
+  <string name="txt_premium_offer">असीमित डाउनलोडिंग् सह ​​100% विज्ञापन-रहितः अनुभवः, 10x द्रुतगतिः।</string>  
+  <string name="txt_premium_offer_1">विज्ञापनं नास्ति, अधिकं च</string>  
+  <string name="txt_premium_offer_2">तत्क्षणिक-कॉल-उत्तर-क्रियाः</string>  
+  <string name="txt_premium_offer_3">बैकअप</string>  
+  <string name="txt_premium_offer_4">पिन सह एप् लॉक्</string>  
+  <string name="txt_premium_monthly_package">मासिक योजना प्रस्तावना</string>  
+  <string name="txt_premium_yearly_package">वार्षिक योजना प्रस्तावना</string>  
+  <string name="txt_save">रक्ष्</string>  
+  <string name="txt_month">माह</string>  
+  <string name="txt_year">वर्ष</string>  
+  <string name="txt_yearly_premium">प्रो वार्षिक</string>  
+  <string name="txt_already_yearly_premium">पूर्वमेव प्रो वार्षिक</string>  
+  <string name="txt_monthly_premium">प्रो मासिक</string>  
+  <string name="txt_already_monthly_premium">पूर्वमेव प्रो मासिक</string>  
+  <string name="txt_timeout_billing_load">सामग्री लोड् कर्तुं न शक्यते। स्वस्य संयोजनं पश्यन्तु</string>  
+  <string name="txt_later">कालान्तरे</string>  
+  <string name="txt_premium_title_1">असीमित प्रवेश करें</string>
+  <string name="txt_premium_title_2">प्रीमियम विशेषताएँ 1 .</string>
+  <string name="txt_free_trial_desc">भवान् कदापि सदस्यतां रद्दं कर्तुं शक्नोति - गूगलप्ले एप् मार्गेण</string>
+  <string name="txt_3day_free_trial">निःशुल्क 3-दिवसीय परीक्षण .</string>
+  <string name="txt_continue">अनुवर्तते</string>
+</resources>

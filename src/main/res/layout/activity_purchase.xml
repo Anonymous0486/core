@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="org.app.core.feature.iap.PurchaseViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".feature.iap.PurchaseActivity">
+
+
+        <ImageView
+            android:id="@+id/imgPremium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/img_premium"
+            android:adjustViewBounds="true"/>
+
+        <ImageView
+            android:id="@+id/closeBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_close"
+            app:tint="@color/white"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="32dp"
+            android:scaleType="center"
+            android:adjustViewBounds="true"
+            android:background="@drawable/bg_oval_icon"
+            android:backgroundTint="#33000000"
+            />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/imgPremium"
+            app:layout_constraintBottom_toTopOf="@+id/bottomLayout"
+            app:layout_constraintVertical_bias="0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="16dp"
+                android:paddingBottom="8dp">
+
+                <ImageView
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:src="@drawable/ic_premium_upgrade"
+                    android:layout_margin="4dp"
+                    android:scaleType="center"
+                    android:visibility="gone"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_premium_title_1"
+                    android:textSize="20sp"
+                    android:textColor="#0463CA"
+                    android:layout_marginTop="12dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_premium_title_2"
+                    android:textSize="24sp"
+                    android:textColor="#F59E0B"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/TextPremiumSubTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_premium_offer"
+                     />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/monthlyPackage"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="78dp"
+                    android:paddingHorizontal="16dp"
+                    android:layout_marginTop="12dp"
+                    isSelected="@{viewModel.uiState.monthly}"
+                    android:background="@drawable/bg_premium_package"
+                    onSingleClick="@{v -> viewModel.onSelectPlan(false)}"
+                    >
+
+                    <ImageView
+                        android:id="@+id/monthlyIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ic_premium_selector"
+                        isSelected="@{viewModel.uiState.monthly}"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/monthlyIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        >
+
+                        <TextView
+                            android:id="@+id/monthTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/txt_premium_monthly_package"
+                            android:textSize="16sp"
+                            app:fontFamily="@font/roboto_regular"
+                            />
+
+                        <TextView
+                            android:id="@+id/monthlyPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:layout_marginTop="4dp"
+                            android:textColor="#1F2937"
+                            app:fontFamily="@font/roboto_regular"
+                            tools:text="$2.50/Month"
+                            />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/yearlyPackage"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="102dp"
+                    android:paddingHorizontal="16dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/bg_premium_package"
+                    isSelected="@{viewModel.uiState.yearly}"
+                    onSingleClick="@{v -> viewModel.onSelectPlan(true)}"
+                    >
+
+                    <ImageView
+                        android:id="@+id/yearlyIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ic_premium_selector"
+                        isSelected="@{viewModel.uiState.yearly}"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/yearlyIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        >
+
+                        <TextView
+                            android:id="@+id/yearlyTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/txt_premium_yearly_package"
+                            android:textSize="16sp"
+                            app:fontFamily="@font/roboto_regular"
+                            />
+
+                        <TextView
+                            android:id="@+id/yearlyPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:layout_marginTop="4dp"
+                            android:textColor="#1F2937"
+                            tools:text="$21.50/Year"
+                            app:fontFamily="@font/roboto_regular"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@color/white"
+                            android:background="@drawable/bg_round_4"
+                            android:paddingVertical="4dp"
+                            android:paddingHorizontal="8dp"
+                            android:backgroundTint="#44BC26"
+                            android:text="@string/txt_3day_free_trial"
+                            />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/bottomLayout"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/upgradeBtn"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_margin="16dp"
+                android:text="@{viewModel.uiState.confirmTitle(context)}"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                tools:text="@string/txt_continue"
+                android:background="@drawable/bg_button_ripple"
+                />
+
+            <TextView
+                android:id="@+id/laterBtn"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/txt_later"
+                android:gravity="center"
+                android:textColor="@color/color1F2937"
+                android:background="@drawable/bg_button_ripple"
+                android:backgroundTint="@color/colorF3F4F6"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="44dp"
+                android:text="@string/txt_free_trial_desc"
+                android:gravity="center"
+                android:textColor="#4B5563"
+                />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">נסה את זה בחינם</string>  
+  <string name="txt_try_free_trial_desc">ניסיון חינם למשך 3 ימים, אתה יכול לבטל את המנוי בכל עת - דרך אפליקציית Google Play</string>  
+  <string name="txt_premium_title">קבל גישה בלתי מוגבלת לתכונות פרימיום</string>  
+  <string name="txt_premium_offer">חוויה נטולת פרסומות של 100% עם הורדה בלתי מוגבלת, מהירות מהירה פי 10.</string>  
+  <string name="txt_premium_offer_1">ללא פרסומות, ועוד</string>  
+  <string name="txt_premium_offer_2">פעולות מיידיות לאחר שיחה</string>  
+  <string name="txt_premium_offer_3">גיבוי</string>  
+  <string name="txt_premium_offer_4">נעילת אפליקציה עם PIN</string>  
+  <string name="txt_premium_monthly_package">הצעה חודשית</string>  
+  <string name="txt_premium_yearly_package">הצע תוכנית שנתית</string>  
+  <string name="txt_save">לְהַצִיל</string>  
+  <string name="txt_month">חוֹדֶשׁ</string>  
+  <string name="txt_year">שָׁנָה</string>  
+  <string name="txt_yearly_premium">פרו שנתי</string>  
+  <string name="txt_already_yearly_premium">כבר פרו שנתי</string>  
+  <string name="txt_monthly_premium">פרו חודשי</string>  
+  <string name="txt_already_monthly_premium">כבר פרו חודשי</string>  
+  <string name="txt_timeout_billing_load">לא ניתן לטעון תוכן. בדוק את החיבור שלך</string>  
+  <string name="txt_later">מְאוּחָר יוֹתֵר</string>  
+  <string name="txt_premium_title_1">קבל גישה בלתי מוגבלת ל</string>
+  <string name="txt_premium_title_2">תכונות פרימיום</string>
+  <string name="txt_free_trial_desc">אתה יכול לבטל מנוי בכל עת - באמצעות אפליקציית Google Play</string>
+  <string name="txt_3day_free_trial">ניסיון חינם לשלושה ימים</string>
+  <string name="txt_continue">לְהַמשִׁיך</string>
+</resources>

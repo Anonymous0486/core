@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">آن را رایگان امتحان کنید</string>  
+  <string name="txt_try_free_trial_desc">آزمایشی رایگان 3 روزه، می‌توانید در هر زمان اشتراک را لغو کنید - از طریق برنامه Google Play</string>  
+  <string name="txt_premium_title">دسترسی نامحدود به ویژگی های پرمیوم داشته باشید</string>  
+  <string name="txt_premium_offer">تجربه 100٪ بدون تبلیغات با دانلود نامحدود، سرعت سریع 10 برابر.</string>  
+  <string name="txt_premium_offer_1">بدون تبلیغات، و بیشتر</string>  
+  <string name="txt_premium_offer_2">اقدامات فوری پس از تماس</string>  
+  <string name="txt_premium_offer_3">پشتیبان گیری</string>  
+  <string name="txt_premium_offer_4">قفل برنامه با پین</string>  
+  <string name="txt_premium_monthly_package">پیشنهاد طرح ماهانه</string>  
+  <string name="txt_premium_yearly_package">طرح سالانه را پیشنهاد دهید</string>  
+  <string name="txt_save">ذخیره کنید</string>  
+  <string name="txt_month">ماه</string>  
+  <string name="txt_year">سال</string>  
+  <string name="txt_yearly_premium">حرفه ای سالانه</string>  
+  <string name="txt_already_yearly_premium">در حال حاضر حرفه ای سالانه</string>  
+  <string name="txt_monthly_premium">ماهنامه حرفه ای</string>  
+  <string name="txt_already_monthly_premium">در حال حاضر ماهنامه حرفه ای</string>  
+  <string name="txt_timeout_billing_load">محتوا بارگیری نمی شود. اتصال خود را بررسی کنید</string>  
+  <string name="txt_later">بعداً</string>  
+  <string name="txt_premium_title_1">دسترسی نامحدود به</string>
+  <string name="txt_premium_title_2">ویژگی های حق بیمه</string>
+  <string name="txt_free_trial_desc">شما می توانید اشتراک را در هر زمان لغو کنید - از طریق برنامه Google Play</string>
+  <string name="txt_3day_free_trial">آزمایش 3 روزه رایگان</string>
+  <string name="txt_continue">ادامه دادن</string>
+</resources>

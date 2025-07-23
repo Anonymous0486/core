@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">ፈትኑ ብነጻ</string>  
+  <string name="txt_try_free_trial_desc">ናይ 3 መዓልታት ነጻ ፈተነ፣ ኣብ ዝኾነ እዋን ምዝገባ ክትስርዙ ትኽእሉ ኢኹም - ብመንገዲ Google Play app</string>  
+  <string name="txt_premium_title">ደረት ኣልቦ ምብጻሕ ፕሪምየም ባህርያት ረኸብ</string>  
+  <string name="txt_premium_offer">100% ካብ ኣድስ ነጻ ዝኾነ ተመኩሮ ምስ ደረት ኣልቦ ምውራድ፣ 10x ቅልጡፍ ፍጥነት።</string>  
+  <string name="txt_premium_offer_1">መወዓውዒ የለን፣ ካልእን</string>  
+  <string name="txt_premium_offer_2">ቅጽበታዊ ድሕሪ ጻውዒት ዝግበር ተግባራት</string>  
+  <string name="txt_premium_offer_3">ምትሕብባር</string>  
+  <string name="txt_premium_offer_4">ኣፕ ሎክ ብፒን</string>  
+  <string name="txt_premium_monthly_package">ወርሓዊ ውጥን ምቕራብ</string>  
+  <string name="txt_premium_yearly_package">ዓመታዊ ውጥን ምቕራብ</string>  
+  <string name="txt_save">ምቑጣብ</string>  
+  <string name="txt_month">ወርሒ</string>  
+  <string name="txt_year">ዓመት</string>  
+  <string name="txt_yearly_premium">ፕሮ ዓመታዊ</string>  
+  <string name="txt_already_yearly_premium">ድሮ ፕሮ ዓመታዊ</string>  
+  <string name="txt_monthly_premium">ፕሮ ወርሓዊ</string>  
+  <string name="txt_already_monthly_premium">ድሮ ፕሮ ወርሓዊ</string>  
+  <string name="txt_timeout_billing_load">ትሕዝቶ ክጽዓን ኣይክእልን እዩ። ምትእስሳርካ መርምር</string>  
+  <string name="txt_later">ዳሕራይ</string>  
+  <string name="txt_premium_title_1">ደረት ኣልቦ መእተዊ ናብ .</string>
+  <string name="txt_premium_title_2">ፕሪምየም ፊቸርስ</string>
+  <string name="txt_free_trial_desc">ኣብ ዝኾነ እዋን ምዝገባ ክትስርዝዎ ትኽእሉ ኢኹም - ብመንገዲ Google Play app</string>
+  <string name="txt_3day_free_trial">ነጻ ናይ 3 መዓልታት ፈተነ</string>
+  <string name="txt_continue">ቀፃሊ</string>
+</resources>

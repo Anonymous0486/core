@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">यसलाई नि: शुल्क प्रयास गर्नुहोस्</string>  
+  <string name="txt_try_free_trial_desc">3-दिनको निःशुल्क परीक्षण, तपाईंले कुनै पनि समय सदस्यता रद्द गर्न सक्नुहुन्छ - Google Play एप मार्फत</string>  
+  <string name="txt_premium_title">प्रिमियम सुविधाहरूमा असीमित पहुँच पाउनुहोस्</string>  
+  <string name="txt_premium_offer">असीमित डाउनलोड, 10x द्रुत गतिको साथ 100% विज्ञापन-रहित अनुभव।</string>  
+  <string name="txt_premium_offer_1">कुनै विज्ञापनहरू, र थप</string>  
+  <string name="txt_premium_offer_2">तत्काल पोस्ट-कल कार्यहरू</string>  
+  <string name="txt_premium_offer_3">ब्याकअप</string>  
+  <string name="txt_premium_offer_4">PIN संग एप लक</string>  
+  <string name="txt_premium_monthly_package">मासिक योजना प्रस्ताव गर्नुहोस्</string>  
+  <string name="txt_premium_yearly_package">वार्षिक योजना प्रस्ताव गर्नुहोस्</string>  
+  <string name="txt_save">बचत गर्नुहोस्</string>  
+  <string name="txt_month">महिना</string>  
+  <string name="txt_year">वर्ष</string>  
+  <string name="txt_yearly_premium">प्रो वार्षिक</string>  
+  <string name="txt_already_yearly_premium">पहिले नै प्रो वार्षिक</string>  
+  <string name="txt_monthly_premium">प्रो मासिक</string>  
+  <string name="txt_already_monthly_premium">पहिले नै प्रो मासिक</string>  
+  <string name="txt_timeout_billing_load">सामग्री लोड गर्न सकिँदैन। आफ्नो जडान जाँच गर्नुहोस्</string>  
+  <string name="txt_later">पछि</string>  
+  <string name="txt_premium_title_1">असीमित पहुँच प्राप्त गर्नुहोस्</string>
+  <string name="txt_premium_title_2">प्रीमियम सुविधाहरू</string>
+  <string name="txt_free_trial_desc">तपाईं कुनै पनि समय बिना सदस्यता रद्द गर्न सक्नुहुनेछ - गुगल प्ले अनुप्रयोग मार्फत</string>
+  <string name="txt_3day_free_trial">नि: शुल्क --दिन परीक्षण</string>
+  <string name="txt_continue">जारी राख्नु</string>
+</resources>

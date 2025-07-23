@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Coba Gratis</string>  
+  <string name="txt_try_free_trial_desc">Uji coba gratis 3 dina, Sampeyan bisa mbatalake langganan kapan wae - liwat aplikasi Google Play</string>  
+  <string name="txt_premium_title">Entuk Akses Unlimited menyang Fitur Premium</string>  
+  <string name="txt_premium_offer">100% Pengalaman tanpa iklan kanthi undhuhan tanpa wates, 10x Kacepetan Cepet.</string>  
+  <string name="txt_premium_offer_1">Ora ana iklan, lan liya-liyane</string>  
+  <string name="txt_premium_offer_2">Tumindak kirim-telpon cepet</string>  
+  <string name="txt_premium_offer_3">Gawe serep</string>  
+  <string name="txt_premium_offer_4">Kunci Aplikasi nganggo PIN</string>  
+  <string name="txt_premium_monthly_package">Nawakake Rencana Saben wulan</string>  
+  <string name="txt_premium_yearly_package">Nawakake Rencana Taunan</string>  
+  <string name="txt_save">Simpen</string>  
+  <string name="txt_month">Wulan</string>  
+  <string name="txt_year">Taun</string>  
+  <string name="txt_yearly_premium">Pro taunan</string>  
+  <string name="txt_already_yearly_premium">Wis Pro Taunan</string>  
+  <string name="txt_monthly_premium">Pro Saben wulan</string>  
+  <string name="txt_already_monthly_premium">Wis Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Isi ora bisa dimuat. Priksa sambungan sampeyan</string>  
+  <string name="txt_later">Mengko</string>  
+  <string name="txt_premium_title_1">Entuk akses tanpa watesan</string>
+  <string name="txt_premium_title_2">Fitur Premium</string>
+  <string name="txt_free_trial_desc">Sampeyan bisa mbatalake langganan kapan - liwat aplikasi Google Play</string>
+  <string name="txt_3day_free_trial">Trial 3-Dina Gratis</string>
+  <string name="txt_continue">Terusake</string>
+</resources>

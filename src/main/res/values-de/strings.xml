@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Probieren Sie es kostenlos aus</string>  
+  <string name="txt_try_free_trial_desc">3-tägige kostenlose Testversion. Sie können das Abonnement jederzeit kündigen – über die Google Play App</string>  
+  <string name="txt_premium_title">Erhalten Sie unbegrenzten Zugriff auf Premium-Funktionen</string>  
+  <string name="txt_premium_offer">100 % werbefreies Erlebnis mit unbegrenztem Download und 10-facher Geschwindigkeit.</string>  
+  <string name="txt_premium_offer_1">Keine Werbung und mehr</string>  
+  <string name="txt_premium_offer_2">Sofortige Aktionen nach dem Anruf</string>  
+  <string name="txt_premium_offer_3">Sicherung</string>  
+  <string name="txt_premium_offer_4">App-Sperre mit PIN</string>  
+  <string name="txt_premium_monthly_package">Bieten Sie einen Monatsplan an</string>  
+  <string name="txt_premium_yearly_package">Bieten Sie einen Jahresplan an</string>  
+  <string name="txt_save">Speichern</string>  
+  <string name="txt_month">Monat</string>  
+  <string name="txt_year">Jahr</string>  
+  <string name="txt_yearly_premium">Pro jährlich</string>  
+  <string name="txt_already_yearly_premium">Bereits Pro Yearly</string>  
+  <string name="txt_monthly_premium">Pro Monat</string>  
+  <string name="txt_already_monthly_premium">Bereits Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Inhalte können nicht geladen werden. Überprüfen Sie Ihre Verbindung</string>  
+  <string name="txt_later">Später</string>  
+  <string name="txt_premium_title_1">Erhalten Sie unbegrenzten Zugriff auf</string>
+  <string name="txt_premium_title_2">Premium -Funktionen</string>
+  <string name="txt_free_trial_desc">Sie können das Abonnement jederzeit stornieren - über die Google Play -App</string>
+  <string name="txt_3day_free_trial">Kostenlose 3-tägige Testversion</string>
+  <string name="txt_continue">Weitermachen</string>
+</resources>

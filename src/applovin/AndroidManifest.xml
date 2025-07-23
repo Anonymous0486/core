@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.app.core">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <application >
+        <meta-data android:name="applovin.sdk.key"
+            android:value="OiStuAsaRFHIMwDV_FDITznsgdEV-RqcTzyVf4bdZl_x0C3TsCp6IKSadCa4dbo8MeIdSLRI8mRVg2w5wo4Mym"/>
+    </application>
+</manifest>

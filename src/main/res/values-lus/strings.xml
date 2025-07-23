@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Free takin enchhin rawh</string>  
+  <string name="txt_try_free_trial_desc">Ni 3 chhung free trial, Engtik lai pawhin subscription i cancel thei - Google Play app hmangin</string>  
+  <string name="txt_premium_title">Premium Features te chu Unlimited Access nei rawh</string>  
+  <string name="txt_premium_offer">100% Ads-free experience a awm a, download theih loh, 10x Fast Speed ​​a awm bawk.</string>  
+  <string name="txt_premium_offer_1">Ads a awm lo, leh thil dang tam tak</string>  
+  <string name="txt_premium_offer_2">Post-call-a thil tih nghal mai tur</string>  
+  <string name="txt_premium_offer_3">Backup a ni</string>  
+  <string name="txt_premium_offer_4">PIN hmangin App Lock a ni</string>  
+  <string name="txt_premium_monthly_package">Thla tin Plan pe rawh</string>  
+  <string name="txt_premium_yearly_package">Kum tin Plan Pe rawh</string>  
+  <string name="txt_save">Humhim</string>  
+  <string name="txt_month">Thla</string>  
+  <string name="txt_year">Kum</string>  
+  <string name="txt_yearly_premium">Pro Kum tin</string>  
+  <string name="txt_already_yearly_premium">Pro Kum tin a ni tawh</string>  
+  <string name="txt_monthly_premium">Pro Thla tin</string>  
+  <string name="txt_already_monthly_premium">Pro Monthly a ni tawh</string>  
+  <string name="txt_timeout_billing_load">Content load theih a ni lo. I connection kha check rawh</string>  
+  <string name="txt_later">A hnuah</string>  
+  <string name="txt_premium_title_1">1000-ah hian unlimited access a hmu thei ang.</string>
+  <string name="txt_premium_title_2">Premium a awm em .</string>
+  <string name="txt_free_trial_desc">Subscription chu engtik lai pawhin i cancel thei - Google Play app hmangin</string>
+  <string name="txt_3day_free_trial">Ni 3 chhung a thlawna trial theih a ni.</string>
+  <string name="txt_continue">Chhunzawm</string>
+</resources>

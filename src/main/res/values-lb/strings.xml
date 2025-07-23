@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Probéiert et gratis</string>  
+  <string name="txt_try_free_trial_desc">3-Deeg gratis Test, Dir kënnt Abonnement zu all Moment annuléieren - iwwer d\'Google Play App</string>  
+  <string name="txt_premium_title">Kritt onlimitéiert Zougang zu Premium Features</string>  
+  <string name="txt_premium_offer">100% Annonce-gratis Erfarung mat onlimitéiertem Download, 10x Schnellgeschwindegkeet.</string>  
+  <string name="txt_premium_offer_1">Keng Annoncen, a méi</string>  
+  <string name="txt_premium_offer_2">Direkt Post-Call Aktiounen</string>  
+  <string name="txt_premium_offer_3">Backupsatellit</string>  
+  <string name="txt_premium_offer_4">App Spär mat PIN</string>  
+  <string name="txt_premium_monthly_package">Offer monatlecht Plang</string>  
+  <string name="txt_premium_yearly_package">Offer Joresplang</string>  
+  <string name="txt_save">Spueren</string>  
+  <string name="txt_month">Mount</string>  
+  <string name="txt_year">Joer</string>  
+  <string name="txt_yearly_premium">Pro Joer</string>  
+  <string name="txt_already_yearly_premium">Scho Pro Joer</string>  
+  <string name="txt_monthly_premium">Pro Mount</string>  
+  <string name="txt_already_monthly_premium">Schon Pro Mount</string>  
+  <string name="txt_timeout_billing_load">Inhalt kann net gelueden ginn. Kontrolléiert Är Verbindung</string>  
+  <string name="txt_later">Spéider</string>  
+  <string name="txt_premium_title_1">Kritt onlimitéiert Zougang zu</string>
+  <string name="txt_premium_title_2">Premium Feature</string>
+  <string name="txt_free_trial_desc">Dir kënnt Zäit Abonnentéierung annuléieren - iwwer d\'Google Play App</string>
+  <string name="txt_3day_free_trial">Gratis 3-Deeg Test</string>
+  <string name="txt_continue">Weidergitt</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Prova-ho gratis</string>  
+  <string name="txt_try_free_trial_desc">Prova gratuïta de 3 dies, podeu cancel·lar la subscripció en qualsevol moment mitjançant l\'aplicació Google Play</string>  
+  <string name="txt_premium_title">Obteniu accés il·limitat a les funcions premium</string>  
+  <string name="txt_premium_offer">Experiència 100% sense anuncis amb descàrrega il·limitada, velocitat ràpida 10x.</string>  
+  <string name="txt_premium_offer_1">Sense anuncis i més</string>  
+  <string name="txt_premium_offer_2">Accions instantànies posteriors a la trucada</string>  
+  <string name="txt_premium_offer_3">Còpia de seguretat</string>  
+  <string name="txt_premium_offer_4">Bloqueig de l\'aplicació amb PIN</string>  
+  <string name="txt_premium_monthly_package">Oferta Pla mensual</string>  
+  <string name="txt_premium_yearly_package">Oferta Pla Anual</string>  
+  <string name="txt_save">Desa</string>  
+  <string name="txt_month">Mes</string>  
+  <string name="txt_year">Any</string>  
+  <string name="txt_yearly_premium">Pro Anual</string>  
+  <string name="txt_already_yearly_premium">Ja Pro Anual</string>  
+  <string name="txt_monthly_premium">Pro mensual</string>  
+  <string name="txt_already_monthly_premium">Ja Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">El contingut no es pot carregar. Comproveu la vostra connexió</string>  
+  <string name="txt_later">Més tard</string>  
+  <string name="txt_premium_title_1">Obteniu un accés il·limitat a</string>
+  <string name="txt_premium_title_2">Funcions premium</string>
+  <string name="txt_free_trial_desc">Podeu cancel·lar la subscripció en qualsevol moment: a través de l’aplicació Google Play</string>
+  <string name="txt_3day_free_trial">Prova gratuïta de 3 dies</string>
+  <string name="txt_continue">Continuar</string>
+</resources>

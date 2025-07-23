@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Prófaðu það ókeypis</string>  
+  <string name="txt_try_free_trial_desc">3 daga ókeypis prufuáskrift, þú getur sagt upp áskrift hvenær sem er - í gegnum Google Play appið</string>  
+  <string name="txt_premium_title">Fáðu ótakmarkaðan aðgang að úrvalsaðgerðum</string>  
+  <string name="txt_premium_offer">100% auglýsingalaus reynsla með ótakmörkuðu niðurhali, 10x hraða.</string>  
+  <string name="txt_premium_offer_1">Engar auglýsingar og fleira</string>  
+  <string name="txt_premium_offer_2">Aðgerðir strax eftir símtal</string>  
+  <string name="txt_premium_offer_3">Afritun</string>  
+  <string name="txt_premium_offer_4">Applæsing með PIN</string>  
+  <string name="txt_premium_monthly_package">Tilboð mánaðaráætlun</string>  
+  <string name="txt_premium_yearly_package">Bjóða upp á ársáætlun</string>  
+  <string name="txt_save">Vista</string>  
+  <string name="txt_month">Mánuður</string>  
+  <string name="txt_year">Ár</string>  
+  <string name="txt_yearly_premium">Atvinnumaður Árlega</string>  
+  <string name="txt_already_yearly_premium">Nú þegar Pro Yearly</string>  
+  <string name="txt_monthly_premium">Pro mánaðarlega</string>  
+  <string name="txt_already_monthly_premium">Nú þegar Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Ekki er hægt að hlaða efni. Athugaðu tenginguna þína</string>  
+  <string name="txt_later">Seinna</string>  
+  <string name="txt_premium_title_1">Fáðu ótakmarkaðan aðgang að</string>
+  <string name="txt_premium_title_2">INDIUM aðgerðir</string>
+  <string name="txt_free_trial_desc">Þú getur hætt við áskrift hvenær sem er - í gegnum Google Play appið</string>
+  <string name="txt_3day_free_trial">Ókeypis 3 daga prufu</string>
+  <string name="txt_continue">Haltu áfram</string>
+</resources>

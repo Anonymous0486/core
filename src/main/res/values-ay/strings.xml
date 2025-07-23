@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Yant’apxam Gratis</string>  
+  <string name="txt_try_free_trial_desc">3 urunak inaki yant’awi, Suscripción ukax kuna pachas cancelasispawa - Google Play app tuqi</string>  
+  <string name="txt_premium_title">Premio Características ukar jan tukuskir mantañaw utji</string>  
+  <string name="txt_premium_offer">100% Anuncios-free experiencia ukax jan limitado descarga ukampi, 10x Fast Speed.</string>  
+  <string name="txt_premium_offer_1">Janiw anuncios ukanakax utjkiti, ukat juk’ampinaka</string>  
+  <string name="txt_premium_offer_2">Jank’akiw jawsañ qhipat lurawinaka</string>  
+  <string name="txt_premium_offer_3">Ukax mä copia de seguridad satawa</string>  
+  <string name="txt_premium_offer_4">App Bloqueo ukax PIN ukampiw lurasi</string>  
+  <string name="txt_premium_monthly_package">Plan Mensual uñacht’ayaña</string>  
+  <string name="txt_premium_yearly_package">Plan Anual uñacht’ayaña</string>  
+  <string name="txt_save">Imaña</string>  
+  <string name="txt_month">Phaxsi</string>  
+  <string name="txt_year">Mara</string>  
+  <string name="txt_yearly_premium">Pro Maranx sapa marawa</string>  
+  <string name="txt_already_yearly_premium">Nayratpach Pro Maran</string>  
+  <string name="txt_monthly_premium">Pro Phaxsi</string>  
+  <string name="txt_already_monthly_premium">Nayratpach Pro Phaxsi</string>  
+  <string name="txt_timeout_billing_load">Contenido ukax janiw cargatäkaspati. Uka conexión uñakipt’aña</string>  
+  <string name="txt_later">Jayp\'uru</string>  
+  <string name="txt_premium_title_1">Unlimited Access ukax 1.1.</string>
+  <string name="txt_premium_title_2">Premium ukax 1.1.</string>
+  <string name="txt_free_trial_desc">Suscripción ukax kuna pachas cancelasispawa - Google Play app tuqiw .</string>
+  <string name="txt_3day_free_trial">3 urunak saraqatat 3 urunak saraqataruw inaki .</string>
+  <string name="txt_continue">Sarantaña</string>
+</resources>

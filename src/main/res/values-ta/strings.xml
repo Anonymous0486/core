@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">இலவசமாக முயற்சிக்கவும்</string>  
+  <string name="txt_try_free_trial_desc">3 நாட்கள் இலவச சோதனை, நீங்கள் எந்த நேரத்திலும் சந்தாவை ரத்து செய்யலாம் - Google Play ஆப்ஸ் மூலம்</string>  
+  <string name="txt_premium_title">பிரீமியம் அம்சங்களுக்கான வரம்பற்ற அணுகலைப் பெறுங்கள்</string>  
+  <string name="txt_premium_offer">வரம்பற்ற பதிவிறக்கத்துடன் 100% விளம்பரங்கள் இல்லாத அனுபவம், 10x வேகம்.</string>  
+  <string name="txt_premium_offer_1">விளம்பரங்கள் இல்லை, மேலும் பல</string>  
+  <string name="txt_premium_offer_2">உடனடி பிந்தைய அழைப்பு நடவடிக்கைகள்</string>  
+  <string name="txt_premium_offer_3">காப்புப்பிரதி</string>  
+  <string name="txt_premium_offer_4">பின்னுடன் பயன்பாட்டு பூட்டு</string>  
+  <string name="txt_premium_monthly_package">மாதாந்திர திட்டத்தை வழங்குங்கள்</string>  
+  <string name="txt_premium_yearly_package">வருடாந்திர திட்டத்தை வழங்குங்கள்</string>  
+  <string name="txt_save">சேமிக்கவும்</string>  
+  <string name="txt_month">மாதம்</string>  
+  <string name="txt_year">ஆண்டு</string>  
+  <string name="txt_yearly_premium">ஆண்டுதோறும் ப்ரோ</string>  
+  <string name="txt_already_yearly_premium">ஏற்கனவே ப்ரோ ஆண்டு</string>  
+  <string name="txt_monthly_premium">புரோ மாதாந்திர</string>  
+  <string name="txt_already_monthly_premium">ஏற்கனவே புரோ மாதாந்திரம்</string>  
+  <string name="txt_timeout_billing_load">உள்ளடக்கத்தை ஏற்ற முடியாது. உங்கள் இணைப்பைச் சரிபார்க்கவும்</string>  
+  <string name="txt_later">பின்னர்</string>  
+  <string name="txt_premium_title_1">வரம்பற்ற அணுகலைப் பெறுங்கள்</string>
+  <string name="txt_premium_title_2">பிரீமியம் அம்சங்கள்</string>
+  <string name="txt_free_trial_desc">நீங்கள் எப்போது வேண்டுமானாலும் சந்தாவை ரத்து செய்யலாம் - Google Play பயன்பாடு வழியாக</string>
+  <string name="txt_3day_free_trial">இலவச 3 நாள் சோதனை</string>
+  <string name="txt_continue">தொடரவும்</string>
+</resources>

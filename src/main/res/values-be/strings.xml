@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Паспрабуйце бясплатна</string>  
+  <string name="txt_try_free_trial_desc">3-дзённая бясплатная пробная версія. Вы можаце адмяніць падпіску ў любы час - праз прыкладанне Google Play</string>  
+  <string name="txt_premium_title">Атрымайце неабмежаваны доступ да прэміум-функцый</string>  
+  <string name="txt_premium_offer">На 100% без рэкламы з неабмежаванай спампоўкай, хуткасцю ў 10 разоў.</string>  
+  <string name="txt_premium_offer_1">Без рэкламы і многае іншае</string>  
+  <string name="txt_premium_offer_2">Імгненныя дзеянні пасля выкліку</string>  
+  <string name="txt_premium_offer_3">Рэзервовае капіраванне</string>  
+  <string name="txt_premium_offer_4">Блакаванне праграмы з дапамогай PIN-кода</string>  
+  <string name="txt_premium_monthly_package">Прапанова штомесячнага плана</string>  
+  <string name="txt_premium_yearly_package">Прапанова гадавога плана</string>  
+  <string name="txt_save">Захаваць</string>  
+  <string name="txt_month">Месяц</string>  
+  <string name="txt_year">Год</string>  
+  <string name="txt_yearly_premium">Pro штогод</string>  
+  <string name="txt_already_yearly_premium">Ужо прафесійны год</string>  
+  <string name="txt_monthly_premium">Pro Штомесяц</string>  
+  <string name="txt_already_monthly_premium">Ужо Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Немагчыма загрузіць кантэнт. Праверце падключэнне</string>  
+  <string name="txt_later">Пазней</string>  
+  <string name="txt_premium_title_1">Атрымайце неабмежаваны доступ да</string>
+  <string name="txt_premium_title_2">Прэміум -асаблівасці</string>
+  <string name="txt_free_trial_desc">Вы можаце адмяніць падпіску ў любы час - праз прыкладанне Google Play</string>
+  <string name="txt_3day_free_trial">Бясплатная 3-дзённая пробная версія</string>
+  <string name="txt_continue">Працягваць</string>
+</resources>

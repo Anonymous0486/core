@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Prøv det gratis</string>  
+  <string name="txt_try_free_trial_desc">3-dages gratis prøveperiode. Du kan til enhver tid opsige abonnementet - via Google Play-appen</string>  
+  <string name="txt_premium_title">Få ubegrænset adgang til premium-funktioner</string>  
+  <string name="txt_premium_offer">100 % annoncefri oplevelse med ubegrænset download, 10x hurtig hastighed.</string>  
+  <string name="txt_premium_offer_1">Ingen annoncer og mere</string>  
+  <string name="txt_premium_offer_2">Øjeblikkelige handlinger efter opkald</string>  
+  <string name="txt_premium_offer_3">Backup</string>  
+  <string name="txt_premium_offer_4">Applås med pinkode</string>  
+  <string name="txt_premium_monthly_package">Tilbyd månedsplan</string>  
+  <string name="txt_premium_yearly_package">Tilbyd årsplan</string>  
+  <string name="txt_save">Spare</string>  
+  <string name="txt_month">Måned</string>  
+  <string name="txt_year">År</string>  
+  <string name="txt_yearly_premium">Pro årligt</string>  
+  <string name="txt_already_yearly_premium">Allerede Pro Yearly</string>  
+  <string name="txt_monthly_premium">Pro månedlig</string>  
+  <string name="txt_already_monthly_premium">Allerede Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Indhold kan ikke indlæses. Tjek din forbindelse</string>  
+  <string name="txt_later">Senere</string>  
+  <string name="txt_premium_title_1">Få ubegrænset adgang til</string>
+  <string name="txt_premium_title_2">Premium -funktioner</string>
+  <string name="txt_free_trial_desc">Du kan annullere abonnement når som helst - via Google Play -appen</string>
+  <string name="txt_3day_free_trial">Gratis 3-dages retssag</string>
+  <string name="txt_continue">Fortsætte</string>
+</resources>

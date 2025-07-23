@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Feuch e an-asgaidh</string>  
+  <string name="txt_try_free_trial_desc">Deuchainn an-asgaidh 3-latha, Faodaidh tu ballrachd a chuir dheth uair sam bith - tron ​​​​app Google Play</string>  
+  <string name="txt_premium_title">Faigh ruigsinneachd gun chrìoch air feartan Premium</string>  
+  <string name="txt_premium_offer">Eòlas 100% gun shanasan le luchdachadh sìos gun chrìoch, 10x Fast Speed.</string>  
+  <string name="txt_premium_offer_1">Gun shanasan, agus barrachd</string>  
+  <string name="txt_premium_offer_2">Gnìomhan às deidh gairm sa bhad</string>  
+  <string name="txt_premium_offer_3">Cùl-taic</string>  
+  <string name="txt_premium_offer_4">Lock App le PIN</string>  
+  <string name="txt_premium_monthly_package">Tairgse Plana Mìosail</string>  
+  <string name="txt_premium_yearly_package">Tairgse Plana Bliadhnail</string>  
+  <string name="txt_save">Sàbhail</string>  
+  <string name="txt_month">Mìos</string>  
+  <string name="txt_year">Bliadhna</string>  
+  <string name="txt_yearly_premium">Pro Bliadhnail</string>  
+  <string name="txt_already_yearly_premium">Mu thràth Pro Bliadhnail</string>  
+  <string name="txt_monthly_premium">Pro mìosail</string>  
+  <string name="txt_already_monthly_premium">A-cheana Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Chan urrainn susbaint a luchdachadh. Thoir sùil air a’ cheangal agad</string>  
+  <string name="txt_later">Nas fhaide air adhart</string>  
+  <string name="txt_premium_title_1">Faigh ruigsinneachd gun chrìoch air</string>
+  <string name="txt_premium_title_2">Feartan Premium</string>
+  <string name="txt_free_trial_desc">Faodaidh tu ballrachd a chuir dheth uair sam bith - tron app Google Play</string>
+  <string name="txt_3day_free_trial">Deuchainn 3-latha an-asgaidh</string>
+  <string name="txt_continue">Lean air adhart</string>
+</resources>

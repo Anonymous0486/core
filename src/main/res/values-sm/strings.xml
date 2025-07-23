@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Taumafai e leai se totogi</string>  
+  <string name="txt_try_free_trial_desc">3-aso fa\'ata\'ita\'iga fua, E mafai ona e fa\'aleaogaina le lesitala i so\'o se taimi - e ala i le Google Play app</string>  
+  <string name="txt_premium_title">Maua le avanoa e leai se gataaga i mea aoga</string>  
+  <string name="txt_premium_offer">100% Faʻasalalauga-leai se poto masani ma le faʻatapulaʻaina o lauga, 10x Saosaoa Saosaoa.</string>  
+  <string name="txt_premium_offer_1">Leai ni fa\'asalalauga, ma isi mea</string>  
+  <string name="txt_premium_offer_2">Gaioiga vave pe a mae\'a vala\'au</string>  
+  <string name="txt_premium_offer_3">Lagolago</string>  
+  <string name="txt_premium_offer_4">Loka App ma PIN</string>  
+  <string name="txt_premium_monthly_package">Ofo Fuafuaga Faalemasina</string>  
+  <string name="txt_premium_yearly_package">Ofo Fuafuaga Faaletausaga</string>  
+  <string name="txt_save">Faasaoina</string>  
+  <string name="txt_month">Masina</string>  
+  <string name="txt_year">Tausaga</string>  
+  <string name="txt_yearly_premium">Pro Tausaga</string>  
+  <string name="txt_already_yearly_premium">Ua uma ona Pro Tausaga</string>  
+  <string name="txt_monthly_premium">Pro masina</string>  
+  <string name="txt_already_monthly_premium">Ua uma ona Pro masina</string>  
+  <string name="txt_timeout_billing_load">E le mafai ona utaina mea. Siaki lau feso\'ota\'iga</string>  
+  <string name="txt_later">Mulimuli ane</string>  
+  <string name="txt_premium_title_1">Maua le le mautonu i le</string>
+  <string name="txt_premium_title_2">Manatu Tau</string>
+  <string name="txt_free_trial_desc">E mafai ona e faʻaleaogaina le faʻaaogaina o le taimi - e ala i le Google Play App</string>
+  <string name="txt_3day_free_trial">Free 3-aso faamasinoga</string>
+  <string name="txt_continue">Faaauau pea</string>
+</resources>

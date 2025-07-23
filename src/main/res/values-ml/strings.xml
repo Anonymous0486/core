@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">ഇത് സൗജന്യമായി പരീക്ഷിക്കുക</string>  
+  <string name="txt_try_free_trial_desc">3 ദിവസത്തെ സൗജന്യ ട്രയൽ, നിങ്ങൾക്ക് എപ്പോൾ വേണമെങ്കിലും സബ്‌സ്‌ക്രിപ്‌ഷൻ റദ്ദാക്കാം - Google Play ആപ്പ് വഴി</string>  
+  <string name="txt_premium_title">പ്രീമിയം ഫീച്ചറുകളിലേക്ക് അൺലിമിറ്റഡ് ആക്‌സസ് നേടൂ</string>  
+  <string name="txt_premium_offer">പരിധിയില്ലാത്ത ഡൗൺലോഡിംഗിനൊപ്പം 100% പരസ്യ രഹിത അനുഭവം, 10x വേഗത.</string>  
+  <string name="txt_premium_offer_1">പരസ്യങ്ങളില്ല, കൂടാതെ മറ്റു പലതും</string>  
+  <string name="txt_premium_offer_2">തൽക്ഷണ പോസ്റ്റ്-കോൾ പ്രവർത്തനങ്ങൾ</string>  
+  <string name="txt_premium_offer_3">ബാക്കപ്പ്</string>  
+  <string name="txt_premium_offer_4">പിൻ ഉപയോഗിച്ച് ആപ്പ് ലോക്ക്</string>  
+  <string name="txt_premium_monthly_package">പ്രതിമാസ പ്ലാൻ ഓഫർ ചെയ്യുക</string>  
+  <string name="txt_premium_yearly_package">വാർഷിക പ്ലാൻ വാഗ്ദാനം ചെയ്യുക</string>  
+  <string name="txt_save">സംരക്ഷിക്കുക</string>  
+  <string name="txt_month">മാസം</string>  
+  <string name="txt_year">വർഷം</string>  
+  <string name="txt_yearly_premium">പ്രോ വർഷം തോറും</string>  
+  <string name="txt_already_yearly_premium">ഇതിനകം തന്നെ വർഷം തോറും പ്രോ</string>  
+  <string name="txt_monthly_premium">പ്രോ പ്രതിമാസ</string>  
+  <string name="txt_already_monthly_premium">ഇതിനകം പ്രോ പ്രതിമാസ</string>  
+  <string name="txt_timeout_billing_load">ഉള്ളടക്കം ലോഡ് ചെയ്യാൻ കഴിയില്ല. നിങ്ങളുടെ കണക്ഷൻ പരിശോധിക്കുക</string>  
+  <string name="txt_later">താമസിച്ച</string>  
+  <string name="txt_premium_title_1">ഇതിലേക്ക് പരിധിയില്ലാത്ത ആക്സസ് നേടുക</string>
+  <string name="txt_premium_title_2">പ്രീമിയം സവിശേഷതകൾ</string>
+  <string name="txt_free_trial_desc">നിങ്ങൾക്ക് എപ്പോൾ വേണമെങ്കിലും സബ്സ്ക്രിപ്ഷൻ റദ്ദാക്കാൻ കഴിയും - Google Play അപ്ലിക്കേഷൻ വഴി</string>
+  <string name="txt_3day_free_trial">3 ദിവസത്തെ ട്രയൽ</string>
+  <string name="txt_continue">തുടരുക</string>
+</resources>

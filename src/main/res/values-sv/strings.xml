@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Prova gratis</string>  
+  <string name="txt_try_free_trial_desc">3 dagars gratis provperiod. Du kan avbryta prenumerationen när som helst - via Google Play-appen</string>  
+  <string name="txt_premium_title">Få obegränsad tillgång till premiumfunktioner</string>  
+  <string name="txt_premium_offer">100 % annonsfri upplevelse med obegränsad nedladdning, 10x snabb hastighet.</string>  
+  <string name="txt_premium_offer_1">Inga annonser och mer</string>  
+  <string name="txt_premium_offer_2">Omedelbara åtgärder efter samtal</string>  
+  <string name="txt_premium_offer_3">Säkerhetskopiering</string>  
+  <string name="txt_premium_offer_4">Applås med PIN</string>  
+  <string name="txt_premium_monthly_package">Erbjuder månadsplan</string>  
+  <string name="txt_premium_yearly_package">Erbjud årsplan</string>  
+  <string name="txt_save">Spara</string>  
+  <string name="txt_month">Månad</string>  
+  <string name="txt_year">År</string>  
+  <string name="txt_yearly_premium">Pro årligen</string>  
+  <string name="txt_already_yearly_premium">Redan Pro Yearly</string>  
+  <string name="txt_monthly_premium">Pro Monthly</string>  
+  <string name="txt_already_monthly_premium">Redan Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Innehåll kan inte laddas. Kontrollera din anslutning</string>  
+  <string name="txt_later">Senare</string>  
+  <string name="txt_premium_title_1">Få obegränsad tillgång till</string>
+  <string name="txt_premium_title_2">Premiumfunktioner</string>
+  <string name="txt_free_trial_desc">Du kan avbryta prenumeration när som helst - via Google Play -appen</string>
+  <string name="txt_3day_free_trial">Gratis 3-dagars rättegång</string>
+  <string name="txt_continue">Fortsätta</string>
+</resources>

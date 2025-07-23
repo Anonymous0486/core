@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">E hoao ia manuahi</string>  
+  <string name="txt_try_free_trial_desc">3 mau lā hoʻāʻo manuahi, hiki iā ʻoe ke kāpae i ke kau inoa i kēlā me kēia manawa - ma o ka Google Play app</string>  
+  <string name="txt_premium_title">Loaʻa i ke komo palena ʻole i nā hiʻohiʻona Premium</string>  
+  <string name="txt_premium_offer">100% Hoʻolaha ʻole me ka hoʻoiho palena ʻole, 10x wikiwiki wikiwiki.</string>  
+  <string name="txt_premium_offer_1">ʻAʻohe hoʻolaha, a ʻoi aku</string>  
+  <string name="txt_premium_offer_2">Nā hana ma hope o ke kelepona koke ʻana</string>  
+  <string name="txt_premium_offer_3">Kākoʻo</string>  
+  <string name="txt_premium_offer_4">Laka App me PIN</string>  
+  <string name="txt_premium_monthly_package">Hāʻawi i ka hoʻolālā mahina</string>  
+  <string name="txt_premium_yearly_package">Hāʻawi i ka papahana makahiki</string>  
+  <string name="txt_save">Mālama</string>  
+  <string name="txt_month">Mahina</string>  
+  <string name="txt_year">Makahiki</string>  
+  <string name="txt_yearly_premium">Pro makahiki</string>  
+  <string name="txt_already_yearly_premium">Ua Pro makahiki</string>  
+  <string name="txt_monthly_premium">Pro Mahina</string>  
+  <string name="txt_already_monthly_premium">Loaʻa iā Pro Mahina</string>  
+  <string name="txt_timeout_billing_load">ʻAʻole hiki ke hoʻouka ʻia ka ʻike. E nānā i kāu pilina</string>  
+  <string name="txt_later">Kahi</string>  
+  <string name="txt_premium_title_1">E kiʻi i ke komoʻana</string>
+  <string name="txt_premium_title_2">Nā hiʻohiʻona kūpono</string>
+  <string name="txt_free_trial_desc">Hiki iāʻoe ke hoʻopau i ka inoa inoa inoa i kēlā me kēia manawa - ma o ka Google Play app</string>
+  <string name="txt_3day_free_trial">ʻO ka hoʻokolokolo 3-lā</string>
+  <string name="txt_continue">E hoʻomau</string>
+</resources>

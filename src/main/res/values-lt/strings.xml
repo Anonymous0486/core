@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Išbandykite nemokamai</string>  
+  <string name="txt_try_free_trial_desc">3 dienų nemokama bandomoji versija. Prenumeratą galite bet kada atšaukti naudodami „Google Play“ programą</string>  
+  <string name="txt_premium_title">Gaukite neribotą prieigą prie aukščiausios kokybės funkcijų</string>  
+  <string name="txt_premium_offer">100 % be skelbimų, neribotas atsisiuntimas, 10 kartų greitesnis.</string>  
+  <string name="txt_premium_offer_1">Jokių skelbimų ir dar daugiau</string>  
+  <string name="txt_premium_offer_2">Momentiniai veiksmai po skambučio</string>  
+  <string name="txt_premium_offer_3">Atsarginė kopija</string>  
+  <string name="txt_premium_offer_4">Programos užraktas su PIN kodu</string>  
+  <string name="txt_premium_monthly_package">Pasiūlykite mėnesio planą</string>  
+  <string name="txt_premium_yearly_package">Pasiūlyti metinį planą</string>  
+  <string name="txt_save">Išsaugoti</string>  
+  <string name="txt_month">Mėnuo</string>  
+  <string name="txt_year">Metai</string>  
+  <string name="txt_yearly_premium">Pro Metinis</string>  
+  <string name="txt_already_yearly_premium">Jau Pro Metinis</string>  
+  <string name="txt_monthly_premium">Pro Monthly</string>  
+  <string name="txt_already_monthly_premium">Jau Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Negalima įkelti turinio. Patikrinkite ryšį</string>  
+  <string name="txt_later">Vėliau</string>  
+  <string name="txt_premium_title_1">Gauti neribotą prieigą prie</string>
+  <string name="txt_premium_title_2">Aukščiausios kokybės savybės</string>
+  <string name="txt_free_trial_desc">Galite bet kada atšaukti prenumeratą - naudodami „Google Play“ programą</string>
+  <string name="txt_3day_free_trial">Nemokamas 3 dienų bandymas</string>
+  <string name="txt_continue">Tęsti</string>
+</resources>

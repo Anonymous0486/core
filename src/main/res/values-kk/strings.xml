@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Тегін қолданып көріңіз</string>  
+  <string name="txt_try_free_trial_desc">3 күндік тегін сынақ нұсқасы, жазылымнан кез келген уақытта Google Play қолданбасы арқылы бас тартуға болады</string>  
+  <string name="txt_premium_title">Премиум мүмкіндіктеріне шексіз қол жеткізіңіз</string>  
+  <string name="txt_premium_offer">100% жарнамасыз тәжірибе, шектеусіз жүктеп алу, 10x жылдам жылдамдық.</string>  
+  <string name="txt_premium_offer_1">Жарнамалар жоқ және т.б</string>  
+  <string name="txt_premium_offer_2">Қоңыраудан кейінгі лезде әрекеттер</string>  
+  <string name="txt_premium_offer_3">Сақтық көшірме</string>  
+  <string name="txt_premium_offer_4">PIN кодымен қолданбаны құлыптау</string>  
+  <string name="txt_premium_monthly_package">Айлық жоспарды ұсыныңыз</string>  
+  <string name="txt_premium_yearly_package">Жылдық жоспарды ұсыныңыз</string>  
+  <string name="txt_save">Сақтау</string>  
+  <string name="txt_month">Ай</string>  
+  <string name="txt_year">Жыл</string>  
+  <string name="txt_yearly_premium">Жыл сайынғы Pro</string>  
+  <string name="txt_already_yearly_premium">Қазірдің өзінде жыл сайынғы Pro</string>  
+  <string name="txt_monthly_premium">Pro Monthly</string>  
+  <string name="txt_already_monthly_premium">Қазірдің өзінде ай сайынғы Pro</string>  
+  <string name="txt_timeout_billing_load">Мазмұнды жүктеу мүмкін емес. Байланысты тексеріңіз</string>  
+  <string name="txt_later">Кейінірек</string>  
+  <string name="txt_premium_title_1">Шексіз кіруді алыңыз</string>
+  <string name="txt_premium_title_2">Премиум ерекшеліктері</string>
+  <string name="txt_free_trial_desc">Сіз кез-келген уақытта - Google Play бағдарламасы арқылы жазылымнан бас тартуға болады</string>
+  <string name="txt_3day_free_trial">ТЕГІН 3 күндік сынақ</string>
+  <string name="txt_continue">Жалғастыру</string>
+</resources>

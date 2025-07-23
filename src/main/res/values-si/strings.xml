@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">එය නොමිලේ උත්සාහ කරන්න</string>  
+  <string name="txt_try_free_trial_desc">දින 3ක නොමිලේ අත්හදා බැලීම, ඔබට ඕනෑම වේලාවක දායකත්වය අවලංගු කළ හැක - Google Play යෙදුම හරහා</string>  
+  <string name="txt_premium_title">වාරික විශේෂාංග සඳහා අසීමිත ප්‍රවේශය ලබා ගන්න</string>  
+  <string name="txt_premium_offer">අසීමිත බාගැනීම් සමඟ 100% දැන්වීම්-රහිත අත්දැකීමක්, 10x වේගවත් වේගය.</string>  
+  <string name="txt_premium_offer_1">දැන්වීම් නැත, සහ තවත්</string>  
+  <string name="txt_premium_offer_2">ක්ෂණික පශ්චාත් ඇමතුම් ක්‍රියා</string>  
+  <string name="txt_premium_offer_3">උපස්ථ</string>  
+  <string name="txt_premium_offer_4">PIN සමඟ යෙදුම් අගුල</string>  
+  <string name="txt_premium_monthly_package">මාසික සැලැස්ම පිරිනැමීම</string>  
+  <string name="txt_premium_yearly_package">වාර්ෂික සැලැස්ම ඉදිරිපත් කරන්න</string>  
+  <string name="txt_save">සුරකින්න</string>  
+  <string name="txt_month">මාසය</string>  
+  <string name="txt_year">වසර</string>  
+  <string name="txt_yearly_premium">Pro වාර්ෂිකව</string>  
+  <string name="txt_already_yearly_premium">දැනටමත් Pro වාර්ෂික</string>  
+  <string name="txt_monthly_premium">Pro මාසික</string>  
+  <string name="txt_already_monthly_premium">දැනටමත් Pro මාසිකව</string>  
+  <string name="txt_timeout_billing_load">අන්තර්ගතය පූරණය කළ නොහැක. ඔබගේ සම්බන්ධතාවය පරීක්ෂා කරන්න</string>  
+  <string name="txt_later">පසුව</string>  
+  <string name="txt_premium_title_1">අසීමිත ප්රවේශය ලබා ගන්න</string>
+  <string name="txt_premium_title_2">වාරික ලක්ෂණ</string>
+  <string name="txt_free_trial_desc">ඔබට ඕනෑම වේලාවක දායකත්වය අවලංගු කළ හැකිය - ගූගල් ප්ලේ යෙදුම හරහා</string>
+  <string name="txt_3day_free_trial">දින 3 ක අත්හදා බැලීම</string>
+  <string name="txt_continue">දිගටම කරගෙන යන්න</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">ޓްރައި އިޓް ފްރީ</string>  
+  <string name="txt_try_free_trial_desc">3 ދުވަހުގެ ހިލޭ ޓްރައިއަލް، ކޮންމެ ވަގުތަކުވެސް ސަބްސްކްރިޕްޝަން ކެންސަލް ކުރެވޭނެ - ގޫގުލް ޕްލޭ އެޕް މެދުވެރިކޮށް</string>  
+  <string name="txt_premium_title">ޕްރީމިއަމް ފީޗާސް އަށް އަންލިމިޓެޑް އެކްސެސް ހޯދުން</string>  
+  <string name="txt_premium_offer">100% އެޑްސް ފްރީ ތަޖުރިބާ އާއި އެކު އަންލިމިޓެޑް ޑައުންލޯޑް ކުރެވޭ، 10x ފަސްޓް ސްޕީޑް.</string>  
+  <string name="txt_premium_offer_1">އިޝްތިހާރެއް ނެތް، އަދި އެއަށްވުރެ ގިނަ ކަންތައްތަކެވެ</string>  
+  <string name="txt_premium_offer_2">ވަގުތުން ޕޯސްޓް ކޯލް އެކްޝަންތައް</string>  
+  <string name="txt_premium_offer_3">ބެކަޕް</string>  
+  <string name="txt_premium_offer_4">ޕިން އާއި އެކު އެޕް ލޮކް ކުރުން</string>  
+  <string name="txt_premium_monthly_package">އޮފާ މަންތްލީ ޕްލޭން</string>  
+  <string name="txt_premium_yearly_package">އަހަރީ ޕްލޭން ހުށަހެޅުން</string>  
+  <string name="txt_save">ރައްކާކުރުން</string>  
+  <string name="txt_month">މަސް</string>  
+  <string name="txt_year">އަހަރު</string>  
+  <string name="txt_yearly_premium">ޕްރޯ އަހަރީ...</string>  
+  <string name="txt_already_yearly_premium">މިހާރުވެސް ޕްރޯ އަހަރީ</string>  
+  <string name="txt_monthly_premium">ޕްރޯ މަންތްލީ</string>  
+  <string name="txt_already_monthly_premium">މިހާރުވެސް ޕްރޯ މަންތްލީ</string>  
+  <string name="txt_timeout_billing_load">ކޮންޓެންޓް ލޯޑް ނުކުރެވޭނެއެވެ. ކަނެކްޝަން ޗެކް ކުރާށެވެ</string>  
+  <string name="txt_later">ފަހުން</string>  
+  <string name="txt_premium_title_1">އަންލިމިޓެޑް އެކްސެސް އަށް ވަޑައިގަންނަވާށެވެ.</string>
+  <string name="txt_premium_title_2">ޕްރީމިއަމް ފީޗާސް</string>
+  <string name="txt_free_trial_desc">ކޮންމެ ވަގުތަކުވެސް ސަބްސްކްރިޕްޝަން ކެންސަލް ކުރެވޭނެ - ގޫގުލް ޕްލޭ އެޕް މެދުވެރިކޮށް</string>
+  <string name="txt_3day_free_trial">ހިލޭ 3 ދުވަހުގެ ޝަރީއަތް</string>
+  <string name="txt_continue">ކުރިއަށްގެންދިޔުން</string>
+</resources>

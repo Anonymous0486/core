@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">ڪوشش ڪريو مفت ۾</string>  
+  <string name="txt_try_free_trial_desc">3 ڏينهن جي مفت آزمائش، توهان ڪنهن به وقت رڪنيت منسوخ ڪري سگهو ٿا - گوگل پلي ايپ ذريعي</string>  
+  <string name="txt_premium_title">پريميئم فيچرز تائين لامحدود رسائي حاصل ڪريو</string>  
+  <string name="txt_premium_offer">100٪ اشتهارن کان پاڪ تجربو لامحدود ڊائون لوڊ سان، 10x تيز رفتار.</string>  
+  <string name="txt_premium_offer_1">ڪوبه اشتهار نه، ۽ وڌيڪ</string>  
+  <string name="txt_premium_offer_2">فوري پوسٽ ڪال ڪارناما</string>  
+  <string name="txt_premium_offer_3">بيڪ اپ</string>  
+  <string name="txt_premium_offer_4">PIN سان ايپ لاڪ</string>  
+  <string name="txt_premium_monthly_package">مھينا منصوبو پيش ڪريو</string>  
+  <string name="txt_premium_yearly_package">ساليانو منصوبو پيش ڪريو</string>  
+  <string name="txt_save">بچايو</string>  
+  <string name="txt_month">مهينو</string>  
+  <string name="txt_year">سال</string>  
+  <string name="txt_yearly_premium">پرو سالياني</string>  
+  <string name="txt_already_yearly_premium">اڳ ۾ ئي پرو سالياني</string>  
+  <string name="txt_monthly_premium">پرو مهيني</string>  
+  <string name="txt_already_monthly_premium">اڳ ۾ ئي پرو مهيني</string>  
+  <string name="txt_timeout_billing_load">مواد لوڊ نه ٿو ڪري سگھجي. پنھنجي ڪنيڪشن چيڪ ڪريو</string>  
+  <string name="txt_later">بعد ۾</string>  
+  <string name="txt_premium_title_1">لامحدود رسائي حاصل ڪريو</string>
+  <string name="txt_premium_title_2">پريميئم خاصيتون</string>
+  <string name="txt_free_trial_desc">توهان ڪنهن به وقت سبسڪرپشن رد ڪري سگهو ٿا - گوگل راند ايپ ذريعي</string>
+  <string name="txt_3day_free_trial">مفت 3 ڏينهن جي آزمائش</string>
+  <string name="txt_continue">جاري رک</string>
+</resources>

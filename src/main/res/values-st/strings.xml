@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">E leke Mahala</string>  
+  <string name="txt_try_free_trial_desc">Teko ea mahala ea matsatsi a 3, U ka hlakola ho ingolisa ka nako efe kapa efe - ka sesebelisoa sa Google Play</string>  
+  <string name="txt_premium_title">Fumana phihlello e sa lekanyetsoang ea Likarolo tsa Premium</string>  
+  <string name="txt_premium_offer">100% boiphihlelo bo se nang lipapatso ka ho khoasolla ho sa lekanyetsoang, lebelo le potlakileng la 10x.</string>  
+  <string name="txt_premium_offer_1">Ha ho lipapatso, le tse ling</string>  
+  <string name="txt_premium_offer_2">Liketso tsa hang-hang ka mor\'a ho letsetsa</string>  
+  <string name="txt_premium_offer_3">Boloka</string>  
+  <string name="txt_premium_offer_4">App Lock e nang le PIN</string>  
+  <string name="txt_premium_monthly_package">Fana ka Moralo oa Khoeli le Khoeli</string>  
+  <string name="txt_premium_yearly_package">Fana ka Moralo oa Selemo le Selemo</string>  
+  <string name="txt_save">Boloka</string>  
+  <string name="txt_month">Kgwedi</string>  
+  <string name="txt_year">Selemo</string>  
+  <string name="txt_yearly_premium">Pro Selemo le selemo</string>  
+  <string name="txt_already_yearly_premium">E se e le Pro Selemo le selemo</string>  
+  <string name="txt_monthly_premium">Pro Monthly</string>  
+  <string name="txt_already_monthly_premium">E se e le Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Litaba ha li khone ho kenngoa. Sheba khokahano ea hau</string>  
+  <string name="txt_later">Hamorao</string>  
+  <string name="txt_premium_title_1">Fumana phihlello e se nang moeli ho</string>
+  <string name="txt_premium_title_2">Likarolo tsa Premium</string>
+  <string name="txt_free_trial_desc">O ka hlakola ngoliso nako efe kapa efe - ka App ea Google</string>
+  <string name="txt_3day_free_trial">Teko ea matsatsi a 3 ea matsatsi a 3</string>
+  <string name="txt_continue">Tsoela pele</string>
+</resources>

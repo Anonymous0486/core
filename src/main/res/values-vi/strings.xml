@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Dùng thử miễn phí</string>  
+  <string name="txt_try_free_trial_desc">Dùng thử miễn phí 3 ngày, Bạn có thể hủy đăng ký bất cứ lúc nào - thông qua ứng dụng Google Play</string>  
+  <string name="txt_premium_title">Nhận quyền truy cập không giới hạn vào các tính năng cao cấp</string>  
+  <string name="txt_premium_offer">Trải nghiệm 100% không có quảng cáo với tải xuống không giới hạn, Tốc độ nhanh gấp 10 lần.</string>  
+  <string name="txt_premium_offer_1">Không có quảng cáo và hơn thế nữa</string>  
+  <string name="txt_premium_offer_2">Hành động sau cuộc gọi tức thì</string>  
+  <string name="txt_premium_offer_3">Hỗ trợ</string>  
+  <string name="txt_premium_offer_4">Khóa ứng dụng bằng mã PIN</string>  
+  <string name="txt_premium_monthly_package">Gói cao cấp hàng tháng</string>  
+  <string name="txt_premium_yearly_package">Gói cao cấp hàng năm</string>  
+  <string name="txt_save">Tiết kiệm</string>  
+  <string name="txt_month">Tháng</string>  
+  <string name="txt_year">Năm</string>  
+  <string name="txt_yearly_premium">Gói cao cấp hàng năm</string>  
+  <string name="txt_already_yearly_premium">Thành viên cao cấp hàng năm</string>  
+  <string name="txt_monthly_premium">Gói cao cấp hàng tháng</string>  
+  <string name="txt_already_monthly_premium">Thành viên cao cấp hàng tháng</string>  
+  <string name="txt_timeout_billing_load">Không thể tải nội dung. Kiểm tra kết nối của bạn</string>  
+  <string name="txt_later">Sau đó</string>  
+  <string name="txt_premium_title_1">Nhận quyền truy cập không giới hạn vào</string>
+  <string name="txt_premium_title_2">Các tính năng cao cấp</string>
+  <string name="txt_free_trial_desc">Bạn có thể hủy đăng ký bất cứ lúc nào - thông qua ứng dụng Google Play</string>
+  <string name="txt_3day_free_trial">Thử nghiệm 3 ngày miễn phí</string>
+  <string name="txt_continue">Tiếp tục</string>
+</resources>

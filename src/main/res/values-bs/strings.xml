@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Isprobajte besplatno</string>  
+  <string name="txt_try_free_trial_desc">3-dnevna besplatna probna verzija, pretplatu možete otkazati bilo kada - putem Google Play aplikacije</string>  
+  <string name="txt_premium_title">Dobijte neograničen pristup premium funkcijama</string>  
+  <string name="txt_premium_offer">100% iskustvo bez oglasa uz neograničeno preuzimanje, 10x brza brzina.</string>  
+  <string name="txt_premium_offer_1">Bez reklama i više</string>  
+  <string name="txt_premium_offer_2">Trenutne radnje nakon poziva</string>  
+  <string name="txt_premium_offer_3">Backup</string>  
+  <string name="txt_premium_offer_4">Zaključavanje aplikacije sa PIN-om</string>  
+  <string name="txt_premium_monthly_package">Ponuda mjesečni plan</string>  
+  <string name="txt_premium_yearly_package">Ponudite godišnji plan</string>  
+  <string name="txt_save">Sačuvaj</string>  
+  <string name="txt_month">Mjesec</string>  
+  <string name="txt_year">Godina</string>  
+  <string name="txt_yearly_premium">Pro Yearly</string>  
+  <string name="txt_already_yearly_premium">Već Pro Godišnji</string>  
+  <string name="txt_monthly_premium">Pro Monthly</string>  
+  <string name="txt_already_monthly_premium">Već Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Sadržaj se ne može učitati. Provjerite svoju vezu</string>  
+  <string name="txt_later">Kasnije</string>  
+  <string name="txt_premium_title_1">Dobiti neograničen pristup</string>
+  <string name="txt_premium_title_2">Premium karakteristike</string>
+  <string name="txt_free_trial_desc">Možete otkazati pretplatu u bilo kojem trenutku - putem aplikacije Google Play</string>
+  <string name="txt_3day_free_trial">Besplatno trodnevno suđenje</string>
+  <string name="txt_continue">Nastaviti</string>
+</resources>

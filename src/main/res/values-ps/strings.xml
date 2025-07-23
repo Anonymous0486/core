@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">دا وړیا هڅه وکړئ</string>  
+  <string name="txt_try_free_trial_desc">د 3 ورځو وړیا آزموینه، تاسو کولی شئ هر وخت ګډون لغوه کړئ - د ګوګل پلی ایپ له لارې</string>  
+  <string name="txt_premium_title">پریمیم ځانګړتیاو ته غیر محدود لاسرسی ترلاسه کړئ</string>  
+  <string name="txt_premium_offer">د لامحدود ډاونلوډ کولو سره 100٪ د اعلاناتو څخه پاک تجربه، 10x چټک سرعت.</string>  
+  <string name="txt_premium_offer_1">هیڅ اعلانونه، او نور</string>  
+  <string name="txt_premium_offer_2">د زنګ وهلو وروسته سمدستي عمل</string>  
+  <string name="txt_premium_offer_3">بیک اپ</string>  
+  <string name="txt_premium_offer_4">د PIN سره ایپ لاک</string>  
+  <string name="txt_premium_monthly_package">میاشتنی پلان وړاندې کړئ</string>  
+  <string name="txt_premium_yearly_package">کلنی پلان وړاندې کړئ</string>  
+  <string name="txt_save">خوندي کړئ</string>  
+  <string name="txt_month">میاشت</string>  
+  <string name="txt_year">کال</string>  
+  <string name="txt_yearly_premium">پرو کلنی</string>  
+  <string name="txt_already_yearly_premium">دمخه پرو کلنی</string>  
+  <string name="txt_monthly_premium">پرو میاشتنۍ</string>  
+  <string name="txt_already_monthly_premium">دمخه پرو میاشتنۍ</string>  
+  <string name="txt_timeout_billing_load">مینځپانګه نشي پورته کیدی. خپل پیوستون چیک کړئ</string>  
+  <string name="txt_later">وروسته</string>  
+  <string name="txt_premium_title_1">ته لامحدود لاسرسی ومومئ</string>
+  <string name="txt_premium_title_2">پریمیم ب .ې</string>
+  <string name="txt_free_trial_desc">تاسو کولی شئ هر وخت غړیتوب ومومئ - د ګوګل ماسټر ایپ له لارې</string>
+  <string name="txt_3day_free_trial">وړیا 3-ورځني محاکمې</string>
+  <string name="txt_continue">ادامه ورکړه</string>
+</resources>

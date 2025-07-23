@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Experimente grátis</string>  
+  <string name="txt_try_free_trial_desc">Avaliação gratuita de 3 dias. Você pode cancelar a assinatura a qualquer momento - por meio do aplicativo Google Play</string>  
+  <string name="txt_premium_title">Obtenha acesso ilimitado a recursos premium</string>  
+  <string name="txt_premium_offer">Experiência 100% livre de anúncios com download ilimitado, velocidade 10x rápida.</string>  
+  <string name="txt_premium_offer_1">Sem anúncios e muito mais</string>  
+  <string name="txt_premium_offer_2">Ações instantâneas pós-chamada</string>  
+  <string name="txt_premium_offer_3">Backup</string>  
+  <string name="txt_premium_offer_4">Bloqueio de aplicativo com PIN</string>  
+  <string name="txt_premium_monthly_package">Oferecer plano mensal</string>  
+  <string name="txt_premium_yearly_package">Oferecer plano anual</string>  
+  <string name="txt_save">Salvar</string>  
+  <string name="txt_month">Mês</string>  
+  <string name="txt_year">Ano</string>  
+  <string name="txt_yearly_premium">Pro Anual</string>  
+  <string name="txt_already_yearly_premium">Já Pro Anual</string>  
+  <string name="txt_monthly_premium">Pró Mensal</string>  
+  <string name="txt_already_monthly_premium">Já Pro Mensal</string>  
+  <string name="txt_timeout_billing_load">O conteúdo não pode ser carregado. Verifique sua conexão</string>  
+  <string name="txt_later">Mais tarde</string>  
+  <string name="txt_premium_title_1">Obtenha acesso ilimitado a</string>
+  <string name="txt_premium_title_2">Recursos premium</string>
+  <string name="txt_free_trial_desc">Você pode cancelar a assinatura a qualquer hora - via aplicativo do Google Play</string>
+  <string name="txt_3day_free_trial">Teste gratuito de 3 dias</string>
+  <string name="txt_continue">Continuar</string>
+</resources>

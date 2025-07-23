@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Gwada shi Kyauta</string>  
+  <string name="txt_try_free_trial_desc">Gwajin kyauta na kwanaki 3, Kuna iya soke biyan kuɗi kowane lokaci - ta hanyar Google Play app</string>  
+  <string name="txt_premium_title">Sami Unlimited Dama zuwa Fasalolin Premium</string>  
+  <string name="txt_premium_offer">100% gwaninta mara talla tare da saukewa mara iyaka, saurin sauri 10x.</string>  
+  <string name="txt_premium_offer_1">Babu talla, da ƙari</string>  
+  <string name="txt_premium_offer_2">Ayyukan bayan kiran nan take</string>  
+  <string name="txt_premium_offer_3">Ajiyayyen</string>  
+  <string name="txt_premium_offer_4">Kulle App tare da PIN</string>  
+  <string name="txt_premium_monthly_package">Bayar da Shirin Kowane Wata</string>  
+  <string name="txt_premium_yearly_package">Bayar da Shirin Shekara-shekara</string>  
+  <string name="txt_save">Ajiye</string>  
+  <string name="txt_month">Watan</string>  
+  <string name="txt_year">Shekara</string>  
+  <string name="txt_yearly_premium">Pro Duk Shekara</string>  
+  <string name="txt_already_yearly_premium">Riga Pro Duk Shekara</string>  
+  <string name="txt_monthly_premium">Pro kowane wata</string>  
+  <string name="txt_already_monthly_premium">Tuni Pro na wata-wata</string>  
+  <string name="txt_timeout_billing_load">Ba za a iya loda abun ciki ba. Duba haɗin ku</string>  
+  <string name="txt_later">Bayan haka</string>  
+  <string name="txt_premium_title_1">Samun damar shiga</string>
+  <string name="txt_premium_title_2">Fasali na Premium</string>
+  <string name="txt_free_trial_desc">Zaka iya soke biyan kuɗi kowane lokaci - ta hanyar Google Play App</string>
+  <string name="txt_3day_free_trial">Gwajin kwanaki 3 kyauta</string>
+  <string name="txt_continue">Ci gaba</string>
+</resources>

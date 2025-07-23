@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Subukan ito nang Libre</string>  
+  <string name="txt_try_free_trial_desc">3-araw na libreng pagsubok, Maaari mong kanselahin ang subscription anumang oras - sa pamamagitan ng Google Play app</string>  
+  <string name="txt_premium_title">Kumuha ng Walang Limitasyong Access sa Mga Premium na Feature</string>  
+  <string name="txt_premium_offer">100% Ads-free na karanasan sa walang limitasyong pag-download, 10x Mabilis na Bilis.</string>  
+  <string name="txt_premium_offer_1">Walang mga ad, at higit pa</string>  
+  <string name="txt_premium_offer_2">Mga agarang pagkilos pagkatapos ng tawag</string>  
+  <string name="txt_premium_offer_3">Backup</string>  
+  <string name="txt_premium_offer_4">App Lock na may PIN</string>  
+  <string name="txt_premium_monthly_package">Mag-alok ng Buwanang Plano</string>  
+  <string name="txt_premium_yearly_package">Mag-alok ng Taunang Plano</string>  
+  <string name="txt_save">I-save</string>  
+  <string name="txt_month">Buwan</string>  
+  <string name="txt_year">Taon</string>  
+  <string name="txt_yearly_premium">Pro Taun-taon</string>  
+  <string name="txt_already_yearly_premium">Pro Yearly na</string>  
+  <string name="txt_monthly_premium">Pro Buwanang</string>  
+  <string name="txt_already_monthly_premium">Pro Monthly na</string>  
+  <string name="txt_timeout_billing_load">Hindi ma-load ang content. Suriin ang iyong koneksyon</string>  
+  <string name="txt_later">Kalaunan</string>  
+  <string name="txt_premium_title_1">Kumuha ng walang limitasyong pag -access sa</string>
+  <string name="txt_premium_title_2">Mga tampok na premium</string>
+  <string name="txt_free_trial_desc">Maaari mong kanselahin ang subscription anumang oras - sa pamamagitan ng Google Play app</string>
+  <string name="txt_3day_free_trial">Libreng 3-araw na pagsubok</string>
+  <string name="txt_continue">Magpatuloy</string>
+</resources>

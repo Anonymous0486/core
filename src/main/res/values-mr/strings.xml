@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">मोफत वापरून पहा</string>  
+  <string name="txt_try_free_trial_desc">3-दिवसांची विनामूल्य चाचणी, तुम्ही कधीही सदस्यता रद्द करू शकता - Google Play ॲपद्वारे</string>  
+  <string name="txt_premium_title">प्रीमियम वैशिष्ट्यांमध्ये अमर्यादित प्रवेश मिळवा</string>  
+  <string name="txt_premium_offer">अमर्यादित डाउनलोडिंग, 10x जलद गतीसह 100% जाहिरात-मुक्त अनुभव.</string>  
+  <string name="txt_premium_offer_1">जाहिराती नाहीत आणि बरेच काही</string>  
+  <string name="txt_premium_offer_2">कॉल नंतरच्या झटपट क्रिया</string>  
+  <string name="txt_premium_offer_3">बॅकअप</string>  
+  <string name="txt_premium_offer_4">पिनसह ॲप लॉक</string>  
+  <string name="txt_premium_monthly_package">मासिक योजना ऑफर करा</string>  
+  <string name="txt_premium_yearly_package">वार्षिक योजना ऑफर करा</string>  
+  <string name="txt_save">जतन करा</string>  
+  <string name="txt_month">महिना</string>  
+  <string name="txt_year">वर्ष</string>  
+  <string name="txt_yearly_premium">प्रो वार्षिक</string>  
+  <string name="txt_already_yearly_premium">आधीच प्रो वार्षिक</string>  
+  <string name="txt_monthly_premium">प्रो मासिक</string>  
+  <string name="txt_already_monthly_premium">आधीच प्रो मासिक</string>  
+  <string name="txt_timeout_billing_load">सामग्री लोड केली जाऊ शकत नाही. तुमचे कनेक्शन तपासा</string>  
+  <string name="txt_later">नंतर</string>  
+  <string name="txt_premium_title_1">येथे अमर्यादित प्रवेश मिळवा</string>
+  <string name="txt_premium_title_2">प्रीमियम वैशिष्ट्ये</string>
+  <string name="txt_free_trial_desc">आपण Google Play अॅपद्वारे कधीही सदस्यता रद्द करू शकता</string>
+  <string name="txt_3day_free_trial">विनामूल्य 3-दिवस चाचणी</string>
+  <string name="txt_continue">सुरू ठेवा</string>
+</resources>

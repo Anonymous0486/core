@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Бушлай кулланыгыз</string>  
+  <string name="txt_try_free_trial_desc">3 көнлек бушлай сынау, Сез язылуны теләсә кайсы вакытта - Google Play кушымтасы аша бетерә аласыз</string>  
+  <string name="txt_premium_title">Премиум үзенчәлекләренә чиксез керү</string>  
+  <string name="txt_premium_offer">Чикләнмәгән йөкләү белән 100% рекламасыз тәҗрибә, 10х тизлек.</string>  
+  <string name="txt_premium_offer_1">Реклама юк һәм башкалар</string>  
+  <string name="txt_premium_offer_2">Чакырудан соңгы чаралар</string>  
+  <string name="txt_premium_offer_3">Резервлау</string>  
+  <string name="txt_premium_offer_4">PIN белән кушымта йозак</string>  
+  <string name="txt_premium_monthly_package">Айлык план тәкъдим итегез</string>  
+  <string name="txt_premium_yearly_package">Еллык план тәкъдим итегез</string>  
+  <string name="txt_save">Саклагыз</string>  
+  <string name="txt_month">Ай</string>  
+  <string name="txt_year">Ел</string>  
+  <string name="txt_yearly_premium">Ел саен</string>  
+  <string name="txt_already_yearly_premium">Инде ел саен</string>  
+  <string name="txt_monthly_premium">Про айлык</string>  
+  <string name="txt_already_monthly_premium">Инде ай саен</string>  
+  <string name="txt_timeout_billing_load">Эчтәлекне йөкләп булмый. Бәйләнешегезне тикшерегез</string>  
+  <string name="txt_later">Соңрак</string>  
+  <string name="txt_premium_title_1">Чикләнмәгән керү мөмкинлеген алыгыз</string>
+  <string name="txt_premium_title_2">Премиум үзенчәлекләре</string>
+  <string name="txt_free_trial_desc">Сез теләсә кайсы вакытта подписка юкка чыга - Google Play кушымтасы аша</string>
+  <string name="txt_3day_free_trial">Бушлай 3 көнлек сынау</string>
+  <string name="txt_continue">Дәвам итегез</string>
+</resources>

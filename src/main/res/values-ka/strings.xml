@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Სცადეთ უფასოდ</string>  
+  <string name="txt_try_free_trial_desc">3-დღიანი უფასო საცდელი ვერსია, გამოწერის გაუქმება ნებისმიერ დროს შეგიძლიათ - Google Play აპის მეშვეობით</string>  
+  <string name="txt_premium_title">Მიიღეთ შეუზღუდავი წვდომა პრემიუმ ფუნქციებზე</string>  
+  <string name="txt_premium_offer">100% რეკლამის გარეშე გამოცდილება შეუზღუდავი ჩამოტვირთვის, 10x სწრაფი სიჩქარით.</string>  
+  <string name="txt_premium_offer_1">Რეკლამის გარეშე და სხვა</string>  
+  <string name="txt_premium_offer_2">Მყისიერი ზარის შემდგომი მოქმედებები</string>  
+  <string name="txt_premium_offer_3">Სარეზერვო</string>  
+  <string name="txt_premium_offer_4">Აპის დაბლოკვა PIN-ით</string>  
+  <string name="txt_premium_monthly_package">Გთავაზობთ ყოველთვიურ გეგმას</string>  
+  <string name="txt_premium_yearly_package">Გთავაზობთ წლიურ გეგმას</string>  
+  <string name="txt_save">Შენახვა</string>  
+  <string name="txt_month">Თვე</string>  
+  <string name="txt_year">Წელიწადი</string>  
+  <string name="txt_yearly_premium">Პრო ყოველწლიურად</string>  
+  <string name="txt_already_yearly_premium">Უკვე პრო ყოველწლიურად</string>  
+  <string name="txt_monthly_premium">Პრო ყოველთვიური</string>  
+  <string name="txt_already_monthly_premium">Უკვე პრო ყოველთვიური</string>  
+  <string name="txt_timeout_billing_load">Კონტენტის ჩატვირთვა შეუძლებელია. შეამოწმეთ თქვენი კავშირი</string>  
+  <string name="txt_later">Მოგვიანებით</string>  
+  <string name="txt_premium_title_1">Მიიღეთ შეუზღუდავი წვდომა</string>
+  <string name="txt_premium_title_2">Პრემიუმ მახასიათებლები</string>
+  <string name="txt_free_trial_desc">Შეგიძლიათ გააუქმოთ ხელმოწერა ნებისმიერ დროს - Google Play აპის საშუალებით</string>
+  <string name="txt_3day_free_trial">Უფასო სამდღიანი სასამართლო პროცესი</string>
+  <string name="txt_continue">Გაგრძელება</string>
+</resources>

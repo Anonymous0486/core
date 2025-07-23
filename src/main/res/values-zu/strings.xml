@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Izame Mahhala</string>  
+  <string name="txt_try_free_trial_desc">Isivivinyo samahhala sezinsuku ezi-3, Ungakhansela ukubhalisa noma nini - ngohlelo lokusebenza lwe-Google Play</string>  
+  <string name="txt_premium_title">Thola Ukufinyelela Okungenamkhawulo Ezicini ze-Premium</string>  
+  <string name="txt_premium_offer">100% umuzwa ongenazo izikhangiso nokulanda okungenamkhawulo, isivinini esisheshayo esingu-10x.</string>  
+  <string name="txt_premium_offer_1">Azikho izikhangiso, nokuningi</string>  
+  <string name="txt_premium_offer_2">Izenzo ezisheshayo zangemuva kwekholi</string>  
+  <string name="txt_premium_offer_3">Yenza ikhophi yasenqolobaneni</string>  
+  <string name="txt_premium_offer_4">I-App Lock enephinikhodi</string>  
+  <string name="txt_premium_monthly_package">Nikeza Uhlelo Lwenyanga Zonke</string>  
+  <string name="txt_premium_yearly_package">Nikeza Uhlelo Lonyaka</string>  
+  <string name="txt_save">Londoloza</string>  
+  <string name="txt_month">Inyanga</string>  
+  <string name="txt_year">Unyaka</string>  
+  <string name="txt_yearly_premium">Pro ngonyaka</string>  
+  <string name="txt_already_yearly_premium">Kakade Pro Ngonyaka</string>  
+  <string name="txt_monthly_premium">Pro Monthly</string>  
+  <string name="txt_already_monthly_premium">Kakade Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Okuqukethwe akukwazi ukulayishwa. Hlola uxhumano lwakho</string>  
+  <string name="txt_later">Ukuhamba kwesikhathi</string>  
+  <string name="txt_premium_title_1">Thola ukufinyelela okungenamkhawulo ku-</string>
+  <string name="txt_premium_title_2">Izici ze-Premium</string>
+  <string name="txt_free_trial_desc">Ungakhansela okubhaliselwe nganoma yisiphi isikhathi - ngohlelo lokusebenza lwe-Google Play</string>
+  <string name="txt_3day_free_trial">Isivivinyo sezinsuku ezi-3 samahhala</string>
+  <string name="txt_continue">Qhubeka</string>
+</resources>

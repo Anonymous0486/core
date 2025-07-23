@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Vyskúšajte zadarmo</string>  
+  <string name="txt_try_free_trial_desc">3-dňová bezplatná skúšobná verzia, predplatné môžete kedykoľvek zrušiť – prostredníctvom aplikácie Google Play</string>  
+  <string name="txt_premium_title">Získajte neobmedzený prístup k prémiovým funkciám</string>  
+  <string name="txt_premium_offer">100% zážitok bez reklám s neobmedzeným sťahovaním, 10x vysoká rýchlosť.</string>  
+  <string name="txt_premium_offer_1">Žiadne reklamy a ďalšie</string>  
+  <string name="txt_premium_offer_2">Okamžité akcie po telefonáte</string>  
+  <string name="txt_premium_offer_3">Zálohovanie</string>  
+  <string name="txt_premium_offer_4">Zámok aplikácie pomocou kódu PIN</string>  
+  <string name="txt_premium_monthly_package">Ponuka mesačného plánu</string>  
+  <string name="txt_premium_yearly_package">Ponuka ročného plánu</string>  
+  <string name="txt_save">Uložiť</string>  
+  <string name="txt_month">Mesiac</string>  
+  <string name="txt_year">Rok</string>  
+  <string name="txt_yearly_premium">Ročne Pro</string>  
+  <string name="txt_already_yearly_premium">Už Pro Yearly</string>  
+  <string name="txt_monthly_premium">Pro Mesačník</string>  
+  <string name="txt_already_monthly_premium">Už Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Obsah sa nedá načítať. Skontrolujte pripojenie</string>  
+  <string name="txt_later">Neskôr</string>  
+  <string name="txt_premium_title_1">Získajte neobmedzený prístup</string>
+  <string name="txt_premium_title_2">Prémiové funkcie</string>
+  <string name="txt_free_trial_desc">Predplatné môžete zrušiť kedykoľvek - prostredníctvom aplikácie Google Play</string>
+  <string name="txt_3day_free_trial">Bezplatná trojdňová skúška</string>
+  <string name="txt_continue">Pokračovať</string>
+</resources>

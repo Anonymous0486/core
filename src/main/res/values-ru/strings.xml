@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Попробуйте бесплатно</string>  
+  <string name="txt_try_free_trial_desc">3-дневная бесплатная пробная версия. Вы можете отменить подписку в любое время - через приложение Google Play.</string>  
+  <string name="txt_premium_title">Получите неограниченный доступ к премиум-функциям</string>  
+  <string name="txt_premium_offer">100% отсутствие рекламы, неограниченное скачивание и 10-кратная скорость.</string>  
+  <string name="txt_premium_offer_1">Никакой рекламы и многое другое.</string>  
+  <string name="txt_premium_offer_2">Мгновенные действия после звонка</string>  
+  <string name="txt_premium_offer_3">Резервное копирование</string>  
+  <string name="txt_premium_offer_4">Блокировка приложения с помощью PIN-кода</string>  
+  <string name="txt_premium_monthly_package">Предложить ежемесячный план</string>  
+  <string name="txt_premium_yearly_package">Предложение годового плана</string>  
+  <string name="txt_save">Сохранять</string>  
+  <string name="txt_month">Месяц</string>  
+  <string name="txt_year">Год</string>  
+  <string name="txt_yearly_premium">Про Ежегодно</string>  
+  <string name="txt_already_yearly_premium">Уже Pro ежегодно</string>  
+  <string name="txt_monthly_premium">Про Ежемесячно</string>  
+  <string name="txt_already_monthly_premium">Уже Pro ежемесячно</string>  
+  <string name="txt_timeout_billing_load">Невозможно загрузить контент. Проверьте свое соединение</string>  
+  <string name="txt_later">Позже</string>  
+  <string name="txt_premium_title_1">Получить неограниченный доступ к</string>
+  <string name="txt_premium_title_2">Премиальные особенности</string>
+  <string name="txt_free_trial_desc">Вы можете отменить подписку в любое время - через приложение Google Play</string>
+  <string name="txt_3day_free_trial">БЕСПЛАТНАЯ 3-дневная пробная версия</string>
+  <string name="txt_continue">Продолжать</string>
+</resources>

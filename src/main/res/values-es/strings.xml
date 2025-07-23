@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Pruébalo gratis</string>  
+  <string name="txt_try_free_trial_desc">Prueba gratuita de 3 días. Puede cancelar la suscripción en cualquier momento a través de la aplicación Google Play.</string>  
+  <string name="txt_premium_title">Obtenga acceso ilimitado a funciones premium</string>  
+  <string name="txt_premium_offer">Experiencia 100% libre de publicidad con descargas ilimitadas y velocidad 10 veces mayor.</string>  
+  <string name="txt_premium_offer_1">Sin anuncios y más</string>  
+  <string name="txt_premium_offer_2">Acciones instantáneas posteriores a la llamada</string>  
+  <string name="txt_premium_offer_3">Respaldo</string>  
+  <string name="txt_premium_offer_4">Bloqueo de aplicaciones con PIN</string>  
+  <string name="txt_premium_monthly_package">Oferta Plan Mensual</string>  
+  <string name="txt_premium_yearly_package">Oferta Plan Anual</string>  
+  <string name="txt_save">Ahorrar</string>  
+  <string name="txt_month">Mes</string>  
+  <string name="txt_year">Año</string>  
+  <string name="txt_yearly_premium">Profesional anual</string>  
+  <string name="txt_already_yearly_premium">Ya Pro Anualmente</string>  
+  <string name="txt_monthly_premium">Profesional mensual</string>  
+  <string name="txt_already_monthly_premium">Ya Pro Mensual</string>  
+  <string name="txt_timeout_billing_load">No se puede cargar el contenido. Comprueba tu conexión</string>  
+  <string name="txt_later">Más tarde</string>  
+  <string name="txt_premium_title_1">Obtener acceso ilimitado a</string>
+  <string name="txt_premium_title_2">Características premium</string>
+  <string name="txt_free_trial_desc">Puede cancelar la suscripción en cualquier momento: a través de la aplicación Google Play</string>
+  <string name="txt_3day_free_trial">Prueba de 3 días gratis</string>
+  <string name="txt_continue">Continuar</string>
+</resources>

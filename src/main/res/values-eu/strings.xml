@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Probatu doan</string>  
+  <string name="txt_try_free_trial_desc">3 eguneko doako proba. Harpidetza bertan behera utz dezakezu edonoiz - Google Play aplikazioaren bidez</string>  
+  <string name="txt_premium_title">Lortu sarbide mugagabea Premium Ezaugarrietarako</string>  
+  <string name="txt_premium_offer">% 100 iragarkirik gabeko esperientzia deskarga mugagabearekin, 10 aldiz abiadura azkarrarekin.</string>  
+  <string name="txt_premium_offer_1">Iragarkirik ez, eta gehiago</string>  
+  <string name="txt_premium_offer_2">Deiaren ondorengo berehalako ekintzak</string>  
+  <string name="txt_premium_offer_3">Babeskopia</string>  
+  <string name="txt_premium_offer_4">Aplikazioaren blokeoa PINarekin</string>  
+  <string name="txt_premium_monthly_package">Eskaintza Hileko Plana</string>  
+  <string name="txt_premium_yearly_package">Eskaintza Urteko Plana</string>  
+  <string name="txt_save">Gorde</string>  
+  <string name="txt_month">Hilabetea</string>  
+  <string name="txt_year">Urtea</string>  
+  <string name="txt_yearly_premium">Pro Urtero</string>  
+  <string name="txt_already_yearly_premium">Dagoeneko Pro Urtero</string>  
+  <string name="txt_monthly_premium">Pro Hilabetekaria</string>  
+  <string name="txt_already_monthly_premium">Dagoeneko Pro Hilabetekoa</string>  
+  <string name="txt_timeout_billing_load">Ezin da edukia kargatu. Egiaztatu zure konexioa</string>  
+  <string name="txt_later">Geroago</string>  
+  <string name="txt_premium_title_1">Sarbidea mugagabea lortu</string>
+  <string name="txt_premium_title_2">Premium Ezaugarriak</string>
+  <string name="txt_free_trial_desc">Harpidetza edozein unetan bertan behera utzi dezakezu - Google Play aplikazioaren bidez</string>
+  <string name="txt_3day_free_trial">DOAKO 3 eguneko proba</string>
+  <string name="txt_continue">Jarraitu</string>
+</resources>

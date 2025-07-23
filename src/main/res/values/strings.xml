@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Test</string>
+    <string name="app_display_name">Test</string>
+
+    <string name="_rating_title">Did you like the app?</string>
+    <string name="_rating_des">Give us a quick rating so we know if you like it?</string>
+    <string name="_later">LATER</string>
+    <string name="_cancel">CANCEL</string>
+    <string name="_submit">SUBMIT</string>
+    <string name="_quite_ok">Quite ok</string>
+    <string name="_rating_comment_hint">Please write your comment here …</string>
+    <string name="_maybe_later">Maybe Later</string>
+
+    <string name="_loading_ads">Loading ads</string>
+    <string name="_very_bad">Very Bad</string>
+    <string name="_not_good">Not good</string>
+    <string name="_very_good">Very Good</string>
+    <string name="_excellent">Excellent !!!</string>
+    <string name="_notify">Notify</string>
+    <string name="_please_select_star">Please select star !</string>
+    <string name="_ok">OK</string>
+    <string name="_thanks">Thanks!</string>
+    <string name="_thank_for_rating">Thanks for rating</string>
+
+    <string name="welcome_back">Welcome back</string>
+
+    <string name="_survey_not_now">Not Now</string>
+    <string name="_survey_submit">Submit</string>
+    <string name="_survey_noti_submit">Submit</string>
+
+    <string name="connection_error">Connection Error</string>
+    <string name="no_internet">No internet connection please try again later</string>
+    <string name="retry">Retry</string>
+    <string name="some_error">Some error occurred, try again later</string>
+
+    <string name="no_internet_connection_title">No Internet connection</string>
+    <string name="has_internet_connection_title">Your connection is restored</string>
+    <string name="no_internet_connection_content">Please check your internet connection</string>
+    <string name="agree">Agree</string>
+
+    <string name="txt_crop_photo_failed">Crop failed. Please try again</string>
+    <string name="txt_no_connection_toast">No internet connection please try again later</string>
+
+    <string name="txt_try_free_trial">Try it Free</string>
+    <string name="txt_try_free_trial_desc">3-days free trial, You can cancel subscription anytime - via the Google Play app</string>
+    <string name="txt_premium_title">Get Unlimited Access to Premium Features</string>
+    <string name="txt_premium_offer">100% Ads-free experience with unlimited downloading, 10x Fast Speed.</string>
+    <string name="txt_premium_offer_1">No ads, and more</string>
+    <string name="txt_premium_offer_2">Instant post-call actions</string>
+    <string name="txt_premium_offer_3">Backup</string>
+    <string name="txt_premium_offer_4">App Lock with PIN</string>
+    <string name="txt_premium_monthly_package">Offer Monthly Plan</string>
+    <string name="txt_premium_yearly_package">Offer Yearly Plan</string>
+    <string name="txt_save">Save</string>
+    <string name="txt_month">Month</string>
+    <string name="txt_year">Year</string>
+    <string name="txt_yearly_premium">Pro Yearly</string>
+    <string name="txt_already_yearly_premium">Already Pro Yearly</string>
+    <string name="txt_monthly_premium">Pro Monthly</string>
+    <string name="txt_already_monthly_premium">Already Pro Monthly</string>
+    <string name="txt_timeout_billing_load">Content cannot be loaded. Check your connection</string>
+    <string name="txt_later">Later</string>
+    <string name="txt_premium_title_1">Get Unlimited Access to</string>
+    <string name="txt_premium_title_2">Premium Features</string>
+    <string name="txt_free_trial_desc">You can cancel subscription anytime - via the Google Play app</string>
+    <string name="txt_3day_free_trial">Free 3-day trial</string>
+    <string name="txt_continue">Continue</string>
+</resources>

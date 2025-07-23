@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">एकरा के फ्री में आजमा के देखीं</string>  
+  <string name="txt_try_free_trial_desc">3 दिन के मुफ्त परीक्षण, आप कबो भी सदस्यता रद्द क सकतानी - गूगल प्ले ऐप के माध्यम से</string>  
+  <string name="txt_premium_title">प्रीमियम फीचर तक असीमित पहुंच पाईं</string>  
+  <string name="txt_premium_offer">असीमित डाउनलोडिंग के साथ 100% विज्ञापन मुक्त अनुभव, 10x तेज गति।</string>  
+  <string name="txt_premium_offer_1">कवनो विज्ञापन ना, आ अउरी बहुत कुछ</string>  
+  <string name="txt_premium_offer_2">तुरंत कॉल के बाद के कार्रवाई</string>  
+  <string name="txt_premium_offer_3">बैकअप के बा</string>  
+  <string name="txt_premium_offer_4">पिन के साथ ऐप लॉक हो जाला</string>  
+  <string name="txt_premium_monthly_package">मासिक योजना के पेशकश करीं</string>  
+  <string name="txt_premium_yearly_package">सालाना योजना के पेशकश करीं</string>  
+  <string name="txt_save">बचावल</string>  
+  <string name="txt_month">महीना</string>  
+  <string name="txt_year">बरिस</string>  
+  <string name="txt_yearly_premium">प्रो सालाना के बा</string>  
+  <string name="txt_already_yearly_premium">पहिलहीं से प्रो ईयरली बा</string>  
+  <string name="txt_monthly_premium">प्रो मासिक के बा</string>  
+  <string name="txt_already_monthly_premium">पहिलहीं से प्रो मासिक बा</string>  
+  <string name="txt_timeout_billing_load">सामग्री लोड ना कइल जा सके. आपन कनेक्शन के जांच करीं</string>  
+  <string name="txt_later">बाद में</string>  
+  <string name="txt_premium_title_1">2018 तक असीमित पहुँच पाईं।</string>
+  <string name="txt_premium_title_2">प्रीमियम के फीचर बा .</string>
+  <string name="txt_free_trial_desc">रउआँ कबो भी सदस्यता रद्द कर सकत बानी - गूगल प्ले ऐप के माध्यम से</string>
+  <string name="txt_3day_free_trial">मुफ्त 3 दिन के ट्रायल के बा</string>
+  <string name="txt_continue">चालू रखीं</string>
+</resources>

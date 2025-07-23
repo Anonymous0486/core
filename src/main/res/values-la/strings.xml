@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Conare eam Free</string>  
+  <string name="txt_try_free_trial_desc">3-dies gratuiti iudicii, subscriptionem excludit aliquando - per Google Play app</string>  
+  <string name="txt_premium_title">Adepto Unlimited Access to Premium Features</string>  
+  <string name="txt_premium_offer">100% Ads-free experience with infinitis downloading, 10x Fast Speed.</string>  
+  <string name="txt_premium_offer_1">Non praeconium, et plus</string>  
+  <string name="txt_premium_offer_2">Instant post vocationem actus</string>  
+  <string name="txt_premium_offer_3">Tergum</string>  
+  <string name="txt_premium_offer_4">App sursum cum ACUS</string>  
+  <string name="txt_premium_monthly_package">Offer Vestibulum Plan</string>  
+  <string name="txt_premium_yearly_package">Offer quotannis Plan</string>  
+  <string name="txt_save">Servare</string>  
+  <string name="txt_month">Mensis</string>  
+  <string name="txt_year">Annus</string>  
+  <string name="txt_yearly_premium">Pro annis singulis</string>  
+  <string name="txt_already_yearly_premium">Iam Pro quotannis</string>  
+  <string name="txt_monthly_premium">Pro Vestibulum</string>  
+  <string name="txt_already_monthly_premium">Iam Pro Vestibulum</string>  
+  <string name="txt_timeout_billing_load">Contentus non potest onerari. Reprehendo vestri nexum</string>  
+  <string name="txt_later">Postea</string>  
+  <string name="txt_premium_title_1">Ut infinitus aditus ad</string>
+  <string name="txt_premium_title_2">Premium features</string>
+  <string name="txt_free_trial_desc">Vos can cancel subscriptione aliquando - per Google Play app</string>
+  <string name="txt_3day_free_trial">Free III-die iudicii</string>
+  <string name="txt_continue">Permaneo</string>
+</resources>

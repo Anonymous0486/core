@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Gezaako ku Free</string>  
+  <string name="txt_try_free_trial_desc">3-days free trial, Osobola okusazaamu okuwandiika essaawa yonna - ng\'oyita ku Google Play app</string>  
+  <string name="txt_premium_title">Funa Omukisa ogutaliiko kkomo ku Bikozesebwa bya Premium</string>  
+  <string name="txt_premium_offer">100% Obumanyirivu obutaliimu birango nga tolina kkomo ku kuwanula, 10x Fast Speed.</string>  
+  <string name="txt_premium_offer_1">Tewali birango, n\'ebirala</string>  
+  <string name="txt_premium_offer_2">Ebikolwa eby’amangu oluvannyuma lw’okukubira essimu</string>  
+  <string name="txt_premium_offer_3">Okutereka</string>  
+  <string name="txt_premium_offer_4">App Lock nga olina PIN</string>  
+  <string name="txt_premium_monthly_package">Okuwaayo Enteekateeka ya Buli Mwezi</string>  
+  <string name="txt_premium_yearly_package">Okuwa Enteekateeka ya Buli Mwaka</string>  
+  <string name="txt_save">Okununula</string>  
+  <string name="txt_month">Omwezi</string>  
+  <string name="txt_year">Omwaka</string>  
+  <string name="txt_yearly_premium">Pro Buli mwaka</string>  
+  <string name="txt_already_yearly_premium">Edda Pro Yearly</string>  
+  <string name="txt_monthly_premium">Pro Buli mwezi</string>  
+  <string name="txt_already_monthly_premium">Edda Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Ebirimu tebisobola kutikkibwa. Kebera omukutu gwo</string>  
+  <string name="txt_later">Oluvannyuma</string>  
+  <string name="txt_premium_title_1">Funa okuyingira okutaliiko kkomo</string>
+  <string name="txt_premium_title_2">Ebintu ebikozesebwa mu kukola eby\'omulembe .</string>
+  <string name="txt_free_trial_desc">Osobola okusazaamu okuwandiika essaawa yonna - ng\'oyita ku Google Play app .</string>
+  <string name="txt_3day_free_trial">Okugezesebwa okw\'ennaku 3 okw\'obwereere .</string>
+  <string name="txt_continue">Eeyongera</string>
+</resources>

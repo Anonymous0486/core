@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Încercați-l gratuit</string>  
+  <string name="txt_try_free_trial_desc">Probă gratuită de 3 zile, puteți anula oricând abonamentul - prin aplicația Google Play</string>  
+  <string name="txt_premium_title">Obțineți acces nelimitat la funcțiile premium</string>  
+  <string name="txt_premium_offer">Experiență 100% fără anunțuri cu descărcare nelimitată, viteză rapidă de 10 ori.</string>  
+  <string name="txt_premium_offer_1">Fără reclame și multe altele</string>  
+  <string name="txt_premium_offer_2">Acțiuni imediate după apel</string>  
+  <string name="txt_premium_offer_3">Backup</string>  
+  <string name="txt_premium_offer_4">Blocare aplicație cu PIN</string>  
+  <string name="txt_premium_monthly_package">Oferta plan lunar</string>  
+  <string name="txt_premium_yearly_package">Oferta plan anual</string>  
+  <string name="txt_save">Salva</string>  
+  <string name="txt_month">Lună</string>  
+  <string name="txt_year">An</string>  
+  <string name="txt_yearly_premium">Pro Anual</string>  
+  <string name="txt_already_yearly_premium">Deja Pro Anual</string>  
+  <string name="txt_monthly_premium">Pro Lunar</string>  
+  <string name="txt_already_monthly_premium">Deja Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Conținutul nu poate fi încărcat. Verificați-vă conexiunea</string>  
+  <string name="txt_later">Mai târziu</string>  
+  <string name="txt_premium_title_1">Obțineți acces nelimitat la</string>
+  <string name="txt_premium_title_2">Caracteristici premium</string>
+  <string name="txt_free_trial_desc">Puteți anula abonamentul oricând - prin intermediul aplicației Google Play</string>
+  <string name="txt_3day_free_trial">Proces gratuit de 3 zile</string>
+  <string name="txt_continue">Continua</string>
+</resources>

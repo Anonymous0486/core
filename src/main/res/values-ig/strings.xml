@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Gbalịa ya n\'efu</string>  
+  <string name="txt_try_free_trial_desc">Ọnwụnwa n\'efu nke ụbọchị 3, ị nwere ike ịkagbu ndenye aha n\'oge ọ bụla - site na ngwa Google Play</string>  
+  <string name="txt_premium_title">Nweta njirimara adịchaghị agwụ agwụ</string>  
+  <string name="txt_premium_offer">Ahụmịhe enweghị mgbasa ozi 100% yana nbudata na-akparaghị ókè, ọsọ ọsọ 10x.</string>  
+  <string name="txt_premium_offer_1">Enweghị mgbasa ozi, yana ndị ọzọ</string>  
+  <string name="txt_premium_offer_2">Omume mgbe okuku gachara</string>  
+  <string name="txt_premium_offer_3">Ndabere</string>  
+  <string name="txt_premium_offer_4">Mkpọchi ngwa nwere PIN</string>  
+  <string name="txt_premium_monthly_package">Nye atụmatụ kwa ọnwa</string>  
+  <string name="txt_premium_yearly_package">Nye atụmatụ kwa afọ</string>  
+  <string name="txt_save">Chekwa</string>  
+  <string name="txt_month">Ọnwa</string>  
+  <string name="txt_year">Afọ</string>  
+  <string name="txt_yearly_premium">Pro kwa afọ</string>  
+  <string name="txt_already_yearly_premium">Ugbua Pro kwa afọ</string>  
+  <string name="txt_monthly_premium">Pro kwa ọnwa</string>  
+  <string name="txt_already_monthly_premium">Ugbua Pro kwa ọnwa</string>  
+  <string name="txt_timeout_billing_load">Enweghị ike ibunye ọdịnaya. Lelee njikọ gị</string>  
+  <string name="txt_later">N\'ikeazu</string>  
+  <string name="txt_premium_title_1">Nweta ohere na-akparaghị ókè</string>
+  <string name="txt_premium_title_2">Atụmatụ adịchaghị</string>
+  <string name="txt_free_trial_desc">You nwere ike ịkagbu ndebanye aha oge - site na Google Play App</string>
+  <string name="txt_3day_free_trial">Ikpe ụbọchị 3 n\'efu</string>
+  <string name="txt_continue">Isochi</string>
+</resources>

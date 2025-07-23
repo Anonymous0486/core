@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Δοκιμάστε το Δωρεάν</string>  
+  <string name="txt_try_free_trial_desc">Δωρεάν δοκιμή 3 ημερών, Μπορείτε να ακυρώσετε τη συνδρομή ανά πάσα στιγμή - μέσω της εφαρμογής Google Play</string>  
+  <string name="txt_premium_title">Αποκτήστε απεριόριστη πρόσβαση σε λειτουργίες Premium</string>  
+  <string name="txt_premium_offer">100% εμπειρία χωρίς διαφημίσεις με απεριόριστη λήψη, 10x γρήγορη ταχύτητα.</string>  
+  <string name="txt_premium_offer_1">Χωρίς διαφημίσεις και πολλά άλλα</string>  
+  <string name="txt_premium_offer_2">Άμεσες ενέργειες μετά την κλήση</string>  
+  <string name="txt_premium_offer_3">Εφεδρικός</string>  
+  <string name="txt_premium_offer_4">Κλείδωμα εφαρμογής με PIN</string>  
+  <string name="txt_premium_monthly_package">Μηνιαίο πρόγραμμα προσφοράς</string>  
+  <string name="txt_premium_yearly_package">Προσφορά Ετήσιο Πρόγραμμα</string>  
+  <string name="txt_save">Εκτός</string>  
+  <string name="txt_month">Μήνας</string>  
+  <string name="txt_year">Ετος</string>  
+  <string name="txt_yearly_premium">Επαγγελματική ετήσια</string>  
+  <string name="txt_already_yearly_premium">Ήδη Pro ετήσια</string>  
+  <string name="txt_monthly_premium">Pro Monthly</string>  
+  <string name="txt_already_monthly_premium">Ήδη Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Δεν είναι δυνατή η φόρτωση του περιεχομένου. Ελέγξτε τη σύνδεσή σας</string>  
+  <string name="txt_later">Αργότερα</string>  
+  <string name="txt_premium_title_1">Αποκτήστε απεριόριστη πρόσβαση στο</string>
+  <string name="txt_premium_title_2">Χαρακτηριστικά υψηλής ποιότητας</string>
+  <string name="txt_free_trial_desc">Μπορείτε να ακυρώσετε τη συνδρομή ανά πάσα στιγμή - μέσω της εφαρμογής Google Play</string>
+  <string name="txt_3day_free_trial">Δωρεάν δοκιμή 3 ημερών</string>
+  <string name="txt_continue">Συνεχίζω</string>
+</resources>

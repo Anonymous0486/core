@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">E leke Mahala</string>  
+  <string name="txt_try_free_trial_desc">3-matsatsi a mahala teko, O ka hlakola peeletšo nako efe kapa efe - ka Google Play tiriso ye</string>  
+  <string name="txt_premium_title">Hwetša Phihlelelo ye e sa Lekanyetšwego go Dikarolo tša Premium</string>  
+  <string name="txt_premium_offer">100% Ads-free boiphihlelo le sa lekanyetsoa thowuni, 10x Fast Speed.</string>  
+  <string name="txt_premium_offer_1">Ga go na dipapatšo, le tše dingwe</string>  
+  <string name="txt_premium_offer_2">Ditiro tša ka pela tša ka morago ga mogala</string>  
+  <string name="txt_premium_offer_3">Bekapo ya go dira bekapo</string>  
+  <string name="txt_premium_offer_4">Senotlolo sa App ka PIN</string>  
+  <string name="txt_premium_monthly_package">Neela Leano la Kgwedi le Kgwedi</string>  
+  <string name="txt_premium_yearly_package">Neela Leano la Ngwaga le Ngwaga</string>  
+  <string name="txt_save">Boloka</string>  
+  <string name="txt_month">Kgwedi</string>  
+  <string name="txt_year">Ngwaga</string>  
+  <string name="txt_yearly_premium">Pro Selemo le Selemo</string>  
+  <string name="txt_already_yearly_premium">E šetše e le Pro Selemo le Selemo</string>  
+  <string name="txt_monthly_premium">Pro Kgwedi le Kgwedi</string>  
+  <string name="txt_already_monthly_premium">E šetše e le Pro Kgwedi le Kgwedi</string>  
+  <string name="txt_timeout_billing_load">Diteng di ka se laelwe. Lekola kgokagano ya gago</string>  
+  <string name="txt_later">Moragonyana</string>  
+  <string name="txt_premium_title_1">Hwetša phihlelelo ye e sa lekanywego go .</string>
+  <string name="txt_premium_title_2">Dikarolo tša Premium .</string>
+  <string name="txt_free_trial_desc">O ka khansela peeletšo nako efe goba efe - ka tirišo ya Google Play .</string>
+  <string name="txt_3day_free_trial">Teko ya mahala ya matšatši a 3 .</string>
+  <string name="txt_continue">Tšwela pele</string>
+</resources>

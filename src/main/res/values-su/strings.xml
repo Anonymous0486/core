@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Coba éta Gratis</string>  
+  <string name="txt_try_free_trial_desc">Uji coba gratis 3 dinten, Anjeun tiasa ngabatalkeun langganan iraha waé - ngalangkungan aplikasi Google Play</string>  
+  <string name="txt_premium_title">Meunang Aksés Unlimited kana Fitur Premium</string>  
+  <string name="txt_premium_offer">100% Pangalaman bébas Iklan sareng unduhan anu henteu terbatas, 10x Kacepetan Gancang.</string>  
+  <string name="txt_premium_offer_1">Henteu aya iklan, sareng seueur deui</string>  
+  <string name="txt_premium_offer_2">Lampah instan pos-panggero</string>  
+  <string name="txt_premium_offer_3">Nyadangkeun</string>  
+  <string name="txt_premium_offer_4">Konci Aplikasi sareng PIN</string>  
+  <string name="txt_premium_monthly_package">Nawiskeun Plan Bulanan</string>  
+  <string name="txt_premium_yearly_package">Nawiskeun Rencana Taunan</string>  
+  <string name="txt_save">Simpen</string>  
+  <string name="txt_month">Bulan</string>  
+  <string name="txt_year">Taun</string>  
+  <string name="txt_yearly_premium">Pro taunan</string>  
+  <string name="txt_already_yearly_premium">Geus Pro Taunan</string>  
+  <string name="txt_monthly_premium">Pro Bulanan</string>  
+  <string name="txt_already_monthly_premium">Geus Pro Bulanan</string>  
+  <string name="txt_timeout_billing_load">Eusi teu tiasa dimuat. Pariksa sambungan anjeun</string>  
+  <string name="txt_later">Engké</string>  
+  <string name="txt_premium_title_1">Kéngingkeun aksés anu henteu terbatas</string>
+  <string name="txt_premium_title_2">Fitur premium</string>
+  <string name="txt_free_trial_desc">Anjeun tiasa ngabatalkeun langganan iraha wae - via aplikasi Google Play</string>
+  <string name="txt_3day_free_trial">Sidang 3 dinten gratis</string>
+  <string name="txt_continue">Nuluykeun</string>
+</resources>

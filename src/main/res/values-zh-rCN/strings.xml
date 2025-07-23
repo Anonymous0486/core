@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">免费试用</string>  
+  <string name="txt_try_free_trial_desc">3 天免费试用，您可以随时取消订阅 - 通过 Google Play 应用程序</string>  
+  <string name="txt_premium_title">无限制地访问高级功能</string>  
+  <string name="txt_premium_offer">100% 无广告体验，无限下载，10 倍快的速度。</string>  
+  <string name="txt_premium_offer_1">没有广告，还有更多</string>  
+  <string name="txt_premium_offer_2">即时通话后操作</string>  
+  <string name="txt_premium_offer_3">备份</string>  
+  <string name="txt_premium_offer_4">使用 PIN 码锁定应用程序</string>  
+  <string name="txt_premium_monthly_package">提供月度计划</string>  
+  <string name="txt_premium_yearly_package">提供年度计划</string>  
+  <string name="txt_save">节省</string>  
+  <string name="txt_month">月</string>  
+  <string name="txt_year">年</string>  
+  <string name="txt_yearly_premium">专业年度</string>  
+  <string name="txt_already_yearly_premium">已经是专业版每年</string>  
+  <string name="txt_monthly_premium">专业月刊</string>  
+  <string name="txt_already_monthly_premium">已经是专业月刊</string>  
+  <string name="txt_timeout_billing_load">无法加载内容。检查您的连接</string>  
+  <string name="txt_later">之后</string>  
+  <string name="txt_premium_title_1">无限制地访问</string>
+  <string name="txt_premium_title_2">优质功能</string>
+  <string name="txt_free_trial_desc">您可以随时取消订阅 - 通过Google Play应用程序</string>
+  <string name="txt_3day_free_trial">免费3天试用</string>
+  <string name="txt_continue">继续</string>
+</resources>

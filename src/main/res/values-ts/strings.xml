@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Ringeta ku swi endla Mahala</string>  
+  <string name="txt_try_free_trial_desc">3-days free trial, U nga khansela xikhokhelo nkarhi wihi na wihi - hi ku tirhisa app ya Google Play</string>  
+  <string name="txt_premium_title">Kuma Mfikelelo lowu nga pimiwangiki eka Swihlawulekisi swa Premium</string>  
+  <string name="txt_premium_offer">100% Ntokoto wa mahala wa swinavetiso hi ku dawuniloda loku nga pimiwangiki, 10x Fast Speed.</string>  
+  <string name="txt_premium_offer_1">Ku hava swinavetiso, ni swin’wana</string>  
+  <string name="txt_premium_offer_2">Swiendlo swa xihatla swa le ndzhaku ka riqingho</string>  
+  <string name="txt_premium_offer_3">Backup ya vuhlayiselo</string>  
+  <string name="txt_premium_offer_4">App Lock hi PIN</string>  
+  <string name="txt_premium_monthly_package">Nyikela Pulani ya N’hweti na N’hweti</string>  
+  <string name="txt_premium_yearly_package">Nyikela Pulani ya Lembe na Lembe</string>  
+  <string name="txt_save">Hlayisa</string>  
+  <string name="txt_month">N\'hweti</string>  
+  <string name="txt_year">Lembe</string>  
+  <string name="txt_yearly_premium">Pro Lembe na Lembe</string>  
+  <string name="txt_already_yearly_premium">Se i Pro Lembe na Lembe</string>  
+  <string name="txt_monthly_premium">Pro N\'hweti na N\'hweti</string>  
+  <string name="txt_already_monthly_premium">Se i Pro N\'hweti na N\'hweti</string>  
+  <string name="txt_timeout_billing_load">Swilo leswi nga endzeni a swi nge layichiwi. Languta vuhlanganisi bya wena</string>  
+  <string name="txt_later">Endzhaku</string>  
+  <string name="txt_premium_title_1">Kuma mfikelelo lowu nga riki na swipimelo eka .</string>
+  <string name="txt_premium_title_2">Swihlawulekisi swa xiyimo xa le henhla .</string>
+  <string name="txt_free_trial_desc">U nga ha khansela xikhokhelo nkarhi wihi na wihi - hi ku tirhisa app ya Google Play .</string>
+  <string name="txt_3day_free_trial">Xikambelo xa mahala xa masiku ya 3 .</string>
+  <string name="txt_continue">Yisa emahlweni</string>
+</resources>

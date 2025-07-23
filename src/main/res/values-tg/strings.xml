@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Онро ройгон санҷед</string>  
+  <string name="txt_try_free_trial_desc">Озмоиши 3-рӯзаи ройгон, Шумо метавонед обунаро дар вақти дилхоҳ бекор кунед - тавассути барномаи Google Play</string>  
+  <string name="txt_premium_title">Дастрасии номаҳдуд ба хусусиятҳои Premium гиред</string>  
+  <string name="txt_premium_offer">100% Таҷрибаи бидуни таблиғ бо зеркашии номаҳдуд, 10x Суръати Fast.</string>  
+  <string name="txt_premium_offer_1">Бе реклама ва ғайра</string>  
+  <string name="txt_premium_offer_2">Амалҳои фаврии пас аз занг</string>  
+  <string name="txt_premium_offer_3">Нусхаи эҳтиётӣ</string>  
+  <string name="txt_premium_offer_4">Қулфи барнома бо PIN</string>  
+  <string name="txt_premium_monthly_package">Нақшаи моҳонаро пешниҳод кунед</string>  
+  <string name="txt_premium_yearly_package">Нақшаи солонаро пешниҳод кунед</string>  
+  <string name="txt_save">Захира кунед</string>  
+  <string name="txt_month">Моҳ</string>  
+  <string name="txt_year">Соли</string>  
+  <string name="txt_yearly_premium">Pro солона</string>  
+  <string name="txt_already_yearly_premium">Аллакай Pro солона</string>  
+  <string name="txt_monthly_premium">Pro моҳона</string>  
+  <string name="txt_already_monthly_premium">Аллакай Pro моҳона</string>  
+  <string name="txt_timeout_billing_load">Мундариҷаро бор кардан мумкин нест. Пайвастагии худро санҷед</string>  
+  <string name="txt_later">Баъдтар</string>  
+  <string name="txt_premium_title_1">Дастрасии номаҳдуд ба</string>
+  <string name="txt_premium_title_2">Хусусиятҳои мукофотӣ</string>
+  <string name="txt_free_trial_desc">Шумо метавонед ҳама гуна обунаро бекор кунед - тавассути барномаи Google Play</string>
+  <string name="txt_3day_free_trial">Санҷиши ройгони 3-рӯз</string>
+  <string name="txt_continue">Давом додан</string>
+</resources>

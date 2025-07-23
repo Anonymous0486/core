@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Пробајте бесплатно</string>  
+  <string name="txt_try_free_trial_desc">3-дневна бесплатна пробна верзија, можете отказати претплату у било ком тренутку - преко апликације Гоогле Плаи</string>  
+  <string name="txt_premium_title">Добијте неограничен приступ премијум функцијама</string>  
+  <string name="txt_premium_offer">100% искуство без огласа са неограниченим преузимањем, 10к брзином.</string>  
+  <string name="txt_premium_offer_1">Без реклама и више</string>  
+  <string name="txt_premium_offer_2">Тренутне радње након позива</string>  
+  <string name="txt_premium_offer_3">Бацкуп</string>  
+  <string name="txt_premium_offer_4">Закључавање апликације са ПИН-ом</string>  
+  <string name="txt_premium_monthly_package">Понудите месечни план</string>  
+  <string name="txt_premium_yearly_package">Понудите годишњи план</string>  
+  <string name="txt_save">Сачувај</string>  
+  <string name="txt_month">Месец</string>  
+  <string name="txt_year">Година</string>  
+  <string name="txt_yearly_premium">Про Иеарли</string>  
+  <string name="txt_already_yearly_premium">Већ Про Годишње</string>  
+  <string name="txt_monthly_premium">Про Монтхли</string>  
+  <string name="txt_already_monthly_premium">Већ Про Монтхли</string>  
+  <string name="txt_timeout_billing_load">Садржај се не може учитати. Проверите своју везу</string>  
+  <string name="txt_later">Касније</string>  
+  <string name="txt_premium_title_1">Добити неограничен приступ</string>
+  <string name="txt_premium_title_2">Премиум карактеристике</string>
+  <string name="txt_free_trial_desc">Можете да откажете претплату у било којем тренутку - путем апликације Гоогле Плаи</string>
+  <string name="txt_3day_free_trial">Бесплатно тродневно суђење</string>
+  <string name="txt_continue">Настављати</string>
+</resources>

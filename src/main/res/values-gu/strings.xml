@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">તેને મફત અજમાવી જુઓ</string>  
+  <string name="txt_try_free_trial_desc">3-દિવસની મફત અજમાયશ, તમે Google Play એપ્લિકેશન દ્વારા - કોઈપણ સમયે સબ્સ્ક્રિપ્શન રદ કરી શકો છો</string>  
+  <string name="txt_premium_title">પ્રીમિયમ સુવિધાઓની અમર્યાદિત ઍક્સેસ મેળવો</string>  
+  <string name="txt_premium_offer">અમર્યાદિત ડાઉનલોડિંગ, 10x ઝડપી ગતિ સાથે 100% જાહેરાત-મુક્ત અનુભવ.</string>  
+  <string name="txt_premium_offer_1">કોઈ જાહેરાતો નહીં અને વધુ</string>  
+  <string name="txt_premium_offer_2">ત્વરિત પોસ્ટ-કોલ ક્રિયાઓ</string>  
+  <string name="txt_premium_offer_3">બેકઅપ</string>  
+  <string name="txt_premium_offer_4">પિન સાથે એપ લોક</string>  
+  <string name="txt_premium_monthly_package">માસિક યોજના ઑફર કરો</string>  
+  <string name="txt_premium_yearly_package">વાર્ષિક યોજના ઓફર કરો</string>  
+  <string name="txt_save">સાચવો</string>  
+  <string name="txt_month">મહિનો</string>  
+  <string name="txt_year">વર્ષ</string>  
+  <string name="txt_yearly_premium">પ્રો વાર્ષિક</string>  
+  <string name="txt_already_yearly_premium">પહેલેથી પ્રો વાર્ષિક</string>  
+  <string name="txt_monthly_premium">પ્રો માસિક</string>  
+  <string name="txt_already_monthly_premium">પહેલેથી જ પ્રો માસિક</string>  
+  <string name="txt_timeout_billing_load">સામગ્રી લોડ કરી શકાતી નથી. તમારું કનેક્શન તપાસો</string>  
+  <string name="txt_later">પાછળથી</string>  
+  <string name="txt_premium_title_1">અમર્યાદિત access ક્સેસ મેળવો</string>
+  <string name="txt_premium_title_2">પ્રીમિયમ સુવિધાઓ</string>
+  <string name="txt_free_trial_desc">તમે કોઈપણ સમયે સબ્સ્ક્રિપ્શનને રદ કરી શકો છો - ગૂગલ પ્લે એપ્લિકેશન દ્વારા</string>
+  <string name="txt_3day_free_trial">મફત 3-દિવસીય અજમાયશ</string>
+  <string name="txt_continue">ચાલુ રાખવું</string>
+</resources>

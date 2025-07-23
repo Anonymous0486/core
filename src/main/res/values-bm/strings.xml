@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">A ɲini k\'a lajɛ Free</string>  
+  <string name="txt_try_free_trial_desc">Tile 3-kɔrɔbɔli fu, I bɛ se ka abonné (abonnement) tiɲɛ waati o waati - Google Play app fɛ</string>  
+  <string name="txt_premium_title">Aw ye dan tɛ sɔrɔ Premium Features la</string>  
+  <string name="txt_premium_offer">100% Ads-free experience ni telesarse dan tɛ, 10x Fast Speed.</string>  
+  <string name="txt_premium_offer_1">Piblisite si tɛ yen, ani fɛn wɛrɛw</string>  
+  <string name="txt_premium_offer_2">Weele kɔfɛ walew teliya la</string>  
+  <string name="txt_premium_offer_3">Backup (Baarakɛda).</string>  
+  <string name="txt_premium_offer_4">App Lock ni PIN ye</string>  
+  <string name="txt_premium_monthly_package">Kalo o kalo bolodacogo jira</string>  
+  <string name="txt_premium_yearly_package">San o san bolodacogo jira</string>  
+  <string name="txt_save">Ka mara</string>  
+  <string name="txt_month">Kalo</string>  
+  <string name="txt_year">San</string>  
+  <string name="txt_yearly_premium">Pro San o san</string>  
+  <string name="txt_already_yearly_premium">Kaban Pro San o San</string>  
+  <string name="txt_monthly_premium">Pro Kalo o kalo</string>  
+  <string name="txt_already_monthly_premium">Kaban Pro Kalo o kalo</string>  
+  <string name="txt_timeout_billing_load">Kɔnɔkow tɛ se ka doni. Aw ye aw ka jɛɲɔgɔnya lajɛ</string>  
+  <string name="txt_later">Kɔfɛ</string>  
+  <string name="txt_premium_title_1">Aw ye dan tɛ sɔrɔ ka don .</string>
+  <string name="txt_premium_title_2">Premium features .</string>
+  <string name="txt_free_trial_desc">Aw bɛ se ka abonnés (abonnés) dabila waati o waati - Google Play app sababu fɛ .</string>
+  <string name="txt_3day_free_trial">Tile 3 kɔrɔbɔli fu .</string>
+  <string name="txt_continue">Ka taa fɛ</string>
+</resources>

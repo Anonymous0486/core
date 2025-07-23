@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Gerageza Ubuntu</string>  
+  <string name="txt_try_free_trial_desc">Iminsi 3 yubusa, Urashobora guhagarika abiyandikishije igihe icyo aricyo cyose - ukoresheje porogaramu ya Google Play</string>  
+  <string name="txt_premium_title">Kubona Imipaka Itagira imipaka Kuri Premium Ibiranga</string>  
+  <string name="txt_premium_offer">100% Ubunararibonye bwubusa hamwe no gukuramo imipaka, 10x Umuvuduko Wihuse.</string>  
+  <string name="txt_premium_offer_1">Nta matangazo, nibindi byinshi</string>  
+  <string name="txt_premium_offer_2">Ako kanya nyuma yo guhamagara ibikorwa</string>  
+  <string name="txt_premium_offer_3">Ububiko</string>  
+  <string name="txt_premium_offer_4">Gufunga porogaramu hamwe na PIN</string>  
+  <string name="txt_premium_monthly_package">Tanga gahunda ya buri kwezi</string>  
+  <string name="txt_premium_yearly_package">Tanga Gahunda Yumwaka</string>  
+  <string name="txt_save">Bika</string>  
+  <string name="txt_month">Ukwezi</string>  
+  <string name="txt_year">Umwaka</string>  
+  <string name="txt_yearly_premium">Pro Buri mwaka</string>  
+  <string name="txt_already_yearly_premium">Bimaze Pro Buri mwaka</string>  
+  <string name="txt_monthly_premium">Pro Ukwezi</string>  
+  <string name="txt_already_monthly_premium">Bimaze Pro Ukwezi</string>  
+  <string name="txt_timeout_billing_load">Ibirimo ntibishobora gutwarwa. Reba aho uhurira</string>  
+  <string name="txt_later">Nyuma</string>  
+  <string name="txt_premium_title_1">Kubona uburyo butagira imipaka kuri</string>
+  <string name="txt_premium_title_2">Ibiranga premium</string>
+  <string name="txt_free_trial_desc">Urashobora guhagarika Kwiyandikisha Igihe cyose - ukoresheje porogaramu ya Google</string>
+  <string name="txt_3day_free_trial">Ikigeragezo cy\'iminsi 3</string>
+  <string name="txt_continue">Komeza</string>
+</resources>

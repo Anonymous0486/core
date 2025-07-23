@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">無料でお試しください</string>  
+  <string name="txt_try_free_trial_desc">3 日間の無料トライアル、Google Play アプリ経由でいつでもサブスクリプションをキャンセルできます</string>  
+  <string name="txt_premium_title">プレミアム機能に無制限にアクセスできます</string>  
+  <string name="txt_premium_offer">100% 広告なし、無制限のダウンロード、10 倍の高速体験。</string>  
+  <string name="txt_premium_offer_1">広告なしなど</string>  
+  <string name="txt_premium_offer_2">通話後の即時アクション</string>  
+  <string name="txt_premium_offer_3">バックアップ</string>  
+  <string name="txt_premium_offer_4">PINによるアプリロック</string>  
+  <string name="txt_premium_monthly_package">月額プランを提供</string>  
+  <string name="txt_premium_yearly_package">年間プランを提供</string>  
+  <string name="txt_save">保存</string>  
+  <string name="txt_month">月</string>  
+  <string name="txt_year">年</string>  
+  <string name="txt_yearly_premium">プロ年間</string>  
+  <string name="txt_already_yearly_premium">すでにプロイヤーリー</string>  
+  <string name="txt_monthly_premium">プロマンスリー</string>  
+  <string name="txt_already_monthly_premium">すでにプロマンスリー</string>  
+  <string name="txt_timeout_billing_load">コンテンツをロードできません。接続を確認してください</string>  
+  <string name="txt_later">後で</string>  
+  <string name="txt_premium_title_1">無制限のアクセスを取得します</string>
+  <string name="txt_premium_title_2">プレミアム機能</string>
+  <string name="txt_free_trial_desc">Google Playアプリを介してサブスクリプションをいつでもキャンセルできます</string>
+  <string name="txt_3day_free_trial">無料の3日間のトライアル</string>
+  <string name="txt_continue">続く</string>
+</resources>

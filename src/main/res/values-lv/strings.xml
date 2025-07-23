@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Izmēģiniet to bez maksas</string>  
+  <string name="txt_try_free_trial_desc">3 dienu bezmaksas izmēģinājuma periods. Varat jebkurā laikā anulēt abonementu, izmantojot lietotni Google Play</string>  
+  <string name="txt_premium_title">Iegūstiet neierobežotu piekļuvi Premium funkcijām</string>  
+  <string name="txt_premium_offer">100% bez reklāmām ar neierobežotu lejupielādi, 10x ātrdarbīgs.</string>  
+  <string name="txt_premium_offer_1">Bez reklāmām un vairāk</string>  
+  <string name="txt_premium_offer_2">Tūlītējas darbības pēc zvana</string>  
+  <string name="txt_premium_offer_3">Dublējums</string>  
+  <string name="txt_premium_offer_4">Lietotņu bloķēšana ar PIN</string>  
+  <string name="txt_premium_monthly_package">Piedāvājiet ikmēneša plānu</string>  
+  <string name="txt_premium_yearly_package">Piedāvājiet gada plānu</string>  
+  <string name="txt_save">Saglabāt</string>  
+  <string name="txt_month">Mēnesis</string>  
+  <string name="txt_year">Gads</string>  
+  <string name="txt_yearly_premium">Pro katru gadu</string>  
+  <string name="txt_already_yearly_premium">Jau Pro katru gadu</string>  
+  <string name="txt_monthly_premium">Pro Monthly</string>  
+  <string name="txt_already_monthly_premium">Jau Pro Monthly</string>  
+  <string name="txt_timeout_billing_load">Saturu nevar ielādēt. Pārbaudiet savienojumu</string>  
+  <string name="txt_later">Vēlāk</string>  
+  <string name="txt_premium_title_1">Iegūstiet neierobežotu piekļuvi</string>
+  <string name="txt_premium_title_2">Premium funkcijas</string>
+  <string name="txt_free_trial_desc">Jūs varat atcelt abonēšanu jebkurā laikā - izmantojot lietotni Google Play</string>
+  <string name="txt_3day_free_trial">Bezmaksas 3 dienu izmēģinājums</string>
+  <string name="txt_continue">Turpināties</string>
+</resources>

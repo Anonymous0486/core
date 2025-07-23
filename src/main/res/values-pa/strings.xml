@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">ਇਸਨੂੰ ਮੁਫ਼ਤ ਵਿੱਚ ਅਜ਼ਮਾਓ</string>  
+  <string name="txt_try_free_trial_desc">3-ਦਿਨਾਂ ਦੀ ਮੁਫ਼ਤ ਅਜ਼ਮਾਇਸ਼, ਤੁਸੀਂ ਕਿਸੇ ਵੀ ਸਮੇਂ ਗਾਹਕੀ ਨੂੰ ਰੱਦ ਕਰ ਸਕਦੇ ਹੋ - Google Play ਐਪ ਰਾਹੀਂ</string>  
+  <string name="txt_premium_title">ਪ੍ਰੀਮੀਅਮ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਤੱਕ ਅਸੀਮਤ ਪਹੁੰਚ ਪ੍ਰਾਪਤ ਕਰੋ</string>  
+  <string name="txt_premium_offer">ਅਸੀਮਤ ਡਾਊਨਲੋਡਿੰਗ, 10x ਤੇਜ਼ ਗਤੀ ਦੇ ਨਾਲ 100% ਵਿਗਿਆਪਨ-ਮੁਕਤ ਅਨੁਭਵ।</string>  
+  <string name="txt_premium_offer_1">ਕੋਈ ਵਿਗਿਆਪਨ ਨਹੀਂ, ਅਤੇ ਹੋਰ</string>  
+  <string name="txt_premium_offer_2">ਕਾਲ ਤੋਂ ਬਾਅਦ ਦੀਆਂ ਤੁਰੰਤ ਕਾਰਵਾਈਆਂ</string>  
+  <string name="txt_premium_offer_3">ਬੈਕਅੱਪ</string>  
+  <string name="txt_premium_offer_4">ਪਿੰਨ ਨਾਲ ਐਪ ਲੌਕ</string>  
+  <string name="txt_premium_monthly_package">ਮਹੀਨਾਵਾਰ ਯੋਜਨਾ ਦੀ ਪੇਸ਼ਕਸ਼ ਕਰੋ</string>  
+  <string name="txt_premium_yearly_package">ਸਲਾਨਾ ਯੋਜਨਾ ਦੀ ਪੇਸ਼ਕਸ਼ ਕਰੋ</string>  
+  <string name="txt_save">ਸੇਵ ਕਰੋ</string>  
+  <string name="txt_month">ਮਹੀਨਾ</string>  
+  <string name="txt_year">ਸਾਲ</string>  
+  <string name="txt_yearly_premium">ਪ੍ਰੋ ਸਾਲਾਨਾ</string>  
+  <string name="txt_already_yearly_premium">ਪਹਿਲਾਂ ਹੀ ਪ੍ਰੋ ਸਾਲਾਨਾ</string>  
+  <string name="txt_monthly_premium">ਪ੍ਰੋ ਮਾਸਿਕ</string>  
+  <string name="txt_already_monthly_premium">ਪਹਿਲਾਂ ਹੀ ਪ੍ਰੋ ਮਾਸਿਕ</string>  
+  <string name="txt_timeout_billing_load">ਸਮੱਗਰੀ ਨੂੰ ਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ। ਆਪਣੇ ਕਨੈਕਸ਼ਨ ਦੀ ਜਾਂਚ ਕਰੋ</string>  
+  <string name="txt_later">ਬਾਅਦ ਵਿਚ</string>  
+  <string name="txt_premium_title_1">ਤੱਕ ਅਸੀਮਿਤ ਪਹੁੰਚ ਪ੍ਰਾਪਤ ਕਰੋ</string>
+  <string name="txt_premium_title_2">ਪ੍ਰੀਮੀਅਮ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ</string>
+  <string name="txt_free_trial_desc">ਤੁਸੀਂ ਗਾਹਕੀ ਨੂੰ ਰੱਦ ਕਰ ਸਕਦੇ ਹੋ - ਗੂਗਲ ਪਲੇ ਐਪ ਦੁਆਰਾ</string>
+  <string name="txt_3day_free_trial">ਮੁਫਤ 3-ਦਿਨ ਦੀ ਅਜ਼ਮਾਇਸ਼</string>
+  <string name="txt_continue">ਜਾਰੀ ਰੱਖੋ</string>
+</resources>

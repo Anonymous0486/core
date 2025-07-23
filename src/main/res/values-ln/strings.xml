@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Meka yango Ofele</string>  
+  <string name="txt_try_free_trial_desc">3-jours test gratuit, Okoki ko annuler abonnément tango nionso - na nzela ya appli Google Play</string>  
+  <string name="txt_premium_title">Zua Accès Illimité na ba fonctionnalités Premium</string>  
+  <string name="txt_premium_offer">100% Expérience sans publicités na téléchargement illimité, 10x Vitesse ya mbangu.</string>  
+  <string name="txt_premium_offer_1">Ba piblisite te, mpe makambo mosusu</string>  
+  <string name="txt_premium_offer_2">Misala ya mbala moko nsima ya kobenga</string>  
+  <string name="txt_premium_offer_3">Sauvegarde ya sauvegarde</string>  
+  <string name="txt_premium_offer_4">Bokangami ya App na PIN</string>  
+  <string name="txt_premium_monthly_package">Pesá Plan ya Sanza na Sanza</string>  
+  <string name="txt_premium_yearly_package">Pesá Plan ya mbula na mbula</string>  
+  <string name="txt_save">Kobikisa</string>  
+  <string name="txt_month">Sanza</string>  
+  <string name="txt_year">Mbula</string>  
+  <string name="txt_yearly_premium">Pro Mbula na mbula</string>  
+  <string name="txt_already_yearly_premium">Déjà Pro Annuel na mbula</string>  
+  <string name="txt_monthly_premium">Pro Sanza na sanza</string>  
+  <string name="txt_already_monthly_premium">Déjà Pro Mois na Sanza</string>  
+  <string name="txt_timeout_billing_load">Contenu ekoki kozala chargé te. Tala connexion na yo</string>  
+  <string name="txt_later">Nsima</string>  
+  <string name="txt_premium_title_1">Bozwa nzela ya kokɔta na nzela ya kozanga ndelo mpo na kozwa .</string>
+  <string name="txt_premium_title_2">Makambo ya liboso .</string>
+  <string name="txt_free_trial_desc">Okoki ko annuler abonnément na tango nionso - na nzela ya appli Google Play .</string>
+  <string name="txt_3day_free_trial">Komekama ya mikolo 3 ya ofele .</string>
+  <string name="txt_continue">Kokoba</string>
+</resources>

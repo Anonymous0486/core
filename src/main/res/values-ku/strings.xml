@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Belaş biceribîne</string>  
+  <string name="txt_try_free_trial_desc">3-roj ceribandina belaş, Hûn dikarin her dem abonetê betal bikin - bi serîlêdana Google Play-ê</string>  
+  <string name="txt_premium_title">Gihîştina Bêsînor ji Taybetmendiyên Premium bistînin</string>  
+  <string name="txt_premium_offer">100% Tecrubeya bê reklam bi dakêşana bêsînor, Leza Zû 10x.</string>  
+  <string name="txt_premium_offer_1">Ne reklam, û bêtir</string>  
+  <string name="txt_premium_offer_2">Çalakiyên post-banga bilez</string>  
+  <string name="txt_premium_offer_3">Backup</string>  
+  <string name="txt_premium_offer_4">App Lock bi PIN</string>  
+  <string name="txt_premium_monthly_package">Plana mehane pêşkêş bikin</string>  
+  <string name="txt_premium_yearly_package">Plana salane pêşkêş bikin</string>  
+  <string name="txt_save">Rizgarkirin</string>  
+  <string name="txt_month">Meh</string>  
+  <string name="txt_year">Sal</string>  
+  <string name="txt_yearly_premium">Pro Yearly</string>  
+  <string name="txt_already_yearly_premium">Jixwe Pro Salane</string>  
+  <string name="txt_monthly_premium">Pro Monthly</string>  
+  <string name="txt_already_monthly_premium">Jixwe Pro Mehane</string>  
+  <string name="txt_timeout_billing_load">Naverok nayê barkirin. Têkiliya xwe kontrol bikin</string>  
+  <string name="txt_later">Paşan</string>  
+  <string name="txt_premium_title_1">Gihîştina bêsînor bistînin</string>
+  <string name="txt_premium_title_2">Taybetmendiyên Premium</string>
+  <string name="txt_free_trial_desc">Hûn dikarin di her kêliyê de betal bikin - bi rêya Google Play App</string>
+  <string name="txt_3day_free_trial">Doza 3-Rojên belaş</string>
+  <string name="txt_continue">Berdewamkirin</string>
+</resources>

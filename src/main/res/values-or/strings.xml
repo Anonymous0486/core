@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">ଏହାକୁ ମାଗଣା ଚେଷ୍ଟା କରନ୍ତୁ |</string>  
+  <string name="txt_try_free_trial_desc">3 ଦିନିଆ ମାଗଣା ପରୀକ୍ଷା, ଆପଣ ଯେକ time ଣସି ସମୟରେ ସଦସ୍ୟତା ବାତିଲ କରିପାରିବେ - ଗୁଗୁଲ୍ ପ୍ଲେ ଆପ୍ ମାଧ୍ୟମରେ |</string>  
+  <string name="txt_premium_title">ପ୍ରିମିୟମ୍ ବ Features ଶିଷ୍ଟ୍ୟଗୁଡିକରେ ଅସୀମିତ ପ୍ରବେଶ ପ୍ରାପ୍ତ କରନ୍ତୁ |</string>  
+  <string name="txt_premium_offer">ଅସୀମିତ ଡାଉନଲୋଡ୍, 100x ଫାଷ୍ଟ ସ୍ପିଡ୍ ସହିତ 100% ବିଜ୍ଞାପନମୁକ୍ତ ଅଭିଜ୍ଞତା |</string>  
+  <string name="txt_premium_offer_1">କ ads ଣସି ବିଜ୍ଞାପନ ନାହିଁ, ଏବଂ ଅଧିକ |</string>  
+  <string name="txt_premium_offer_2">ତତକ୍ଷଣାତ୍ କଲ୍-କ୍ରିୟାଗୁଡ଼ିକ |</string>  
+  <string name="txt_premium_offer_3">ନକଲ ସଂରକ୍ଷଣ</string>  
+  <string name="txt_premium_offer_4">PIN ସହିତ ଆପ୍ ଲକ୍ |</string>  
+  <string name="txt_premium_monthly_package">ମାସିକ ଯୋଜନା ଅଫର୍ କରନ୍ତୁ |</string>  
+  <string name="txt_premium_yearly_package">ବାର୍ଷିକ ଯୋଜନା ପ୍ରଦାନ କରନ୍ତୁ |</string>  
+  <string name="txt_save">ସଞ୍ଚୟ କରନ୍ତୁ |</string>  
+  <string name="txt_month">ମାସ</string>  
+  <string name="txt_year">ବର୍ଷ</string>  
+  <string name="txt_yearly_premium">ପ୍ରୋ ବାର୍ଷିକ |</string>  
+  <string name="txt_already_yearly_premium">ପୂର୍ବରୁ ପ୍ରୋ ବାର୍ଷିକ |</string>  
+  <string name="txt_monthly_premium">ପ୍ରୋ ମାସିକ</string>  
+  <string name="txt_already_monthly_premium">ପୂର୍ବରୁ ପ୍ରୋ ମାସିକ |</string>  
+  <string name="txt_timeout_billing_load">ବିଷୟବସ୍ତୁ ଲୋଡ୍ ହୋଇପାରିବ ନାହିଁ | ଆପଣଙ୍କର ସଂଯୋଗ ଯାଞ୍ଚ କରନ୍ତୁ |</string>  
+  <string name="txt_later">ପରେ</string>  
+  <string name="txt_premium_title_1">କୁ ଅସୀମିତ ପ୍ରବେଶ ପାଆନ୍ତୁ |</string>
+  <string name="txt_premium_title_2">ପ୍ରିମିୟମ୍ ବ features ଶିଷ୍ଟ୍ୟଗୁଡିକ |</string>
+  <string name="txt_free_trial_desc">ଆପଣ ଯେକ time ଣସି ସମୟରେ ସଦସ୍ୟତା ବାତିଲ୍ କରିପାରିବେ - ଗୁଗୁଲ୍ ପ୍ଲେ ଆପ୍ ମାଧ୍ୟମରେ |</string>
+  <string name="txt_3day_free_trial">ମାଗଣା 3-ଦିନ ପରୀକ୍ଷା |</string>
+  <string name="txt_continue">ଜାରି ରଖ |</string>
+</resources>

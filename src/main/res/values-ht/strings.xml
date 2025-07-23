@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Automatically translated by Globalization Translator (https://github.com/wilinz/globalization-translator)-->
+<resources> 
+  <string name="txt_try_free_trial">Eseye li gratis</string>  
+  <string name="txt_try_free_trial_desc">3-jou gratis esè, Ou ka anile abònman nenpòt lè - atravè app Google Play la</string>  
+  <string name="txt_premium_title">Jwenn Aksè San limit nan Karakteristik Premium</string>  
+  <string name="txt_premium_offer">Eksperyans 100% san piblisite ak telechaje san limit, 10x vitès rapid.</string>  
+  <string name="txt_premium_offer_1">Pa gen anons, ak plis ankò</string>  
+  <string name="txt_premium_offer_2">Aksyon apre apèl instant</string>  
+  <string name="txt_premium_offer_3">Sovgad</string>  
+  <string name="txt_premium_offer_4">App Lock ak PIN</string>  
+  <string name="txt_premium_monthly_package">Ofri Plan Mansyèl</string>  
+  <string name="txt_premium_yearly_package">Ofri Plan Anyèl</string>  
+  <string name="txt_save">Sove</string>  
+  <string name="txt_month">Mwa</string>  
+  <string name="txt_year">Ane</string>  
+  <string name="txt_yearly_premium">Pro Anyèl</string>  
+  <string name="txt_already_yearly_premium">Deja Pro Anyèl</string>  
+  <string name="txt_monthly_premium">Pro chak mwa</string>  
+  <string name="txt_already_monthly_premium">Deja Pro Mansyèl</string>  
+  <string name="txt_timeout_billing_load">Kontni pa ka chaje. Tcheke koneksyon ou</string>  
+  <string name="txt_later">Pi ta</string>  
+  <string name="txt_premium_title_1">Jwenn aksè san limit nan</string>
+  <string name="txt_premium_title_2">Premium Karakteristik</string>
+  <string name="txt_free_trial_desc">Ou ka anile abònman nenpòt lè - atravè app a Google Jwe</string>
+  <string name="txt_3day_free_trial">Jijman gratis 3-jou</string>
+  <string name="txt_continue">Kontinye</string>
+</resources>
