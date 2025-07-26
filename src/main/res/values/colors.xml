@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAds">#068abf</color>
+    <color name="colorAdsButton">#2471ff</color>
+    <color name="color_main">#068abf</color>
+
+
+    <color name="blueDark">#062737</color>
+    <color name="yellow">#eed202 </color>
+
+    <color name="text_des">#B0B0B0</color>
+
+    <color name="rating_title">#415368</color>
+    <color name="rating_button">#ff5582</color>
+    <color name="rating_desc">#cccccc</color>
+    <color name="rating_star">#fed555</color>
+
+    <color name="lightTransparent">#16000000</color>
+
+    <color name="ads_btn_background_tint">#2471ff</color>
+    <color name="ads_btn_text_color">#ffffffff</color>
+    <color name="ads_btn_ripple_color">#ffffffff</color>
+
+    <color name="ads_text_color">@color/black</color>
+    <color name="ads_border_color">#C4CDE0</color>
+
+    <color name="survey_main_color">#5D9EFF</color>
+    <color name="survey_secondary_color">#385D9EFF</color>
+
+    <color name="shimmer_base_color">@color/white</color>
+    <color name="shimmer_highlight_color">@color/white</color>
+
+    //Common
+
+    <color name="colorPrimary">#3B82F6</color>
+    <color name="colorPrimaryDark">#102B46</color>
+    <color name="colorAccent">#F1C40E</color>
+    <color name="colorAccentDark">#024302</color>
+    <color name="greenEnergy">#48AB7C</color>
+    <color name="black">#000000</color>
+    <color name="darkGray">#727272</color>
+    <color name="gray">#BCBCBC</color>
+    <color name="lightGray">#E3E3E3</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="blue">#2CB6FD</color>
+    <color name="red">#e20404</color>
+    <color name="backgroundGray">#FAFAFA</color>
+    <color name="backgroundDarkGray">#E1E1E1</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGray">#BCBCBC</color>
+    <color name="colorDarkGray">#040707</color>
+    <color name="lightBlack">#33000000</color>
+    <color name="color_3">#2C2C2E</color>
+    <color name="color_primary">#0463CA</color>
+    <color name="colorF5F5F5">#F5F5F5</color>
+    <color name="colorButtonDisable">#5F6168</color>
+    <color name="color111111">#111111</color>
+    <color name="backgroundProgress">#99000000</color>
+    <color name="app_color_black">#000000</color>
+    <color name="colorF3F4F6">#F3F4F6</color>
+    <color name="colorGray_02">#E5E7EB</color>
+    <color name="colorGray_08">#1F2937</color>
+    <color name="color4B5563">#4B5563</color>
+    <color name="color9CA3AF">#9CA3AF</color>
+</resources>

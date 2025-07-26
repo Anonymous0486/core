@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/btn_action_negative" android:state_enabled="false"/>
+    <item android:drawable="@drawable/btn_action_positive" android:state_enabled="true"/>
+</selector>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/colorAds" />
+    <corners
+        android:bottomLeftRadius="2dp" android:bottomRightRadius="13dp"
+        android:topRightRadius="2dp" android:topLeftRadius="@dimen/ads_border_radius"/>
+
+</shape>
