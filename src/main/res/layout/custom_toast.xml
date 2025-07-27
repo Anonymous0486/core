@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimen16"
         android:layout_marginEnd="@dimen/dimen16"
-        android:background="@drawable/bg_round_12"
+        android:background="@drawable/ripple_round_12"
         android:backgroundTint="?attr/colorBackgroundFloating"
         android:gravity="center_vertical"
         android:minHeight="56dp"

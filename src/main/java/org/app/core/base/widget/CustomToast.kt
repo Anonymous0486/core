@@ -78,7 +78,7 @@ class CustomToast {
             onViewAction:() -> Unit,
         ) {
             val snackBar = Snackbar.make(view, "", Snackbar.LENGTH_LONG)
-            snackBar.view.setBackgroundResource(R.drawable.bg_round_12)
+            snackBar.view.setBackgroundResource(R.drawable.ripple_round_12)
 
             val layout = LayoutInflater.from(context).inflate(R.layout.saved_msg_toast, null, false)
             val snackBarLayout = snackBar.view as? Snackbar.SnackbarLayout

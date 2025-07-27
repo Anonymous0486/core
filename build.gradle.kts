@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.kotlinKsp)
+
+    id("kotlin-kapt") //TODO: For use databinding
 }
 
 val props = Properties()
