@@ -5,6 +5,7 @@ import android.app.Activity
 import android.app.ActivityManager
 import android.app.Dialog
 import android.content.Context
+import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
@@ -32,6 +33,8 @@ import javax.net.ssl.SSLContext
 import javax.net.ssl.SSLSocketFactory
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
+import androidx.core.graphics.createBitmap
+import java.util.Locale
 
 @SuppressLint("HardwareIds")
 fun getDeviceSerialNumber(context: Context): String? {
@@ -198,17 +201,9 @@ fun drawableToBitmap(drawable: Drawable): Bitmap {
         }
     }
     val bitmap = if (drawable.intrinsicWidth <= 0 || drawable.intrinsicHeight <= 0) {
-        Bitmap.createBitmap(
-            1,
-            1,
-            Bitmap.Config.ARGB_8888
-        ) // Single color bitmap will be created of 1x1 pixel
+        createBitmap(1, 1) // Single color bitmap will be created of 1x1 pixel
     } else {
-        Bitmap.createBitmap(
-            drawable.intrinsicWidth,
-            drawable.intrinsicHeight,
-            Bitmap.Config.ARGB_8888
-        )
+        createBitmap(drawable.intrinsicWidth, drawable.intrinsicHeight)
     }
     val canvas = Canvas(bitmap)
     drawable.setBounds(0, 0, canvas.width, canvas.height)
@@ -220,4 +215,13 @@ fun <T> MutableList<T>.swap(idx1: Int, idx2: Int): MutableList<T> = apply {
     val t = this[idx1]
     this[idx1] = this[idx2]
     this[idx2] = t
+}
+
+fun getCurrentLanguage() : String {
+    val locates = Resources.getSystem().configuration.locales
+    return if (locates.isEmpty) {
+        Locale.getDefault().language
+    } else {
+        locates.get(0).language
+    }
 }
