@@ -8,8 +8,10 @@ import android.content.res.Resources
 import android.database.Cursor
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.graphics.Matrix
 import android.graphics.Rect
+import android.graphics.drawable.ColorDrawable
 import android.media.MediaMetadataRetriever
 import android.net.Uri
 import android.os.Build
@@ -32,6 +34,7 @@ import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
 import java.text.SimpleDateFormat
+import androidx.core.graphics.drawable.toDrawable
 
 var SUB_FOLDER: String = "DownloadVideo/"
 
@@ -62,6 +65,7 @@ fun showLoadingDialog(activity: Activity?, hint: String?): Dialog? {
 
     val progressDialog = Dialog(activity, R.style.CustomDialogAnimation)
     progressDialog.setContentView(R.layout.progress_dialog)
+    progressDialog.window?.setBackgroundDrawable(Color.TRANSPARENT.toDrawable())
     val tvHint = progressDialog.findViewById<TextView>(R.id.tv_hint)
     if (!hint.isNullOrEmpty()) {
         tvHint?.visibility = View.VISIBLE
@@ -290,6 +294,15 @@ fun hasMimeTypes(description: ClipDescription, types: List<String>): Boolean {
         }
     }
     return false
+}
+
+fun createOutputPath(displayName: String): String? {
+    val path = getPath()
+    if (path.isNotBlank()) {
+        return path + File.separator + displayName
+    }
+
+    return null
 }
 
 data class DataSave(

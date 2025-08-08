@@ -20,22 +20,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.gms.ads.nativead.MediaView
-        android:id="@+id/ad_media"
+    <Button
+        android:id="@+id/ad_call_to_action"
+        style="@style/DefaultButtonAds"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/ads_layout_margin"
-        android:layout_marginVertical="@dimen/ads_layout_margin"
-        app:layout_constraintBottom_toTopOf="@+id/ad_call_to_action"
-        app:layout_constraintHeight_min="@dimen/ads_media_height_min"
-        app:layout_constraintTop_toBottomOf="@+id/ad_body" />
+        android:layout_marginVertical="2dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/ic_ad" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/ads_layout_margin"
-        app:layout_constraintTop_toBottomOf="@id/ic_ad">
+        app:layout_constraintTop_toBottomOf="@id/ad_call_to_action"
+        android:layout_marginTop="8dp"
+        >
 
         <TextView
             android:id="@+id/ad_headline"
@@ -76,16 +81,12 @@
         android:textSize="13sp"
         app:layout_constraintTop_toBottomOf="@id/constraintLayout" />
 
-    <Button
-        android:id="@+id/ad_call_to_action"
-        style="@style/DefaultButtonAds"
+    <com.google.android.gms.ads.nativead.MediaView
+        android:id="@+id/ad_media"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/ads_layout_margin"
-        android:layout_marginBottom="@dimen/ads_layout_margin"
-        android:ellipsize="end"
-        android:gravity="center"
-        android:maxLines="2"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        android:layout_height="0dp"
+        app:layout_constraintHeight_min="78dp"
+        android:layout_marginTop="@dimen/ads_layout_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ad_body" />
 </androidx.constraintlayout.widget.ConstraintLayout>
