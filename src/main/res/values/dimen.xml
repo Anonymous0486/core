@@ -187,4 +187,9 @@
     <dimen name="icon_size">@dimen/dimen_16</dimen>
     <dimen name="height_bottom_nav_menu">86dp</dimen>
     <dimen name="header_tab_bar_height">56dp</dimen>
+
+    <dimen name="gnt_no_margin">0dp</dimen>
+    <dimen name="gnt_no_size">0dp</dimen>
+    <dimen name="gnt_default_margin">10dp</dimen>
+    <dimen name="gnt_small_margin">5dp</dimen>
 </resources>

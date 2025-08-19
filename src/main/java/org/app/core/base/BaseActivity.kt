@@ -7,17 +7,24 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
+import androidx.core.view.isVisible
+import androidx.core.view.updateLayoutParams
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Lifecycle
@@ -28,6 +35,7 @@ import com.zeugmasolutions.localehelper.LocaleHelper
 import com.zeugmasolutions.localehelper.LocaleHelperActivityDelegate
 import com.zeugmasolutions.localehelper.LocaleHelperActivityDelegateImpl
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.app.core.base.utils.NetworkUtil
 import org.app.core.base.utils.getDialogWaiting
@@ -43,10 +51,15 @@ import org.app.core.base.utils.px
 import java.util.*
 import kotlinx.coroutines.isActive
 import org.app.core.ads.callback.AdsCallback
+import org.app.core.base.binding.setOnSingleClickListener
 import org.app.core.base.utils.StringResId
+import timber.log.Timber
+import kotlin.math.min
 
 abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
-    open val TAG = this::class.simpleName
+    open val TAG = this::class.simpleName ?: "BaseActivityTAG"
+
+    open val forceMaxHeightNative: Boolean = true
 
     private val localeDelegate: LocaleHelperActivityDelegate = LocaleHelperActivityDelegateImpl()
 
@@ -66,10 +79,15 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
 
     private var toastHasInternet: Toast? = null
 
+    var nativeFullContainer: FrameLayout? = null
+    var nativeFullId: String = ""
     var adsContainer: FrameLayout? = null
     var layoutCard: CardView? = null
+    var closeNativeFullAds: ImageView? = null
     private var _timeStamp: Long = 0
     private var _hasNativeAds: Boolean = true
+    private var _requestNativeId = ""
+    private var _pendingBackAction: Boolean = false
 
     open fun preventShowToastNoInternet() = false
 
@@ -116,7 +134,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
 
         initViewBinding()
         setContentView(binding.root)
-        _timeStamp = 0
+        _timeStamp = System.currentTimeMillis()
 
         if (savedInstanceState == null) {
             setUpBottomNavigation()
@@ -135,28 +153,44 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
         )
         isInternetConnected = NetworkUtil.isNetworkConnected(this)
 
+        setupBinding()
         setUpViews()
         setUpObserver()
+
+        if (CoreAds.instance.isHideAds) {
+            _hasNativeAds = false
+            layoutCard?.hide()
+        } else {
+            lifecycleScope.launch {
+                lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
+                    CoreAds.instance.nativeLoadedTs.collectLatest { ts ->
+                        Timber.tag(TAG).d("NativeAdmob loaded: $ts - $_timeStamp")
+                        if (ts >_timeStamp) {
+                            if (nativeFullContainer?.isVisible == true && nativeFullId.isNotBlank()) {
+                                showNativeFull("Refresh")
+                            } else {
+                                if (_hasNativeAds) showAds()
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 onActivityStarted()
-                showAds(1)
+                showAds(true)
             }
         }
 
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
-                if (CoreAds.instance.isHideAds) {
-                    _hasNativeAds = false
-                    layoutCard?.hide()
-                } else {
-                    while (isActive && _hasNativeAds) {
-                        if (shouldRefreshAds()) {
-                            refreshNative()
-                        }
-                        delay(1000)
+                while (isActive && _hasNativeAds) {
+                    if (shouldRefreshAds()) {
+                        refreshNative()
                     }
+                    delay(1000)
                 }
             }
         }
@@ -213,9 +247,36 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
 
     open fun setUpBottomNavigation() {}
 
-    open fun setUpViews() {}
+    open fun setupBinding() {
+        Timber.tag(TAG).i("setupBinding")
+        nativeFullContainer = _binding?.root?.findViewById(R.id.nativeFullContainer) as? FrameLayout
+        adsContainer = _binding?.root?.findViewById(R.id.adsContainer) as? FrameLayout
+        layoutCard = _binding?.root?.findViewById(R.id.layoutCard) as? CardView
+        closeNativeFullAds = _binding?.root?.findViewById(R.id.closeNativeFullAds) as? ImageView
+
+        nativeFullContainer?.hide()
+        closeNativeFullAds?.hide()
+    }
+
+    open fun setUpViews() {
+        if (closeNativeFullAds != null) {
+            closeNativeFullAds?.setOnSingleClickListener {
+                nativeFullContainer?.hide()
+                closeNativeFullAds?.hide()
+                if (_pendingBackAction) {
+                    finish()
+                } else {
+                    onCloseAction()
+                }
+            }
+        }
+    }
 
     open fun onSecurityCheck() {}
+
+    open fun onCloseAction() {
+        finish()
+    }
 
     // Override this function for task that need run background and may need time to completed
     open fun onActivityStarted() {}
@@ -234,6 +295,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
     override fun onDestroy() {
         _binding = null
         super.onDestroy()
+        CoreAds.instance.releaseNativeAds(_requestNativeId)
     }
 
     fun onNetworkStateChanged(isConnected: Boolean) {
@@ -282,7 +344,25 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
         toastNoInternet?.show()
     }
 
-    fun showAds(preloads: Int = 0) : Boolean {
+    fun enableEdgeToEdge(root: View, isFull: Boolean = true) {
+        enableEdgeToEdge()
+        val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
+        windowInsetsController.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
+        ViewCompat.setOnApplyWindowInsetsListener(root) { v, windowInsets ->
+            if (!isFull) {
+                val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+                v.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                    leftMargin = insets.left
+                    bottomMargin = insets.bottom
+                    rightMargin = insets.right
+                }
+            }
+            WindowInsetsCompat.CONSUMED
+        }
+    }
+
+    fun showAds(loading: Boolean = false) : Boolean {
         adsContainer ?: return false
         layoutCard ?: return false
 
@@ -298,30 +378,51 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
         val nativeAds = remoteConfig.natives?.firstOrNull {
             it.tag == tagNative && !it.id.isNullOrBlank()
         }
-        layoutCard!!.show()
+
+        Timber.tag(TAG).i("Showing ads...")
         if (nativeAds != null) {
+            layoutCard!!.show()
             layoutCard!!.layoutParams.apply {
                 width = ViewGroup.LayoutParams.MATCH_PARENT
             }
             layoutCard!!.setMargins(left = 12.px, right =  12.px)
             layoutCard!!.radius = 10.px.toFloat()
-            CoreAds.instance.showAdapterNativeAdsMultiple(
+            if (!forceMaxHeightNative) {
+                resources.displayMetrics.let { displayMetrics ->
+                    val height = displayMetrics.heightPixels
+                    val maxH = min(((height - 24.px)  / 3), 350.px)
+                    layoutCard!!.viewTreeObserver
+                        .addOnGlobalLayoutListener(
+                            OnViewGlobalLayoutListener(layoutCard!!, maxH)
+                        )
+                }
+            }
+            val aNative = CoreAds.instance.loadOrShowAdmobNativeAds(
                 this.applicationContext,
-                this,
                 adsContainer!!,
                 nativeAds.id!!,
                 nativeAds.event ?: tagNative,
                 nativeAds.style ?: NativeStyle.BIG_10,
-                false,
-                nativeAds.preload ?: 0)
-
-            _timeStamp = System.currentTimeMillis()
+            )
+            if (aNative != null) {
+                _timeStamp = System.currentTimeMillis()
+                _requestNativeId = aNative.requestId
+            } else {
+                if (loading) {
+                    showProgressDialog()
+                    Handler(Looper.getMainLooper())
+                        .postDelayed({
+                            hideProgressDialog()
+                        }, 1600)
+                }
+            }
             return true
         } else {
             val tagBanner = TAG + "_Banner"
             val bannerAds = remoteConfig.banners?.firstOrNull {
                 it.tag == tagBanner && !it.id.isNullOrBlank()
             }
+            _hasNativeAds = false
             if (bannerAds != null) {
                 if (bannerAds.size == "medium") {
                     layoutCard!!.layoutParams.apply {
@@ -345,7 +446,6 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                     if (_timeStamp == 0L) bannerAds.collapsible_type else null,
                     true
                 )
-                _hasNativeAds = false
                 _timeStamp = System.currentTimeMillis()
 
                 if (!CoreAds.instance.isHideAds && banner == null) {
@@ -382,22 +482,17 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
         }
         layoutCard!!.show()
         if (nativeAds != null) {
-            layoutCard!!.layoutParams.apply {
-                width = ViewGroup.LayoutParams.MATCH_PARENT
-            }
-            layoutCard!!.setMargins(left = 12.px, right =  12.px)
-            layoutCard!!.radius = 10.px.toFloat()
-            CoreAds.instance.showAdapterNativeAdsMultiple(
+            val aNative = CoreAds.instance.loadOrShowAdmobNativeAds(
                 this.applicationContext,
-                this,
                 adsContainer!!,
                 nativeAds.id!!,
                 nativeAds.event ?: tagNative,
                 nativeAds.style ?: NativeStyle.BIG_10,
-                false,
-                1)
-
-            _timeStamp = System.currentTimeMillis()
+            )
+            if (aNative != null) {
+                _timeStamp = System.currentTimeMillis()
+                _requestNativeId = aNative.requestId
+            }
         }
     }
 
@@ -424,8 +519,8 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
             return
         }
 
-        CoreAds.instance.showAdapterInterstitialAds(
-            30000,
+        val ret = CoreAds.instance.showAdapterInterstitialAds(
+            ads?.timelapse ?: 0,
             getString(StringResId.loadingAds),
             this,
             ads?.id ?: return,
@@ -435,19 +530,94 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                 override fun onClosed() {
                     super.onClosed()
 
-                    if (!isDestroyed && !isFinishing) {
-                        finish()
+                    if (!_pendingBackAction) {
+                        if (!isDestroyed && !isFinishing) {
+                            finish()
+                        }
                     }
                 }
 
                 override fun onError(message: String?) {
                     super.onError(message)
 
-                    if (!isDestroyed && !isFinishing) {
-                        finish()
+                    if (!_pendingBackAction) {
+                        if (!isDestroyed && !isFinishing) {
+                            finish()
+                        }
                     }
                 }
             })
+
+        if (ret) {
+            val nativeId = ads.nativeId
+            if (!nativeId.isNullOrBlank() && nativeFullContainer != null) {
+                _pendingBackAction = true
+                nativeFullId = nativeId
+                showNativeFull("BackAction")
+            }
+        }
+    }
+
+    fun showInterstitialBy(tag: String, onCompleted: (() -> Unit)?) {
+        val rmConfig = CoreRemoteConfig.instance.adsRemoteConfig
+        val ads = rmConfig?.interstitials?.firstOrNull {
+            it.tag == tag
+        }
+
+        if (ads?.id.isNullOrBlank()) {
+            onCompleted?.invoke()
+            return
+        }
+
+        var nativeId: String? = null
+        val ret = CoreAds.instance.showAdapterInterstitialAds(
+            ads?.timelapse ?: 0,
+            getString(StringResId.loadingAds),
+            this,
+            ads?.id!!,
+            ads.event ?: "ClickGuideDummy",
+            object : AdsCallback() {
+                override fun onClosed() {
+                    super.onClosed()
+                    if (nativeId.isNullOrBlank()) {
+                        if (!isDestroyed && !isFinishing) {
+                            onCompleted?.invoke()
+                        }
+                    }
+                }
+
+                override fun onError(message: String?) {
+                    super.onError(message)
+                    if (nativeId.isNullOrBlank()) {
+                        if (!isDestroyed && !isFinishing) {
+                            onCompleted?.invoke()
+                        }
+                    }
+                }
+            })
+
+        if (ret) {
+            nativeId = ads.nativeId
+            if (!nativeId.isNullOrBlank() && nativeFullContainer != null) {
+                nativeFullId = nativeId
+                showNativeFull(tag)
+            }
+        }
+    }
+
+    private fun showNativeFull(tag: String) {
+        nativeFullContainer?.show()
+        closeNativeFullAds?.show()
+        val aNative = CoreAds.instance.loadOrShowAdmobNativeAds(
+            this.applicationContext,
+            nativeFullContainer!!,
+            nativeFullId,
+            tag + "NativeFull",
+            NativeStyle.FULLSCREEN,
+        )
+        if (aNative != null) {
+            nativeFullId = ""
+        }
     }
 
     private fun shouldRefreshAds() : Boolean {

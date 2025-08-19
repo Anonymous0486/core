@@ -6,8 +6,13 @@ import android.util.Base64
 import android.util.Log
 import com.google.android.gms.tasks.Task
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.remoteconfig.ConfigUpdate
+import com.google.firebase.remoteconfig.ConfigUpdateListener
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigException
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
 import com.google.firebase.remoteconfig.ktx.remoteConfig
+import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -22,6 +27,7 @@ import org.app.core.ads.remoteconfig.config.OpenApp
 import org.app.core.ads.remoteconfig.type.DataType
 import org.app.core.ads.remoteconfig.type.MediationType
 import org.app.core.feature.extension.coroutinesIO
+import timber.log.Timber
 import java.io.File
 import java.io.FileInputStream
 
@@ -77,6 +83,7 @@ class CoreRemoteConfig {
         return isSetupSuccess
     }
 
+    @Suppress("OPT_IN_USAGE")
     fun init(
         activity: Activity,
         isLocal: Boolean = false,
@@ -104,42 +111,69 @@ class CoreRemoteConfig {
 
         isSetting = true
         val config = Firebase.remoteConfig
-        val configSettings = FirebaseRemoteConfigSettings.Builder()
-            .setMinimumFetchIntervalInSeconds(fetchTime)
-            .build()
-        config.setConfigSettingsAsync(configSettings)
-        config.fetchAndActivate().addOnCompleteListener { task: Task<Boolean?> ->
-            GlobalScope.launch(Dispatchers.IO) {
-                if (!task.isComplete || !task.isSuccessful) {
-                    Log.i(TAG, "Remote: Task is not successful")
-                    setupLocalDataAdsRemoteConfig(activity, callback)
-                    return@launch
-                }
+        //TODO: Should only use for development (not production)
+//        val configSettings = remoteConfigSettings {
+//            minimumFetchIntervalInSeconds = 3600
+//        }
+//        config.setConfigSettingsAsync(configSettings)
 
-                try {
-                    val adsCfgJson = config.getString(keyAdsConfig)
-                    _adsRemoteConfig = Gson().fromJson(adsCfgJson, AdsConfigure::class.java)
-                    
-                    Log.i(TAG, "Remote: active version: ${_adsRemoteConfig?.active_version}")
-
-                    // No need -> Firebase Remote Configuration already handle cached data at local base on elapsed time
-//                    writeLocalDataAdsRemoteConfig(activity, adsCfgJson)
-
-                    val appCfgJson = config.getString(keyAppConfig)
-                    _appRemoteConfig = Gson().fromJson(appCfgJson, AppConfigure::class.java)
-                    isSetupSuccess = true
-                    isSetting = false
-                    isDataType = DataType.REMOTE
-                    withContext(Dispatchers.Main) {
-                        Log.i(TAG, "Remote: Task is successful")
-                        callback?.onLoadSuccess()
+        config.addOnConfigUpdateListener(object : ConfigUpdateListener {
+            override fun onUpdate(configUpdate: ConfigUpdate) {
+                Timber.tag(TAG).i("OnConfigUpdate: ${configUpdate.updatedKeys}")
+                config.activate().addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        handleRemoteConfig(config)
                     }
-                } catch (e: Exception) {
-                    Log.i(TAG, "Remote Exception: ${e.message}")
+                }
+            }
+
+            override fun onError(error: FirebaseRemoteConfigException) {
+                Timber.tag(TAG).i("Config update error with code: ${error.code} - ${error.message}")
+            }
+        })
+
+        config.fetch().addOnCompleteListener { task ->
+            if (!task.isComplete || !task.isSuccessful) {
+                Timber.tag(TAG).i("Remote: Task is not successful")
+                GlobalScope.launch(Dispatchers.IO) {
                     setupLocalDataAdsRemoteConfig(activity, callback)
+                }
+            } else {
+                config.activate().addOnCompleteListener { activateTask ->
+                    GlobalScope.launch(Dispatchers.IO) {
+                        if (activateTask.isSuccessful) {
+                            try {
+                                handleRemoteConfig(config)
+                                withContext(Dispatchers.Main) {
+                                    Timber.tag(TAG).i("Remote: Task is successful")
+                                    callback?.onLoadSuccess()
+                                }
+                            } catch (e: Exception) {
+                                Timber.tag(TAG).i("Remote Exception: ${e.message}")
+                                setupLocalDataAdsRemoteConfig(activity, callback)
+                            }
+                        } else {
+                            setupLocalDataAdsRemoteConfig(activity, callback)
+                        }
+                    }
                 }
             }
         }
+    }
+
+    private fun handleRemoteConfig(config: FirebaseRemoteConfig) {
+        val adsCfgJson = config.getString(keyAdsConfig)
+        _adsRemoteConfig = Gson().fromJson(adsCfgJson, AdsConfigure::class.java)
+
+        Timber.tag(TAG).i("Remote: active version: ${_adsRemoteConfig?.active_version}")
+
+        val appCfgJson = config.getString(keyAppConfig)
+        _appRemoteConfig = Gson().fromJson(appCfgJson, AppConfigure::class.java)
+
+        Timber.tag(TAG).i("Remote: actual version: ${_appRemoteConfig?.actualVersion} - ${_appRemoteConfig?.isForceUpdate}")
+        isSetupSuccess = true
+        isSetting = false
+        isDataType = DataType.REMOTE
     }
     
     fun setLocalConfig(jsonString: String, forceLocal: Boolean = false) {
@@ -191,7 +225,7 @@ class CoreRemoteConfig {
     ) {
         var localResult = ""//readLocalDataAdsRemoteConfig(activity)
         if (localResult.isEmpty()) localResult = readFileRemoteConfigAdsDefaultLocal(activity)
-
+        Timber.tag(TAG).i("Remote: setup local data")
         if (localResult.isNotEmpty()) {
             try {
                 _adsRemoteConfig = Gson().fromJson(localResult, AdsConfigure::class.java)
@@ -199,12 +233,12 @@ class CoreRemoteConfig {
                 isSetting = false
                 isDataType = DataType.LOCAL
                 withContext(Dispatchers.Main) {
-                    Log.i(TAG, "Local: Task is successful")
+                    Timber.tag(TAG).i("Local: Task is successful")
                     callback?.onLoadSuccess()
                 }
                 return
             } catch (e: Exception) {
-                Log.i(TAG, "Local Exception: ${e.message}")
+                Timber.tag(TAG).i("Local Exception: ${e.message}")
                 isSetupSuccess = false
                 isSetting = false
                 withContext(Dispatchers.Main) {
@@ -217,7 +251,7 @@ class CoreRemoteConfig {
         isSetting = false
         isDataType = DataType.UNKNOWN
         withContext(Dispatchers.Main) {
-            Log.i(TAG, "Local: Empty data")
+            Timber.tag(TAG).i("Local: Empty data")
             callback?.onLoadFailed("Local: Empty data")
         }
         

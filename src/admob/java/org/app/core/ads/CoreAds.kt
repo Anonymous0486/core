@@ -30,6 +30,8 @@ import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import org.app.core.R
 import org.app.core.ads.base.BaseAds
@@ -42,7 +44,9 @@ import org.app.core.ads.callback.LoadCallback
 import org.app.core.ads.dialog.DialogAdsLoading
 import org.app.core.ads.nativeads.AdapterNativeAdView
 import org.app.core.ads.nativeads.AdapterNativeAds
+import org.app.core.ads.nativeads.AdmobNativeAds
 import org.app.core.ads.nativeads.CustomAdapterNativeAdViews
+import org.app.core.ads.nativeads.NativeDisplayView
 import org.app.core.ads.openads.AdapterOpenAds
 import org.app.core.ads.openads.AdapterOpenAppManager
 import org.app.core.ads.remoteconfig.CoreRemoteConfig
@@ -53,6 +57,7 @@ import java.util.concurrent.TimeUnit
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.pow
+import androidx.core.view.isEmpty
 
 @SuppressLint("LogNotTimber")
 class CoreAds private constructor() {
@@ -87,6 +92,27 @@ class CoreAds private constructor() {
     var lastFullAdsTime: Long
         get() = _lastFullAdsTime
         set(value) { _lastFullAdsTime = value }
+
+    //TODO: New functions for new concept load and show native ads
+    private val _nativeAdsList = mutableListOf<AdmobNativeAds>()
+    private val _nativeLoadedTs = MutableStateFlow(0L)      // Timestamp saved of last native ads loaded
+    val nativeLoadedTs = _nativeLoadedTs.asStateFlow()
+
+    fun updateTimestamp(timestamp: Long) {
+        if (_isHideAds) return
+
+        _nativeLoadedTs.tryEmit(timestamp)
+    }
+
+    fun releaseNativeAds(requestId: String) {
+        if (requestId.isBlank()) return
+
+        val ads = _nativeAdsList.firstOrNull { it.requestId == requestId }
+        if (ads != null && ads.isDisplayed()) {
+            _nativeAdsList.remove(ads)
+            ads.destroyAds()
+        }
+    }
 
     fun toggleDebug(mode: Boolean? = null) : Boolean {
         _enableDebug = mode ?: !_enableDebug
@@ -512,7 +538,6 @@ class CoreAds private constructor() {
         handler.postDelayed(runnable, 15000)
         
         val ads = if (adsInterStorage[adsId] == null) {
-
             var cacheAds: AdapterInterstitialAds? = null
             for (m in adsInterStorage) {
                 if (m.value.isAvailable) {
@@ -590,7 +615,7 @@ class CoreAds private constructor() {
                 ads.load()
             }
             
-            return false
+            return true
         }
         
         Log.i(TAG, "Show inter: $adsId")
@@ -1272,6 +1297,64 @@ class CoreAds private constructor() {
         admobNativeAdsViewsStorage[adId]?.lastDisplayAds = nativeAd
 
         return true
+    }
+
+    fun loadOrShowAdmobNativeAds(
+        context: Context,
+        container: FrameLayout?,
+        adId: String,
+        eventId: String,
+        style: Int = NativeStyle.SMALL_41
+    ) : AdmobNativeAds? {
+        val layoutAdId = styleNativeAdsStorage[style] ?: return null
+        if (_nativeAdsList.isEmpty()) {
+            Timber.tag(TAG).d("Native ads is empty -> request to load...")
+            val aNative = AdmobNativeAds(context = context, adUnitId = adId, event = eventId)
+            _nativeAdsList.add(aNative)
+            aNative.loadAds()
+            if (container != null) {
+                Timber.tag(TAG).d("Native ads is empty -> start shimmer")
+                val shimmer = aNative.createShimmer(context, layoutAdId)
+                shimmer.startShimmer()
+                container.removeAllViews()
+                container.addView(shimmer)
+            }
+            return null
+        }
+
+        val loadedAds = _nativeAdsList.firstOrNull { it.isAvailable() }
+        if (loadedAds != null && container != null) {
+            Timber.tag(TAG).d("Native show available ads")
+            loadedAds.showAdView(layoutAdId, context, container)
+            return loadedAds
+        }
+
+        val loadingAds = _nativeAdsList.firstOrNull { it.isLoading() }
+        if (loadingAds != null) {
+            Timber.tag(TAG).d("Native ads is loading -> show waiting shimmer")
+            if (container != null && container.isEmpty()) {
+                val shimmer = loadingAds.createShimmer(context, layoutAdId)
+                shimmer.startShimmer()
+                container.removeAllViews()
+                container.addView(shimmer)
+            }
+        } else {
+            Timber.tag(TAG).d("Native ads refresh the new ads...")
+            _nativeAdsList.removeIf { it.isDisplayed() }
+
+            val aNative = AdmobNativeAds(context = context, adUnitId = adId, event = eventId)
+            _nativeAdsList.add(aNative)
+            aNative.loadAds()
+            if (container != null && container.isEmpty()) {
+                Timber.tag(TAG).d("Native ads is empty -> start shimmer")
+                val shimmer = aNative.createShimmer(context, layoutAdId)
+                shimmer.startShimmer()
+                container.removeAllViews()
+                container.addView(shimmer)
+            }
+        }
+
+        return null
     }
 
     fun removeContainerBy(adId: String) {

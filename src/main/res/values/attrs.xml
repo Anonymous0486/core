@@ -105,4 +105,9 @@
     <attr name="padding_menu_item" format="dimension" />
     <attr name="apply_tint_for_menu_item" format="boolean" />
   </declare-styleable>
+
+  <item name="layoutCard" type="id"/>
+  <item name="adsContainer" type="id"/>
+  <item name="nativeFullContainer" type="id"/>
+  <item name="closeNativeFullAds" type="id"/>
 </resources>

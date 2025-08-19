@@ -164,4 +164,65 @@ class AdapterNativeAdView(
         
         return adView
     }
+
+    private fun populateNativeAdView(nativeAd: NativeAd, compatibleBinding: NativeDisplayView) {
+        val nativeAdView = compatibleBinding.root ?: return
+
+        nativeAdView.mediaView = compatibleBinding.adMedia
+
+        nativeAdView.headlineView = compatibleBinding.adHeadline
+        nativeAdView.bodyView = compatibleBinding.adBody
+        nativeAdView.callToActionView = compatibleBinding.adCallToAction
+        nativeAdView.iconView = compatibleBinding.adAppIcon
+        nativeAdView.starRatingView = compatibleBinding.adStars
+        nativeAdView.storeView = compatibleBinding.adStore
+        nativeAdView.advertiserView = compatibleBinding.adAdvertiser
+
+        compatibleBinding.adHeadline?.text = nativeAd.headline
+        nativeAd.mediaContent?.let { compatibleBinding.adMedia?.mediaContent = it }
+
+        if (nativeAd.body == null) {
+            compatibleBinding.adBody?.visibility = View.INVISIBLE
+        } else {
+            compatibleBinding.adBody?.visibility = View.VISIBLE
+            compatibleBinding.adBody?.text = nativeAd.body
+        }
+
+        if (nativeAd.callToAction == null) {
+            compatibleBinding.adCallToAction?.visibility = View.INVISIBLE
+        } else {
+            compatibleBinding.adCallToAction?.visibility = View.VISIBLE
+            compatibleBinding.adCallToAction?.text = nativeAd.callToAction
+        }
+
+        if (nativeAd.icon == null) {
+            compatibleBinding.adAppIcon?.visibility = View.GONE
+        } else {
+            compatibleBinding.adAppIcon?.setImageDrawable(nativeAd.icon?.drawable)
+            compatibleBinding.adAppIcon?.visibility = View.VISIBLE
+        }
+
+        if (nativeAd.store == null) {
+            compatibleBinding.adStore?.visibility = View.INVISIBLE
+        } else {
+            compatibleBinding.adStore?.visibility = View.VISIBLE
+            compatibleBinding.adStore?.text = nativeAd.store
+        }
+
+        if (nativeAd.starRating == null) {
+            compatibleBinding.adStars?.visibility = View.INVISIBLE
+        } else {
+            compatibleBinding.adStars?.rating = nativeAd.starRating!!.toFloat()
+            compatibleBinding.adStars?.visibility = View.VISIBLE
+        }
+
+        if (nativeAd.advertiser == null) {
+            compatibleBinding.adAdvertiser?.visibility = View.INVISIBLE
+        } else {
+            compatibleBinding.adAdvertiser?.text = nativeAd.advertiser
+            compatibleBinding.adAdvertiser?.visibility = View.VISIBLE
+        }
+
+        nativeAdView.setNativeAd(nativeAd)
+    }
 }

@@ -23,4 +23,10 @@ class Interstitial {
     
     @SerializedName("description")
     var description: String? = null
+
+    @SerializedName("native_id")
+    var nativeId: String? = null
+
+    @SerializedName("timelapse")
+    var timelapse: Long? = 0
 }

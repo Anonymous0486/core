@@ -1,6 +1,7 @@
 package org.app.core.base.extensions
 
 import android.annotation.SuppressLint
+import android.content.res.ColorStateList
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Canvas
@@ -8,8 +9,10 @@ import android.graphics.Color
 import android.graphics.Matrix
 import android.graphics.PorterDuff
 import android.graphics.Typeface
+import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
+import android.graphics.drawable.RippleDrawable
 import android.net.Uri
 import android.text.Spannable
 import android.text.SpannableString
@@ -59,9 +62,17 @@ import org.app.core.R
 import org.app.core.base.utils.px
 import java.io.File
 import java.lang.reflect.ParameterizedType
+import androidx.core.graphics.toColorInt
+import com.google.android.material.shape.CornerFamily
+import com.google.android.material.shape.MaterialShapeDrawable
+import androidx.core.graphics.drawable.toDrawable
+import androidx.core.view.isInvisible
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
+import com.google.android.material.color.MaterialColors
 
 fun View.show() {
-    if (visibility == View.VISIBLE) return
+    if (isVisible) return
 
     visibility = View.VISIBLE
     if (this is Group) {
@@ -92,7 +103,7 @@ fun View.show(isShow: Boolean) {
 }
 
 fun View.hide() {
-    if (visibility == View.GONE) return
+    if (isGone) return
 
     visibility = View.GONE
     if (this is Group) {
@@ -101,7 +112,7 @@ fun View.hide() {
 }
 
 fun View.invisible() {
-    if (visibility == View.INVISIBLE) return
+    if (isInvisible) return
 
     visibility = View.INVISIBLE
     if (this is Group) {
@@ -115,6 +126,38 @@ fun View.goneUnless(visible: Boolean) {
     if (this is Group) {
         this.requestLayout()
     }
+}
+
+@BindingAdapter(
+    value = ["app:bgColor", "app:roundRadius", "app:rippleColor", "app:disabledColor"],
+    requireAll = false
+)
+fun View.setCustomBackground(
+    bgColor: String? = null,
+    roundRadius: Int? = null,
+    rippleColor: String? = null,
+    disabledColor: String? = null
+) {
+    val colorControl = MaterialColors.getColor(context, android.R.attr.colorControlHighlight, "#DDDDDD".toColorInt())  // System lighter gray color - #DDDDDD
+    val states = arrayOf(
+        intArrayOf(android.R.attr.state_pressed),
+        intArrayOf(android.R.attr.state_enabled),
+        intArrayOf(-android.R.attr.state_enabled)
+    )
+    val colors = intArrayOf(
+        if(rippleColor.isNullOrBlank()) colorControl else rippleColor.toColorInt(),
+        (bgColor ?: "#FFFFFF").toColorInt(),
+        (disabledColor ?: "#DDDDDD").toColorInt()
+    )
+    val shapeDrawable = MaterialShapeDrawable()
+    shapeDrawable.fillColor = ColorStateList(states, colors)
+
+    if (roundRadius != null &&  roundRadius > 0) {
+        shapeDrawable.shapeAppearanceModel = shapeDrawable.shapeAppearanceModel.toBuilder()
+            .setAllCorners(CornerFamily.ROUNDED, roundRadius.px.toFloat())
+            .build()
+    }
+    background = shapeDrawable
 }
 
 fun ImageView.drawCircle(backgroundColor: String, borderColor: String? = null) {

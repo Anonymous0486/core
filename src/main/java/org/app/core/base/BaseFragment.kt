@@ -11,11 +11,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.LayoutRes
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
@@ -27,6 +29,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.google.android.gms.ads.AdSize
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.app.core.ads.CoreAds
 import org.app.core.ads.base.NativeStyle
@@ -39,14 +42,19 @@ import java.util.*
 import kotlinx.coroutines.isActive
 import org.app.core.R
 import org.app.core.ads.CoreAds.Companion
+import org.app.core.ads.callback.AdsCallback
 import org.app.core.ads.remoteconfig.config.AdsConfigure
+import org.app.core.base.binding.setOnSingleClickListener
 import org.app.core.base.extensions.hide
+import org.app.core.base.extensions.show
 import org.app.core.base.utils.NetworkUtil
 import org.app.core.base.utils.StringResId
 import timber.log.Timber
+import kotlin.math.min
 
 abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
-    open val TAG = this::class.simpleName
+    open val TAG = this::class.simpleName ?: "BaseFragmentTAG"
+    open val forceMaxHeightNative: Boolean = false
 
     private var _binding: VB? = null
     val mBinding: VB?
@@ -64,6 +72,11 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
     private var _timeStamp: Long = 0
     private var _hasNativeAds: Boolean = true
     private var _hasBannerAds: Boolean = true
+    private var _requestNativeId = ""
+    var nativeFullContainer: FrameLayout? = null
+    var closeNativeFullAds: ImageView? = null
+    var nativeFullId: String = ""
+    private var _pendingBackAction: Boolean = false
 
     private var onPermissionResult: ((Boolean) -> Unit)? = null
     private val requestPermissionLauncher = registerForActivityResult(
@@ -85,7 +98,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         }
 
         initView(binding.root)
-        _timeStamp = 0
+        _timeStamp = System.currentTimeMillis()
         // using when fragment transition animation 300ms
         binding.root.postDelayed(
             { initDataWithAnimation() },
@@ -121,6 +134,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
             }
         })
 
+        _timeStamp = System.currentTimeMillis()
         if (!hasInitializedRootView) {
             getFragmentArguments()
             setBindingVariables()
@@ -132,20 +146,34 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         }
         view.setOnTouchListener { _, _ -> true }
         isInternetConnected = NetworkUtil.isNetworkConnected(context ?: return)
-        showAds()
+        if (CoreAds.instance.isHideAds) {
+            _hasNativeAds = false
+            _hasBannerAds = false
+            layoutCard?.hide()
+        } else {
+            showAds(true)
+            lifecycleScope.launch {
+                lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
+                    CoreAds.instance.nativeLoadedTs.collectLatest { ts ->
+                        if (ts >_timeStamp) {
+                            if (nativeFullContainer?.isVisible == true && nativeFullId.isNotBlank()) {
+                                showNativeFull("Refresh")
+                            } else {
+                                if (_hasNativeAds) showAds()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
-                if (CoreAds.instance.isHideAds) {
-                    _hasNativeAds = false
-                    _hasBannerAds = false
-                    layoutCard?.hide()
-                } else {
-                    while (isActive && _hasNativeAds) {
-                        if (shouldRefreshAds()) {
-                            refreshNative()
-                        }
-                        delay(1000)
+                while (isActive && _hasNativeAds) {
+                    if (shouldRefreshAds()) {
+                        refreshNative()
                     }
+                    delay(1000)
                 }
             }
         }
@@ -157,6 +185,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         }
         hideLoading()
 
+        CoreAds.instance.releaseNativeAds(_requestNativeId)
         super.onDestroyView()
     }
 
@@ -187,7 +216,23 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
 
     open fun getFragmentArguments() {}
 
-    open fun setBindingVariables() {}
+    open fun setBindingVariables() {
+        Timber.tag(TAG).i("setupBinding")
+        nativeFullContainer = _binding?.root?.findViewById(R.id.nativeFullContainer) as? FrameLayout
+        adsContainer = _binding?.root?.findViewById(R.id.adsContainer) as? FrameLayout
+        layoutCard = _binding?.root?.findViewById(R.id.layoutCard) as? CardView
+        closeNativeFullAds = _binding?.root?.findViewById(R.id.closeNativeFullAds) as? ImageView
+
+        nativeFullContainer?.hide()
+        closeNativeFullAds?.hide()
+        if (closeNativeFullAds != null) {
+            closeNativeFullAds?.setOnSingleClickListener {
+                nativeFullContainer?.hide()
+                closeNativeFullAds?.hide()
+                onCloseAction()
+            }
+        }
+    }
 
     open fun setUpViews() {}
 
@@ -199,33 +244,17 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
 
     open fun setupObservers() {}
 
+    open fun onCloseAction() {}
+
     protected open fun onRetryClick() {}
 
     protected open fun reloadData() {}
-
-    open fun onLeft(view: View) {
-        if (parentFragmentManager.backStackEntryCount > 0) {
-            parentFragmentManager.popBackStack()
-        } else {
-            activity?.onBackPressed()
-        }
-    }
-
-    open fun onRight(view: View) {
-    }
-
-    open fun onRight1(view: View) {
-    }
-
-    protected open fun getChildLayoutReplace(): Int {
-        return 0
-    }
 
     fun onNetworkStateChanged(isConnected: Boolean) {
         if (isConnected != isInternetConnected) {
             isInternetConnected = isConnected
             if (isConnected) {
-                showAds(0)
+                showAds()
             }
         }
     }
@@ -258,7 +287,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         get() = Locale.getDefault()
 
     @SuppressLint("LogNotTimber")
-    fun showAds(preloads: Int = 1) : Boolean {
+    fun showAds(showLoading: Boolean = false) : Boolean {
         adsContainer ?: return false
         layoutCard ?: return false
         if (CoreAds.instance.isHideAds) {
@@ -277,25 +306,44 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
             it.tag == tagNative && !it.id.isNullOrBlank()
         }
 
-        Timber.tag("###DEBUG").i( "$TAG Show ads...")
+        Timber.tag(TAG).i( "$TAG Show ads...")
         if (nativeAds != null) {
             layoutCard!!.layoutParams.apply {
                 width = ViewGroup.LayoutParams.MATCH_PARENT
             }
             layoutCard!!.setMargins(left = 12.px, right =  12.px)
             layoutCard!!.radius = 10.px.toFloat()
+            if (!forceMaxHeightNative) {
+                resources.displayMetrics.let { displayMetrics ->
+                    val height = displayMetrics.heightPixels
+                    val maxH = min(((height - 24.px)  / 3), 350.px)
+                    layoutCard!!.viewTreeObserver
+                        .addOnGlobalLayoutListener(
+                            OnViewGlobalLayoutListener(layoutCard!!, maxH)
+                        )
+                }
+            }
             _hasNativeAds = true
             _hasBannerAds = false
-            CoreAds.instance.showAdapterNativeAdsMultiple(
+            val aNative = CoreAds.instance.loadOrShowAdmobNativeAds(
                 actv.applicationContext,
-                actv,
                 adsContainer!!,
                 nativeAds.id!!,
                 nativeAds.event ?: tagNative,
                 nativeAds.style ?: NativeStyle.BIG_10,
-                false,
-                nativeAds.preload ?: 0)
-            _timeStamp = System.currentTimeMillis()
+            )
+            if (aNative != null) {
+                _timeStamp = System.currentTimeMillis()
+                _requestNativeId = aNative.requestId
+            } else {
+                if (showLoading) {
+                    showLoading(getString(StringResId.loading))
+                    Handler(Looper.getMainLooper())
+                        .postDelayed({
+                            hideLoading()
+                        }, 1600)
+                }
+            }
 
             return true
         } else {
@@ -341,7 +389,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
             }
         }
 
-        _hasBannerAds = false;
+        _hasBannerAds = false
         _hasNativeAds = false
         layoutCard!!.hide()
         return false
@@ -366,11 +414,6 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         }
         Timber.tag("###DEBUG").i( "Refresh ads...")
         if (nativeAds != null) {
-            layoutCard!!.layoutParams.apply {
-                width = ViewGroup.LayoutParams.MATCH_PARENT
-            }
-            layoutCard!!.setMargins(left = 12.px, right =  12.px)
-            layoutCard!!.radius = 10.px.toFloat()
             CoreAds.instance.showAdapterNativeAdsMultiple(
                 actv.applicationContext,
                 actv,
@@ -456,6 +499,74 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
             }
         } ?: kotlin.run {
             onCompleted?.invoke((false))
+        }
+    }
+
+    fun showInterstitialBy(tag: String, onCompleted: (() -> Unit)?) {
+        if (activity == null) {
+            onCompleted?.invoke()
+            return
+        }
+
+        val rmConfig = CoreRemoteConfig.instance.adsRemoteConfig
+        val ads = rmConfig?.interstitials?.firstOrNull {
+            it.tag == tag
+        }
+
+        if (ads?.id.isNullOrBlank()) {
+            onCompleted?.invoke()
+            return
+        }
+
+        var nativeId: String? = null
+        val ret = CoreAds.instance.showAdapterInterstitialAds(
+            ads?.timelapse ?: 0,
+            getString(StringResId.loadingAds),
+            requireActivity(),
+            ads?.id!!,
+            ads.event ?: "ClickGuideDummy",
+            object : AdsCallback() {
+                override fun onClosed() {
+                    super.onClosed()
+                    if (nativeId.isNullOrBlank()) {
+                        if (activity != null && !requireActivity().isDestroyed && !requireActivity().isFinishing) {
+                            onCompleted?.invoke()
+                        }
+                    }
+                }
+
+                override fun onError(message: String?) {
+                    super.onError(message)
+                    if (nativeId.isNullOrBlank()) {
+                        if (activity != null && !requireActivity().isDestroyed && !requireActivity().isFinishing) {
+                            onCompleted?.invoke()
+                        }
+                    }
+                }
+            })
+
+        if (ret) {
+            nativeId = ads.nativeId
+            if (!nativeId.isNullOrBlank() && nativeFullContainer != null) {
+                nativeFullId = nativeId
+                showNativeFull(tag)
+            }
+        }
+    }
+
+    private fun showNativeFull(tag: String) {
+        activity ?: return
+        nativeFullContainer?.show()
+        closeNativeFullAds?.show()
+        val aNative = CoreAds.instance.loadOrShowAdmobNativeAds(
+            requireActivity().applicationContext,
+            nativeFullContainer!!,
+            nativeFullId,
+            tag + "NativeFull",
+            NativeStyle.FULLSCREEN,
+        )
+        if (aNative != null) {
+            nativeFullId = ""
         }
     }
 
