@@ -62,6 +62,8 @@ import org.app.core.R
 import org.app.core.base.utils.px
 import java.io.File
 import java.lang.reflect.ParameterizedType
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
 import androidx.core.graphics.toColorInt
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
@@ -232,6 +234,18 @@ fun View.showSnackBar(
     }
 
     snackBar.show()
+}
+
+private fun setIntrinsicBounds(drawable: Drawable?) {
+    drawable?.setBounds(0, 0, drawable.intrinsicWidth, drawable.intrinsicHeight)
+}
+
+@BindingAdapter("android:iconLeft")
+fun setDrawableLeft(view: TextView, resourceId: Int) {
+    val drawable = ContextCompat.getDrawable(view.context, resourceId)
+    setIntrinsicBounds(drawable)
+    val drawables = view.compoundDrawables
+    view.setCompoundDrawables(drawable, drawables[1], drawables[2], drawables[3])
 }
 
 @BindingAdapter(value = ["app:loadImage", "app:progressBar"], requireAll = false)

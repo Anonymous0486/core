@@ -1,9 +1,11 @@
 package org.app.core.base.utils
 
+import android.annotation.SuppressLint
 import android.text.format.DateFormat
 import android.text.format.DateUtils
 import org.app.core.base.utils.DateUtils.Companion.DEFAULT_DATE_FORMAT
 import org.app.core.base.utils.DateUtils.Companion.EXTENDED_DATE_FORMAT
+import org.app.core.base.utils.DateUtils.Companion.TIME_24_FORMAT
 import org.app.core.base.utils.DateUtils.Companion.UI_DATE_FORMAT
 import org.app.core.base.utils.DateUtils.Companion.WEEKLY_DATE_FORMAT
 import java.text.ParseException
@@ -11,6 +13,7 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 import java.util.Locale
+import java.util.TimeZone
 
 class DateUtils {
     companion object {
@@ -49,6 +52,13 @@ class DateUtils {
         fun fromSimpleString(dateString: String) : Date? {
             val format = SimpleDateFormat(UI_DATE_FORMAT, Locale.US)
             return format.parse(dateString)
+        }
+
+        @SuppressLint("SimpleDateFormat")
+        fun isTwoTimeInSameDay(dateOne: Int, dateSecond: Int): Boolean {
+            val simpleDateFormat = SimpleDateFormat("yyyyMMdd");
+            simpleDateFormat.timeZone = TimeZone.getDefault()
+            return simpleDateFormat.format(dateOne).equals(simpleDateFormat.format(dateSecond));
         }
     }
 }
@@ -190,3 +200,31 @@ fun getLocale(): Locale? {
 fun Date.isYesterday(): Boolean = DateUtils.isToday(this.time + DateUtils.DAY_IN_MILLIS)
 
 fun Date.isToday(): Boolean = DateUtils.isToday(this.time)
+
+fun Date.toFormatTime(template: String): String {
+    val fm = SimpleDateFormat(template, getLocale())
+    return fm.format(this)
+}
+
+fun Long.formatTime() : String {
+    val cal = Calendar.getInstance(Locale.ENGLISH)
+    cal.timeInMillis = this
+    return DateFormat.format(TIME_24_FORMAT, cal).toString()
+}
+
+fun Int.getFormattedDuration(forceShowHours: Boolean = false): String {
+    val sb = StringBuilder(8)
+    val hours = this / 3600
+    val minutes = this % 3600 / 60
+    val seconds = this % 60
+
+    if (this >= 3600) {
+        sb.append(String.format(Locale.getDefault(), "%02d", hours)).append(":")
+    } else if (forceShowHours) {
+        sb.append("0:")
+    }
+
+    sb.append(String.format(Locale.getDefault(), "%02d", minutes))
+    sb.append(":").append(String.format(Locale.getDefault(), "%02d", seconds))
+    return sb.toString()
+}

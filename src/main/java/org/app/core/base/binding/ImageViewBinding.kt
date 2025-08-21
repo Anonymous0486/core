@@ -4,12 +4,14 @@ import android.graphics.BitmapFactory
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import androidx.databinding.BindingAdapter
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.imageview.ShapeableImageView
+import org.app.core.R
 
 @BindingAdapter("url", "placeHolder", "errorHolder")
 fun ShapeableImageView.setImage(url: String, placeHolder: Int, errorHolder: Int) {
@@ -86,6 +88,84 @@ fun AppCompatImageView.setImage(src: Int?, placeHolder: Int, errorHolder: Int, i
             .apply(
                 RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)
                     .format(DecodeFormat.PREFER_ARGB_8888).dontAnimate()
+            )
+            .transition(DrawableTransitionOptions.withCrossFade())
+            .into(this)
+    }
+}
+
+
+@BindingAdapter(value = ["src", "isCircle"], requireAll = false)
+fun AppCompatImageView.setImage(src: Int?, isCircle: Boolean) {
+    if (isCircle) {
+        val placeholder = BitmapFactory.decodeResource(
+            resources,
+            R.drawable.img_place_holder
+        )
+        val circularBitmapDrawable = RoundedBitmapDrawableFactory.create(resources, placeholder)
+        circularBitmapDrawable.isCircular = true
+        Glide.with(this.context)
+            .load(src)
+            .apply(
+                RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)
+                    .format(DecodeFormat.PREFER_ARGB_8888)
+                    .error(circularBitmapDrawable)
+                    .placeholder(circularBitmapDrawable)
+                    .circleCrop().dontAnimate()
+            )
+            .transition(DrawableTransitionOptions.withCrossFade())
+            .into(this)
+    } else {
+        Glide.with(this.context)
+            .load(src)
+            .apply(
+                RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)
+                    .format(DecodeFormat.PREFER_ARGB_8888)
+                    .dontAnimate()
+            )
+            .transition(DrawableTransitionOptions.withCrossFade())
+            .into(this)
+    }
+}
+
+
+@BindingAdapter(value = ["url", "isCircle"], requireAll = false)
+fun AppCompatImageView.setImage(
+    url: String?,
+    isCircle: Boolean
+) {
+    val circularProgressDrawable = CircularProgressDrawable(context)
+    circularProgressDrawable.strokeWidth = 5f
+    circularProgressDrawable.setColorSchemeColors(R.color.colorPrimary)
+    circularProgressDrawable.centerRadius = 30f
+    circularProgressDrawable.start()
+
+    if (isCircle) {
+        val placeholder = BitmapFactory.decodeResource(
+            resources,
+            R.drawable.img_place_holder
+        )
+        val circularBitmapDrawable = RoundedBitmapDrawableFactory.create(resources, placeholder)
+        circularBitmapDrawable.isCircular = true
+        Glide.with(this.context)
+            .load(url.orEmpty())
+            .apply(
+                RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL)
+                    .format(DecodeFormat.PREFER_ARGB_8888)
+                    .error(circularBitmapDrawable)
+                    .placeholder(circularProgressDrawable).circleCrop().dontAnimate()
+            )
+            .transition(DrawableTransitionOptions.withCrossFade())
+            .into(this)
+    } else {
+        Glide.with(this.context)
+            .load(url.orEmpty())
+            .apply(
+                RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL)
+                    .format(DecodeFormat.PREFER_ARGB_8888)
+                    .error(R.drawable.img_place_holder)
+                    .placeholder(circularProgressDrawable)
+                    .dontAnimate()
             )
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(this)
