@@ -26,7 +26,6 @@ fun showSoftInput(edit: EditText, context: Context) {
 }
 
 fun hideKeyBoardDialog(edit: EditText, context: Context){
-    val im: InputMethodManager =
-        context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-    im.hideSoftInputFromWindow(edit.windowToken, 0)
+    val im = context.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+    im?.hideSoftInputFromWindow(edit.windowToken, 0)
 }

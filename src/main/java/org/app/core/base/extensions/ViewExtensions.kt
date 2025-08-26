@@ -72,6 +72,7 @@ import androidx.core.view.isInvisible
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import com.google.android.material.color.MaterialColors
+import androidx.core.net.toUri
 
 fun View.show() {
     if (isVisible) return
@@ -436,11 +437,30 @@ fun setLocalImage(imgView: ImageView, image: String?, cornerRadius: Int?) {
     }
 }
 
+@BindingAdapter("localImage")
+fun setLocalImage(imgView: ImageView, image: String?) {
+    image?.let {
+        try {
+            Glide
+                .with(imgView.context)
+                .load(Uri.fromFile(File(image)))
+                .apply(
+                    RequestOptions()
+                        .error(R.drawable.img_place_holder)
+                )
+                .into(imgView)
+
+        } catch (ex: Exception) {
+            ex.printStackTrace()
+        }
+    }
+}
+
 @BindingAdapter("localCircleImage")
 fun setLocalCircleImage(imgView: ImageView, image: String?) {
-    if (image != null && image.isNotBlank()) {
+    if (!image.isNullOrBlank()) {
         try {
-            imgView.loadImageUri(Uri.parse(image), ImageViewType.CIRCLE)
+            imgView.loadImageUri(image.toUri(), ImageViewType.CIRCLE)
         } catch (ex: Exception) {
             imgView.loadImageResource(R.drawable.ic_avatar, ImageViewType.CIRCLE)
         }

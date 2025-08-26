@@ -39,6 +39,10 @@ fun String.isElonMuskLink() : Boolean {
     return this.startsWith("https://x.com/") || this.startsWith("http://x.com/")
 }
 
+fun String.isValidThreadLink() = Regex(
+    "(?:https?:\\/{2})?(?:w{3}\\.)?(threads|m.threads).*"
+).matches(this)
+
 fun String.encryptCBC(ivKey: String, secretKey: String): String {
     val iv = IvParameterSpec(ivKey.toByteArray())
     val keySpec = SecretKeySpec(secretKey.toByteArray(), "AES")

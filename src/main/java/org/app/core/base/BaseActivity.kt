@@ -348,14 +348,17 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
         enableEdgeToEdge()
         val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
         windowInsetsController.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-        windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
+        if (isFull) {
+            windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
+        } else {
+            windowInsetsController.show(WindowInsetsCompat.Type.systemBars())
+        }
         ViewCompat.setOnApplyWindowInsetsListener(root) { v, windowInsets ->
             if (!isFull) {
-                val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+                val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars().or(WindowInsetsCompat.Type.ime()))
                 v.updateLayoutParams<ViewGroup.MarginLayoutParams> {
-                    leftMargin = insets.left
                     bottomMargin = insets.bottom
-                    rightMargin = insets.right
+                    topMargin = insets.top
                 }
             }
             WindowInsetsCompat.CONSUMED

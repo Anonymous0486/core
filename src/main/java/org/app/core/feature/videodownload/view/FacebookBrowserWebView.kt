@@ -63,9 +63,45 @@ class FacebookBrowserWebView : WebView {
         }
     }
 
+    fun runThreadsParser() {
+        try {
+            this.evaluateJavascript("javascript:${jsScript}") {
+                Timber.tag("###DEBUG").i("Finish Threads parser: $it")
+            }
+        } catch (ex: Exception) {
+            Firebase.crashlytics.recordException(ex)
+            ex.printStackTrace()
+        }
+    }
+
     companion object {
         const val DEFAULT_MOBILE_AGENT =
 //            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
             "Mozilla/5.0 (Linux; Android 13; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36"
+
+        val jsScript = """
+            var presentImg = '';
+            var videoTit = '';
+            function checkVisible(elm) {
+                var rect = elm.getBoundingClientRect();
+                var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+                return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+            }
+            
+            var videoImg = document.querySelectorAll('meta[property="og:image"]');
+            if (videoImg.length > 0) {
+                presentImg = videoImg[0].content;
+            }
+            var videoDesc = document.querySelectorAll('meta[property="og:description"]');
+            if (videoDesc.length > 0) {
+                videoTit = videoDesc[0].content;
+            }
+            var myVideos = document.getElementsByTagName('video');
+            if (myVideos.length > 0) {
+                mJava.onVideoClicked(myVideos[0].src, presentImg, videoTit);
+            } else {
+                mJava.onVideoClicked('', presentImg, videoTit);
+            }
+            """
     }
 }
