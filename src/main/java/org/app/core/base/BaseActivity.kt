@@ -390,13 +390,13 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
             }
             layoutCard!!.setMargins(left = 12.px, right =  12.px)
             layoutCard!!.radius = 10.px.toFloat()
-            if (!forceMaxHeightNative) {
+            if (forceMaxHeightNative) {
                 resources.displayMetrics.let { displayMetrics ->
                     val height = displayMetrics.heightPixels
-                    val maxH = min(((height - 24.px)  / 3), 350.px)
-                    layoutCard!!.viewTreeObserver
+                    val maxH = min((2 * (height - 24.px) / 5), 350.px)
+                    adsContainer!!.viewTreeObserver
                         .addOnGlobalLayoutListener(
-                            OnViewGlobalLayoutListener(layoutCard!!, maxH)
+                            OnViewGlobalLayoutListener(adsContainer!!, maxH)
                         )
                 }
             }

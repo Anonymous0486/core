@@ -89,7 +89,6 @@
             android:id="@+id/ad_media"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintHeight_min="78dp"
             android:layout_marginTop="@dimen/ads_layout_margin"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ad_body" />

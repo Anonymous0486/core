@@ -11,10 +11,8 @@ class OnViewGlobalLayoutListener(
     ViewTreeObserver.OnGlobalLayoutListener {
 
     override fun onGlobalLayout() {
-        if (view.height > maxHeight) {
-            val params = view.layoutParams
-            params.height = maxHeight
-            view.layoutParams = params
-        }
+        val params = view.layoutParams
+        params.height = maxHeight
+        view.layoutParams = params
     }
 }

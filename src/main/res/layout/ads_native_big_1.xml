@@ -10,10 +10,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_centerInParent="true"
         android:id="@+id/background"
         android:background="@drawable/border_ads">
@@ -22,9 +18,7 @@
             android:id="@+id/ad_media"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginVertical="2dp"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-            app:layout_constraintHeight_min="78dp"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -48,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/ads_layout_margin"
-            android:layout_marginBottom="@dimen/ads_layout_margin"
+            android:layout_marginBottom="4dp"
             android:paddingVertical="2dp"
             app:layout_constraintBottom_toTopOf="@id/ad_body">
 
@@ -101,7 +95,7 @@
             android:layout_marginHorizontal="@dimen/ads_layout_margin"
             android:layout_marginBottom="@dimen/ads_small_layout_margin"
             android:ellipsize="end"
-            android:maxLines="2"
+            android:maxLines="1"
             android:textColor="@color/ads_text_color"
             android:textSize="12sp"
             app:layout_constraintBottom_toTopOf="@id/ad_call_to_action" />
