@@ -54,7 +54,7 @@ import kotlin.math.min
 
 abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
     open val TAG = this::class.simpleName ?: "BaseFragmentTAG"
-    open val forceMaxHeightNative: Boolean = true
+    open val forceMaxHeightNative: Boolean = false
 
     private var _binding: VB? = null
     val mBinding: VB?
@@ -317,12 +317,13 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                 resources.displayMetrics.let { displayMetrics ->
                     val height = displayMetrics.heightPixels
                     val maxH = min((2 * (height - 24.px) / 5), 350.px)
-                    layoutCard!!.viewTreeObserver
+                    adsContainer!!.viewTreeObserver
                         .addOnGlobalLayoutListener(
-                            OnViewGlobalLayoutListener(layoutCard!!, maxH)
+                            OnViewGlobalLayoutListener(adsContainer!!, maxH)
                         )
                 }
             }
+
             _hasNativeAds = true
             _hasBannerAds = false
             val aNative = CoreAds.instance.loadOrShowAdmobNativeAds(

@@ -14,6 +14,9 @@ class AppConfigure {
     
     @SerializedName("isForce")
     var isForceUpdate: Boolean = false
+
+    @SerializedName("mediaPicker")
+    var mediaPicker: Boolean = false
     
     @SerializedName("jsScript")
     var remoteJsScript: String = ""

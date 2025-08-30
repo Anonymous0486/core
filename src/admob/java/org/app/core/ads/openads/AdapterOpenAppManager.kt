@@ -95,7 +95,7 @@ class AdapterOpenAppManager private constructor() : LifecycleObserver,
             Timber.tag(TAG).i("Set id -> $adId")
             this.adId = adId
         }
-        CoreFeature.instance.initializeFeatureBy(myApplication?.packageName ?: "")
+//        CoreFeature.instance.initializeFeatureBy(myApplication?.packageName ?: "")
     }
 
     fun preloadAds() {

@@ -59,7 +59,7 @@ import kotlin.math.min
 abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
     open val TAG = this::class.simpleName ?: "BaseActivityTAG"
 
-    open val forceMaxHeightNative: Boolean = true
+    open val forceMaxHeightNative: Boolean = false
 
     private val localeDelegate: LocaleHelperActivityDelegate = LocaleHelperActivityDelegateImpl()
 

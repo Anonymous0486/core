@@ -102,7 +102,7 @@ dependencies {
     "admobImplementation"(libs.vungle)
     "admobImplementation"(libs.pangle)
 
-    api(libs.timber)
+    implementation(libs.timber)
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
 
