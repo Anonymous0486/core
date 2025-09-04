@@ -347,20 +347,26 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
     fun enableEdgeToEdge(root: View, isFull: Boolean = true) {
         enableEdgeToEdge()
         val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
-        windowInsetsController.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+
         if (isFull) {
+            windowInsetsController.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
             windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
         } else {
             windowInsetsController.show(WindowInsetsCompat.Type.systemBars())
         }
         ViewCompat.setOnApplyWindowInsetsListener(root) { v, windowInsets ->
-            if (!isFull) {
-                val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars().or(WindowInsetsCompat.Type.ime()))
-                v.updateLayoutParams<ViewGroup.MarginLayoutParams> {
-                    bottomMargin = insets.bottom
-                    topMargin = insets.top
+            val isVisible = lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)
+            Timber.tag("####DEBUG").i("setOnApplyWindowInsetsListener...$isVisible")
+            if (isVisible) {
+                if (!isFull) {
+                    val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars().or(WindowInsetsCompat.Type.ime()))
+                    v.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                        bottomMargin = insets.bottom
+                        topMargin = insets.top
+                    }
                 }
             }
+
             WindowInsetsCompat.CONSUMED
         }
     }
