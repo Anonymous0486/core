@@ -59,7 +59,7 @@ import kotlin.math.min
 abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
     open val TAG = this::class.simpleName ?: "BaseActivityTAG"
 
-    open val forceMaxHeightNative: Boolean = false
+    open val nativeHeight: Int = 0
 
     private val localeDelegate: LocaleHelperActivityDelegate = LocaleHelperActivityDelegateImpl()
 
@@ -396,16 +396,21 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
             }
             layoutCard!!.setMargins(left = 12.px, right =  12.px)
             layoutCard!!.radius = 10.px.toFloat()
-            if (forceMaxHeightNative) {
+            if (nativeHeight >= 0) {
                 resources.displayMetrics.let { displayMetrics ->
                     val height = displayMetrics.heightPixels
-                    val maxH = min((2 * (height - 24.px) / 5), 350.px)
+                    val maxH = if (nativeHeight == 0) {
+                        min((2 * (height - 24.px) / 5), 350.px)
+                    } else {
+                        nativeHeight
+                    }
                     adsContainer!!.viewTreeObserver
                         .addOnGlobalLayoutListener(
                             OnViewGlobalLayoutListener(adsContainer!!, maxH)
                         )
                 }
             }
+
             val aNative = CoreAds.instance.loadOrShowAdmobNativeAds(
                 this.applicationContext,
                 adsContainer!!,
@@ -615,6 +620,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
     }
 
     private fun showNativeFull(tag: String) {
+        Timber.tag(TAG).i("showNativeFull $tag")
         nativeFullContainer?.show()
         closeNativeFullAds?.show()
         val aNative = CoreAds.instance.loadOrShowAdmobNativeAds(

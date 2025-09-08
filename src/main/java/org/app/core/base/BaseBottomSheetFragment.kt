@@ -33,10 +33,11 @@ abstract class BaseBottomSheetFragment<VB : ViewBinding> :
         return binding.root
     }
 
+    override fun getTheme() = R.style.SheetDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(DialogFragment.STYLE_NORMAL, R.style.ThemeOverlay_Catalog_BottomSheetDialog_Scrollable)
+        setStyle(DialogFragment.STYLE_NORMAL, R.style.SheetDialog)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

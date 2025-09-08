@@ -16,14 +16,16 @@
         <com.google.android.gms.ads.nativead.MediaView
             android:id="@+id/ad_media"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             />
 
         <TextView
             android:id="@+id/ic_ad"
             style="@style/AdAttribution"
             app:layout_constraintStart_toStartOf="@id/ad_media"
-            app:layout_constraintTop_toTopOf="@id/ad_media"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_margin="2dp"
             />
 

@@ -54,7 +54,8 @@ import kotlin.math.min
 
 abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
     open val TAG = this::class.simpleName ?: "BaseFragmentTAG"
-    open val forceMaxHeightNative: Boolean = false
+    open val nativeHeight: Int = 0
+    open val showInitializeLoading: Boolean = true
 
     private var _binding: VB? = null
     val mBinding: VB?
@@ -151,7 +152,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
             _hasBannerAds = false
             layoutCard?.hide()
         } else {
-            showAds(true)
+            showAds(showInitializeLoading)
             lifecycleScope.launch {
                 lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
                     CoreAds.instance.nativeLoadedTs.collectLatest { ts ->
@@ -313,10 +314,14 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
             }
             layoutCard!!.setMargins(left = 12.px, right =  12.px)
             layoutCard!!.radius = 10.px.toFloat()
-            if (forceMaxHeightNative) {
+            if (nativeHeight >= 0) {
                 resources.displayMetrics.let { displayMetrics ->
                     val height = displayMetrics.heightPixels
-                    val maxH = min((2 * (height - 24.px) / 5), 350.px)
+                    val maxH = if (nativeHeight == 0) {
+                        min((2 * (height - 24.px) / 5), 350.px)
+                    } else {
+                        nativeHeight
+                    }
                     adsContainer!!.viewTreeObserver
                         .addOnGlobalLayoutListener(
                             OnViewGlobalLayoutListener(adsContainer!!, maxH)
@@ -415,15 +420,13 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         }
         Timber.tag("###DEBUG").i( "Refresh ads...")
         if (nativeAds != null) {
-            CoreAds.instance.showAdapterNativeAdsMultiple(
+            CoreAds.instance.loadOrShowAdmobNativeAds(
                 actv.applicationContext,
-                actv,
                 adsContainer!!,
                 nativeAds.id!!,
                 nativeAds.event ?: tagNative,
                 nativeAds.style ?: NativeStyle.BIG_10,
-                false,
-                nativeAds.preload ?: 0)
+            )
             _timeStamp = System.currentTimeMillis()
         }
     }
@@ -444,15 +447,14 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
             }
             parent.setMargins(left = 12.px, right =  12.px)
             parent.radius = 10.px.toFloat()
-            CoreAds.instance.showAdapterNativeAdsMultiple(
+            CoreAds.instance.loadOrShowAdmobNativeAds(
                 actv.applicationContext,
-                actv,
                 container,
                 nativeAds.id!!,
-                nativeAds.event ?: (tagNative + "Dummy"),
+                nativeAds.event ?: tagNative,
                 nativeAds.style ?: NativeStyle.BIG_10,
-                false,
-                nativeAds.preload ?: 0)
+            )
+            _timeStamp = System.currentTimeMillis()
         } else {
             val tagBanner = TAG + "_Banner"
             val bannerAds = remoteConfig.banners?.firstOrNull {
@@ -481,6 +483,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                     bannerAds.collapsible_type,
                     true
                 )
+                _timeStamp = System.currentTimeMillis()
             } else {
                 parent.hide()
             }
