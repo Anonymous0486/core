@@ -1323,9 +1323,11 @@ class CoreAds private constructor() {
         }
 
         val loadedAds = _nativeAdsList.firstOrNull { it.isAvailable() }
-        if (loadedAds != null && container != null) {
-            Timber.tag(TAG).d("Native show available ads")
-            loadedAds.showAdView(layoutAdId, context, container)
+        if (loadedAds != null) {
+            if (container != null) {
+                Timber.tag(TAG).d("Native show available ads")
+                loadedAds.showAdView(layoutAdId, context, container)
+            }
             return loadedAds
         }
 
