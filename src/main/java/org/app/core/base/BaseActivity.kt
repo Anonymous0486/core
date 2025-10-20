@@ -2,8 +2,10 @@ package org.app.core.base
 
 import android.app.Dialog
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Configuration
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -18,6 +20,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.core.app.ActivityOptionsCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
@@ -36,24 +39,24 @@ import com.zeugmasolutions.localehelper.LocaleHelperActivityDelegate
 import com.zeugmasolutions.localehelper.LocaleHelperActivityDelegateImpl
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
-import org.app.core.base.utils.NetworkUtil
-import org.app.core.base.utils.getDialogWaiting
-import org.app.core.base.widget.CustomToast
 import org.app.core.R
 import org.app.core.ads.CoreAds
 import org.app.core.ads.base.NativeStyle
+import org.app.core.ads.callback.AdsCallback
 import org.app.core.ads.remoteconfig.CoreRemoteConfig
+import org.app.core.base.binding.setOnSingleClickListener
 import org.app.core.base.extensions.hide
 import org.app.core.base.extensions.setMargins
 import org.app.core.base.extensions.show
-import org.app.core.base.utils.px
-import java.util.*
-import kotlinx.coroutines.isActive
-import org.app.core.ads.callback.AdsCallback
-import org.app.core.base.binding.setOnSingleClickListener
+import org.app.core.base.utils.NetworkUtil
 import org.app.core.base.utils.StringResId
+import org.app.core.base.utils.getDialogWaiting
+import org.app.core.base.utils.px
+import org.app.core.base.widget.CustomToast
 import timber.log.Timber
+import java.util.*
 import kotlin.math.min
 
 abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
@@ -128,6 +131,15 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
         localeDelegate.onPaused()
     }
 
+//    override fun startActivity(intent: Intent?) {
+//        val options = ActivityOptionsCompat.makeCustomAnimation(
+//            this,
+//            R.anim.anim_slide_in_top,
+//            R.anim.fade_out
+//        )
+//        startActivity(intent, options.toBundle())
+//    }
+
     override
     fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -140,17 +152,17 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
             setUpBottomNavigation()
         }
 
-        toastNoInternet = CustomToast.makeText(
-            this,
-            getString(R.string.no_internet),
-            R.drawable.ic_no_internet
-        )
-        toastHasInternet = CustomToast.makeText(
-            this,
-            getString(R.string.connection_restored),
-            R.drawable.ic_tick_correct,
-            toastPaddingBottom()
-        )
+//        toastNoInternet = CustomToast.makeText(
+//            this,
+//            getString(R.string.no_internet),
+//            R.drawable.ic_no_internet
+//        )
+//        toastHasInternet = CustomToast.makeText(
+//            this,
+//            getString(R.string.connection_restored),
+//            R.drawable.ic_tick_correct,
+//            toastPaddingBottom()
+//        )
         isInternetConnected = NetworkUtil.isNetworkConnected(this)
 
         setupBinding()
@@ -343,6 +355,23 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
     fun showToastNoInternet() {
         toastNoInternet?.show()
     }
+
+//    override fun finish() {
+//        super.finish()
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+//            overrideActivityTransition(
+//                OVERRIDE_TRANSITION_OPEN,
+//                R.anim.no_change,     // previous activity enter
+//                R.anim.anim_slide_out_top  // current activity exit
+//            )
+//        } else {
+//            @Suppress("DEPRECATION")
+//            overridePendingTransition(
+//                R.anim.no_change,
+//                R.anim.anim_slide_out_top
+//            )
+//        }
+//    }
 
     fun enableEdgeToEdge(root: View, isFull: Boolean = true) {
         enableEdgeToEdge()

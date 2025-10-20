@@ -73,6 +73,7 @@ import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import com.google.android.material.color.MaterialColors
 import androidx.core.net.toUri
+import androidx.core.graphics.createBitmap
 
 fun View.show() {
     if (isVisible) return
@@ -618,11 +619,7 @@ fun View.takeScreenShot(scaleWidth: Int? = null): Bitmap? {
     try {
         val bmWidth = this.measuredWidth
         val bmHeight = this.measuredHeight
-        val screenshot = Bitmap.createBitmap(
-            bmWidth,
-            bmHeight,
-            Bitmap.Config.ARGB_8888
-        )
+        val screenshot = createBitmap(bmWidth, bmHeight)
 
         val canvas = Canvas(screenshot)
         this.draw(canvas)
