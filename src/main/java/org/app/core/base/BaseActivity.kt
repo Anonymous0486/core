@@ -206,6 +206,8 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                 }
             }
         }
+
+        preloadSwitchScreenAds()
     }
 
     open fun setUpObserver(){}
@@ -648,6 +650,49 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
         }
     }
 
+    fun handleSwitchScreen(onShown: (() -> Unit)?, onCompleted: (() -> Unit)?) {
+        val tagBack = TAG + "_Back"
+        val tagNext = TAG + "_Next"
+        val rmConfig = CoreRemoteConfig.instance.adsRemoteConfig
+        val ads = rmConfig?.interstitials?.firstOrNull {
+            it.tag == tagBack || it.tag == tagNext
+        }
+        if (ads?.id.isNullOrBlank()) {
+            onCompleted?.invoke()
+            return
+        }
+        CoreAds.instance.showAdapterInterstitialAds(
+            ads.timelapse ?: 0,
+            getString(StringResId.loadingAds),
+            this,
+            ads.id ?: return,
+            ads.event ?: "DummyTranslateVoice",
+            object : AdsCallback() {
+
+                override fun onClosed() {
+                    super.onClosed()
+
+                    if (!isDestroyed && !isFinishing) {
+                        onCompleted?.invoke()
+                    }
+                }
+
+                override fun onError(message: String?) {
+                    super.onError(message)
+
+                    if (!isDestroyed && !isFinishing) {
+                        onCompleted?.invoke()
+                    }
+                }
+                override fun onShow() {
+                    Timber.tag("MONET-DEBUG").i("Inter shown!")
+                    if (!isDestroyed && !isFinishing) {
+                        onShown?.invoke()
+                    }
+                }
+            })
+    }
+
     private fun showNativeFull(tag: String) {
         Timber.tag(TAG).i("showNativeFull $tag")
         nativeFullContainer?.show()
@@ -667,5 +712,20 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
     private fun shouldRefreshAds() : Boolean {
         val currentTime = System.currentTimeMillis()
         return currentTime >= (_timeStamp + 30000)
+    }
+
+    private fun preloadSwitchScreenAds() {
+        val tagBack = TAG + "_Back"
+        val tagNext = TAG + "_Next"
+        val rmConfig = CoreRemoteConfig.instance.adsRemoteConfig
+        val ads = rmConfig?.interstitials?.firstOrNull {
+            it.tag == tagBack || it.tag == tagNext
+        }
+        if (ads?.id.isNullOrBlank()) {
+            return
+        }
+
+        Timber.tag("MONET-DEBUG").d("Preload inter ads in create activity!!!")
+        CoreAds.instance.initAdapterInterstitialAds(this, ads.id!!, ads.event ?: "")
     }
 }

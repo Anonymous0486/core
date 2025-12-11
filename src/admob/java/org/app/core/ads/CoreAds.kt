@@ -326,6 +326,7 @@ class CoreAds private constructor() {
             return
         }
         val splashAds = AdapterInterstitialAds(activity = activity, adId = adsId, eventId = eventId, tag = "AdmobInterstitialSplash")
+        adsInterStorage[adsId] = splashAds
         var splashDone = false
 
         val handler = Handler(Looper.getMainLooper())
@@ -335,7 +336,7 @@ class CoreAds private constructor() {
 
             logFirebaseEvent(eventId + "_timeout")
             if (activity.isDestroyed || activity.isFinishing) return@Runnable
-            callback?.onError("Ad request timed out")
+            callback?.onError("Timeout")
         }
         handler.postDelayed(runnable, timeout.toLong())
         splashAds.setLoadCallback(object : LoadCallback() {
@@ -346,13 +347,14 @@ class CoreAds private constructor() {
                     showMessage(activity, "$eventId loaded success")
                 }
                 splashAds.turnOffAutoReload()
-                if (splashDone) return
+                if (splashDone) {
+                    return
+                }
                 splashDone = true
 
                 handler.removeCallbacksAndMessages(null)
                 if (activity.isDestroyed || activity.isFinishing) {
                     logFirebaseEvent(eventId + "_Actv_Hidden")
-                    adsInterStorage[adsId] = splashAds
                     return
                 }
 

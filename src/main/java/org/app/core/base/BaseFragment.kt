@@ -178,6 +178,8 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                 }
             }
         }
+
+        preloadAds()
     }
 
     override fun onDestroyView() {
@@ -555,6 +557,75 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                 nativeFullId = nativeId
                 showNativeFull(tag)
             }
+        }
+    }
+
+    fun handleSwitchScreen(onShown: (() -> Unit)?, onCompleted: (() -> Unit)?) {
+        val tagBack = TAG + "_Back"
+        val tagNext = TAG + "_Next"
+        val rmConfig = CoreRemoteConfig.instance.adsRemoteConfig
+        val ads = rmConfig?.interstitials?.firstOrNull {
+            it.tag == tagBack || it.tag == tagNext
+        }
+        if (ads?.id.isNullOrBlank() || activity == null) {
+            onCompleted?.invoke()
+            return
+        }
+        CoreAds.instance.showAdapterInterstitialAds(
+            ads.timelapse ?: 0,
+            getString(StringResId.loadingAds),
+            requireActivity(),
+            ads.id ?: return,
+            ads.event ?: "DummyTranslateVoice",
+            object : AdsCallback() {
+                override fun onClosed() {
+                    super.onClosed()
+
+                    onCompleted?.invoke()
+                }
+
+                override fun onError(message: String?) {
+                    super.onError(message)
+
+                    onCompleted?.invoke()
+                }
+
+                override fun onShow() {
+                    Timber.tag("MONET-DEBUG").i("Fragment Inter shown!")
+                    onShown?.invoke()
+                }
+            })
+    }
+
+    private fun preloadAds() {
+        // Inter
+        val tagBack = TAG + "_Back"
+        val tagNext = TAG + "_Next"
+        val rmConfig = CoreRemoteConfig.instance.adsRemoteConfig
+        val ads = rmConfig?.interstitials?.firstOrNull {
+            it.tag == tagBack || it.tag == tagNext
+        }
+        if (ads?.id.isNullOrBlank()) {
+            return
+        }
+
+        Timber.tag("MONET-DEBUG").d("Preload inter ads in create fragment!!!")
+        CoreAds.instance.initAdapterInterstitialAds(activity ?: return, ads.id!!, ads.event ?: "")
+
+        // Native
+        val tagNative = TAG
+        val nativeAds = rmConfig.natives?.firstOrNull {
+            it.place_preload == tagNative
+        }
+        if (nativeAds != null && nativeAds.id.isNullOrBlank() == false) {
+            Timber.tag("MONET-DEBUG").d("Preload Native ads in create fragment!!!")
+            CoreAds.instance.loadOrShowAdmobNativeAds(
+                requireActivity().applicationContext,
+                null,
+                nativeAds.id!!,
+                nativeAds.event ?: "DummyEventNative",
+                nativeAds.style ?: NativeStyle.BIG_13
+            )
         }
     }
 

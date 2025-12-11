@@ -4,7 +4,6 @@ import org.app.core.R
 
 object StringResId {
     val confirm = R.string.confirm
-    val cancel = R.string.cancel_dialog
     val selectLanguage = R.string.select_language
     val ok = R.string.agree_dialog
     val next = R.string.next
@@ -19,40 +18,15 @@ object StringResId {
     val setting = R.string.setting
     val privacy = R.string.privacy
     val language = R.string.txt_language
+    val cancel = R.string.txt_cancel
+    val clear = R.string.txt_clear_content
     val storagePermissionNotice = R.string.txt_storage_permission_notice
     
     val txtLikeApp = R.string.do_you_like_the_app
-    val premiumVersionTitle = R.string.txt_drawer_header_pro_title
-    val premiumVersionDes = R.string.txt_drawer_header_pro_desc
-    val rateAndFeedback = R.string.txt_menu_rate_feedback
-    val updatePremiumTitle = R.string.txt_purchase_update_pro
-    val updatePremiumSub = R.string.txt_purchase_update_pro_subtitle
-    val updatePremiumDes1 = R.string.txt_purchase_update_pro_desc1
-    val updatePremiumDes2 = R.string.txt_purchase_update_pro_desc2
-    val updatePremiumDes3 = R.string.txt_purchase_update_pro_desc3
     val loading = R.string.txt_loading
-    val downloadSuccess = R.string.txt_des_success
-    val premiumPlanTitle = R.string.txt_purchased_plan
-    val premiumPlanSub = R.string.txt_purchased_plan_title
-    val premiumPlanDes = R.string.txt_purchased_plan_desc
-    val cancelRenewal = R.string.txt_cancel_renewal
-    val dueDate = R.string.txt_due_date
-    val paymentPlan = R.string.txt_next_payment_plan
-    val renewalPlanDes = R.string.txt_current_plan_renewal_desc
-    val planDes = R.string.txt_tax_purchased_plan_desc
-    val exitApp = R.string.txt_exit_app
-    val exit = R.string.txt_exit_button
+    val exit = R.string.txt_exit
     
     val exitConfirm = R.string.txt_exit_app_confirm
-    val packageMonthly = R.string.txt_monthly_package
-    val packageYearly = R.string.txt_yearly_package
-    val packageForever = R.string.txt_forever_package
-    val packageMonthlyDes = R.string.txt_monthly_package_desc
-    val packageYearlyDes = R.string.txt_yearly_package_desc
-    val packageForeverDes = R.string.txt_forever_package_desc
-    val year = R.string.txt_year_title
-    val month = R.string.txt_month_title
-    val forever = R.string.txt_forever_title
     val done = R.string.txt_done
     val lowNetworkConnection = R.string.txt_low_connection_toast
     val rateDes = R.string.txt_rating_description
@@ -95,6 +69,12 @@ object StringResId {
     val listEmpty = R.string.list_no_result
     val close = R.string.action_close
     
+    val welcomeBack = R.string.txt_welcome_back
+    val noInternetConnect = R.string.no_internet_connection_title
+    val noInternetRestored = R.string.has_internet_connection_title
+    val checkInternetState = R.string.no_internet_connection_content
+    val agree = R.string.agree
+    val cropFailed = R.string.txt_crop_photo_failed
     val lan_afrikaans = R.string.txt_language_afrikaans
     val lan_arabic = R.string.txt_language_arabic
     val lan_bulgarian = R.string.txt_language_bulgarian

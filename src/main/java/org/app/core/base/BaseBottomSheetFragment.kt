@@ -16,6 +16,8 @@ abstract class BaseBottomSheetFragment<VB : ViewBinding> :
 
     protected lateinit var binding: VB
 
+    override fun getTheme() = R.style.SheetDialog
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,8 +34,6 @@ abstract class BaseBottomSheetFragment<VB : ViewBinding> :
         binding = method.invoke(null, layoutInflater, container, false) as VB
         return binding.root
     }
-
-    override fun getTheme() = R.style.SheetDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
