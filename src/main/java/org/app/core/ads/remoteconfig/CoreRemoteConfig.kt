@@ -165,8 +165,10 @@ class CoreRemoteConfig {
         val adsCfgJson = config.getString(keyAdsConfig)
         _adsRemoteConfig = Gson().fromJson(adsCfgJson, AdsConfigure::class.java)
 
-        Timber.tag(TAG).i("Remote: active version: ${_adsRemoteConfig?.active_version}")
-
+        Timber.tag(TAG).i("Remote: active version: ${_adsRemoteConfig?.active_version} - ${_adsRemoteConfig?.status}")
+        if (_adsRemoteConfig?.status == null || _adsRemoteConfig?.status == false) {
+            CoreAds.instance.setHideAds(true)
+        }
         val appCfgJson = config.getString(keyAppConfig)
         _appRemoteConfig = Gson().fromJson(appCfgJson, AppConfigure::class.java)
 

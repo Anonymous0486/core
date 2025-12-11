@@ -411,8 +411,12 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
             return false
         }
 
-        val remoteConfig = CoreRemoteConfig.instance.adsRemoteConfig ?: CoreRemoteConfig.instance.fetchLocalConfig(this)
-        remoteConfig ?: return false
+        val remoteConfig = CoreRemoteConfig.instance.adsRemoteConfig
+        if (remoteConfig == null || remoteConfig.status == false) {
+            layoutCard?.hide()
+            CoreAds.instance.setHideAds(true)
+            return false
+        }
 
         val tagNative = TAG + "_Native"
         val nativeAds = remoteConfig.natives?.firstOrNull {
@@ -518,8 +522,12 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
             return
         }
 
-        val remoteConfig = CoreRemoteConfig.instance.adsRemoteConfig ?: CoreRemoteConfig.instance.fetchLocalConfig(this)
-        remoteConfig ?: return
+        val remoteConfig = CoreRemoteConfig.instance.adsRemoteConfig
+        if (remoteConfig == null || remoteConfig.status == false) {
+            layoutCard?.hide()
+            CoreAds.instance.setHideAds(true)
+            return
+        }
 
         val tagNative = TAG + "_Native"
         val nativeAds = remoteConfig.natives?.firstOrNull {
@@ -559,7 +567,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
         val ads = rmConfig?.interstitials?.firstOrNull {
             it.tag == tagNative
         }
-        if (ads?.id.isNullOrBlank()) {
+        if (ads?.id.isNullOrBlank() || rmConfig?.status == false) {
             finish()
             return
         }
@@ -609,7 +617,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
             it.tag == tag
         }
 
-        if (ads?.id.isNullOrBlank()) {
+        if (ads?.id.isNullOrBlank() || rmConfig?.status == false) {
             onCompleted?.invoke()
             return
         }

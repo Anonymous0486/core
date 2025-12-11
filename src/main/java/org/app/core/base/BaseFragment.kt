@@ -301,8 +301,12 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         }
 
         val actv = activity ?: return false
-        val remoteConfig = CoreRemoteConfig.instance.adsRemoteConfig ?: CoreRemoteConfig.instance.fetchLocalConfig(actv)
-        remoteConfig ?: return false
+        val remoteConfig = CoreRemoteConfig.instance.adsRemoteConfig
+        if (remoteConfig == null || remoteConfig.status == false) {
+            layoutCard?.hide()
+            CoreAds.instance.setHideAds(true)
+            return false
+        }
 
         val tagNative = TAG + "_Native"
         val nativeAds = remoteConfig.natives?.firstOrNull {
@@ -414,8 +418,12 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         }
 
         val actv = activity ?: return
-        val remoteConfig = CoreRemoteConfig.instance.adsRemoteConfig ?: CoreRemoteConfig.instance.fetchLocalConfig(actv)
-        remoteConfig ?: return
+        val remoteConfig = CoreRemoteConfig.instance.adsRemoteConfig
+        if (remoteConfig == null || remoteConfig.status == false) {
+            layoutCard?.hide()
+            CoreAds.instance.setHideAds(true)
+            return
+        }
         val tagNative = TAG + "_Native"
         val nativeAds = remoteConfig.natives?.firstOrNull {
             it.tag == tagNative && !it.id.isNullOrBlank()
@@ -434,8 +442,13 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
     }
 
     fun showAdsWhenPagerChanged(container: FrameLayout, parent: CardView) {
-        val remoteConfig = CoreRemoteConfig.instance.adsRemoteConfig ?: CoreRemoteConfig.instance.fetchLocalConfig(requireActivity())
-        remoteConfig ?: return
+        val remoteConfig = CoreRemoteConfig.instance.adsRemoteConfig
+        if (remoteConfig == null || remoteConfig.status == false) {
+            layoutCard?.hide()
+            parent.hide()
+            CoreAds.instance.setHideAds(true)
+            return
+        }
 
         val actv = activity ?: return
         val tagNative = TAG + "_Native"
@@ -515,7 +528,14 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         }
 
         val rmConfig = CoreRemoteConfig.instance.adsRemoteConfig
-        val ads = rmConfig?.interstitials?.firstOrNull {
+        if (rmConfig == null || rmConfig.status == false) {
+            layoutCard?.hide()
+            CoreAds.instance.setHideAds(true)
+            onCompleted?.invoke()
+            return
+        }
+
+        val ads = rmConfig.interstitials?.firstOrNull {
             it.tag == tag
         }
 
