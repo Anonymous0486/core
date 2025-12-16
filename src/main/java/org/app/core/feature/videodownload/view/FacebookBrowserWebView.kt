@@ -24,7 +24,7 @@ class FacebookBrowserWebView : WebView {
 
     @SuppressLint("SetJavaScriptEnabled")
     private fun initWebView() {
-        settings.userAgentString = DEFAULT_MOBILE_AGENT
+//        settings.userAgentString = DEFAULT_MOBILE_AGENT
         settings.javaScriptEnabled = true
         settings.useWideViewPort = true
         settings.loadWithOverviewMode = true
@@ -77,7 +77,8 @@ class FacebookBrowserWebView : WebView {
     companion object {
         const val DEFAULT_MOBILE_AGENT =
 //            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
-            "Mozilla/5.0 (Linux; Android 13; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36"
+            "Mozilla/5.0 (Linux; Android 13; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7339.123 Mobile Safari/537.36"
+//        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
         val jsScript = """
             var presentImg = '';

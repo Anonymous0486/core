@@ -1355,6 +1355,8 @@ class CoreAds private constructor() {
                 shimmer.startShimmer()
                 container.removeAllViews()
                 container.addView(shimmer)
+            } else {
+                Timber.tag(TAG).d("Native ads is empty -> just load new ads")
             }
         }
 
