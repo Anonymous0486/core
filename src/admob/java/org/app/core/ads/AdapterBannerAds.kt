@@ -31,6 +31,7 @@ import timber.log.Timber
 import java.util.ArrayList
 import java.util.UUID
 import java.util.concurrent.LinkedBlockingQueue
+import androidx.core.view.isEmpty
 
 @SuppressLint("LogNotTimber")
 class AdapterBannerAds(
@@ -215,12 +216,14 @@ class AdapterBannerAds(
                 container.removeAllViews()
                 container.addView(ads)
                 logEvent("Shown")
-            } catch (_: Exception) {}
+            } catch (e: Exception) {
+                Timber.tag("BannerAdmob").i( "Exception: ${e.localizedMessage}")
+            }
         } else {
             if (isLoading()) {
                 logEvent("Waiting")
                 this.container = container
-                if (container.childCount == 0) {
+                if (container.isEmpty()) {
                     enableShimmer(adsSize)
                 }
             }

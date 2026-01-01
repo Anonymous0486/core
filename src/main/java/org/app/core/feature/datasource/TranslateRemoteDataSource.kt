@@ -10,6 +10,7 @@ import org.app.core.feature.model.BaseResponse
 import org.app.core.feature.model.DictionaryModel
 import org.app.core.feature.model.FailureStatus
 import org.app.core.feature.model.ResponseData
+import org.app.core.feature.model.TextTranslateRequest
 import org.app.core.feature.model.TranslateResponse
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -31,6 +32,18 @@ class TranslateRemoteDataSource @Inject constructor(
         }
         
         return safeApiCall { _translateService!!.translates(content, languageCode) }
+    }
+
+    suspend fun translateText(content: String, languageCode: String) : ResponseData<BaseResponse<TranslateResponse?>?> {
+        if (!translateNetworkInitializing()) {
+            return ResponseData.Failure(FailureStatus.API_FAIL, 404, "Network component is not ready")
+        }
+
+        val request = TextTranslateRequest(
+            content,
+            languageCode
+        )
+        return safeApiCall { _translateService!!.translateText(request) }
     }
     
     suspend fun multipleTranslate(contents: List<String>, languageCode: RequestBody) : ResponseData< BaseResponse<List<String>?>?> {

@@ -920,11 +920,11 @@ class CoreAds private constructor() {
         
         if (!isNetworkAvailable(activity)) {
             callback?.onError("The device is not connected to the internet")
-            Log.i("BannerAdmob", "The device is not connected to the internet")
+            Timber.tag("BannerAdmob").i("The device is not connected to the internet")
             return null
         }
 
-        if (container.childCount == 0) {
+        if (container.isEmpty()) {
             ads.showShimmer(size, container)
         }
         _bannerContainer = container
@@ -1306,7 +1306,8 @@ class CoreAds private constructor() {
         container: FrameLayout?,
         adId: String,
         eventId: String,
-        style: Int = NativeStyle.SMALL_41
+        style: Int = NativeStyle.SMALL_41,
+        preload: Int = 0,
     ) : AdmobNativeAds? {
         val layoutAdId = styleNativeAdsStorage[style] ?: return null
         if (_nativeAdsList.isEmpty()) {

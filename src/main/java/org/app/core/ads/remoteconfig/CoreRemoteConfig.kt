@@ -63,7 +63,7 @@ class CoreRemoteConfig {
     
     fun findAppOpenId() : String? {
         _adsRemoteConfig?.let { config ->
-            val filter = config.open_ads?.filter { it.version == config.active_version || it.status == true }
+            val filter = config.open_ads?.filter { it.status == true }
             
             return filter?.firstOrNull()?.id
         }

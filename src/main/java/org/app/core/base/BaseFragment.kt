@@ -324,7 +324,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                 resources.displayMetrics.let { displayMetrics ->
                     val height = displayMetrics.heightPixels
                     val maxH = if (nativeHeight == 0) {
-                        min((2 * (height - 24.px) / 5), 350.px)
+                        min((1 * (height - 24.px) / 3), 350.px)
                     } else {
                         nativeHeight
                     }

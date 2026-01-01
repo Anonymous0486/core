@@ -1,6 +1,5 @@
 package org.app.core.ads.nativeads
 
-import android.app.Activity
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
@@ -24,11 +23,9 @@ import com.google.android.gms.ads.admanager.AdManagerAdView
 import com.google.android.gms.ads.nativead.NativeAd
 import org.app.core.R
 import org.app.core.ads.CoreAds
-import org.app.core.ads.base.NativeStyle
 import org.app.core.ads.remoteconfig.CoreRemoteConfig
 import org.app.core.ads.remoteconfig.config.BackupAds
 import org.app.core.ads.remoteconfig.type.BackupType
-import org.app.core.ads.utils.convertToCamelCase
 import timber.log.Timber
 import java.util.UUID
 import java.util.concurrent.LinkedBlockingQueue
