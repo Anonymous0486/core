@@ -42,6 +42,14 @@ android {
         }
     }
 
+    packaging {
+        resources {
+            excludes += "META-INF/DEPENDENCIES"
+            excludes += "META-INF/LICENSE"
+            excludes += "META-INF/LICENSE.txt"
+        }
+    }
+
     flavorDimensions.add("platform")
     productFlavors {
         create("applovin") {
@@ -127,6 +135,12 @@ dependencies {
     "applovinImplementation"(libs.play.services.ads.identifier)
     //noinspection GradleDynamicVersion
     "applovinImplementation"("com.applovin.mediation:google-adapter:+")
+
+    implementation("com.google.android.gms:play-services-drive:17.0.0")
+    implementation("com.google.android.gms:play-services-auth:21.2.0")
+    implementation("com.google.http-client:google-http-client-gson:1.42.2")
+    implementation("com.google.api-client:google-api-client-android:1.30.7")
+    implementation("com.google.apis:google-api-services-drive:v3-rev188-1.25.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -375,6 +375,18 @@ fun uriToBitmap(uri: Uri, context: Context?, options: BitmapFactory.Options? = n
     return null
 }
 
+fun String.removePrefixIfNeed() : String {
+    if (this.startsWith("copy")) {
+        val index = this.indexOf("_of_")
+        return if (index != -1) {
+            this.substring(index).replace("_of_", "")
+        } else {
+            this.replace("copy", "")
+        }
+    }
+    return this
+}
+
 inline fun <reified T : Enum<T>> Intent.putExtra(victim: T): Intent =
     putExtra(T::class.java.name, victim.ordinal)
 
