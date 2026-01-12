@@ -525,7 +525,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                     Handler(Looper.getMainLooper())
                         .postDelayed({
                             hideProgressDialog()
-                        }, 1600)
+                        }, 1500)
                 }
             }
             return true
