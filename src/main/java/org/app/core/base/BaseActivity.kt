@@ -28,6 +28,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.isVisible
 import androidx.core.view.updateLayoutParams
+import androidx.core.view.updatePadding
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Lifecycle
@@ -402,6 +403,37 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
         }
     }
 
+    fun hideStatusBar(view: View) {
+        val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
+        windowInsetsController.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        windowInsetsController.hide(WindowInsetsCompat.Type.statusBars())
+        ViewCompat.setOnApplyWindowInsetsListener(view) { v, insets ->
+            val bars = insets.getInsets(
+                WindowInsetsCompat.Type.systemBars()
+                        or WindowInsetsCompat.Type.displayCutout()
+            )
+            v.updatePadding(
+                top = bars.top,
+                bottom = bars.bottom,
+            )
+            WindowInsetsCompat.CONSUMED
+        }
+    }
+
+    fun hideNavigationBar(view: View) {
+        val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
+        windowInsetsController.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        windowInsetsController.hide(WindowInsetsCompat.Type.navigationBars())
+        ViewCompat.setOnApplyWindowInsetsListener(view) { v, insets ->
+            val bars = insets.getInsets(
+                WindowInsetsCompat.Type.systemBars()
+                        or WindowInsetsCompat.Type.displayCutout()
+            )
+            v.updatePadding(top = bars.top)
+            WindowInsetsCompat.CONSUMED
+        }
+    }
+
     fun showAds(loading: Boolean = false) : Boolean {
         adsContainer ?: return false
         layoutCard ?: return false
@@ -622,7 +654,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
             return
         }
 
-        var nativeId: String? = null
+        var nativeId = ""
         val ret = CoreAds.instance.showAdapterInterstitialAds(
             ads?.timelapse ?: 0,
             getString(StringResId.loadingAds),
@@ -632,7 +664,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
             object : AdsCallback() {
                 override fun onClosed() {
                     super.onClosed()
-                    if (nativeId.isNullOrBlank()) {
+                    if (nativeId.isBlank()) {
                         if (!isDestroyed && !isFinishing) {
                             onCompleted?.invoke()
                         }
@@ -641,20 +673,26 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
 
                 override fun onError(message: String?) {
                     super.onError(message)
-                    if (nativeId.isNullOrBlank()) {
+                    if (nativeId.isBlank()) {
                         if (!isDestroyed && !isFinishing) {
                             onCompleted?.invoke()
+                        }
+                    }
+                }
+
+                override fun onShow() {
+                    Timber.tag("MONET-DEBUG").i("Inter shown!")
+                    if (!isDestroyed && !isFinishing) {
+                        if (nativeId.isNotBlank() && nativeFullContainer != null) {
+                            nativeFullId = nativeId
+                            showNativeFull(tag)
                         }
                     }
                 }
             })
 
         if (ret) {
-            nativeId = ads.nativeId
-            if (!nativeId.isNullOrBlank() && nativeFullContainer != null) {
-                nativeFullId = nativeId
-                showNativeFull(tag)
-            }
+            nativeId = ads.nativeId ?: ""
         }
     }
 
@@ -674,7 +712,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
             getString(StringResId.loadingAds),
             this,
             ads.id ?: return,
-            ads.event ?: "DummyTranslateVoice",
+            ads.event ?: "DummyEvent",
             object : AdsCallback() {
 
                 override fun onClosed() {
@@ -722,18 +760,33 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
         return currentTime >= (_timeStamp + 30000)
     }
 
+    fun preloadNativeIfNeed() {
+        val rmConfig = CoreRemoteConfig.instance.adsRemoteConfig
+        if (rmConfig == null || rmConfig.status == false) {
+            return
+        }
+
+        val nativeAds = rmConfig.natives?.firstOrNull {
+            it.place_preload == TAG && !it.id.isNullOrBlank()
+        }
+
+        if (nativeAds != null) {
+            CoreAds.instance.preloadAdmobNativeAds(applicationContext, nativeAds.id!!, nativeAds.event ?: "DUMMY")
+        }
+    }
+
     private fun preloadSwitchScreenAds() {
         val tagBack = TAG + "_Back"
         val tagNext = TAG + "_Next"
         val rmConfig = CoreRemoteConfig.instance.adsRemoteConfig
         val ads = rmConfig?.interstitials?.firstOrNull {
-            it.tag == tagBack || it.tag == tagNext
+            (it.tag == tagBack || it.tag == tagNext) && it.always_preload == true
         }
         if (ads?.id.isNullOrBlank()) {
             return
         }
 
         Timber.tag("MONET-DEBUG").d("Preload inter ads in create activity!!!")
-        CoreAds.instance.initAdapterInterstitialAds(this, ads.id!!, ads.event ?: "")
+        CoreAds.instance.initAdapterInterstitialAds(this, ads.id!!, ads.event ?: "", 2)
     }
 }

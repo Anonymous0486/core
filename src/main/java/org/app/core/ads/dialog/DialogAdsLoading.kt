@@ -31,12 +31,10 @@ class DialogAdsLoading(context: Context, loadingTxt: String = ""): Dialog(contex
             window!!.attributes = layoutParams
             WindowCompat.setDecorFitsSystemWindows(window!!, false)
             if (Build.VERSION.SDK_INT >= 30) {
-                window!!.attributes.layoutInDisplayCutoutMode =
-                    WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS
+                window!!.attributes.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS
                 window!!.setNavigationBarContrastEnforced(false)
                 val controller = WindowCompat.getInsetsController(window!!, window!!.decorView)
                 controller.hide(WindowInsetsCompat.Type.systemBars())
-                controller.hide(WindowInsetsCompat.Type.navigationBars())
                 controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
             }
         }

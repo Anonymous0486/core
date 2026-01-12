@@ -34,10 +34,11 @@ data class AdmobNativeAds(
     val requestId: String = UUID.randomUUID().toString(),
     private val context: Context,
     val adUnitId: String,
-    val event: String,
+    val event: String
 ) {
     private val TAG = "NativeAdmob"
     private var _nativeAd: NativeAd? = null
+    private var _displayWhenLoaded: Boolean = true
     var _mixedAdView: AdManagerAdView? = null
     var _isLoading = false
     var _isShown = false
@@ -75,6 +76,10 @@ data class AdmobNativeAds(
             destroyAds()
         }
         return _isShown
+    }
+
+    fun setDisplayWhenLoaded(flag: Boolean) {
+        _displayWhenLoaded = flag
     }
 
     fun destroyAds() {
@@ -141,7 +146,9 @@ data class AdmobNativeAds(
                     Timber.tag(TAG).d("onAdLoaded  -> $adUnitId")
                     _isLoading = false
                     logEvent("Loaded")
-                    CoreAds.instance.updateTimestamp(System.currentTimeMillis())
+                    if (_displayWhenLoaded) {
+                        CoreAds.instance.updateTimestamp(System.currentTimeMillis())
+                    }
                 }
 
                 override fun onAdClosed() {
@@ -222,7 +229,9 @@ data class AdmobNativeAds(
                     Timber.tag(TAG).d("onAdLoaded backup -> $backupId")
                     _isLoading = false
                     logEvent("LoadedBackupId")
-                    CoreAds.instance.updateTimestamp(System.currentTimeMillis())
+                    if (_displayWhenLoaded) {
+                        CoreAds.instance.updateTimestamp(System.currentTimeMillis())
+                    }
                 }
 
                 override fun onAdClosed() {

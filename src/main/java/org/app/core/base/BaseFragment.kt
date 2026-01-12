@@ -145,7 +145,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
 
             hasInitializedRootView = true
         }
-        view.setOnTouchListener { _, _ -> true }
+
         isInternetConnected = NetworkUtil.isNetworkConnected(context ?: return)
         if (CoreAds.instance.isHideAds) {
             _hasNativeAds = false
@@ -615,6 +615,22 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                     onShown?.invoke()
                 }
             })
+    }
+
+    fun preloadNativeIfNeed() {
+        val actv = activity ?: return
+        val rmConfig = CoreRemoteConfig.instance.adsRemoteConfig
+        if (rmConfig == null || rmConfig.status == false) {
+            return
+        }
+
+        val nativeAds = rmConfig.natives?.firstOrNull {
+            it.tag == TAG && !it.id.isNullOrBlank()
+        }
+
+        if (nativeAds != null) {
+            CoreAds.instance.preloadAdmobNativeAds(actv.applicationContext, nativeAds.id!!, nativeAds.event ?: "DUMMY")
+        }
     }
 
     private fun preloadAds() {

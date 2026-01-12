@@ -570,13 +570,13 @@ class CoreAds private constructor() {
             ads.setLoadCallback(object : LoadCallback() {
                 override fun onLoadSuccess() {
                     super.onLoadSuccess()
-                    
+
                     try {
                         if (dialogLoading.isShowing) {
                             dialogLoading.cancel()
                         }
                     } catch (_: Exception) {}
-                    
+
                     if (_enableDebug) {
                         showMessage(activity, "$adsId loaded success")
                     }
@@ -641,6 +641,7 @@ class CoreAds private constructor() {
                 if (dialogLoading.isShowing) dialogLoading.cancel()
             }catch (_: Exception){}
         }, 1000)
+
         return true
     }
 
@@ -1301,6 +1302,26 @@ class CoreAds private constructor() {
         return true
     }
 
+    fun preloadAdmobNativeAds(
+        context: Context,
+        adId: String,
+        eventId: String,
+    ) {
+        if (_nativeAdsList.isNotEmpty()) {
+            val ads = _nativeAdsList.firstOrNull { it.isAvailable() || it.isLoading() }
+            if (ads != null) {
+                //TODO: Has at least 1 available ads or loading ads
+                return
+            }
+        }
+
+        Timber.tag(TAG).d("Native ads preload...")
+        val aNative = AdmobNativeAds(context = context, adUnitId = adId, event = eventId)
+        aNative.setDisplayWhenLoaded(false)
+        _nativeAdsList.add(aNative)
+        aNative.loadAds()
+    }
+
     fun loadOrShowAdmobNativeAds(
         context: Context,
         container: FrameLayout?,
@@ -1337,6 +1358,7 @@ class CoreAds private constructor() {
         val loadingAds = _nativeAdsList.firstOrNull { it.isLoading() }
         if (loadingAds != null) {
             Timber.tag(TAG).d("Native ads is loading -> show waiting shimmer")
+            loadingAds.setDisplayWhenLoaded(true)
             if (container != null && container.isEmpty()) {
                 val shimmer = loadingAds.createShimmer(context, layoutAdId)
                 shimmer.startShimmer()

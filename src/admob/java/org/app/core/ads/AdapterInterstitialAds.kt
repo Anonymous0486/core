@@ -56,10 +56,6 @@ class AdapterInterstitialAds(activity: Activity,
                     ads = interstitialAd
                     onLoadSuccess()
                     logEvent("Loaded")
-                    if (showWhenLoaded) {
-                        logEvent("Shown")
-                        ads?.show(activity)
-                    }
                 }
 
                 override fun onAdFailedToLoad(loadAdError: LoadAdError) {
@@ -153,7 +149,7 @@ class AdapterInterstitialAds(activity: Activity,
         override fun onAdFailedToShowFullScreenContent(adError: AdError) {
             Log.i(TAG, "$tag onAdFailedToShowFullScreenContent: ${adError.message}")
             onShowError(adError.message)
-            logEvent(if (isBackupId) "DisplayFailBackupId" else "DisplayFail")
+            logEvent(if (isBackupId) "DisplayFailBackupId_${adError.code}" else "DisplayFail_${adError.code}")
         }
 
         override fun onAdDismissedFullScreenContent() {
