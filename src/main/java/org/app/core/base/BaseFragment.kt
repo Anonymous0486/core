@@ -73,6 +73,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
     private var _timeStamp: Long = 0
     private var _hasNativeAds: Boolean = true
     private var _hasBannerAds: Boolean = true
+    private var _firstTimeShownBanner: Boolean = true
     private var _requestNativeId = ""
     var nativeFullContainer: FrameLayout? = null
     var closeNativeFullAds: ImageView? = null
@@ -170,11 +171,17 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
 
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
-                while (isActive && _hasNativeAds) {
-                    if (shouldRefreshAds()) {
-                        refreshNative()
+                if (CoreAds.instance.isHideAds) {
+                    _hasNativeAds = false
+                    _hasBannerAds = false
+                    layoutCard?.hide()
+                } else {
+                    while (isActive && _hasNativeAds) {
+                        if (shouldRefreshAds()) {
+                            refreshNative()
+                        }
+                        delay(1000)
                     }
-                    delay(1000)
                 }
             }
         }
@@ -376,17 +383,25 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                     layoutCard!!.setMargins(left = 0, right =  0)
                     layoutCard!!.radius = 0f
                 }
+                val size = if (bannerAds.size == "medium") {
+                    AdSize.MEDIUM_RECTANGLE
+                } else if (bannerAds.size == "full") {
+                    AdSize.FULL_BANNER
+                } else {
+                    null
+                }
                 val banner = CoreAds.instance.showAdapterBannerAds(
                     actv,
                     adsContainer!!,
                     bannerAds.id!!,
                     bannerAds.event ?: tagBanner,
-                    if (bannerAds.size == "medium") AdSize.MEDIUM_RECTANGLE else null,
+                    size,
                     null,
-                    if (_timeStamp == 0L) bannerAds.collapsible_type else null,
+                    if (_firstTimeShownBanner) bannerAds.collapsible_type else null,
                     true
                 )
                 _timeStamp = System.currentTimeMillis()
+                _firstTimeShownBanner = false
                 _hasNativeAds = false
                 _hasBannerAds = true
 
@@ -488,12 +503,19 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                     parent.setMargins(left = 0, right =  0)
                     parent.radius = 0f
                 }
+                val size = if (bannerAds.size == "medium") {
+                    AdSize.MEDIUM_RECTANGLE
+                } else if (bannerAds.size == "full") {
+                    AdSize.FULL_BANNER
+                } else {
+                    null
+                }
                 CoreAds.instance.showAdapterBannerAds(
                     actv,
                     container,
                     bannerAds.id!!,
                     bannerAds.event ?: (tagBanner + "Dummy"),
-                    if (bannerAds.size == "medium") AdSize.MEDIUM_RECTANGLE else null,
+                    size,
                     null,
                     bannerAds.collapsible_type,
                     true

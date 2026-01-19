@@ -268,6 +268,9 @@ data class AdmobNativeAds(
     ) {
         try {
             if (_mixedAdView != null) {
+                if (_mixedAdView?.parent != null) {
+                    (_mixedAdView?.parent as FrameLayout?)?.removeView(_mixedAdView)
+                }
                 adsContainer.removeAllViews()
                 adsContainer.addView(_mixedAdView)
             } else {

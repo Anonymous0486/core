@@ -57,10 +57,10 @@ class AdapterBannerAds(
     override fun initAds() {
         super.initAds()
         ads = AdView(activity)
-        if (adsSize == null) {
-            ads?.setAdSize(adSizeDefault)
-        } else {
+        if (adsSize == AdSize.MEDIUM_RECTANGLE) {
             ads?.setAdSize(adsSize!!)
+        } else {
+            ads?.setAdSize(adSizeDefault)
         }
         ads?.adUnitId = adId
         initAdListener()
@@ -248,10 +248,10 @@ class AdapterBannerAds(
         ads = null
 
         ads = AdView(activity)
-        if (adsSize == null) {
-            ads?.setAdSize(adSizeDefault)
-        } else {
+        if (adsSize == AdSize.MEDIUM_RECTANGLE) {
             ads?.setAdSize(adsSize!!)
+        } else {
+            ads?.setAdSize(adSizeDefault)
         }
         ads?.adUnitId = backupId
 
@@ -364,6 +364,10 @@ class AdapterBannerAds(
             val widthPixels: Int = outMetrics.widthPixels
             val density: Float = outMetrics.density
             val adWidth = (widthPixels / density).toInt()
-            return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(activity, adWidth)
+            if (adsSize == AdSize.FULL_BANNER) {
+                return AdSize.getCurrentOrientationInlineAdaptiveBannerAdSize(activity, adWidth)
+            } else {
+                return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(activity, adWidth)
+            }
         }
 }
