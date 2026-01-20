@@ -155,6 +155,7 @@ class AdapterInterstitialAds(activity: Activity,
         override fun onAdDismissedFullScreenContent() {
             Log.i(TAG, "$tag onAdDismissedFullScreenContent")
             AdapterOpenAppManager.isAdOtherShowFullScreen = false
+            CoreAds.instance.lastFullAdsTime = System.currentTimeMillis()
             onClosed()
         }
 

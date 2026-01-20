@@ -74,6 +74,7 @@ class AdapterOpenAds(activity: Activity,
         override fun onAdDismissedFullScreenContent() {
             Log.d(TAG, "$tag onAdDismissedFullScreenContent")
             AdapterOpenAppManager.isAdOtherShowFullScreen = false
+            CoreAds.instance.lastFullAdsTime = System.currentTimeMillis()
             onClosed()
         }
 

@@ -591,7 +591,6 @@ class CoreAds private constructor() {
                     
                     Log.i(TAG, "Show when loaded in case re-init: $adsId")
                     ads.show(callback)
-                    _lastFullAdsTime = System.currentTimeMillis()
                 }
                 
                 override fun onLoadFailed(message: String?) {
@@ -636,7 +635,6 @@ class CoreAds private constructor() {
             asdCompleted = true
             ads.turnOffAutoReload()
             ads.show(callback)
-            _lastFullAdsTime = System.currentTimeMillis()
             try {
                 if (dialogLoading.isShowing) dialogLoading.cancel()
             }catch (_: Exception){}
@@ -1688,7 +1686,6 @@ class CoreAds private constructor() {
                 return@postDelayed
             }
             ads.show(callback)
-            _lastFullAdsTime = System.currentTimeMillis()
             try {
                 if (dialogLoading?.isShowing == true) dialogLoading.cancel()
             }catch (_: Exception){}

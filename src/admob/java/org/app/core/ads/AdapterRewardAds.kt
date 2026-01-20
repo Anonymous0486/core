@@ -72,6 +72,7 @@ class AdapterRewardAds(activity: Activity, adId: String, private val eventId: St
         override fun onAdDismissedFullScreenContent() {
             Log.d(TAG, "RewardAdmob onAdDismissedFullScreenContent")
             AdapterOpenAppManager.isAdOtherShowFullScreen = false
+            CoreAds.instance.lastFullAdsTime = System.currentTimeMillis()
             onClosed()
         }
 

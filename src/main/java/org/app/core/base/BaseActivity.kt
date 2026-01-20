@@ -180,6 +180,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                     CoreAds.instance.nativeLoadedTs.collectLatest { ts ->
                         Timber.tag(TAG).d("NativeAdmob loaded: $ts - $_timeStamp")
                         if (ts >_timeStamp) {
+                            onNativeLoaded()
                             if (nativeFullContainer?.isVisible == true && nativeFullId.isNotBlank()) {
                                 showNativeFull("Refresh")
                             } else {
@@ -301,6 +302,8 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
 
     // Override this function for task that need run background and may need time to completed
     open fun onActivityStarted() {}
+
+    open fun onNativeLoaded() {}
 
     fun showBottomBanner(parent: CardView, container: FrameLayout) {
         val remoteConfig = CoreRemoteConfig.instance.adsRemoteConfig

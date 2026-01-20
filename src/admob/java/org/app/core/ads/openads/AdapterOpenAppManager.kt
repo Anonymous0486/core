@@ -576,6 +576,7 @@ class AdapterOpenAppManager private constructor() : LifecycleObserver,
             launchingCallback = null
             loadingCallback?.invoke()
             loadingCallback = null
+            CoreAds.instance.lastFullAdsTime = System.currentTimeMillis()
             // Temporary ignore preload
             val rmAds = CoreRemoteConfig.instance.findAppOpenAds()
             if (rmAds != null && rmAds.always_preload == true) {
