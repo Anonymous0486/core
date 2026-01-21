@@ -15,6 +15,8 @@ import java.io.IOException
 import android.widget.Toast
 import androidx.annotation.*
 import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
+import com.google.android.gms.ads.AdSize
 import java.io.FileNotFoundException
 
 fun Context?.isNetworkConnected(cb: (() -> Unit)? = null): Boolean {
@@ -101,3 +103,24 @@ val Context.screenSize:Pair<Int,Int>
         }
 
     }
+
+fun Context.openWebBy(link: String) {
+    try {
+
+        val intent = Intent(Intent.ACTION_VIEW, link.toUri())
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
+    } catch (e: Exception) {
+        e.printStackTrace()
+    }
+}
+
+fun Context.calculateBannerHeightBy(maxH: Int? = null) : AdSize {
+    val outMetrics = resources.displayMetrics
+    val heightPixels = outMetrics.heightPixels
+    val density = outMetrics.density
+    val adHeight = ((heightPixels / density) - 104).toInt() / 3
+    val widthPixels: Int = outMetrics.widthPixels
+    val adWidth = (widthPixels / density).toInt() - 48
+    return AdSize.getInlineAdaptiveBannerAdSize(adWidth, maxH ?: adHeight)
+}

@@ -45,6 +45,7 @@ import org.app.core.ads.CoreAds.Companion
 import org.app.core.ads.callback.AdsCallback
 import org.app.core.ads.remoteconfig.config.AdsConfigure
 import org.app.core.base.binding.setOnSingleClickListener
+import org.app.core.base.extensions.calculateBannerHeightBy
 import org.app.core.base.extensions.hide
 import org.app.core.base.extensions.show
 import org.app.core.base.utils.NetworkUtil
@@ -371,23 +372,40 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                 it.tag == tagBanner && !it.id.isNullOrBlank()
             }
             if (bannerAds != null) {
-                if (bannerAds.size == "medium") {
+                val size = if (bannerAds.size == "medium") {
                     layoutCard!!.layoutParams.apply {
                         width = 300.px
                     }
                     layoutCard!!.radius = 10.px.toFloat()
+                    AdSize.MEDIUM_RECTANGLE
+                } else if (bannerAds.size == "full") {
+                    layoutCard!!.layoutParams.apply {
+                        width = ViewGroup.LayoutParams.MATCH_PARENT
+                    }
+                    layoutCard!!.setMargins(left = 0, right =  0)
+                    layoutCard!!.radius = 0f
+                    AdSize.FULL_BANNER
+                }  else if (bannerAds.size == "inline") {
+                    val size = context?.calculateBannerHeightBy()
+                    if (size != null) {
+                        layoutCard!!.layoutParams.apply {
+                            width = ViewGroup.LayoutParams.MATCH_PARENT
+                        }
+                    } else {
+                        layoutCard!!.layoutParams.apply {
+                            width = ViewGroup.LayoutParams.MATCH_PARENT
+                        }
+                    }
+
+                    layoutCard!!.setMargins(left = 24.px, right =  24.px)
+                    layoutCard!!.radius = 10.px.toFloat()
+                    size
                 } else {
                     layoutCard!!.layoutParams.apply {
                         width = ViewGroup.LayoutParams.MATCH_PARENT
                     }
                     layoutCard!!.setMargins(left = 0, right =  0)
                     layoutCard!!.radius = 0f
-                }
-                val size = if (bannerAds.size == "medium") {
-                    AdSize.MEDIUM_RECTANGLE
-                } else if (bannerAds.size == "full") {
-                    AdSize.FULL_BANNER
-                } else {
                     null
                 }
                 val banner = CoreAds.instance.showAdapterBannerAds(
@@ -491,23 +509,40 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                 it.tag == tagBanner && !it.id.isNullOrBlank()
             }
             if (bannerAds != null) {
-                if (bannerAds.size == "medium") {
-                    parent.layoutParams.apply {
+                val size = if (bannerAds.size == "medium") {
+                    layoutCard!!.layoutParams.apply {
                         width = 300.px
                     }
-                    parent.radius = 10.px.toFloat()
-                } else {
-                    parent.layoutParams.apply {
-                        width = ViewGroup.LayoutParams.MATCH_PARENT
-                    }
-                    parent.setMargins(left = 0, right =  0)
-                    parent.radius = 0f
-                }
-                val size = if (bannerAds.size == "medium") {
+                    layoutCard!!.radius = 10.px.toFloat()
                     AdSize.MEDIUM_RECTANGLE
                 } else if (bannerAds.size == "full") {
+                    layoutCard!!.layoutParams.apply {
+                        width = ViewGroup.LayoutParams.MATCH_PARENT
+                    }
+                    layoutCard!!.setMargins(left = 0, right =  0)
+                    layoutCard!!.radius = 0f
                     AdSize.FULL_BANNER
+                }  else if (bannerAds.size == "inline") {
+                    val size = context?.calculateBannerHeightBy()
+                    if (size != null) {
+                        layoutCard!!.layoutParams.apply {
+                            width = ViewGroup.LayoutParams.MATCH_PARENT
+                        }
+                    } else {
+                        layoutCard!!.layoutParams.apply {
+                            width = ViewGroup.LayoutParams.MATCH_PARENT
+                        }
+                    }
+
+                    layoutCard!!.setMargins(left = 24.px, right =  24.px)
+                    layoutCard!!.radius = 10.px.toFloat()
+                    size
                 } else {
+                    layoutCard!!.layoutParams.apply {
+                        width = ViewGroup.LayoutParams.MATCH_PARENT
+                    }
+                    layoutCard!!.setMargins(left = 0, right =  0)
+                    layoutCard!!.radius = 0f
                     null
                 }
                 CoreAds.instance.showAdapterBannerAds(

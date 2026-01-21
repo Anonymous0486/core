@@ -57,7 +57,7 @@ class AdapterBannerAds(
     override fun initAds() {
         super.initAds()
         ads = AdView(activity)
-        if (adsSize == AdSize.MEDIUM_RECTANGLE) {
+        if (adsSize != null) {
             ads?.setAdSize(adsSize!!)
         } else {
             ads?.setAdSize(adSizeDefault)
@@ -248,7 +248,7 @@ class AdapterBannerAds(
         ads = null
 
         ads = AdView(activity)
-        if (adsSize == AdSize.MEDIUM_RECTANGLE) {
+        if (adsSize != null) {
             ads?.setAdSize(adsSize!!)
         } else {
             ads?.setAdSize(adSizeDefault)

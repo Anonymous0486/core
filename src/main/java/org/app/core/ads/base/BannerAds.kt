@@ -63,10 +63,10 @@ abstract class BannerAds<T> protected constructor(
     }
 
     fun showShimmer(adsSize: AdSize? = null, container: FrameLayout) {
-        val shimmerLayoutId = if (adsSize == AdSize.MEDIUM_RECTANGLE) {
-            R.layout.layout_normal_ad_placeholder
-        } else {
+        val shimmerLayoutId =  if (adsSize == null) {
             R.layout.layout_small_ad_placeholder
+        } else {
+            R.layout.layout_normal_ad_placeholder
         }
         val shimmerBuilder = Shimmer.AlphaHighlightBuilder()
             .setClipToChildren(true)
