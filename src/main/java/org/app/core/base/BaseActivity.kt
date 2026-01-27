@@ -480,8 +480,6 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
 
         val remoteConfig = CoreRemoteConfig.instance.adsRemoteConfig
         if (remoteConfig == null || remoteConfig.status == false) {
-            layoutCard?.hide()
-            CoreAds.instance.setHideAds(true)
             return false
         }
 
@@ -610,8 +608,6 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
 
         val remoteConfig = CoreRemoteConfig.instance.adsRemoteConfig
         if (remoteConfig == null || remoteConfig.status == false) {
-            layoutCard?.hide()
-            CoreAds.instance.setHideAds(true)
             return
         }
 

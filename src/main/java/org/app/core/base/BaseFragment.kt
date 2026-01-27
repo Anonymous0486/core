@@ -137,7 +137,6 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
             }
         })
 
-        _timeStamp = System.currentTimeMillis()
         if (!hasInitializedRootView) {
             getFragmentArguments()
             setBindingVariables()
@@ -162,7 +161,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                             if (nativeFullContainer?.isVisible == true && nativeFullId.isNotBlank()) {
                                 showNativeFull("Refresh")
                             } else {
-                                if (_hasNativeAds) showAds()
+                                if (_hasNativeAds || _hasBannerAds) showAds()
                             }
                         }
                     }
@@ -311,8 +310,6 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         val actv = activity ?: return false
         val remoteConfig = CoreRemoteConfig.instance.adsRemoteConfig
         if (remoteConfig == null || remoteConfig.status == false) {
-            layoutCard?.hide()
-            CoreAds.instance.setHideAds(true)
             return false
         }
 
@@ -423,7 +420,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                 _hasNativeAds = false
                 _hasBannerAds = true
 
-                if (!CoreAds.instance.isHideAds && banner == null) {
+                if (banner == null && showLoading) {
                     showLoading(getString(StringResId.loading))
                     Handler(Looper.getMainLooper())
                         .postDelayed({
@@ -453,8 +450,6 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         val actv = activity ?: return
         val remoteConfig = CoreRemoteConfig.instance.adsRemoteConfig
         if (remoteConfig == null || remoteConfig.status == false) {
-            layoutCard?.hide()
-            CoreAds.instance.setHideAds(true)
             return
         }
         val tagNative = TAG + "_Native"
@@ -477,9 +472,6 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
     fun showAdsWhenPagerChanged(container: FrameLayout, parent: CardView) {
         val remoteConfig = CoreRemoteConfig.instance.adsRemoteConfig
         if (remoteConfig == null || remoteConfig.status == false) {
-            layoutCard?.hide()
-            parent.hide()
-            CoreAds.instance.setHideAds(true)
             return
         }
 
@@ -585,9 +577,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         }
 
         val rmConfig = CoreRemoteConfig.instance.adsRemoteConfig
-        if (rmConfig == null || rmConfig.status == false) {
-            layoutCard?.hide()
-            CoreAds.instance.setHideAds(true)
+        if (rmConfig == null) {
             onCompleted?.invoke()
             return
         }

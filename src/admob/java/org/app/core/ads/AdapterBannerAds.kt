@@ -53,7 +53,11 @@ class AdapterBannerAds(
     var isFirstDisplay = true
     var isLoaded = false
     var backupAds: LinkedBlockingQueue<BackupAds> = LinkedBlockingQueue<BackupAds>()
-    
+
+    fun isReady() : Boolean {
+        return isAvailable && isLoaded
+    }
+
     override fun initAds() {
         super.initAds()
         ads = AdView(activity)
@@ -82,12 +86,7 @@ class AdapterBannerAds(
                         container?.addView(ads)
                         logEvent("Shown")
                     } else {
-                        val cachedContainer = CoreAds.instance.bannerContainer
-                        if (cachedContainer != null) {
-                            cachedContainer.removeAllViews()
-                            cachedContainer.addView(ads)
-                            logEvent("ShownCached")
-                        }
+                        CoreAds.instance.updateTimestamp(System.currentTimeMillis())
                     }
                 } catch (_: Exception) {}
             }
@@ -270,12 +269,7 @@ class AdapterBannerAds(
                         container?.addView(ads)
                         logEvent("ShownBackupId")
                     } else {
-                        val cachedContainer = CoreAds.instance.bannerContainer
-                        if (cachedContainer != null) {
-                            cachedContainer.removeAllViews()
-                            cachedContainer.addView(ads)
-                            logEvent("ShownCached")
-                        }
+                        CoreAds.instance.updateTimestamp(System.currentTimeMillis())
                     }
                 } catch (_: Exception) {}
             }

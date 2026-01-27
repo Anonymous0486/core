@@ -886,7 +886,7 @@ class CoreAds private constructor() {
 
 
         if ((preloadAds as? AdapterBannerAds) != null) {
-            if (preloadAds.isAvailable) {
+            if (preloadAds.isReady()) {
                 Log.i("BannerAdmob", "Show ads with force ${forceReload}")
 
                 preloadAds.show(container, callback)
@@ -899,7 +899,6 @@ class CoreAds private constructor() {
             } else {
                 if (preloadAds.isLoading()) {
                     Log.i("BannerAdmob", "Waiting ads load...")
-                    _bannerContainer = container
                     preloadAds.showShimmer(size, container)
                     return null
                 }
@@ -926,16 +925,13 @@ class CoreAds private constructor() {
         if (container.isEmpty()) {
             ads.showShimmer(size, container)
         }
-        _bannerContainer = container
+        adsStorage[key] = ads
         ads.setLoadCallback(object : LoadCallback() {
             override fun onLoadSuccess() {
                 super.onLoadSuccess()
 
                 if (_enableDebug) {
                     showMessage(activity, "$eventId loaded success")
-                }
-                if (adsStorage[key] == null) {
-                    adsStorage[key] = ads
                 }
             }
 
