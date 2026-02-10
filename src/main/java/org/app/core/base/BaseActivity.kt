@@ -185,7 +185,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                             if (nativeFullContainer?.isVisible == true && nativeFullId.isNotBlank()) {
                                 showNativeFull("Refresh")
                             } else {
-                                if (_hasNativeAds) showAds()
+                                showAds()
                             }
                         }
                     }
@@ -725,10 +725,9 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                 override fun onError(message: String?) {
                     super.onError(message)
                     Timber.tag("MONET-DEBUG").i("Inter onError -> $nativeId")
-                    if (nativeId.isBlank()) {
-                        if (!isDestroyed && !isFinishing) {
-                            onCompleted?.invoke()
-                        }
+                    nativeFullId = ""
+                    if (!isDestroyed && !isFinishing) {
+                        onCompleted?.invoke()
                     }
                 }
 

@@ -154,21 +154,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
             layoutCard?.hide()
         } else {
             showAds(showInitializeLoading)
-            lifecycleScope.launch {
-                lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
-                    CoreAds.instance.nativeLoadedTs.collectLatest { ts ->
-                        if (ts >_timeStamp) {
-                            if (nativeFullContainer?.isVisible == true && nativeFullId.isNotBlank()) {
-                                showNativeFull("Refresh")
-                            } else {
-                                if (_hasNativeAds || _hasBannerAds) showAds()
-                            }
-                        }
-                    }
-                }
-            }
         }
-
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
                 if (CoreAds.instance.isHideAds) {
@@ -252,7 +238,21 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
 
     open fun observeAPICall() {}
 
-    open fun setupObservers() {}
+    open fun setupObservers() {
+        lifecycleScope.launch {
+            lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
+                CoreAds.instance.nativeLoadedTs.collectLatest { ts ->
+                    if (ts >_timeStamp) {
+                        if (nativeFullContainer?.isVisible == true && nativeFullId.isNotBlank()) {
+                            showNativeFull("Refresh")
+                        } else {
+                            if (_hasNativeAds || _hasBannerAds) showAds()
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     open fun onCloseAction() {}
 
@@ -610,9 +610,18 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
 
                 override fun onError(message: String?) {
                     super.onError(message)
-                    if (nativeId.isNullOrBlank()) {
-                        if (activity != null && !requireActivity().isDestroyed && !requireActivity().isFinishing) {
-                            onCompleted?.invoke()
+                    nativeFullId = ""
+                    if (activity != null && !requireActivity().isDestroyed && !requireActivity().isFinishing) {
+                        onCompleted?.invoke()
+                    }
+                }
+
+                override fun onShow() {
+                    Timber.tag("MONET-DEBUG").i("Inter shown!")
+                    if (activity != null && !requireActivity().isDestroyed && !requireActivity().isFinishing) {
+                        if (!nativeId.isNullOrBlank() && nativeFullContainer != null) {
+                            nativeFullId = nativeId!!
+                            showNativeFull(tag)
                         }
                     }
                 }
@@ -620,10 +629,6 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
 
         if (ret) {
             nativeId = ads.nativeId
-            if (!nativeId.isNullOrBlank() && nativeFullContainer != null) {
-                nativeFullId = nativeId
-                showNativeFull(tag)
-            }
         }
     }
 

@@ -60,11 +60,12 @@ import kotlin.math.pow
 import androidx.core.view.isEmpty
 
 @SuppressLint("LogNotTimber")
-class CoreAds private constructor() {
+class CoreAds private constructor(
+    private val appContext: Context
+) {
     private var analytics: FirebaseAnalytics = Firebase.analytics
     private var _enableDebug = false
     private var _initialized = false
-    private var _container: FrameLayout? = null
 
     var bannerContainer: FrameLayout?
         get() = _bannerContainer
@@ -153,7 +154,6 @@ class CoreAds private constructor() {
                 it.tag == "SplashActivity_Native" && !it.id.isNullOrBlank()
             }
             if (splashAds != null) {
-                _container = null
                 val adsId = splashAds.id!!
                 admobNativeAdsViewsStorage[adsId] = CustomAdapterNativeAdViews(
                     isLoading = false,
@@ -946,6 +946,11 @@ class CoreAds private constructor() {
         })
         
         ads.load()
+        if ((preloadAds as? AdapterBannerAds) != null) {
+            if (preloadAds.isReady()) {
+                return preloadAds
+            }
+        }
         return null
     }
 
@@ -1032,9 +1037,7 @@ class CoreAds private constructor() {
 
     // ---------------------- Native -------------------------
     val admobNativeAdsViewsStorage: HashMap<String, CustomAdapterNativeAdViews> = HashMap()
-    var nativeContainer: FrameLayout?
-        get() = _container
-        set(value) { _container = value }
+    var nativeContainer: FrameLayout? = null
 
     val styleNativeAdsStorage: HashMap<Int, Int> = HashMap()
 
@@ -1158,7 +1161,6 @@ class CoreAds private constructor() {
         preloads: Int = 1,
         callback: AdsCallback? = null,
     ) {
-        _container = null
         val layoutAdId = styleNativeAdsStorage[style] ?: return
         val customNativeAd = admobNativeAdsViewsStorage[adId]
         if (isHideAds) {
@@ -1242,7 +1244,6 @@ class CoreAds private constructor() {
                         eventId
                     )
                 }
-                _container = container
             }
             
             return
@@ -1552,7 +1553,6 @@ class CoreAds private constructor() {
                         container.removeAllViews()
                         container.addView(shimmer)
                     }
-                    _container = container
                 }
             }
             Timber.tag(TAG).i("NativeAdmob is on loading ${customNativeAd.isLoading}")
@@ -1561,7 +1561,6 @@ class CoreAds private constructor() {
                 customNativeAd.isLoading = true
                 admobNativeAdsViewsStorage[adsId]?.preloads = 0
                 multiplePreloadAdapterNativeAds(context, activity, adsId, layoutAdId, null, eventId)
-                _container = container
             }
         } else {
             Timber.tag(TAG).i("NativeAdmob [Multiple] Show ads: $adsId")
@@ -1717,21 +1716,22 @@ class CoreAds private constructor() {
         const val INTER_DONE = 2        // 0x10
         const val ALL_DONE = 3          // 0x11
 
+        @Volatile
         private var INSTANCE: CoreAds? = null
 
-        @JvmStatic
-        val instance: CoreAds
-            get() {
-                if (INSTANCE == null) {
-                    synchronized(CoreAds::class.java) {
-                        if (INSTANCE == null) {
-                            INSTANCE = CoreAds()
-                            INSTANCE!!.resetStyleNativeList()
-                        }
+        fun init(context: Context) {
+            if (INSTANCE == null) {
+                synchronized(this) {
+                    if (INSTANCE == null) {
+                        INSTANCE = CoreAds(context.applicationContext)
                     }
                 }
-                return INSTANCE!!
             }
+        }
+
+        val instance: CoreAds
+            get() = INSTANCE
+                ?: throw IllegalStateException("CoreAds not initialized")
 
         @JvmStatic
         fun isNetworkAvailable(context: Context): Boolean {
