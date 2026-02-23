@@ -1,12 +1,13 @@
 package org.app.core.ads.base
 
 import android.app.Activity
-import org.app.core.ads.callback.AdsCallback
+import android.content.Context
 import androidx.annotation.CallSuper
+import org.app.core.ads.callback.AdsCallback
 import org.app.core.ads.callback.LoadCallback
 
 abstract class BaseAds<T> protected constructor(
-    protected var activity: Activity,
+    protected val context: Context,
     protected var adId: String
 ) : Ads() {
 
@@ -69,7 +70,7 @@ abstract class BaseAds<T> protected constructor(
         return this
     }
 
-    override fun show(callback: AdsCallback?) {
+    override fun show(activity: Activity, callback: AdsCallback?) {
         setAdsCallback(callback = callback)
 
         if (isShowing) return
@@ -86,7 +87,7 @@ abstract class BaseAds<T> protected constructor(
             return
         }
 
-        showAds()
+        showAds(activity)
     }
 
     @CallSuper
@@ -132,6 +133,6 @@ abstract class BaseAds<T> protected constructor(
         isLoading = true
     }
 
-    open fun showAds() {}
+    open fun showAds(activity: Activity) {}
     open fun destroyAds() {}
 }

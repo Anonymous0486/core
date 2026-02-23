@@ -2,10 +2,8 @@ package org.app.core.base
 
 import android.app.Dialog
 import android.content.Context
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Configuration
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -20,7 +18,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
-import androidx.core.app.ActivityOptionsCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
@@ -56,9 +53,8 @@ import org.app.core.base.utils.NetworkUtil
 import org.app.core.base.utils.StringResId
 import org.app.core.base.utils.getDialogWaiting
 import org.app.core.base.utils.px
-import org.app.core.base.widget.CustomToast
 import timber.log.Timber
-import java.util.*
+import java.util.Locale
 import kotlin.math.min
 
 abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
@@ -512,7 +508,6 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
             }
 
             val aNative = CoreAds.instance.loadOrShowAdmobNativeAds(
-                this.applicationContext,
                 adsContainer!!,
                 nativeAds.id!!,
                 nativeAds.event ?: tagNative,
@@ -618,7 +613,6 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
         layoutCard!!.show()
         if (nativeAds != null) {
             val aNative = CoreAds.instance.loadOrShowAdmobNativeAds(
-                this.applicationContext,
                 adsContainer!!,
                 nativeAds.id!!,
                 nativeAds.event ?: tagNative,
@@ -795,7 +789,6 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
         nativeFullContainer?.show()
         closeNativeFullAds?.show()
         val aNative = CoreAds.instance.loadOrShowAdmobNativeAds(
-            this.applicationContext,
             nativeFullContainer!!,
             nativeFullId,
             tag + "NativeFull",

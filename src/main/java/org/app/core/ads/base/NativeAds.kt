@@ -1,6 +1,7 @@
 package org.app.core.ads.base
 
 import android.app.Activity
+import android.content.Context
 import android.view.View
 import android.widget.Button
 import android.widget.FrameLayout
@@ -11,20 +12,20 @@ import com.facebook.shimmer.Shimmer
 import com.facebook.shimmer.ShimmerFrameLayout
 import org.app.core.R
 import org.app.core.ads.callback.AdsCallback
+import org.app.core.base.extensions.layoutInflater
 
 abstract class NativeAds<T> protected constructor(
-    activity: Activity,
+    context: Context,
     protected var container: FrameLayout?,
     adId: String
-) : BaseAds<T>(activity = activity, adId = adId) {
+) : BaseAds<T>(context = context, adId = adId) {
 
-    override fun show(callback: AdsCallback?) {
+    override fun show(activity: Activity, callback: AdsCallback?) {
         setAdsCallback(callback = callback)
 
         if (isShowing()) return
 
         if (!isAvailable) load()
-        showAds()
     }
 
     private var shimmer: ShimmerFrameLayout? = null
@@ -35,14 +36,14 @@ abstract class NativeAds<T> protected constructor(
             .setRepeatDelay(500)
             .setHighlightAlpha(0.6f)
 
-        shimmer = ShimmerFrameLayout(activity)
+        shimmer = ShimmerFrameLayout(context)
         shimmer!!.id = View.generateViewId()
         shimmer!!.layoutParams = ConstraintLayout.LayoutParams(
             ConstraintLayout.LayoutParams.MATCH_PARENT,
             ConstraintLayout.LayoutParams.MATCH_PARENT
         )
         
-        val view = activity?.layoutInflater?.inflate(shimmerLayoutId, shimmer) ?: return
+        val view = context.layoutInflater.inflate(shimmerLayoutId, shimmer) ?: return
         view.setBackgroundResource(R.drawable.bg_ads)
         try {
             val icAd = view.findViewById<TextView>(R.id.ic_ad)

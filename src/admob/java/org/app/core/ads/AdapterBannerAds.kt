@@ -2,6 +2,7 @@ package org.app.core.ads
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Context
 import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
@@ -35,7 +36,7 @@ import androidx.core.view.isEmpty
 
 @SuppressLint("LogNotTimber")
 class AdapterBannerAds(
-    activity: Activity,
+    context: Context,
     container: FrameLayout?,
     adId: String,
     private val eventId: String,
@@ -43,7 +44,7 @@ class AdapterBannerAds(
     var collapsibleType: String? = null,
     var isShowAdsWhenLoaded: Boolean = true,
 ) : BannerAds<AdView?>(
-    activity,
+    context,
     container,
     adId,
     adsSize,
@@ -60,7 +61,7 @@ class AdapterBannerAds(
 
     override fun initAds() {
         super.initAds()
-        ads = AdView(activity)
+        ads = AdView(context)
         if (adsSize != null) {
             ads?.setAdSize(adsSize!!)
         } else {
@@ -118,10 +119,6 @@ class AdapterBannerAds(
                 logEvent("Impression")
 
                 isFirstDisplay = false
-                if (shimmer != null && !activity.isDestroyed) {
-                    container?.removeView(shimmer)
-                    shimmer = null
-                }
             }
 
             override fun onAdClicked() {
@@ -180,8 +177,8 @@ class AdapterBannerAds(
         Timber.tag("BannerAdmob").i( "$adId Start request for loading ads...")
     }
 
-    override fun showAds() {
-        super.showAds()
+    override fun showAds(activity: Activity) {
+        super.showAds(activity)
 
         try {
             if (container != null) {
@@ -246,7 +243,7 @@ class AdapterBannerAds(
         ads?.destroy()
         ads = null
 
-        ads = AdView(activity)
+        ads = AdView(context)
         if (adsSize != null) {
             ads?.setAdSize(adsSize!!)
         } else {
@@ -302,10 +299,6 @@ class AdapterBannerAds(
                 logEvent("ImpressionBackupId")
 
                 isFirstDisplay = false
-                if (shimmer != null && !activity.isDestroyed) {
-                    container?.removeView(shimmer)
-                    shimmer = null
-                }
             }
 
             override fun onAdClicked() {
@@ -354,14 +347,14 @@ class AdapterBannerAds(
     // Determine the screen width (less decorations) to use for the ad width.
     private val adSizeDefault: AdSize
         get() {
-            val outMetrics: DisplayMetrics = activity.resources.displayMetrics
+            val outMetrics: DisplayMetrics = context.resources.displayMetrics
             val widthPixels: Int = outMetrics.widthPixels
             val density: Float = outMetrics.density
             val adWidth = (widthPixels / density).toInt()
             if (adsSize == AdSize.FULL_BANNER) {
-                return AdSize.getCurrentOrientationInlineAdaptiveBannerAdSize(activity, adWidth)
+                return AdSize.getCurrentOrientationInlineAdaptiveBannerAdSize(context, adWidth)
             } else {
-                return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(activity, adWidth)
+                return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(context, adWidth)
             }
         }
 }

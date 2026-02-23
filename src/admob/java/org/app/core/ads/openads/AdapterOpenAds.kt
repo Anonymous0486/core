@@ -1,6 +1,7 @@
 package org.app.core.ads.openads
 
 import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import com.google.android.gms.ads.*
@@ -8,17 +9,17 @@ import com.google.android.gms.ads.appopen.AppOpenAd
 import org.app.core.ads.CoreAds
 import org.app.core.ads.base.OpenAds
 
-class AdapterOpenAds(activity: Activity,
+class AdapterOpenAds(context: Context,
                      adId: String,
                      private val eventId: String,
                      private var tag: String = "AppOpenAdmob") :
-    OpenAds<AppOpenAd?>(activity, adId) {
+    OpenAds<AppOpenAd?>(context, adId) {
 
     override fun loadAds() {
         super.loadAds()
         val adRequest = AdRequest.Builder().build()
         AppOpenAd.load(
-            activity,
+            context,
             adId,
             adRequest,
             object : AppOpenAd.AppOpenAdLoadCallback() {
@@ -39,8 +40,15 @@ class AdapterOpenAds(activity: Activity,
             })
     }
 
-    override fun showAds() {
-        super.showAds()
+    override fun showAds(activity: Activity) {
+        super.showAds(activity)
+        super.showAds(activity)
+
+        if (activity.isFinishing || activity.isDestroyed) {
+            onShowError("Activity is not valid")
+            return
+        }
+
         ads?.show(activity)
     }
 

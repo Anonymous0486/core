@@ -1,12 +1,12 @@
 package org.app.core.ads.base
 
-import android.app.Activity
+import android.content.Context
 import org.app.core.ads.dialog.DialogAdsLoading
 
 abstract class InterAds<T> protected constructor(
-    activity: Activity,
+    context: Context,
     adId: String
-) : BaseAds<T>(activity = activity, adId = adId) {
+) : BaseAds<T>(context = context, adId = adId) {
 
     override fun onShowSuccess() {
         super.onShowSuccess()

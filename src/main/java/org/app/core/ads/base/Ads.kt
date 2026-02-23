@@ -1,5 +1,6 @@
 package org.app.core.ads.base
 
+import android.app.Activity
 import org.app.core.ads.callback.AdsCallback
 
 abstract class Ads {
@@ -16,7 +17,7 @@ abstract class Ads {
      * show available ads
      */
 
-    abstract fun show(callback: AdsCallback? = null)
+    abstract fun show(activity: Activity, callback: AdsCallback? = null)
 
     /**
      * this callback for ads show successful

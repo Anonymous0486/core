@@ -21,6 +21,7 @@ import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.LayoutRes
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.isEmpty
 import com.facebook.shimmer.Shimmer
 import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.android.gms.ads.AdSize
@@ -46,7 +47,6 @@ import org.app.core.ads.nativeads.AdapterNativeAdView
 import org.app.core.ads.nativeads.AdapterNativeAds
 import org.app.core.ads.nativeads.AdmobNativeAds
 import org.app.core.ads.nativeads.CustomAdapterNativeAdViews
-import org.app.core.ads.nativeads.NativeDisplayView
 import org.app.core.ads.openads.AdapterOpenAds
 import org.app.core.ads.openads.AdapterOpenAppManager
 import org.app.core.ads.remoteconfig.CoreRemoteConfig
@@ -55,9 +55,7 @@ import timber.log.Timber
 import java.io.File
 import java.util.concurrent.TimeUnit
 import kotlin.math.max
-import kotlin.math.min
 import kotlin.math.pow
-import androidx.core.view.isEmpty
 
 @SuppressLint("LogNotTimber")
 class CoreAds private constructor(
@@ -168,7 +166,6 @@ class CoreAds private constructor(
 
                 val admobNativeAds = AdapterNativeAds(
                     activity.applicationContext,
-                    activity,
                     null,
                     layoutAdId,
                     adsId,
@@ -249,7 +246,7 @@ class CoreAds private constructor(
                 }
                 if (startAppAds != null) {
                     val interAds = AdapterInterstitialAds(
-                        activity = activity,
+                        context = appContext,
                         adId = startAppAds.id!!,
                         eventId = startAppAds.event ?: "StartAppDummy",
                         tag = "AdmobInterstitialSplash"
@@ -325,12 +322,12 @@ class CoreAds private constructor(
             callback?.onClosed()
             return
         }
-        val splashAds = AdapterInterstitialAds(activity = activity, adId = adsId, eventId = eventId, tag = "AdmobInterstitialSplash")
-        adsInterStorage[adsId] = splashAds
+        val splashAds = AdapterInterstitialAds(context = appContext, adId = adsId, eventId = eventId, tag = "AdmobInterstitialSplash")
         var splashDone = false
 
         val handler = Handler(Looper.getMainLooper())
         val runnable = Runnable {
+            Timber.tag("AdmobInterstitialSplash").i("Timeout...$splashDone")
             if (splashDone) return@Runnable
             splashDone = true
 
@@ -344,31 +341,44 @@ class CoreAds private constructor(
                 super.onLoadSuccess()
 
                 if (_enableDebug) {
-                    showMessage(activity, "$eventId loaded success")
+                    showMessage(appContext, "$eventId loaded success")
                 }
                 splashAds.turnOffAutoReload()
                 if (splashDone) {
                     return
                 }
                 splashDone = true
-
                 handler.removeCallbacksAndMessages(null)
                 if (activity.isDestroyed || activity.isFinishing) {
                     logFirebaseEvent(eventId + "_Actv_Hidden")
+                    adsInterStorage[adsId] = splashAds
                     return
                 }
 
+                Timber.tag("AdmobInterstitialSplash").i("Show after loaded...")
                 val dialogLoading = DialogAdsLoading(activity, loadingTxt)
                 dialogLoading.show()
-                showAdsWithDialogLoading(activity, splashAds, callback, dialogLoading)
+                Handler(Looper.getMainLooper()).postDelayed({
+                    try {
+                        if (dialogLoading.isShowing == true) dialogLoading.cancel()
+                    }catch (_: Exception){}
+
+                    if (activity.isDestroyed || activity.isFinishing) {
+                        logFirebaseEvent( "AppDummy_Actv_Hidden")
+                        adsInterStorage[adsId] = splashAds
+                        return@postDelayed
+                    }
+                    splashAds.show(activity, callback)
+                }, 1000)
             }
 
             override fun onLoadFailed(message: String?) {
                 super.onLoadFailed(message)
 
                 if (_enableDebug) {
-                    showMessage(activity, "Error: $message")
+                    showMessage(appContext, "Error: $message")
                 }
+                if (activity.isDestroyed || activity.isFinishing) return
                 callback?.onError(message)
             }
         }).load()
@@ -382,7 +392,7 @@ class CoreAds private constructor(
         callback: AdsCallback?
     ) {
         var splashAds: AdapterOpenAds? =
-            AdapterOpenAds(activity = activity, adId = adsId,  eventId, tag = "AdmobOpenSplash")
+            AdapterOpenAds(context = appContext, adId = adsId,  eventId, tag = "AdmobOpenSplash")
         var splashDone = false
 
         val handler = Handler(Looper.getMainLooper())
@@ -515,7 +525,7 @@ class CoreAds private constructor(
             callback?.onClosed()
             return false
         }
-        
+
         val dialogLoading = DialogAdsLoading(activity, loadingTxt)
         dialogLoading.show()
         var asdCompleted = false
@@ -550,7 +560,7 @@ class CoreAds private constructor(
 
             if (cacheAds == null) {
                 Log.i(TAG, "Init New Inter in show: $adsId")
-                val newAds = AdapterInterstitialAds(activity, adsId, eventId)
+                val newAds = AdapterInterstitialAds(appContext, adsId, eventId)
                 adsInterStorage[adsId] = newAds
 
                 newAds
@@ -578,7 +588,7 @@ class CoreAds private constructor(
                     } catch (_: Exception) {}
 
                     if (_enableDebug) {
-                        showMessage(activity, "$adsId loaded success")
+                        showMessage(appContext, "$adsId loaded success")
                     }
                     ads.turnOffAutoReload()
                     asdCompleted = true
@@ -590,14 +600,14 @@ class CoreAds private constructor(
                     }
                     
                     Log.i(TAG, "Show when loaded in case re-init: $adsId")
-                    ads.show(callback)
+                    ads.show(activity, callback)
                 }
                 
                 override fun onLoadFailed(message: String?) {
                     super.onLoadFailed(message)
                     
                     if (_enableDebug) {
-                        showMessage(activity, "Error: $message")
+                        showMessage(appContext, "Error: $message")
                     }
 
                     try {
@@ -634,7 +644,7 @@ class CoreAds private constructor(
             
             asdCompleted = true
             ads.turnOffAutoReload()
-            ads.show(callback)
+            ads.show(activity, callback)
             try {
                 if (dialogLoading.isShowing) dialogLoading.cancel()
             }catch (_: Exception){}
@@ -711,9 +721,9 @@ class CoreAds private constructor(
         }
 
         val ads: RewardAds<*> = if (adsStorage[adsId] == null) {
-            AdapterRewardAds(activity, adsId, eventId)
+            AdapterRewardAds(appContext, adsId, eventId)
         } else {
-            adsStorage[adsId] as? RewardAds<*> ?: AdapterRewardAds(activity, adsId, eventId)
+            adsStorage[adsId] as? RewardAds<*> ?: AdapterRewardAds(appContext, adsId, eventId)
         }
 
         adsStorage[adsId] = ads
@@ -755,7 +765,7 @@ class CoreAds private constructor(
                     } catch (_: Exception) {}
 
                     if (_enableDebug) {
-                        showMessage(activity, "$adsId loaded success")
+                        showMessage(appContext, "$adsId loaded success")
                     }
                     ads.turnOffAutoReload()
                     asdCompleted = true
@@ -766,7 +776,7 @@ class CoreAds private constructor(
                     }
 
                     Log.i(TAG, "Show when loaded in case re-init: $adsId")
-                    ads.show(callback)
+                    ads.show(activity, callback)
                     _lastFullAdsTime = System.currentTimeMillis()
                 }
 
@@ -774,7 +784,7 @@ class CoreAds private constructor(
                     super.onLoadFailed(message)
 
                     if (_enableDebug) {
-                        showMessage(activity, "Error: $message")
+                        showMessage(appContext, "Error: $message")
                     }
 
                     try {
@@ -799,7 +809,6 @@ class CoreAds private constructor(
     // ----------------------- Banner -----------------------
     
     fun initAdapterBannerAds(
-        activity: Activity,
         adId: String,
         eventId: String,
         size: AdSize? = null,
@@ -815,7 +824,7 @@ class CoreAds private constructor(
 
         Log.i(TAG, "Init BannerAdmob: $key")
         val ads = AdapterBannerAds(
-            activity = activity,
+            context = appContext,
             container = null,
             adId = adId,
             eventId = eventId,
@@ -831,7 +840,7 @@ class CoreAds private constructor(
                 adsStorage[key] = ads
                 retryAttempt = 0.0
                 if (_enableDebug) {
-                    showMessage(activity, "$eventId loaded success")
+                    showMessage(appContext, "$eventId loaded success")
                 }
             }
             
@@ -839,7 +848,7 @@ class CoreAds private constructor(
                 super.onLoadFailed(message)
     
                 if (_enableDebug) {
-                    showMessage(activity, "Error: $message")
+                    showMessage(appContext, "Error: $message")
                 }
                 if (maxRetryAttempt > retryAttempt) {
                     retryAttempt++
@@ -907,7 +916,7 @@ class CoreAds private constructor(
 
         Timber.tag("BannerAdmob").i("Load and show $collapsibleType")
         val ads = AdapterBannerAds(
-            activity = activity,
+            context = appContext,
             container = null,
             adId = adId,
             eventId = eventId,
@@ -996,7 +1005,7 @@ class CoreAds private constructor(
         }
         Log.i("BannerAdmob", "Load and show $collapsibleType")
         val ads = AdapterBannerAds(
-            activity = activity,
+            context = appContext,
             container = null,
             adId = "ca-app-pub-6445739239297382/6346653244",
             eventId = eventId + "_BA",
@@ -1121,7 +1130,7 @@ class CoreAds private constructor(
             container.removeAllViews()
             container.addView(shimmer)
         }
-        val admobNativeAds = AdapterNativeAds(context, activity, container, layoutAdId, adsId, eventId, false)
+        val admobNativeAds = AdapterNativeAds(context, container, layoutAdId, adsId, eventId, false)
         admobNativeAds.setLoadCallback(object : LoadCallback() {
             override fun onLoadSuccess() {
                 super.onLoadSuccess()
@@ -1318,7 +1327,6 @@ class CoreAds private constructor(
     }
 
     fun loadOrShowAdmobNativeAds(
-        context: Context,
         container: FrameLayout?,
         adId: String,
         eventId: String,
@@ -1328,12 +1336,12 @@ class CoreAds private constructor(
         val layoutAdId = styleNativeAdsStorage[style] ?: return null
         if (_nativeAdsList.isEmpty()) {
             Timber.tag(TAG).d("Native ads is empty -> request to load...")
-            val aNative = AdmobNativeAds(context = context, adUnitId = adId, event = eventId)
+            val aNative = AdmobNativeAds(context = appContext, adUnitId = adId, event = eventId)
             _nativeAdsList.add(aNative)
             aNative.loadAds()
             if (container != null) {
                 Timber.tag(TAG).d("Native ads is empty -> start shimmer")
-                val shimmer = aNative.createShimmer(context, layoutAdId)
+                val shimmer = aNative.createShimmer(appContext, layoutAdId)
                 shimmer.startShimmer()
                 container.removeAllViews()
                 container.addView(shimmer)
@@ -1345,7 +1353,7 @@ class CoreAds private constructor(
         if (loadedAds != null) {
             if (container != null) {
                 Timber.tag(TAG).d("Native show available ads")
-                loadedAds.showAdView(layoutAdId, context, container)
+                loadedAds.showAdView(layoutAdId, appContext, container)
             }
             return loadedAds
         }
@@ -1355,7 +1363,7 @@ class CoreAds private constructor(
             Timber.tag(TAG).d("Native ads is loading -> show waiting shimmer")
             loadingAds.setDisplayWhenLoaded(true)
             if (container != null && container.isEmpty()) {
-                val shimmer = loadingAds.createShimmer(context, layoutAdId)
+                val shimmer = loadingAds.createShimmer(appContext, layoutAdId)
                 shimmer.startShimmer()
                 container.removeAllViews()
                 container.addView(shimmer)
@@ -1364,12 +1372,12 @@ class CoreAds private constructor(
             Timber.tag(TAG).d("Native ads refresh the new ads...")
             _nativeAdsList.removeIf { it.isDisplayed() }
 
-            val aNative = AdmobNativeAds(context = context, adUnitId = adId, event = eventId)
+            val aNative = AdmobNativeAds(context = appContext, adUnitId = adId, event = eventId)
             _nativeAdsList.add(aNative)
             aNative.loadAds()
             if (container != null && container.isEmpty()) {
                 Timber.tag(TAG).d("Native ads is empty -> start shimmer")
-                val shimmer = aNative.createShimmer(context, layoutAdId)
+                val shimmer = aNative.createShimmer(appContext, layoutAdId)
                 shimmer.startShimmer()
                 container.removeAllViews()
                 container.addView(shimmer)
@@ -1478,7 +1486,7 @@ class CoreAds private constructor(
     }
 
     private fun multiplePreloadAdapterNativeAds(context: Context, activity: Activity, adsId: String, layoutAdId: Int, container: FrameLayout?, eventId: String) {
-        val admobNativeAds = AdapterNativeAds(context, activity, container, layoutAdId, adsId, eventId, false)
+        val admobNativeAds = AdapterNativeAds(context, container, layoutAdId, adsId, eventId, false)
         
         //TODO: May need handle load callback later
         admobNativeAds.setLoadCallback(object : LoadCallback() {
@@ -1680,7 +1688,7 @@ class CoreAds private constructor(
                 callback?.onError("Activity finished")
                 return@postDelayed
             }
-            ads.show(callback)
+            ads.show(activity, callback)
             try {
                 if (dialogLoading?.isShowing == true) dialogLoading.cancel()
             }catch (_: Exception){}
@@ -1724,6 +1732,7 @@ class CoreAds private constructor(
                 synchronized(this) {
                     if (INSTANCE == null) {
                         INSTANCE = CoreAds(context.applicationContext)
+                        INSTANCE!!.resetStyleNativeList()
                     }
                 }
             }

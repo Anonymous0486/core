@@ -343,7 +343,6 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
             _hasNativeAds = true
             _hasBannerAds = false
             val aNative = CoreAds.instance.loadOrShowAdmobNativeAds(
-                actv.applicationContext,
                 adsContainer!!,
                 nativeAds.id!!,
                 nativeAds.event ?: tagNative,
@@ -447,7 +446,6 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
             return
         }
 
-        val actv = activity ?: return
         val remoteConfig = CoreRemoteConfig.instance.adsRemoteConfig
         if (remoteConfig == null || remoteConfig.status == false) {
             return
@@ -459,7 +457,6 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         Timber.tag("###DEBUG").i( "Refresh ads...")
         if (nativeAds != null) {
             CoreAds.instance.loadOrShowAdmobNativeAds(
-                actv.applicationContext,
                 adsContainer!!,
                 nativeAds.id!!,
                 nativeAds.event ?: tagNative,
@@ -488,7 +485,6 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
             parent.setMargins(left = 12.px, right =  12.px)
             parent.radius = 10.px.toFloat()
             CoreAds.instance.loadOrShowAdmobNativeAds(
-                actv.applicationContext,
                 container,
                 nativeAds.id!!,
                 nativeAds.event ?: tagNative,
@@ -708,7 +704,6 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         if (nativeAds != null && nativeAds.id.isNullOrBlank() == false) {
             Timber.tag("MONET-DEBUG").d("Preload Native ads in create fragment!!!")
             CoreAds.instance.loadOrShowAdmobNativeAds(
-                requireActivity().applicationContext,
                 null,
                 nativeAds.id!!,
                 nativeAds.event ?: "DummyEventNative",
@@ -722,7 +717,6 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         nativeFullContainer?.show()
         closeNativeFullAds?.show()
         val aNative = CoreAds.instance.loadOrShowAdmobNativeAds(
-            requireActivity().applicationContext,
             nativeFullContainer!!,
             nativeFullId,
             tag + "NativeFull",

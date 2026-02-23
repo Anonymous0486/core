@@ -2,6 +2,7 @@ package org.app.core.ads
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -22,11 +23,11 @@ import org.app.core.ads.remoteconfig.type.BackupType
 import java.util.concurrent.LinkedBlockingQueue
 
 @SuppressLint("LogNotTimber")
-class AdapterInterstitialAds(activity: Activity,
+class AdapterInterstitialAds(context: Context,
                              adId: String,
                              private val eventId: String,
                              private var tag: String = "InterstitialAdmob") :
-    InterAds<InterstitialAd?>(activity, adId) {
+    InterAds<InterstitialAd?>(context, adId) {
 
     var backupAds: LinkedBlockingQueue<BackupAds> = LinkedBlockingQueue<BackupAds>()
     var isBackupId = false
@@ -45,7 +46,7 @@ class AdapterInterstitialAds(activity: Activity,
         Log.i(TAG, "$tag start load inter. $adId - ${backupAds.size}")
 
         InterstitialAd.load(
-            activity,
+            context,
             adId,
             adRequest,
             object : InterstitialAdLoadCallback() {
@@ -73,8 +74,13 @@ class AdapterInterstitialAds(activity: Activity,
             })
     }
 
-    override fun showAds() {
-        super.showAds()
+    override fun showAds(activity: Activity) {
+        super.showAds(activity)
+
+        if (activity.isFinishing || activity.isDestroyed) {
+            onShowError("Activity is not valid")
+            return
+        }
 
         logEvent(if (isBackupId) "ShownBackupId" else "Shown")
         ads?.show(activity)
@@ -102,7 +108,7 @@ class AdapterInterstitialAds(activity: Activity,
         logEvent("RequestBackupId")
         isBackupId = true
         InterstitialAd.load(
-            activity,
+            context,
             backupId,
             adRequest,
             object : InterstitialAdLoadCallback() {
@@ -150,6 +156,7 @@ class AdapterInterstitialAds(activity: Activity,
             Log.i(TAG, "$tag onAdFailedToShowFullScreenContent: ${adError.message}")
             onShowError(adError.message)
             logEvent(if (isBackupId) "DisplayFailBackupId_${adError.code}" else "DisplayFail_${adError.code}")
+            clearAllCallback()
         }
 
         override fun onAdDismissedFullScreenContent() {
@@ -157,6 +164,7 @@ class AdapterInterstitialAds(activity: Activity,
             AdapterOpenAppManager.isAdOtherShowFullScreen = false
             CoreAds.instance.lastFullAdsTime = System.currentTimeMillis()
             onClosed()
+            clearAllCallback()
         }
 
         override fun onAdShowedFullScreenContent() {

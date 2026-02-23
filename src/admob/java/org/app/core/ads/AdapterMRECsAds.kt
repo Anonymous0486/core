@@ -1,6 +1,7 @@
 package org.app.core.ads
 
 import android.app.Activity
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.util.DisplayMetrics
@@ -18,16 +19,16 @@ import org.app.core.ads.callback.AdsCallback
 import org.app.core.ads.openads.AdapterOpenAppManager
 
 class AdapterMRECsAds(
-    activity: Activity,
+    context: Context,
     container: FrameLayout,
     adId: String,
     private val eventId: String,
     var isShowAdsWhenLoaded: Boolean = true
-) : BannerAds<AdView?>(activity, container, adId) {
+) : BannerAds<AdView?>(context, container, adId) {
     
     override fun initAds() {
         super.initAds()
-        ads = AdView(activity)
+        ads = AdView(context)
         ads?.setAdSize(adSizeDefault)
         ads?.adUnitId = adId
         initAdListener()
@@ -40,7 +41,7 @@ class AdapterMRECsAds(
                 Log.d(TAG, "BannerAdmob onAdLoaded")
                 onLoadSuccess()
                 
-                if (isShowAdsWhenLoaded && CoreAds.isNetworkAvailable(activity)) {
+                if (isShowAdsWhenLoaded && CoreAds.isNetworkAvailable(context)) {
                     container?.visibility = View.VISIBLE
                 }
             }
@@ -55,7 +56,7 @@ class AdapterMRECsAds(
                 Log.d(TAG, "BannerAdmob onAdFailedToLoad: ${loadAdError.message}")
                 onLoadFailed(loadAdError.message)
                 
-                if (!CoreAds.isNetworkAvailable(activity)) {
+                if (!CoreAds.isNetworkAvailable(context)) {
                     container?.visibility = View.GONE
                 }
             }
@@ -64,11 +65,6 @@ class AdapterMRECsAds(
                 super.onAdImpression()
                 Log.d(TAG, "BannerAdmob onAdImpression")
                 onShowSuccess()
-                
-                if (shimmer != null && !activity.isDestroyed) {
-                    container?.removeView(shimmer)
-                    shimmer = null
-                }
             }
             
             override fun onAdClicked() {
@@ -100,8 +96,8 @@ class AdapterMRECsAds(
         turnOffAutoReload()
     }
     
-    override fun showAds() {
-        super.showAds()
+    override fun showAds(activity: Activity) {
+        super.showAds(activity)
         container?.addView(ads)
     }
     
@@ -129,27 +125,10 @@ class AdapterMRECsAds(
     // Determine the screen width (less decorations) to use for the ad width.
     private val adSizeDefault: AdSize
         get() {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                val windowMetrics = activity.windowManager.currentWindowMetrics
-                val bounds = windowMetrics.bounds
-                
-                val adWidthPixels = bounds.width().toFloat()
-                
-                val density = activity.resources.displayMetrics.density
-                val adWidth = (adWidthPixels / density).toInt()
-                val delta = 16 * density.toInt()
-                
-                return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(activity, adWidth - delta)
-            } else {
-                val display = activity.windowManager.defaultDisplay
-                val outMetrics = DisplayMetrics()
-                display.getMetrics(outMetrics)
-                val widthPixels = outMetrics.widthPixels.toFloat()
-                val density = outMetrics.density
-                val adWidth = (widthPixels / density).toInt()
-                val delta = 16 * density.toInt()
-                
-                return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(activity, adWidth - delta)
-            }
+            val outMetrics: DisplayMetrics = context.resources.displayMetrics
+            val widthPixels: Int = outMetrics.widthPixels
+            val density: Float = outMetrics.density
+            val adWidth = (widthPixels / density).toInt()
+            return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(context, adWidth)
         }
 }

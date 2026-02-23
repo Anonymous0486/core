@@ -1,6 +1,7 @@
 package org.app.core.ads
 
 import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import com.google.android.gms.ads.*
@@ -9,14 +10,14 @@ import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import org.app.core.ads.openads.AdapterOpenAppManager
 import org.app.core.ads.base.RewardAds
 
-class AdapterRewardAds(activity: Activity, adId: String, private val eventId: String) :
-    RewardAds<RewardedAd?>(activity, adId) {
+class AdapterRewardAds(context: Context, adId: String, private val eventId: String) :
+    RewardAds<RewardedAd?>(context, adId) {
 
     override fun loadAds() {
         super.loadAds()
         val adRequest = AdRequest.Builder().build()
         RewardedAd.load(
-            activity,
+            context,
             adId,
             adRequest,
             object : RewardedAdLoadCallback() {
@@ -35,7 +36,12 @@ class AdapterRewardAds(activity: Activity, adId: String, private val eventId: St
         })
     }
 
-    override fun showAds() {
+    override fun showAds(activity: Activity) {
+
+        if (activity.isFinishing || activity.isDestroyed) {
+            onShowError("Activity is not valid")
+            return
+        }
         ads?.show(activity){
             Log.d(TAG, "RewardAdmob onUserRewarded: amount=${it.amount}, type=${it.type}")
             onUserRewarded(it.amount, it.type)

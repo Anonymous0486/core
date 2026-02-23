@@ -34,14 +34,13 @@ import java.util.concurrent.LinkedBlockingQueue
 
 @SuppressLint("LogNotTimber")
 class AdapterNativeAds(
-    val context: Context,
-    activity: Activity,
+    context: Context,
     container: FrameLayout?,
     @LayoutRes private var layoutAdId: Int,
     adId: String,
     private val firebaseEventId: String,
     private val isMultiple: Boolean = false,
-) : NativeAds<NativeAdView?>(activity, container, adId) {
+) : NativeAds<NativeAdView?>(context, container, adId) {
     
     private var nativeAdLoader: AdLoader? = null
     private var retry: Int = 0

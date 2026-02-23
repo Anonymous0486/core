@@ -1,23 +1,23 @@
 package org.app.core.ads.base
 
 import android.app.Activity
+import android.content.Context
 import android.widget.FrameLayout
-import androidx.core.content.ContextCompat
 import com.facebook.shimmer.Shimmer
-import com.facebook.shimmer.Shimmer.ColorHighlightBuilder
 import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.android.gms.ads.AdSize
-import org.app.core.ads.callback.AdsCallback
 import org.app.core.R
+import org.app.core.ads.callback.AdsCallback
+import org.app.core.base.extensions.layoutInflater
 
 
 abstract class BannerAds<T> protected constructor(
-    activity: Activity,
+    context: Context,
     protected var container: FrameLayout?,
     adId: String,
     adsSize: AdSize? = null,
     isCollapsible: Boolean = false
-) : BaseAds<T>(activity = activity, adId = adId) {
+) : BaseAds<T>(context = context, adId = adId) {
 
     init {
         if (container?.childCount == 0) {
@@ -25,13 +25,12 @@ abstract class BannerAds<T> protected constructor(
         }
     }
 
-    override fun show(callback: AdsCallback?) {
+    override fun show(activity: Activity, callback: AdsCallback?) {
         setAdsCallback(callback = callback)
 
         if (isShowing()) return
 
         if (!isAvailable) load()
-        showAds()
     }
 
     protected var shimmer: ShimmerFrameLayout? = null
@@ -48,13 +47,13 @@ abstract class BannerAds<T> protected constructor(
             .setRepeatDelay(500)
             .setHighlightAlpha(0.6f)
 
-        shimmer = ShimmerFrameLayout(activity)
+        shimmer = ShimmerFrameLayout(context)
         shimmer!!.layoutParams =
             FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.MATCH_PARENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT
             )
-        activity.layoutInflater.inflate(shimmerLayoutId, shimmer)
+        context.layoutInflater.inflate(shimmerLayoutId, shimmer)
         shimmer!!.setShimmer(shimmerBuilder.build())
 
         container?.removeAllViews()
@@ -74,13 +73,13 @@ abstract class BannerAds<T> protected constructor(
             .setRepeatDelay(500)
             .setHighlightAlpha(0.6f)
 
-        val shimmer = ShimmerFrameLayout(activity)
+        val shimmer = ShimmerFrameLayout(context)
         shimmer.layoutParams =
             FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.MATCH_PARENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT
             )
-        activity.layoutInflater.inflate(shimmerLayoutId, shimmer)
+        context.layoutInflater.inflate(shimmerLayoutId, shimmer)
         shimmer.setShimmer(shimmerBuilder.build())
 
         container.removeAllViews()
