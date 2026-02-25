@@ -77,19 +77,17 @@ class AdapterBannerAds(
                 super.onAdLoaded()
 
                 logEvent("Loaded")
-                Timber.tag("BannerAdmob").i("$adId onAdLoaded: ${container != null}")
-                onLoadSuccess()
-                
+                Timber.tag("BannerAdmob").i("$adId onAdLoaded that has container: ${container != null}")
+
                 isLoaded = true
                 try {
                     if (container != null) {
                         container?.removeAllViews()
                         container?.addView(ads)
                         logEvent("Shown")
-                    } else {
-                        CoreAds.instance.updateTimestamp(System.currentTimeMillis())
                     }
                 } catch (_: Exception) {}
+                onLoadSuccess()
             }
 
             override fun onAdClosed() {
@@ -209,6 +207,9 @@ class AdapterBannerAds(
         if (isLoaded && isFirstDisplay) {
             Timber.tag("BannerAdmob").i( "$adId show with container")
             try {
+                if (ads?.parent != null) {
+                    (ads?.parent as FrameLayout?)?.removeView(ads)
+                }
                 container.removeAllViews()
                 container.addView(ads)
                 logEvent("Shown")

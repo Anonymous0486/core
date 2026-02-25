@@ -23,6 +23,9 @@ import com.google.android.gms.ads.admanager.AdManagerAdView
 import com.google.android.gms.ads.nativead.NativeAd
 import org.app.core.R
 import org.app.core.ads.CoreAds
+import org.app.core.ads.base.BaseAds
+import org.app.core.ads.callback.AdsCallback
+import org.app.core.ads.callback.LoadCallback
 import org.app.core.ads.remoteconfig.CoreRemoteConfig
 import org.app.core.ads.remoteconfig.config.BackupAds
 import org.app.core.ads.remoteconfig.type.BackupType
@@ -45,6 +48,8 @@ data class AdmobNativeAds(
 
     private var nativeAdLoader: AdLoader? = null
     var backupAds: LinkedBlockingQueue<BackupAds> = LinkedBlockingQueue<BackupAds>()
+
+    private var loadCallback: LoadCallback? = null
 
     fun loadAds() {
         logEvent("Request")
@@ -82,12 +87,17 @@ data class AdmobNativeAds(
         _displayWhenLoaded = flag
     }
 
+    fun setLoadCallback(callback: LoadCallback?) {
+        loadCallback = callback
+    }
+
     fun destroyAds() {
         _nativeAd?.destroy()
         _nativeAd = null
         _mixedAdView?.destroy()
         _mixedAdView = null
         nativeAdLoader = null
+        loadCallback = null
         Timber.tag(TAG).d("destroyAds")
     }
 

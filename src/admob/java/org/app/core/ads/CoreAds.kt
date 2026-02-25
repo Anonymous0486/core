@@ -109,7 +109,6 @@ class CoreAds private constructor(
         val ads = _nativeAdsList.firstOrNull { it.requestId == requestId }
         if (ads != null && ads.isDisplayed()) {
             _nativeAdsList.remove(ads)
-            ads.destroyAds()
         }
     }
 
@@ -876,10 +875,8 @@ class CoreAds private constructor(
         adId: String,
         eventId: String,
         size: AdSize? = null,
-        callback: AdsCallback?,
         collapsibleType: String? = null,
-        isShowAdsWhenLoaded: Boolean = true,
-        forceReload: Boolean = false
+        loadCallback: LoadCallback?,
     ) : AdapterBannerAds? {
         val key = adId + if (size == null) "_default" else "_$size"
 
@@ -896,9 +893,9 @@ class CoreAds private constructor(
 
         if ((preloadAds as? AdapterBannerAds) != null) {
             if (preloadAds.isReady()) {
-                Log.i("BannerAdmob", "Show ads with force ${forceReload}")
+                Log.i("BannerAdmob", "Show ready ads...")
 
-                preloadAds.show(container, callback)
+                preloadAds.show(container, null)
                 if ((collapsibleType != CollapsibleType.TOP
                             && collapsibleType != CollapsibleType.BOTTOM)
                     && preloadAds.isFirstDisplay) {
@@ -908,6 +905,9 @@ class CoreAds private constructor(
             } else {
                 if (preloadAds.isLoading()) {
                     Log.i("BannerAdmob", "Waiting ads load...")
+                    if (loadCallback != null) {
+                        preloadAds.setLoadCallback(loadCallback)
+                    }
                     preloadAds.showShimmer(size, container)
                     return null
                 }
@@ -922,11 +922,9 @@ class CoreAds private constructor(
             eventId = eventId,
             adsSize = size,
             collapsibleType = collapsibleType,
-            isShowAdsWhenLoaded = isShowAdsWhenLoaded,
         )
         
         if (!isNetworkAvailable(activity)) {
-            callback?.onError("The device is not connected to the internet")
             Timber.tag("BannerAdmob").i("The device is not connected to the internet")
             return null
         }
@@ -935,24 +933,9 @@ class CoreAds private constructor(
             ads.showShimmer(size, container)
         }
         adsStorage[key] = ads
-        ads.setLoadCallback(object : LoadCallback() {
-            override fun onLoadSuccess() {
-                super.onLoadSuccess()
-
-                if (_enableDebug) {
-                    showMessage(activity, "$eventId loaded success")
-                }
-            }
-
-            override fun onLoadFailed(message: String?) {
-                super.onLoadFailed(message)
-    
-                if (_enableDebug) {
-                    showMessage(activity, "Error: $message")
-                }
-                callback?.onError(message)
-            }
-        })
+        if (loadCallback != null) {
+            ads.setLoadCallback(loadCallback)
+        }
         
         ads.load()
         if ((preloadAds as? AdapterBannerAds) != null) {
@@ -961,6 +944,32 @@ class CoreAds private constructor(
             }
         }
         return null
+    }
+
+    fun showAvailableBanner(
+        container: FrameLayout,
+        adId: String,
+        eventId: String,
+        size: AdSize? = null,
+    ) {
+        val key = adId + if (size == null) "_default" else "_$size"
+
+        Timber.tag("BannerAdmob").i( "Show BannerAdmob: $key -> $isHideAds")
+        val preloadAds = adsStorage[key]
+        if (isHideAds) {
+            container.visibility = View.GONE
+            if (preloadAds?.isAvailable == true) {
+                logFirebaseEvent(eventId + "_not_consent")
+            }
+            return
+        }
+
+        if ((preloadAds as? AdapterBannerAds) != null) {
+            if (preloadAds.isReady()) {
+                Timber.tag("BannerAdmob").i( "Show ready ads...")
+                preloadAds.show(container, null)
+            }
+        }
     }
 
     fun showLockScreenBannerAds(
@@ -1326,26 +1335,43 @@ class CoreAds private constructor(
         aNative.loadAds()
     }
 
+    fun showAdmobNativeAds(
+        container: FrameLayout?,
+        style: Int = NativeStyle.SMALL_41
+    ) : AdmobNativeAds? {
+        val layoutAdId = styleNativeAdsStorage[style] ?: return null
+        val loadedAds = _nativeAdsList.firstOrNull { it.isAvailable() }
+        if (loadedAds != null) {
+            if (container != null) {
+                Timber.tag(TAG).d("Native show available ads")
+                loadedAds.showAdView(layoutAdId, appContext, container)
+            }
+            return loadedAds
+        }
+        return null
+    }
+
     fun loadOrShowAdmobNativeAds(
         container: FrameLayout?,
         adId: String,
         eventId: String,
         style: Int = NativeStyle.SMALL_41,
-        preload: Int = 0,
+        callback: LoadCallback? = null,
     ) : AdmobNativeAds? {
         val layoutAdId = styleNativeAdsStorage[style] ?: return null
         if (_nativeAdsList.isEmpty()) {
             Timber.tag(TAG).d("Native ads is empty -> request to load...")
             val aNative = AdmobNativeAds(context = appContext, adUnitId = adId, event = eventId)
-            _nativeAdsList.add(aNative)
-            aNative.loadAds()
             if (container != null) {
+                callback?.let { aNative.setLoadCallback(callback) }
                 Timber.tag(TAG).d("Native ads is empty -> start shimmer")
                 val shimmer = aNative.createShimmer(appContext, layoutAdId)
                 shimmer.startShimmer()
                 container.removeAllViews()
                 container.addView(shimmer)
             }
+            _nativeAdsList.add(aNative)
+            aNative.loadAds()
             return null
         }
 
@@ -1363,6 +1389,7 @@ class CoreAds private constructor(
             Timber.tag(TAG).d("Native ads is loading -> show waiting shimmer")
             loadingAds.setDisplayWhenLoaded(true)
             if (container != null && container.isEmpty()) {
+                callback?.let { loadingAds.setLoadCallback(callback) }
                 val shimmer = loadingAds.createShimmer(appContext, layoutAdId)
                 shimmer.startShimmer()
                 container.removeAllViews()
@@ -1373,10 +1400,9 @@ class CoreAds private constructor(
             _nativeAdsList.removeIf { it.isDisplayed() }
 
             val aNative = AdmobNativeAds(context = appContext, adUnitId = adId, event = eventId)
-            _nativeAdsList.add(aNative)
-            aNative.loadAds()
             if (container != null && container.isEmpty()) {
                 Timber.tag(TAG).d("Native ads is empty -> start shimmer")
+                callback?.let { aNative.setLoadCallback(callback) }
                 val shimmer = aNative.createShimmer(appContext, layoutAdId)
                 shimmer.startShimmer()
                 container.removeAllViews()
@@ -1384,6 +1410,8 @@ class CoreAds private constructor(
             } else {
                 Timber.tag(TAG).d("Native ads is empty -> just load new ads")
             }
+            _nativeAdsList.add(aNative)
+            aNative.loadAds()
         }
 
         return null

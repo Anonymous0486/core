@@ -43,6 +43,7 @@ import org.app.core.R
 import org.app.core.ads.CoreAds
 import org.app.core.ads.base.NativeStyle
 import org.app.core.ads.callback.AdsCallback
+import org.app.core.ads.callback.LoadCallback
 import org.app.core.ads.remoteconfig.CoreRemoteConfig
 import org.app.core.base.binding.setOnSingleClickListener
 import org.app.core.base.extensions.calculateBannerHeightBy
@@ -167,27 +168,6 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
         setupBinding()
         setUpViews()
         setUpObserver()
-
-        if (CoreAds.instance.isHideAds) {
-            _hasNativeAds = false
-            layoutCard?.hide()
-        } else {
-            lifecycleScope.launch {
-                lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
-                    CoreAds.instance.nativeLoadedTs.collectLatest { ts ->
-                        Timber.tag(TAG).d("NativeAdmob loaded: $ts - $_timeStamp")
-                        if (ts >_timeStamp) {
-                            onNativeLoaded()
-                            if (nativeFullContainer?.isVisible == true && nativeFullId.isNotBlank()) {
-                                showNativeFull("Refresh")
-                            } else {
-                                showAds()
-                            }
-                        }
-                    }
-                }
-            }
-        }
 
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -319,8 +299,13 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                 bannerAds.event ?: tagBanner,
                 null,
                 null,
-                null,
-                true
+                object : LoadCallback() {
+                    override fun onLoadSuccess() {
+                        if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)) {
+                            CoreAds.instance.showAvailableBanner(adsContainer!!, bannerAds.id!!, bannerAds.event ?: tagBanner, null)
+                        }
+                    }
+                }
             )
         } else {
             parent.hide()
@@ -490,7 +475,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
             layoutCard!!.layoutParams.apply {
                 width = ViewGroup.LayoutParams.MATCH_PARENT
             }
-            layoutCard!!.setMargins(left = 12.px, right =  12.px)
+            layoutCard!!.setMargins(left = 16.px, right =  16.px)
             layoutCard!!.radius = 10.px.toFloat()
             if (nativeHeight >= 0) {
                 resources.displayMetrics.let { displayMetrics ->
@@ -512,7 +497,16 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                 nativeAds.id!!,
                 nativeAds.event ?: tagNative,
                 nativeAds.style ?: NativeStyle.BIG_10,
+                object : LoadCallback() {
+                    override fun onLoadSuccess() {
+                        if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED) && adsContainer != null) {
+                            val retAds = CoreAds.instance.showAdmobNativeAds(adsContainer, nativeAds.style ?: NativeStyle.BIG_10)
+                            retAds?.let { _requestNativeId = it.requestId }
+                        }
+                    }
+                }
             )
+
             if (aNative != null) {
                 _timeStamp = System.currentTimeMillis()
                 _requestNativeId = aNative.requestId
@@ -552,7 +546,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                         width = ViewGroup.LayoutParams.MATCH_PARENT
                     }
 
-                    layoutCard!!.setMargins(left = 24.px, right =  24.px)
+                    layoutCard!!.setMargins(left = 16.px, right = 16.px)
                     layoutCard!!.radius = 10.px.toFloat()
                     size
                 } else {
@@ -569,11 +563,15 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                     bannerAds.id!!,
                     bannerAds.event ?: tagBanner,
                     size,
-                    null,
                     if (_firstTimeShownBanner) bannerAds.collapsible_type else null,
-                    true
+                    object : LoadCallback() {
+                        override fun onLoadSuccess() {
+                            if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED) && adsContainer != null) {
+                                CoreAds.instance.showAvailableBanner(adsContainer!!, bannerAds.id!!, bannerAds.event ?: tagBanner, size)
+                            }
+                        }
+                    }
                 )
-                _timeStamp = System.currentTimeMillis()
                 _firstTimeShownBanner = false
 
                 if (!CoreAds.instance.isHideAds && banner == null) {
@@ -617,6 +615,14 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                 nativeAds.id!!,
                 nativeAds.event ?: tagNative,
                 nativeAds.style ?: NativeStyle.BIG_10,
+                object : LoadCallback() {
+                    override fun onLoadSuccess() {
+                        if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED) && adsContainer != null) {
+                            val retAds = CoreAds.instance.showAdmobNativeAds(adsContainer, nativeAds.style ?: NativeStyle.BIG_10)
+                            retAds?.let { _requestNativeId = it.requestId }
+                        }
+                    }
+                }
             )
             if (aNative != null) {
                 _timeStamp = System.currentTimeMillis()
@@ -793,6 +799,14 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
             nativeFullId,
             tag + "NativeFull",
             NativeStyle.FULLSCREEN,
+            object : LoadCallback() {
+                override fun onLoadSuccess() {
+                    if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED) && adsContainer != null) {
+                        val retAds = CoreAds.instance.showAdmobNativeAds(adsContainer, NativeStyle.FULLSCREEN)
+                        retAds?.let { _requestNativeId = it.requestId }
+                    }
+                }
+            }
         )
         if (aNative != null) {
             nativeFullId = ""
