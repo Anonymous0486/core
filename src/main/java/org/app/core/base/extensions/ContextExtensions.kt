@@ -121,6 +121,6 @@ fun Context.calculateBannerHeightBy(maxH: Int? = null) : AdSize {
     val density = outMetrics.density
     val adHeight = ((heightPixels / density) - 104).toInt() / 3
     val widthPixels: Int = outMetrics.widthPixels
-    val adWidth = (widthPixels / density).toInt() - 48
+    val adWidth = (widthPixels / density).toInt() - 32
     return AdSize.getInlineAdaptiveBannerAdSize(adWidth, maxH ?: adHeight)
 }

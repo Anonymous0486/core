@@ -77,7 +77,7 @@ class AdapterBannerAds(
                 super.onAdLoaded()
 
                 logEvent("Loaded")
-                Timber.tag("BannerAdmob").i("$adId onAdLoaded that has container: ${container != null}")
+                Timber.tag("BannerAdmob").i("$adId onAdLoaded that has container: ${container != null} and adView.isCollapsible() is ${ads?.isCollapsible}")
 
                 isLoaded = true
                 try {
@@ -85,9 +85,12 @@ class AdapterBannerAds(
                         container?.removeAllViews()
                         container?.addView(ads)
                         logEvent("Shown")
+                    } else {
+                        onLoadSuccess()
                     }
-                } catch (_: Exception) {}
-                onLoadSuccess()
+                } catch (_: Exception) {
+                    onLoadSuccess()
+                }
             }
 
             override fun onAdClosed() {
@@ -198,6 +201,8 @@ class AdapterBannerAds(
         super.destroyAds()
         ads?.destroy()
         ads = null
+        clearLoadCallback()
+        clearAdsCallback()
         Log.d(TAG, "BannerAdmob $adId destroyAds")
     }
     

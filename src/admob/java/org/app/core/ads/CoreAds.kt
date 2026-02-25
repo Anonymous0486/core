@@ -890,7 +890,6 @@ class CoreAds private constructor(
             return null
         }
 
-
         if ((preloadAds as? AdapterBannerAds) != null) {
             if (preloadAds.isReady()) {
                 Log.i("BannerAdmob", "Show ready ads...")
@@ -915,23 +914,25 @@ class CoreAds private constructor(
         }
 
         Timber.tag("BannerAdmob").i("Load and show $collapsibleType")
+        val isCollapsible = collapsibleType == CollapsibleType.TOP || collapsibleType == CollapsibleType.BOTTOM
         val ads = AdapterBannerAds(
-            context = appContext,
+            context = if (isCollapsible) activity else appContext,
             container = null,
             adId = adId,
             eventId = eventId,
             adsSize = size,
             collapsibleType = collapsibleType,
         )
-        
+
+        if (container.isEmpty()) {
+            ads.showShimmer(size, container)
+        }
+
         if (!isNetworkAvailable(activity)) {
             Timber.tag("BannerAdmob").i("The device is not connected to the internet")
             return null
         }
 
-        if (container.isEmpty()) {
-            ads.showShimmer(size, container)
-        }
         adsStorage[key] = ads
         if (loadCallback != null) {
             ads.setLoadCallback(loadCallback)
