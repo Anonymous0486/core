@@ -120,6 +120,7 @@ class CoreAds private constructor(
 
     fun setHideAds(flag: Boolean) {
         _isHideAds = flag
+        Timber.tag(TAG).i("setHideAds: $flag")
         if (_isHideAds) {
             AdapterOpenAppManager.instance.disableOpenAds()
         } else {
@@ -914,10 +915,10 @@ class CoreAds private constructor(
             }
         }
 
-        Timber.tag("BannerAdmob").i("Load and show $collapsibleType")
+        Timber.tag("BannerAdmob").i("Load and show -> $collapsibleType")
         val ads = AdapterBannerAds(
-            context = appContext,
-            container = null,
+            context = activity,
+            container = container,
             adId = adId,
             eventId = eventId,
             adsSize = size,
@@ -929,13 +930,13 @@ class CoreAds private constructor(
             return null
         }
 
-        if (container.isEmpty()) {
-            ads.showShimmer(size, container)
-        }
+//        if (container.isEmpty()) {
+//            ads.showShimmer(size, container)
+//        }
         adsStorage[key] = ads
-        if (loadCallback != null) {
-            ads.setLoadCallback(loadCallback)
-        }
+//        if (loadCallback != null) {
+//            ads.setLoadCallback(loadCallback)
+//        }
         
         ads.load()
         if ((preloadAds as? AdapterBannerAds) != null) {
@@ -1343,7 +1344,7 @@ class CoreAds private constructor(
         val loadedAds = _nativeAdsList.firstOrNull { it.isAvailable() }
         if (loadedAds != null) {
             if (container != null) {
-                Timber.tag(TAG).d("Native show available ads")
+                Timber.tag(TAG).d("NativeAdmob show available ads")
                 loadedAds.showAdView(layoutAdId, appContext, container)
             }
             return loadedAds
@@ -1360,11 +1361,11 @@ class CoreAds private constructor(
     ) : AdmobNativeAds? {
         val layoutAdId = styleNativeAdsStorage[style] ?: return null
         if (_nativeAdsList.isEmpty()) {
-            Timber.tag(TAG).d("Native ads is empty -> request to load...")
+            Timber.tag(TAG).d("NativeAdmob is empty -> request to load...")
             val aNative = AdmobNativeAds(context = appContext, adUnitId = adId, event = eventId)
             if (container != null) {
                 callback?.let { aNative.setLoadCallback(callback) }
-                Timber.tag(TAG).d("Native ads is empty -> start shimmer")
+                Timber.tag(TAG).d("NativeAdmob is empty -> start shimmer")
                 val shimmer = aNative.createShimmer(appContext, layoutAdId)
                 shimmer.startShimmer()
                 container.removeAllViews()

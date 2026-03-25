@@ -20,9 +20,9 @@ abstract class BannerAds<T> protected constructor(
 ) : BaseAds<T>(context = context, adId = adId) {
 
     init {
-        if (container?.childCount == 0) {
-            enableShimmer(adsSize)
-        }
+//        if (container?.childCount == 0) {
+//            enableShimmer(adsSize)
+//        }
     }
 
     override fun show(activity: Activity, callback: AdsCallback?) {

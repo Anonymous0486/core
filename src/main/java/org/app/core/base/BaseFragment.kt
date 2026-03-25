@@ -73,6 +73,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
     var adsContainer: FrameLayout? = null
     var layoutCard: CardView? = null
     private var _timeStamp: Long = 0
+    private var _refreshTimelapse: Long = 30000
     private var _hasNativeAds: Boolean = true
     private var _hasBannerAds: Boolean = true
     private var _firstTimeShownBanner: Boolean = true
@@ -81,6 +82,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
     var closeNativeFullAds: ImageView? = null
     var nativeFullId: String = ""
     private var _pendingBackAction: Boolean = false
+    private var _firstDisplay = true
 
     private var onPermissionResult: ((Boolean) -> Unit)? = null
     private val requestPermissionLauncher = registerForActivityResult(
@@ -134,6 +136,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
             override fun onPause(owner: LifecycleOwner) {
                 super.onPause(owner)
 
+                _firstDisplay = false
                 onFragmentPause()
             }
         })
@@ -149,13 +152,6 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         }
 
         isInternetConnected = NetworkUtil.isNetworkConnected(context ?: return)
-        if (CoreAds.instance.isHideAds) {
-            _hasNativeAds = false
-            _hasBannerAds = false
-            layoutCard?.hide()
-        } else {
-            showAds(showInitializeLoading)
-        }
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
                 if (CoreAds.instance.isHideAds) {
@@ -163,6 +159,9 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                     _hasBannerAds = false
                     layoutCard?.hide()
                 } else {
+                    if (_firstDisplay) {
+                        showAds(showInitializeLoading)
+                    }
                     while (isActive && _hasNativeAds) {
                         if (shouldRefreshAds()) {
                             refreshNative()
@@ -338,8 +337,10 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                 nativeAds.style ?: NativeStyle.BIG_10,
                 object : LoadCallback() {
                     override fun onLoadSuccess() {
+                        Timber.tag("NativeAdmob").i( "Callback onLoadSuccess111 ${lifecycle.currentState}")
                         if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED) && adsContainer != null) {
                             val retAds = CoreAds.instance.showAdmobNativeAds(adsContainer, nativeAds.style ?: NativeStyle.BIG_10)
+                            _timeStamp = System.currentTimeMillis()
                             retAds?.let { _requestNativeId = it.requestId }
                         }
                     }
@@ -354,7 +355,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                     Handler(Looper.getMainLooper())
                         .postDelayed({
                             hideLoading()
-                        }, 1600)
+                        }, 1500)
                 }
             }
 
@@ -458,7 +459,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         }
         Timber.tag("###DEBUG").i( "Refresh ads...")
         if (nativeAds != null) {
-            CoreAds.instance.loadOrShowAdmobNativeAds(
+            val aNative = CoreAds.instance.loadOrShowAdmobNativeAds(
                 adsContainer!!,
                 nativeAds.id!!,
                 nativeAds.event ?: tagNative,
@@ -468,11 +469,15 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                         if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED) && adsContainer != null) {
                             val retAds = CoreAds.instance.showAdmobNativeAds(adsContainer, nativeAds.style ?: NativeStyle.BIG_10)
                             retAds?.let { _requestNativeId = it.requestId }
+                            _timeStamp = System.currentTimeMillis()
                         }
                     }
                 }
             )
-            _timeStamp = System.currentTimeMillis()
+            if (aNative != null) {
+                _timeStamp = System.currentTimeMillis()
+                _requestNativeId = aNative.requestId
+            }
         }
     }
 
@@ -662,7 +667,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
     }
 
     private fun shouldRefreshAds() : Boolean {
-        val currentTime = System.currentTimeMillis()
-        return currentTime >= (_timeStamp + 25000)
+        val currentTime = System.currentTimeMillis() - _refreshTimelapse
+        return currentTime >= _timeStamp
     }
 }

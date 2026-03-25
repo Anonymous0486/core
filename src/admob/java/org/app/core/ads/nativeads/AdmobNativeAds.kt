@@ -153,9 +153,10 @@ data class AdmobNativeAds(
 
                 override fun onAdLoaded() {
                     super.onAdLoaded()
-                    Timber.tag(TAG).d("onAdLoaded  -> $adUnitId")
+                    Timber.tag(TAG).d("onAdLoaded  -> $adUnitId and ${_nativeAd != null}")
                     _isLoading = false
                     logEvent("Loaded")
+                    loadCallback?.onLoadSuccess()
                     if (_displayWhenLoaded) {
                         CoreAds.instance.updateTimestamp(System.currentTimeMillis())
                     }
@@ -239,6 +240,7 @@ data class AdmobNativeAds(
                     Timber.tag(TAG).d("onAdLoaded backup -> $backupId")
                     _isLoading = false
                     logEvent("LoadedBackupId")
+                    loadCallback?.onLoadSuccess()
                     if (_displayWhenLoaded) {
                         CoreAds.instance.updateTimestamp(System.currentTimeMillis())
                     }
@@ -278,6 +280,7 @@ data class AdmobNativeAds(
     ) {
         try {
             if (_mixedAdView != null) {
+                Timber.tag("NativeAdmob").d("Show Mixed")
                 if (_mixedAdView?.parent != null) {
                     (_mixedAdView?.parent as FrameLayout?)?.removeView(_mixedAdView)
                 }
@@ -289,6 +292,7 @@ data class AdmobNativeAds(
                 populateNativeAdView(_nativeAd?: return, compatibleBinding, layoutAdId)
                 adsContainer.removeAllViews()
                 adsContainer.addView(compatibleBinding.root ?: return)
+                Timber.tag("NativeAdmob").d("Show native")
             }
         } catch (e: Exception) {
             e.printStackTrace()

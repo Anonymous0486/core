@@ -69,6 +69,9 @@ class AdapterBannerAds(
         }
         ads?.adUnitId = adId
         initAdListener()
+
+        Timber.tag("BannerAdmob").i("$adId init ads that has container: ${container != null}")
+        container?.addView(ads)
     }
 
     private fun initAdListener() {
@@ -77,16 +80,16 @@ class AdapterBannerAds(
                 super.onAdLoaded()
 
                 logEvent("Loaded")
-                Timber.tag("BannerAdmob").i("$adId onAdLoaded that has container: ${container != null}")
+                Timber.tag("BannerAdmob").i("$adId onAdLoaded that has container: ${container != null} and adView.isCollapsible() is ${ads?.isCollapsible}")
 
                 isLoaded = true
-                try {
-                    if (container != null) {
-                        container?.removeAllViews()
-                        container?.addView(ads)
-                        logEvent("Shown")
-                    }
-                } catch (_: Exception) {}
+//                try {
+//                    if (container != null) {
+//                        container?.removeAllViews()
+//                        container?.addView(ads)
+//                        logEvent("Shown")
+//                    }
+//                } catch (_: Exception) {}
                 onLoadSuccess()
             }
 
