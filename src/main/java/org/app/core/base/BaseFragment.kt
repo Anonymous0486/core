@@ -528,7 +528,8 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
             object : AdsCallback() {
                 override fun onClosed() {
                     super.onClosed()
-                    if (nativeId.isNullOrBlank()) {
+                    Timber.tag("MONET-DEBUG").i("Inter onClosed -> $nativeId")
+                    if (nativeId.isNullOrBlank() || nativeFullContainer == null) {
                         if (activity != null && !requireActivity().isDestroyed && !requireActivity().isFinishing) {
                             onCompleted?.invoke()
                         }
@@ -538,6 +539,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                 override fun onError(message: String?) {
                     super.onError(message)
                     nativeFullId = ""
+                    Timber.tag("MONET-DEBUG").i("Inter onClosed -> $nativeId")
                     if (activity != null && !requireActivity().isDestroyed && !requireActivity().isFinishing) {
                         onCompleted?.invoke()
                     }
@@ -654,8 +656,8 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
             NativeStyle.FULLSCREEN,
             object : LoadCallback() {
                 override fun onLoadSuccess() {
-                    if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED) && adsContainer != null) {
-                        val retAds = CoreAds.instance.showAdmobNativeAds(adsContainer, NativeStyle.FULLSCREEN)
+                    if (activity != null && !requireActivity().isDestroyed && !requireActivity().isFinishing) {
+                        val retAds = CoreAds.instance.showAdmobNativeAds(nativeFullContainer, NativeStyle.FULLSCREEN)
                         retAds?.let { _requestNativeId = it.requestId }
                     }
                 }

@@ -721,7 +721,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                 override fun onClosed() {
                     super.onClosed()
                     Timber.tag("MONET-DEBUG").i("Inter onClosed -> $nativeId")
-                    if (nativeId.isBlank()) {
+                    if (nativeId.isBlank() || nativeFullContainer == null) {
                         if (!isDestroyed && !isFinishing) {
                             onCompleted?.invoke()
                         }
@@ -807,8 +807,8 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
             NativeStyle.FULLSCREEN,
             object : LoadCallback() {
                 override fun onLoadSuccess() {
-                    if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED) && adsContainer != null) {
-                        val retAds = CoreAds.instance.showAdmobNativeAds(adsContainer, NativeStyle.FULLSCREEN)
+                    if (!isDestroyed && !isFinishing) {
+                        val retAds = CoreAds.instance.showAdmobNativeAds(nativeFullContainer, NativeStyle.FULLSCREEN)
                         retAds?.let { _requestNativeId = it.requestId }
                     }
                 }
