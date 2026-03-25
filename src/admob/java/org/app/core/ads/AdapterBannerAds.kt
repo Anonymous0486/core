@@ -69,6 +69,9 @@ class AdapterBannerAds(
         }
         ads?.adUnitId = adId
         initAdListener()
+
+        Timber.tag("BannerAdmob").i("$adId init ads that has container: ${container != null}")
+        container?.addView(ads)
     }
 
     private fun initAdListener() {

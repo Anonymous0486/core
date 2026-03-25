@@ -91,6 +91,8 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
     private var _firstTimeShownBanner: Boolean = true
     private var _requestNativeId = ""
     private var _pendingBackAction: Boolean = false
+    private var _firstDisplay = true
+    private var _refreshTimelapse: Long = 30000
 
     open fun preventShowToastNoInternet() = false
 
@@ -172,7 +174,6 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 onActivityStarted()
-                showAds(true)
             }
         }
 
@@ -182,6 +183,9 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                     _hasNativeAds = false
                     layoutCard?.hide()
                 } else {
+                    if (_firstDisplay) {
+                        showAds(true)
+                    }
                     while (isActive && _hasNativeAds) {
                         if (shouldRefreshAds()) {
                             refreshNative()
@@ -501,6 +505,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                     override fun onLoadSuccess() {
                         if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED) && adsContainer != null) {
                             val retAds = CoreAds.instance.showAdmobNativeAds(adsContainer, nativeAds.style ?: NativeStyle.BIG_10)
+                            _timeStamp = System.currentTimeMillis()
                             retAds?.let { _requestNativeId = it.requestId }
                         }
                     }
@@ -619,6 +624,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                     override fun onLoadSuccess() {
                         if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED) && adsContainer != null) {
                             val retAds = CoreAds.instance.showAdmobNativeAds(adsContainer, nativeAds.style ?: NativeStyle.BIG_10)
+                            _timeStamp = System.currentTimeMillis()
                             retAds?.let { _requestNativeId = it.requestId }
                         }
                     }
@@ -814,8 +820,8 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
     }
 
     private fun shouldRefreshAds() : Boolean {
-        val currentTime = System.currentTimeMillis()
-        return currentTime >= (_timeStamp + 30000)
+        val currentTime = System.currentTimeMillis() - _refreshTimelapse
+        return currentTime >= _timeStamp
     }
 
     fun preloadNativeIfNeed() {
