@@ -280,7 +280,6 @@ data class AdmobNativeAds(
     ) {
         try {
             if (_mixedAdView != null) {
-                Timber.tag("NativeAdmob").d("Show Mixed")
                 if (_mixedAdView?.parent != null) {
                     (_mixedAdView?.parent as FrameLayout?)?.removeView(_mixedAdView)
                 }
@@ -292,7 +291,6 @@ data class AdmobNativeAds(
                 populateNativeAdView(_nativeAd?: return, compatibleBinding, layoutAdId)
                 adsContainer.removeAllViews()
                 adsContainer.addView(compatibleBinding.root ?: return)
-                Timber.tag("NativeAdmob").d("Show native")
             }
         } catch (e: Exception) {
             e.printStackTrace()
