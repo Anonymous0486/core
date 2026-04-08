@@ -306,7 +306,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                 object : LoadCallback() {
                     override fun onLoadSuccess() {
                         if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)) {
-                            CoreAds.instance.showAvailableBanner(adsContainer!!, bannerAds.id!!, bannerAds.event ?: tagBanner, null)
+                            CoreAds.instance.showAvailableBanner(container, bannerAds.id!!, bannerAds.event ?: tagBanner, null)
                         }
                     }
                 }

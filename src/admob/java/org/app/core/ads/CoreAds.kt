@@ -908,7 +908,9 @@ class CoreAds private constructor(
                     if (loadCallback != null) {
                         preloadAds.setLoadCallback(loadCallback)
                     }
-                    preloadAds.showShimmer(size, container)
+                    if (container.isEmpty()) {
+                        preloadAds.showShimmer(size, container)
+                    }
                     return null
                 }
             }
