@@ -190,4 +190,6 @@
     <string name="txt_exit">Exit</string>
     <string name="txt_check_network">Check network</string>
     <string name="no_internet_connection_desc">You are offline. Please connect to the internet to continue using the translation feature</string>
+
+    <string name="build_prompt" translatable="false">You are a professional translator.\nTranslate all the following content into %1$s.\n\nMANDATORY REQUIREMENTS:\n- Output the translated text ONLY. No explanations, no notes, no comments.\n- Do not repeat or echo the original text.\n- Do not include any prefix like \"Here is the translation\" or similar.\n- Do not ask the user any questions.\n- Do not summarize.\n- Do not omit any content.\n- Preserve structure, headings, bullets, and line breaks.\n- If there are tables, keep them in a reasonable format (markdown/tsv).\n\n%2$s</string>
 </resources>

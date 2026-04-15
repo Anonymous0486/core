@@ -17,14 +17,15 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@color/colorGray_08"
             app:fontFamily="@font/roboto_regular"
+            tools:text="english"
             android:textSize="14sp" />
 
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="@color/white"
+            android:background="@color/colorGray_08"
             android:layout_marginHorizontal="16dp"
             android:alpha="0.5"
             android:layout_marginVertical="16dp"
@@ -36,9 +37,10 @@
             android:layout_height="match_parent"
             android:text="View"
             android:textColor="#3B82F6"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:paddingStart="16dp"
-            app:fontFamily="@font/roboto_medium"
+            app:fontFamily="@font/roboto_regular"
+            android:textStyle="bold"
             android:gravity="center"
             tools:ignore="HardcodedText" />
     </LinearLayout>

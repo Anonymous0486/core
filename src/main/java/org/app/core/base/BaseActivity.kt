@@ -63,6 +63,8 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
 
     open val nativeHeight: Int = 0
 
+    open val showInitializeLoading: Boolean = true
+
     private val localeDelegate: LocaleHelperActivityDelegate = LocaleHelperActivityDelegateImpl()
 
     private var _binding: VB? = null
@@ -184,7 +186,8 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                     layoutCard?.hide()
                 } else {
                     if (_firstDisplay) {
-                        showAds(true)
+                        showAds(showInitializeLoading)
+                        _firstDisplay = false
                     }
                     while (isActive && _hasNativeAds) {
                         if (shouldRefreshAds()) {
@@ -305,7 +308,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                 null,
                 object : LoadCallback() {
                     override fun onLoadSuccess() {
-                        if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)) {
+                        if (lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) {
                             CoreAds.instance.showAvailableBanner(container, bannerAds.id!!, bannerAds.event ?: tagBanner, null)
                         }
                     }
@@ -503,7 +506,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                 nativeAds.style ?: NativeStyle.BIG_10,
                 object : LoadCallback() {
                     override fun onLoadSuccess() {
-                        if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED) && adsContainer != null) {
+                        if (lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) {
                             val retAds = CoreAds.instance.showAdmobNativeAds(adsContainer, nativeAds.style ?: NativeStyle.BIG_10)
                             _timeStamp = System.currentTimeMillis()
                             retAds?.let { _requestNativeId = it.requestId }
@@ -571,9 +574,10 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                     if (_firstTimeShownBanner) bannerAds.collapsible_type else null,
                     object : LoadCallback() {
                         override fun onLoadSuccess() {
-                            if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED) && adsContainer != null) {
+                            if (lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED) && adsContainer != null) {
                                 CoreAds.instance.showAvailableBanner(adsContainer!!, bannerAds.id!!, bannerAds.event ?: tagBanner, size)
                             }
+                            hideProgressDialog()
                         }
                     }
                 )
@@ -622,7 +626,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                 nativeAds.style ?: NativeStyle.BIG_10,
                 object : LoadCallback() {
                     override fun onLoadSuccess() {
-                        if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED) && adsContainer != null) {
+                        if (lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) {
                             val retAds = CoreAds.instance.showAdmobNativeAds(adsContainer, nativeAds.style ?: NativeStyle.BIG_10)
                             _timeStamp = System.currentTimeMillis()
                             retAds?.let { _requestNativeId = it.requestId }

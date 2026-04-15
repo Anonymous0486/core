@@ -5,6 +5,11 @@ import androidx.activity.OnBackPressedCallback
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
+import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavDirections
@@ -14,6 +19,7 @@ import org.app.core.base.utils.hideSoftInput
 import org.app.core.base.utils.showMessage
 import org.app.core.base.utils.showNoInternetAlert
 import org.app.core.R
+import org.app.core.base.BaseBottomSheetFragment
 
 fun FragmentManager.findFragment(fragment: Fragment) =
     findFragmentByTag(fragment.javaClass.simpleName)
@@ -81,4 +87,20 @@ fun Fragment.backToPreviousScreen() {
     try {
         findNavController().navigateUp()
     } catch (_ : Exception) {}
+}
+
+fun BaseBottomSheetFragment<*>.hideNavigationBar() {
+    dialog?.window?.let { window ->
+        val insetsController = WindowCompat.getInsetsController(window, window.decorView)
+        insetsController.hide(WindowInsetsCompat.Type.navigationBars())
+        insetsController.systemBarsBehavior =
+            WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+
+        ViewCompat.setOnApplyWindowInsetsListener(window.decorView) { v, windowInsets ->
+            v.updatePadding(
+                bottom = 0,
+            )
+            WindowInsetsCompat.CONSUMED
+        }
+    }
 }

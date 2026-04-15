@@ -30,6 +30,11 @@ android {
         buildConfigField("String", "crawldm", props.getProperty("crawldm"))
         buildConfigField("String", "socialdm", props.getProperty("socialdm"))
         buildConfigField("String", "ttdm", props.getProperty("ttdm"))
+        buildConfigField("String", "OPEN_ROUTER_API_KEY", "\"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\"")
+        buildConfigField("String", "BASE_OPEN_ROUTER_URL", "\"https://openrouter.ai/api/v1/chat/completions\"")
+        buildConfigField("String", "BASE_GOOGLE_TRANSLATE_URL", "\"https://translate.google.com/translate_a/single\"")
+        buildConfigField("String", "OPEN_ROUTER_APP_REFERER", "\"\"")
+        buildConfigField("String", "OPEN_ROUTER_APP_TITLE", "\"\"")
     }
 
     buildTypes {
@@ -100,7 +105,7 @@ dependencies {
     implementation(libs.jsoup)
 
     // Translate
-//    implementation(libs.translate)
+    implementation(libs.translate)
 
     implementation(libs.firebase.config.ktx)
     implementation(libs.firebase.analytics.ktx)
