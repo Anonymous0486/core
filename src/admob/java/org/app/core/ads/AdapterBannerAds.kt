@@ -265,8 +265,6 @@ class AdapterBannerAds(
 
                 logEvent("LoadedBackupId")
                 Log.d(TAG, "BannerAdmob $backupId onAdLoadedBackupId: ${container != null}")
-                onLoadSuccess()
-
                 isLoaded = true
                 try {
                     if (container != null) {
@@ -275,6 +273,7 @@ class AdapterBannerAds(
                         logEvent("ShownBackupId")
                     } else {
                         CoreAds.instance.updateTimestamp(System.currentTimeMillis())
+                        onLoadSuccess()
                     }
                 } catch (_: Exception) {}
             }

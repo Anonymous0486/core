@@ -35,6 +35,7 @@ import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 import androidx.core.graphics.createBitmap
 import java.util.Locale
+import androidx.core.graphics.drawable.toDrawable
 
 @SuppressLint("HardwareIds")
 fun getDeviceSerialNumber(context: Context): String? {
@@ -122,7 +123,7 @@ fun checkNetwork(activity: Context, text: String?): Int {
 
 fun getDialogWaiting(context: Context?): Dialog {
     val dialogLoad = Dialog(context!!)
-    dialogLoad.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+    dialogLoad.window!!.setBackgroundDrawable(Color.TRANSPARENT.toDrawable())
     dialogLoad.setContentView(R.layout.dialog_post_loading)
     dialogLoad.setCanceledOnTouchOutside(false)
     dialogLoad.setCancelable(false)

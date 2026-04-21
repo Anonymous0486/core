@@ -1027,7 +1027,7 @@ class CoreAds private constructor(
             isShowAdsWhenLoaded = true,
         )
 
-        if (container.childCount == 0) {
+        if (container.isEmpty()) {
             ads.showShimmer(size, container)
         }
         _bannerContainer = container
@@ -1038,6 +1038,11 @@ class CoreAds private constructor(
                 if (_enableDebug) {
                     showMessage(activity, "$eventId loaded success")
                 }
+                try {
+                    if (_bannerContainer != null) {
+                        ads.show(_bannerContainer!!, null)
+                    }
+                } catch (_: Exception) { }
             }
 
             override fun onLoadFailed(message: String?) {

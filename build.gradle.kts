@@ -105,7 +105,7 @@ dependencies {
     implementation(libs.jsoup)
 
     // Translate
-    implementation(libs.translate)
+//    implementation(libs.translate)
 
     implementation(libs.firebase.config.ktx)
     implementation(libs.firebase.analytics.ktx)
