@@ -7,6 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import org.app.core.base.utils.showMessage
 import org.app.core.R
+import androidx.core.net.toUri
 
 fun <A : Activity> Activity.openActivityAndClearStack(activity: Class<A>) {
     Intent(this, activity).apply {
@@ -35,7 +36,7 @@ fun Activity.redirectToPlayStore(appId: String) {
         this.startActivity(
             Intent(
                 Intent.ACTION_VIEW,
-                Uri.parse("https://play.google.com/store/apps/details?id=$appId")
+                "https://play.google.com/store/apps/details?id=$appId".toUri()
             )
         )
     } catch (_: Exception) {}

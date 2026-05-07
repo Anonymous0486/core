@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.LayoutRes
@@ -400,7 +401,10 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
 //    }
 
     fun enableEdgeToEdge(root: View, isFull: Boolean = true) {
-        enableEdgeToEdge()
+        enableEdgeToEdge(statusBarStyle = SystemBarStyle.light(
+            android.graphics.Color.TRANSPARENT,
+            android.graphics.Color.TRANSPARENT
+        ))
         val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
 
         if (isFull) {
@@ -742,7 +746,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
                 }
 
                 override fun onShow() {
-                    Timber.tag("MONET-DEBUG").i("Inter shown!")
+                    Timber.tag("MONET-DEBUG").i("Inter shown! -> $nativeId")
                     if (!isDestroyed && !isFinishing) {
                         if (nativeId.isNotBlank() && nativeFullContainer != null) {
                             nativeFullId = nativeId
@@ -754,6 +758,7 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
 
         if (ret) {
             nativeId = ads.nativeId ?: ""
+            Timber.tag("MONET-DEBUG").i("Set nativeId if need -> $nativeId")
         }
     }
 

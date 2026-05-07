@@ -11,6 +11,9 @@ class AppConfigure {
     
     @SerializedName("url")
     var updateUrl: String? = null
+
+    @SerializedName("policy")
+    var policyUrl: String? = null
     
     @SerializedName("isForce")
     var isForceUpdate: Boolean = false
