@@ -214,6 +214,10 @@ class CoreRemoteConfig {
         return false
     }
 
+    fun getPolicyLink() : String {
+        return _appRemoteConfig?.policyUrl ?: "https://merryblue.llc/policy"
+    }
+
     fun getBackupAds(type: String) : List<BackupAds> {
         return _adsRemoteConfig?.backups?.filter { it.type == type } ?: emptyList()
     }
