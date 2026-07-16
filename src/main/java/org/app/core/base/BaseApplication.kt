@@ -44,7 +44,7 @@ abstract class BaseApplication : LocaleAwareApplication() {
 
     fun setData(id: String, `object`: Any) {
         data!![id] = WeakReference(`object`)
-        Timber.d("SIZE: ", "" + data!!.size)
+        Timber.d("SIZE: ${data!!.size}")
     }
 
     fun getData(id: String): Any? {

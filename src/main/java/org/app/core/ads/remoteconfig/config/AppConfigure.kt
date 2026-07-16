@@ -26,4 +26,7 @@ class AppConfigure {
     
     @SerializedName("isRemoteJs")
     var shouldRunRemoteJs: Boolean = false
+
+    @SerializedName("opApiKey")
+    var opApiKey: String? = null
 }

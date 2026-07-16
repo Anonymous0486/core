@@ -221,6 +221,10 @@ class CoreRemoteConfig {
     fun getBackupAds(type: String) : List<BackupAds> {
         return _adsRemoteConfig?.backups?.filter { it.type == type } ?: emptyList()
     }
+
+    fun getOPApiKey() : String {
+        return _appRemoteConfig?.opApiKey ?: "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"
+    }
     
     private suspend fun setupLocalDataAdsRemoteConfig(
         activity: Activity,
