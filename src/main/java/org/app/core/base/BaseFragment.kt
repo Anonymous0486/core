@@ -60,59 +60,66 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
     open val showInitializeLoading: Boolean = true
 
     private var _binding: VB? = null
-    val mBinding: VB?
-        get() = _binding
+    val mBinding: VB? get() = _binding
+    open val binding: VB
+        get() = _binding ?: throw IllegalStateException(
+            "Cannot access view binding when View is destroyed (between onDestroyView and onCreateView) at $TAG"
+        )
+    val ensureBindingNotNull: VB? get() = _binding
 
-    open val binding get() = _binding!!
-    private var mRootView: View? = null
-    private var hasInitializedRootView = false
-    private var progressDialog: Dialog? = null
-    private var isInternetConnected = true
-
-    private var job: Job? = null
     var adsContainer: FrameLayout? = null
     var layoutCard: CardView? = null
-    private var _timeStamp: Long = 0
-    private var _refreshTimelapse: Long = 30000
-    private var _hasNativeAds: Boolean = true
-    private var _hasBannerAds: Boolean = true
-    private var _firstTimeShownBanner: Boolean = true
-    private var _requestNativeId = ""
     var nativeFullContainer: FrameLayout? = null
     var closeNativeFullAds: ImageView? = null
     var nativeFullId: String = ""
-    private var _pendingBackAction: Boolean = false
-    private var _firstDisplay = true
+    private var _requestNativeId: String = ""
+    private var _hasNativeAds: Boolean = false
+    private var _hasBannerAds: Boolean = false
+    private var _firstTimeShownBanner: Boolean = true
+    private var _adsRefreshJob: Job? = null
+    private val ADS_REFRESH_INTERVAL_MS = 30_000L
 
+    private var progressDialog: Dialog? = null
+    private var isInternetConnected = true
     private var onPermissionResult: ((Boolean) -> Unit)? = null
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
     ) { isGrantedMap ->
-        val filter = isGrantedMap.values.filter { !it }
+        val hasDenied = isGrantedMap.values.any { !it }
+        onPermissionResult?.invoke(!hasDenied)
+        onPermissionResult = null
+    }
 
-        if (filter.isEmpty()) {
-            onPermissionResult?.invoke((true))
-        } else {
-            onPermissionResult?.invoke((false))
+    private val lifecycleObserver = object : DefaultLifecycleObserver {
+        override fun onResume(owner: LifecycleOwner) {
+            super.onResume(owner)
+            onFragmentResume()
+        }
+        override fun onPause(owner: LifecycleOwner) {
+            super.onPause(owner)
+
+            _firstDisplay = false
+            hideLoading()
+            onFragmentPause()
         }
     }
 
+    private var mRootView: View? = null
+    private var job: Job? = null
+    private var _timeStamp: Long = 0
+    private var _refreshTimelapse: Long = 30000
+    private var _pendingBackAction: Boolean = false
+    private var _firstDisplay = true
+
+
     override
     fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        if (mRootView == null) {
-            initViewBinding(inflater, container)
-        }
-
+        _binding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false)
+        _binding?.lifecycleOwner = viewLifecycleOwner
         initView(binding.root)
-        _timeStamp = System.currentTimeMillis()
-        // using when fragment transition animation 300ms
-        binding.root.postDelayed(
-            { initDataWithAnimation() },
-            300
-        )
         initObserver()
 
-        return mRootView
+        return binding.root
     }
 
     private fun initViewBinding(inflater: LayoutInflater, container: ViewGroup?) {
@@ -127,61 +134,70 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
     fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Use LifecycleObserver instead of override lifecycle methods such as onResume
-        viewLifecycleOwner.lifecycle.addObserver(object : DefaultLifecycleObserver {
-            override fun onResume(owner: LifecycleOwner) {
-                super.onResume(owner)
-                onFragmentResume()
-            }
-            override fun onPause(owner: LifecycleOwner) {
-                super.onPause(owner)
+        viewLifecycleOwner.lifecycle.addObserver(lifecycleObserver)
 
-                _firstDisplay = false
-                onFragmentPause()
-            }
-        })
-
-        if (!hasInitializedRootView) {
-            getFragmentArguments()
-            setBindingVariables()
-            observeAPICall()
-            setupObservers()
-            setUpViews()
-
-            hasInitializedRootView = true
-        }
+        getFragmentArguments()
+        setBindingVariables()
+        observeAPICall()
+        setupObservers()
+        setUpViews()
 
         isInternetConnected = NetworkUtil.isNetworkConnected(context ?: return)
-        lifecycleScope.launch {
-            lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
+        setupAutoAdsLifecycle()
+        preloadInterstitial()
+    }
+
+    private fun setupAutoAdsLifecycle() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.RESUMED) {
                 if (CoreAds.instance.isHideAds) {
                     _hasNativeAds = false
                     _hasBannerAds = false
                     layoutCard?.hide()
-                } else {
-                    if (_firstDisplay) {
-                        showAds(showInitializeLoading)
-                    }
-                    while (isActive && _hasNativeAds) {
-                        if (shouldRefreshAds()) {
-                            refreshNative()
-                        }
-                        delay(1000)
-                    }
+                    return@repeatOnLifecycle
+                }
+                val isAdShown = showAds(showInitializeLoading && _firstDisplay)
+                if (isAdShown && _hasNativeAds) {
+                    startNativeAdsRefreshTimer()
                 }
             }
         }
+    }
 
-        preloadAds()
+    private fun startNativeAdsRefreshTimer() {
+        _adsRefreshJob?.cancel()
+        _adsRefreshJob = viewLifecycleOwner.lifecycleScope.launch {
+            while (isActive && _hasNativeAds && !CoreAds.instance.isHideAds) {
+                delay(ADS_REFRESH_INTERVAL_MS)
+                if (isActive && isAdded && !isDetached && adsContainer != null) {
+                    refreshNative()
+                }
+            }
+        }
     }
 
     override fun onDestroyView() {
+        _adsRefreshJob?.cancel()
+        _adsRefreshJob = null
         if (view?.parent != null) {
             (view?.parent as? ViewGroup)?.endViewTransition(view)
         }
-        hideLoading()
 
-        CoreAds.instance.releaseNativeAds(_requestNativeId)
+        progressDialog = null
+        if (_requestNativeId.isNotBlank()) {
+            CoreAds.instance.releaseNativeAds(_requestNativeId)
+            _requestNativeId = ""
+        }
+        adsContainer?.removeAllViews()
+        adsContainer = null
+        layoutCard = null
+        nativeFullContainer?.removeAllViews()
+        nativeFullContainer = null
+        closeNativeFullAds = null
+        onPermissionResult = null
+        viewLifecycleOwner.lifecycle.removeObserver(lifecycleObserver)
+        _binding = null
+
         super.onDestroyView()
     }
 
@@ -208,16 +224,16 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
 
     open fun initView(view: View) {}
 
-    open fun initDataWithAnimation() {}
-
     open fun getFragmentArguments() {}
 
     open fun setBindingVariables() {
         Timber.tag(TAG).i("setupBinding")
-        nativeFullContainer = _binding?.root?.findViewById(R.id.nativeFullContainer) as? FrameLayout
-        adsContainer = _binding?.root?.findViewById(R.id.adsContainer) as? FrameLayout
-        layoutCard = _binding?.root?.findViewById(R.id.layoutCard) as? CardView
-        closeNativeFullAds = _binding?.root?.findViewById(R.id.closeNativeFullAds) as? ImageView
+        _binding?.root?.let { root ->
+            adsContainer = root.findViewById(R.id.adsContainer)
+            layoutCard = root.findViewById(R.id.layoutCard)
+            nativeFullContainer = root.findViewById(R.id.nativeFullContainer)
+            closeNativeFullAds = root.findViewById(R.id.closeNativeFullAds)
+        }
 
         nativeFullContainer?.hide()
         closeNativeFullAds?.hide()
@@ -259,7 +275,9 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
 
     fun showLoading() {
         hideLoading()
-        progressDialog = showLoadingDialog(activity, null)
+        try {
+            progressDialog = showLoadingDialog(activity, null)
+        } catch (_: Exception) {}
     }
 
     fun showLoading(hint: String?) {
@@ -269,7 +287,10 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         } catch (_: Exception) {}
     }
 
-    fun hideLoading() = hideLoadingDialog(progressDialog, activity)
+    fun hideLoading() {
+        hideLoadingDialog(progressDialog, activity)
+        progressDialog = null
+    }
 
     fun setLanguage(language: String) {
         (activity as? BaseActivity<*>)?.updateLocale(language)
@@ -278,7 +299,9 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
     open fun initObserver(){}
 
     open fun showMessage(message : String){
-        Toast.makeText(requireContext(),message,Toast.LENGTH_SHORT).show()
+        if (isAdded) {
+            Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+        }
     }
 
     val currentLanguage: Locale
@@ -298,6 +321,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         val actv = activity ?: return false
         val remoteConfig = CoreRemoteConfig.instance.adsRemoteConfig
         if (remoteConfig == null || remoteConfig.status == false) {
+            layoutCard?.hide()
             return false
         }
 
@@ -490,10 +514,10 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                 onPermissionResult = onCompleted
                 requestPermissionLauncher.launch(remainingPermissions.toTypedArray())
             } else {
-                onCompleted?.invoke((true))
+                onCompleted?.invoke(true)
             }
         } ?: kotlin.run {
-            onCompleted?.invoke((false))
+            onCompleted?.invoke(false)
         }
     }
 
@@ -530,9 +554,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                     super.onClosed()
                     Timber.tag("MONET-DEBUG").i("Inter onClosed -> $nativeId")
                     if (nativeId.isNullOrBlank() || nativeFullContainer == null) {
-                        if (activity != null && !requireActivity().isDestroyed && !requireActivity().isFinishing) {
-                            onCompleted?.invoke()
-                        }
+                        safeExecuteAction(onCompleted)
                     }
                 }
 
@@ -540,9 +562,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                     super.onError(message)
                     nativeFullId = ""
                     Timber.tag("MONET-DEBUG").i("Inter onClosed -> $nativeId")
-                    if (activity != null && !requireActivity().isDestroyed && !requireActivity().isFinishing) {
-                        onCompleted?.invoke()
-                    }
+                    safeExecuteAction(onCompleted)
                 }
 
                 override fun onShow() {
@@ -558,6 +578,12 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
 
         if (ret) {
             nativeId = ads.nativeId
+        }
+    }
+
+    private fun safeExecuteAction(action: (() -> Unit)?) {
+        if (isAdded && activity != null && !requireActivity().isFinishing && !requireActivity().isDestroyed) {
+            action?.invoke()
         }
     }
 
@@ -582,13 +608,13 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
                 override fun onClosed() {
                     super.onClosed()
 
-                    onCompleted?.invoke()
+                    safeExecuteAction(onCompleted)
                 }
 
                 override fun onError(message: String?) {
                     super.onError(message)
 
-                    onCompleted?.invoke()
+                    safeExecuteAction(onCompleted)
                 }
 
                 override fun onShow() {
@@ -606,7 +632,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         }
 
         val nativeAds = rmConfig.natives?.firstOrNull {
-            it.tag == TAG && !it.id.isNullOrBlank()
+            it.place_preload == TAG && !it.id.isNullOrBlank()
         }
 
         if (nativeAds != null) {
@@ -614,8 +640,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         }
     }
 
-    private fun preloadAds() {
-        // Inter
+    private fun preloadInterstitial() {
         val tagBack = TAG + "_Back"
         val tagNext = TAG + "_Next"
         val rmConfig = CoreRemoteConfig.instance.adsRemoteConfig
@@ -634,7 +659,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         val nativeAds = rmConfig.natives?.firstOrNull {
             it.place_preload == tagNative
         }
-        if (nativeAds != null && nativeAds.id.isNullOrBlank() == false) {
+        if (nativeAds != null && !nativeAds.id.isNullOrBlank()) {
             Timber.tag("MONET-DEBUG").d("Preload Native ads in create fragment!!!")
             CoreAds.instance.loadOrShowAdmobNativeAds(
                 null,
@@ -647,18 +672,21 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
 
     private fun showNativeFull(tag: String) {
         activity ?: return
-        nativeFullContainer?.show()
-        closeNativeFullAds?.show()
+        val container = nativeFullContainer ?: return
+        container.show()
+        container.show()
         val aNative = CoreAds.instance.loadOrShowAdmobNativeAds(
-            nativeFullContainer!!,
+            container,
             nativeFullId,
             tag + "NativeFull",
             NativeStyle.FULLSCREEN,
             object : LoadCallback() {
                 override fun onLoadSuccess() {
-                    if (activity != null && !requireActivity().isDestroyed && !requireActivity().isFinishing) {
-                        val retAds = CoreAds.instance.showAdmobNativeAds(nativeFullContainer, NativeStyle.FULLSCREEN)
-                        retAds?.let { _requestNativeId = it.requestId }
+                    if (_binding != null && activity != null && !requireActivity().isDestroyed && !requireActivity().isFinishing) {
+                        nativeFullContainer?.let { safeContainer ->
+                            val retAds = CoreAds.instance.showAdmobNativeAds(safeContainer, NativeStyle.FULLSCREEN)
+                            retAds?.let { _requestNativeId = it.requestId }
+                        }
                     }
                 }
             }
@@ -666,10 +694,5 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         if (aNative != null) {
             nativeFullId = ""
         }
-    }
-
-    private fun shouldRefreshAds() : Boolean {
-        val currentTime = System.currentTimeMillis() - _refreshTimelapse
-        return currentTime >= _timeStamp
     }
 }
