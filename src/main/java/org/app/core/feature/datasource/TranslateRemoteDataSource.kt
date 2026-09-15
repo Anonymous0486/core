@@ -14,6 +14,7 @@ import org.app.core.feature.model.TextTranslateRequest
 import org.app.core.feature.model.TranslateResponse
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import timber.log.Timber
 import javax.inject.Inject
 
 class TranslateRemoteDataSource @Inject constructor(
@@ -78,6 +79,7 @@ class TranslateRemoteDataSource @Inject constructor(
         try {
             if (_translateRetrofit == null) {
                 val decryptedUrl = BuildConfig.translateDm.decryptCBC(BuildConfig.iv, BuildConfig.secret)
+                Timber.d("###DEBUG -> decryptedUrl: $decryptedUrl")
                 if (decryptedUrl.isBlank()) return false
                 
                 _translateRetrofit = Retrofit.Builder()

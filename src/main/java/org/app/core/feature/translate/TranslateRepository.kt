@@ -158,6 +158,7 @@ class TranslateRepository @Inject constructor(
 
     suspend fun mlVisionTranslate(sourceText: List<String>, sourceLan: String, targetLag: String) = runIO {
         _translatedBlock.clear()
+        Timber.d("###DEBUG -> mlVisionTranslate start: $sourceLan -> $targetLag")
         if (sourceLan.isNotBlank() &&
             availableLanguages.contains(sourceLan) && availableModels.contains(sourceLan)
             && availableLanguages.contains(targetLag) && availableModels.contains(targetLag)) {
@@ -176,8 +177,13 @@ class TranslateRepository @Inject constructor(
             if (!availableModels.contains(targetLag)) {
                 downloadLanguage(targetLag)
             }
+
+            if (!availableModels.contains(sourceLan)) {
+                downloadLanguage(sourceLan)
+            }
         }
 
+        Timber.d("###DEBUG -> mlVisionTranslate result block size: ${_translatedBlock.size}")
         return@runIO _translatedBlock
     }
 
@@ -232,7 +238,6 @@ class TranslateRepository @Inject constructor(
         var downloadTask: Task<Void>?
         if (pendingDownloads.containsKey(languageCode)) {
             downloadTask = pendingDownloads[languageCode]
-            // found existing task. exiting
             if (downloadTask != null && !downloadTask.isCanceled) {
                 return
             }
