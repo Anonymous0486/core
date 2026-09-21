@@ -447,7 +447,7 @@ class CoreAds private constructor(
         activity: Activity,
         adsId: String,
         eventId: String,
-        maxRetryAttempt: Int = DEFAULT_MAX_RETRY_ATTEMPT
+        maxRetryAttempt: Int = 2
     ) {
         
         if (isHideAds) return
@@ -467,8 +467,6 @@ class CoreAds private constructor(
                 if (_enableDebug) {
                     showMessage(activity, "$eventId loaded success")
                 }
-                
-                retryAttempt = 1.0
             }
 
             override fun onLoadFailed(message: String?) {
@@ -486,7 +484,7 @@ class CoreAds private constructor(
                         retryAttempt++
                         val delayMillis = TimeUnit.SECONDS.toMillis(
                             2.0.pow(
-                                6.0.coerceAtMost(retryAttempt)
+                                3.0.coerceAtMost(retryAttempt)
                             ).toLong() + 1
                         )
                         
@@ -1325,7 +1323,6 @@ class CoreAds private constructor(
     }
 
     fun preloadAdmobNativeAds(
-        context: Context,
         adId: String,
         eventId: String,
     ) {
@@ -1338,7 +1335,7 @@ class CoreAds private constructor(
         }
 
         Timber.tag(TAG).d("Native ads preload...")
-        val aNative = AdmobNativeAds(context = context, adUnitId = adId, event = eventId)
+        val aNative = AdmobNativeAds(context = appContext, adUnitId = adId, event = eventId)
         aNative.setDisplayWhenLoaded(false)
         _nativeAdsList.add(aNative)
         aNative.loadAds()

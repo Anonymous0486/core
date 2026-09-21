@@ -6,6 +6,7 @@ import android.net.Uri
 import org.app.core.databinding.LayoutSmallPlaceHolderBinding
 import org.app.core.feature.extension.ImageViewType
 import org.app.core.feature.extension.loadImageUrl
+import androidx.core.net.toUri
 
 class SmallPlaceHolder(
     private val title: String,
@@ -26,7 +27,7 @@ class SmallPlaceHolder(
                 context.startActivity(
                     Intent(
                         Intent.ACTION_VIEW,
-                        Uri.parse("https://play.google.com/store/apps/details?id=$desc")
+                        "https://play.google.com/store/apps/details?id=$desc".toUri()
                     )
                 )
             } catch (e: Exception) {
