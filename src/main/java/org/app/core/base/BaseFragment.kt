@@ -1,12 +1,8 @@
 package org.app.core.base
 
-import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,45 +13,23 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.LayoutRes
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
-import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
-import com.google.android.gms.ads.AdSize
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
-import org.app.core.ads.CoreAds
-import org.app.core.ads.base.NativeStyle
-import org.app.core.ads.remoteconfig.CoreRemoteConfig
-import org.app.core.base.extensions.setMargins
-import org.app.core.base.utils.hideLoadingDialog
-import org.app.core.base.utils.px
-import org.app.core.base.utils.showLoadingDialog
-import java.util.*
-import kotlinx.coroutines.isActive
 import org.app.core.R
-import org.app.core.ads.CoreAds.Companion
 import org.app.core.ads.base.AdsViewContainer
 import org.app.core.ads.base.ScreenAdsDelegate
 import org.app.core.ads.callback.AdsActionHandler
-import org.app.core.ads.callback.AdsCallback
-import org.app.core.ads.callback.LoadCallback
-import org.app.core.ads.remoteconfig.config.AdsConfigure
 import org.app.core.base.binding.setOnSingleClickListener
-import org.app.core.base.extensions.calculateBannerHeightBy
 import org.app.core.base.extensions.hide
-import org.app.core.base.extensions.show
 import org.app.core.base.utils.NetworkUtil
-import org.app.core.base.utils.StringResId
+import org.app.core.base.utils.hideLoadingDialog
+import org.app.core.base.utils.showLoadingDialog
 import timber.log.Timber
-import kotlin.math.min
+import java.util.Locale
 
 abstract class BaseFragment<VB : ViewDataBinding> : Fragment(), AdsActionHandler {
     open val TAG = this::class.simpleName ?: "BaseFragmentTAG"

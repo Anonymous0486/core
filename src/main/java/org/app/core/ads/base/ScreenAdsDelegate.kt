@@ -1,6 +1,8 @@
 package org.app.core.ads.base
 
 import android.app.Activity
+import android.os.Handler
+import android.os.Looper
 import android.view.ViewGroup
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.Lifecycle
@@ -170,6 +172,12 @@ class ScreenAdsDelegate(
                 _requestNativeId = aNative.requestId
             } else if (showLoading) {
                 onShowLoading?.invoke(true)
+                Handler(Looper.getMainLooper())
+                    .postDelayed({
+                        if (isContextValid() && isAtLeastMinActiveState()) {
+                            onShowLoading?.invoke(false)
+                        }
+                    }, 1500)
             }
             return true
         }
@@ -226,6 +234,12 @@ class ScreenAdsDelegate(
             _hasBannerAds = true
             if (banner == null && showLoading) {
                 onShowLoading?.invoke(true)
+                Handler(Looper.getMainLooper())
+                    .postDelayed({
+                        if (isContextValid() && isAtLeastMinActiveState()) {
+                            onShowLoading?.invoke(false)
+                        }
+                    }, 1500)
             }
             return true
         }

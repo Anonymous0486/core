@@ -5,14 +5,11 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
@@ -24,7 +21,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import androidx.core.view.isVisible
 import androidx.core.view.updateLayoutParams
 import androidx.core.view.updatePadding
 import androidx.databinding.DataBindingUtil
@@ -32,36 +28,25 @@ import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.google.android.gms.ads.AdSize
 import com.zeugmasolutions.localehelper.LocaleHelper
 import com.zeugmasolutions.localehelper.LocaleHelperActivityDelegate
 import com.zeugmasolutions.localehelper.LocaleHelperActivityDelegateImpl
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import org.app.core.R
 import org.app.core.ads.CoreAds
 import org.app.core.ads.base.AdsViewContainer
-import org.app.core.ads.base.NativeStyle
 import org.app.core.ads.base.ScreenAdsDelegate
 import org.app.core.ads.callback.AdsActionHandler
 import org.app.core.ads.callback.AdsCallback
 import org.app.core.ads.callback.LoadCallback
 import org.app.core.ads.remoteconfig.CoreRemoteConfig
 import org.app.core.base.binding.setOnSingleClickListener
-import org.app.core.base.extensions.calculateBannerHeightBy
 import org.app.core.base.extensions.hide
-import org.app.core.base.extensions.setMargins
-import org.app.core.base.extensions.show
 import org.app.core.base.utils.NetworkUtil
 import org.app.core.base.utils.StringResId
 import org.app.core.base.utils.getDialogWaiting
-import org.app.core.base.utils.hideLoadingDialog
-import org.app.core.base.utils.px
 import timber.log.Timber
 import java.util.Locale
-import kotlin.math.min
 
 abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity(), AdsActionHandler {
     open val TAG = this::class.simpleName ?: "BaseActivityTAG"
