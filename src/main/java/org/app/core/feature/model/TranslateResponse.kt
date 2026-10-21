@@ -5,6 +5,10 @@ import com.google.gson.annotations.SerializedName
 data class TranslateResponse(
     @SerializedName("language_present")
     val languagePresent: String? = null,
+
     @SerializedName("translate")
-    val translate: String? = null
+    val translate: String? = null,
+
+    @SerializedName("provider")
+    val provider: String? = null
 )

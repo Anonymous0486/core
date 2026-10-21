@@ -83,10 +83,11 @@ class TranslateRepository @Inject constructor(
 
     suspend fun translateText(
         content: String,
-        languageCode: String
+        languageCode: String,
+        type: String?
     ): BaseResponse<TranslateResponse> {
 
-        return when (val response = dataSource.translateText(content, languageCode)) {
+        return when (val response = dataSource.translateText(content, languageCode, type)) {
             is ResponseData.Success -> {
                 if (response.value?.result != null) {
                     val data = response.value.result
@@ -198,7 +199,7 @@ class TranslateRepository @Inject constructor(
                 }
                 if (ret.isBlank()) {
                     //TODO: Retry with server API
-                    return@runIO translateText(content, targetLag)
+                    return@runIO translateText(content, targetLag, null)
                 } else {
                     return@runIO BaseResponse(status = true, result = TranslateResponse(translate = ret))
                 }

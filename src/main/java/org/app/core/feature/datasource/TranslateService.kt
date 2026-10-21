@@ -37,4 +37,9 @@ interface TranslateService {
     suspend fun dictionaryGet(
         @Query("term") term: String,
     ): BaseResponse<DictionaryModel>?
+
+    @POST("api/v2/translate/content-ai")
+    suspend fun translateContentByType(
+        @Body request: TextTranslateRequest,
+    ): BaseResponse<TranslateResponse?>?
 }

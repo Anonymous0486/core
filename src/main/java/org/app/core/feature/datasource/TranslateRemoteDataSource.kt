@@ -35,16 +35,25 @@ class TranslateRemoteDataSource @Inject constructor(
         return safeApiCall { _translateService!!.translates(content, languageCode) }
     }
 
-    suspend fun translateText(content: String, languageCode: String) : ResponseData<BaseResponse<TranslateResponse?>?> {
+    suspend fun translateText(content: String, languageCode: String, type: String? = null) : ResponseData<BaseResponse<TranslateResponse?>?> {
         if (!translateNetworkInitializing()) {
             return ResponseData.Failure(FailureStatus.API_FAIL, 404, "Network component is not ready")
         }
 
-        val request = TextTranslateRequest(
-            content,
-            languageCode
-        )
-        return safeApiCall { _translateService!!.translateText(request) }
+        if (type.isNullOrBlank()) {
+            val request = TextTranslateRequest(
+                content,
+                languageCode
+            )
+            return safeApiCall { _translateService!!.translateText(request) }
+        } else {
+            val request = TextTranslateRequest(
+                content,
+                languageCode,
+                type
+            )
+            return safeApiCall { _translateService!!.translateContentByType(request) }
+        }
     }
     
     suspend fun multipleTranslate(contents: List<String>, languageCode: RequestBody) : ResponseData< BaseResponse<List<String>?>?> {
@@ -74,7 +83,7 @@ class TranslateRemoteDataSource @Inject constructor(
         
         return safeApiCall { _translateService!!.dictionaryGet(term) }
     }
-    
+
     private fun translateNetworkInitializing() : Boolean {
         try {
             if (_translateRetrofit == null) {
