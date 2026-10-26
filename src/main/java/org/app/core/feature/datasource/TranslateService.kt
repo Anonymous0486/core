@@ -42,4 +42,13 @@ interface TranslateService {
     suspend fun translateContentByType(
         @Body request: TextTranslateRequest,
     ): BaseResponse<TranslateResponse?>?
+
+
+    @POST("api/v2/translate/content-ai-multiple")
+    @Multipart
+    suspend fun multipleTextTranslateWithType(
+        @Part content_translate: List<@JvmSuppressWildcards MultipartBody.Part>,
+        @Part("language_code") language_code: RequestBody,
+        @Part("type") type: RequestBody
+    ): BaseResponse<List<String>?>?
 }

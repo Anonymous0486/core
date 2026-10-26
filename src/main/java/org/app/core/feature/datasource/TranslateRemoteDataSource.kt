@@ -1,9 +1,11 @@
 package org.app.core.feature.datasource
 
 import com.google.gson.Gson
+import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
 import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import org.app.core.BuildConfig
 import org.app.core.ads.utils.decryptCBC
 import org.app.core.feature.model.BaseResponse
@@ -56,7 +58,7 @@ class TranslateRemoteDataSource @Inject constructor(
         }
     }
     
-    suspend fun multipleTranslate(contents: List<String>, languageCode: RequestBody) : ResponseData< BaseResponse<List<String>?>?> {
+    suspend fun multipleTranslate(contents: List<String>, languageCode: String, type: String?) : ResponseData< BaseResponse<List<String>?>?> {
         if (!translateNetworkInitializing()) {
             return ResponseData.Failure(FailureStatus.API_FAIL, 404, "Network component is not ready")
         }
@@ -64,8 +66,19 @@ class TranslateRemoteDataSource @Inject constructor(
         val contentTranslate = contents.map { text ->
             MultipartBody.Part.createFormData("content_translate[]", text)
         }
-        
-        return safeApiCall { _translateService!!.multipleTextTranslates(contentTranslate, languageCode) }
+
+        return if (type.isNullOrBlank()) {
+            safeApiCall { _translateService!!.multipleTextTranslates(
+                contentTranslate,
+                languageCode.toRequestBody("text/plain".toMediaType())
+            ) }
+        } else {
+            safeApiCall { _translateService!!.multipleTextTranslateWithType(
+                contentTranslate,
+                languageCode.toRequestBody("text/plain".toMediaType()),
+                type.toRequestBody("text/plain".toMediaType())
+            ) }
+        }
     }
     
     suspend fun translateWebBy(url: String, from: String, to: String) : ResponseData< BaseResponse<String?>?> {

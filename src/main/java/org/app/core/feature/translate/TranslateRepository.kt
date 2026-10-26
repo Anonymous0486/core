@@ -105,9 +105,10 @@ class TranslateRepository @Inject constructor(
 
     suspend fun multipleTranslate(
         contents: List<String>,
-        languageCode: RequestBody
+        languageCode: String,
+        type: String?
     ): BaseResponse<List<String>?> {
-        return when (val response = dataSource.multipleTranslate(contents, languageCode)) {
+        return when (val response = dataSource.multipleTranslate(contents, languageCode, type)) {
             is ResponseData.Success -> {
                 if (response.value?.result != null) {
                     val data = response.value?.result
@@ -117,9 +118,6 @@ class TranslateRepository @Inject constructor(
                 }
             }
             is ResponseData.Failure -> BaseResponse(status = false, message = response.message)
-            else -> {
-                BaseResponse(status = false)
-            }
         }
     }
 
