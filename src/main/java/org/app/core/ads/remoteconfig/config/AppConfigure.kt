@@ -19,11 +19,14 @@ class AppConfigure {
     var isForceUpdate: Boolean = false
 
     @SerializedName("mediaPicker")
-    var mediaPicker: Boolean = false
+    var mediaPicker: Boolean? = false
     
     @SerializedName("jsScript")
-    var remoteJsScript: String = ""
+    var remoteJsScript: String? = ""
     
     @SerializedName("isRemoteJs")
-    var shouldRunRemoteJs: Boolean = false
+    var shouldRunRemoteJs: Boolean? = false
+
+    @SerializedName("isMultiClone")
+    var isMultiClone: Boolean? = false
 }

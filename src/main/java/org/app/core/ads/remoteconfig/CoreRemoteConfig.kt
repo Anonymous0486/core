@@ -48,7 +48,10 @@ class CoreRemoteConfig {
     
     val adsRemoteConfig: AdsConfigure?
         get() = _adsRemoteConfig
-    
+
+    val isMultipClone: Boolean
+        get() = _appRemoteConfig?.isMultiClone ?: false
+
     fun setReleaseFetchTime(fetchTime: Long) {
         this.fetchTime = fetchTime
     }
