@@ -22,15 +22,13 @@ class GoogleTranslateClient @Inject constructor(
 
     fun translate(text: String, fromLang: String, toLang: String): String {
         if (text.isBlank()) return text
-        val resolvedFromLang = fromLang
-        val resolvedToLang = toLang
 
         val encodedText = URLEncoder.encode(text, StandardCharsets.UTF_8.name())
         val url = buildString {
             append(baseUrl)
             append("?client=gtx&dt=t&dj=1")
-            append("&sl=$resolvedFromLang")
-            append("&tl=$resolvedToLang")
+            append("&sl=$fromLang")
+            append("&tl=$toLang")
             append("&q=$encodedText")
         }
 
@@ -67,10 +65,4 @@ class GoogleTranslateClient @Inject constructor(
             return translated
         }
     }
-
-//    private fun normalizeLanguageCode(languageCode: String): String {
-//        val raw = languageCode.trim()
-//        if (raw.equals("auto", ignoreCase = true)) return "auto"
-//        return TranslateLanguage.from(raw).code
-//    }
 }

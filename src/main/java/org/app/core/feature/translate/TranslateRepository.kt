@@ -103,21 +103,61 @@ class TranslateRepository @Inject constructor(
         }
     }
 
+    suspend fun translateText(
+        content: String,
+        srcLanguage: String,
+        desLanguage: String,
+        type: String?
+    ): BaseResponse<TranslateResponse> {
+        val response = dataSource.translateText(content, desLanguage, type)
+        if (response is ResponseData.Success) {
+            if (response.value?.result != null) {
+                val data = response.value.result
+                Timber.d("###DEBUG -> API result: ${data.translate}")
+                return BaseResponse(status = true, result = data)
+            } else {
+                return googleTranslateText(content, srcLanguage, desLanguage)
+            }
+        } else {
+            return googleTranslateText(content, srcLanguage, desLanguage)
+        }
+    }
+
     suspend fun multipleTranslate(
         contents: List<String>,
-        languageCode: String,
+        srcLanguage: String,
+        desLanguage: String,
         type: String?
     ): BaseResponse<List<String>?> {
-        return when (val response = dataSource.multipleTranslate(contents, languageCode, type)) {
+        return when (val response = dataSource.multipleTranslate(contents, desLanguage, type)) {
             is ResponseData.Success -> {
-                if (response.value?.result != null) {
+                if (response.value?.result != null && !response.value.result.isEmpty()) {
                     val data = response.value?.result
+                    Timber.d("###DEBUG -> API result: $data")
                     BaseResponse(status = true, result = data)
                 } else {
-                    BaseResponse(status = true, result = null)
+                    val originText = contents.joinToString(System.lineSeparator())
+                    val googleRet = translateWithFreeGoogleApi(originText, srcLanguage, desLanguage)
+
+                    Timber.d("###DEBUG Google translate result $googleRet -> $originText -> $srcLanguage -> $desLanguage")
+                    if (googleRet.isBlank()) {
+                        BaseResponse(status = true, result = null)
+                    } else {
+                        BaseResponse(status = true, result = listOf(googleRet))
+                    }
                 }
             }
-            is ResponseData.Failure -> BaseResponse(status = false, message = response.message)
+            is ResponseData.Failure -> {
+                val originText = contents.joinToString(System.lineSeparator())
+                val googleRet = translateWithFreeGoogleApi(originText, srcLanguage, desLanguage)
+
+                Timber.d("###DEBUG Google translate result $googleRet -> $originText -> $srcLanguage -> $desLanguage")
+                if (googleRet.isBlank()) {
+                    BaseResponse(status = true, result = null)
+                } else {
+                    BaseResponse(status = true, result = listOf(googleRet))
+                }
+            }
         }
     }
 
@@ -346,6 +386,24 @@ class TranslateRepository @Inject constructor(
             language,
             content
         )
+    }
+
+    private fun googleTranslateText(
+        content: String,
+        srcLanguage: String,
+        desLanguage: String,
+    ) : BaseResponse<TranslateResponse> {
+        try {
+            val translated = googleTranslateClient.translate(text = content, fromLang = srcLanguage, toLang = desLanguage)
+            Timber.d("###DEBUG -> Google translate result: $translated")
+            return if (translated.isBlank()) {
+                BaseResponse(status = false)
+            } else {
+                BaseResponse(status = true, result =  TranslateResponse(translate = translated))
+            }
+        } catch (_: Exception) {
+            return BaseResponse(status = false)
+        }
     }
 
     companion object {
