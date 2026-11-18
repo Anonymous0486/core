@@ -104,10 +104,10 @@ fun Cursor.getMediaFromCursor(): Photo? {
         0
     }
 
-    val albumLabel: String = try {
+    val albumLabel: String? = try {
         getString(getColumnIndexOrThrow(MediaStore.MediaColumns.BUCKET_DISPLAY_NAME))
     } catch (_: Exception) {
-        Build.MODEL
+        ""
     }
     val takenTimestamp: Long? = try {
         //TODO: For Android 9
@@ -160,7 +160,7 @@ fun Cursor.getMediaFromCursor(): Photo? {
         return null
     }
 
-    Timber.tag("###DEBUG").e("Found photo $title")
+    Timber.tag("###DEBUG").e("Found photo $title $albumLabel")
     return Photo(
         id = id,
         label = title,
@@ -168,7 +168,7 @@ fun Cursor.getMediaFromCursor(): Photo? {
         path = path,
         relativePath = relativePath,
         albumID = albumID,
-        albumLabel = albumLabel,
+        albumLabel = albumLabel ?: "",
         timestamp = addedTimestamp,
         takenTimestamp = takenTimestamp,
         expiryTimestamp = expiryTimestamp,
