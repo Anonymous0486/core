@@ -1,13 +1,11 @@
 package org.app.core.feature.login
 
 import android.content.ContentResolver
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.provider.OpenableColumns
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.Tasks
-import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException
 import com.google.api.client.http.FileContent
 import com.google.api.client.http.InputStreamContent
 import com.google.api.services.drive.Drive
@@ -186,7 +184,7 @@ class DriveService(driveService: Drive) {
         )
     }
 
-    suspend fun uploadFile(name: String, file: java.io.File, type: String, context: Context): String? = runIO {
+    suspend fun uploadFile(name: String, file: java.io.File, type: String): String? = runIO {
         try {
             if (_backupFolderId.isNullOrBlank()) {
                 _backupFolderId = findFolderByName(BACKUP_FOLDER) ?: createFolderBy(BACKUP_FOLDER)
@@ -220,9 +218,6 @@ class DriveService(driveService: Drive) {
                     uploadedFile.id
                 }
             }
-        } catch (userEx: UserRecoverableAuthIOException)  {
-            context.startActivity(userEx.intent)
-            null
         } catch (e: Exception) {
             e.printStackTrace()
             null
