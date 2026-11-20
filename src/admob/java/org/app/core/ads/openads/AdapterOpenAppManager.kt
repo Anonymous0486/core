@@ -11,6 +11,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ProcessLifecycleOwner
+import com.facebook.appevents.AppEventsConstants.EVENT_NAME_AD_IMPRESSION
+import com.facebook.appevents.AppEventsConstants.EVENT_PARAM_CURRENCY
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.appopen.AppOpenAd
 import com.google.android.gms.ads.appopen.AppOpenAd.AppOpenAdLoadCallback
@@ -616,7 +618,12 @@ class AdapterOpenAppManager private constructor() : LifecycleObserver,
 
     private inner class AdmobPaidEventCallback : OnPaidEventListener {
         override fun onPaidEvent(adValue: AdValue) {
-            Timber.tag(TAG).i( "onPaidEvent")
+            val value = (adValue.valueMicros / 1000000.0)
+            Timber.tag(TAG).i("$adId onPaidEvent -> ${adValue.valueMicros} - $value - ${adValue.currencyCode}")
+
+            val params = Bundle()
+            params.putString(EVENT_PARAM_CURRENCY, "USD")
+            CoreAds.instance.logFbEvent(EVENT_NAME_AD_IMPRESSION, value, params)
         }
     }
 

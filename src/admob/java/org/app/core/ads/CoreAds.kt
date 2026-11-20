@@ -22,6 +22,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.LayoutRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isEmpty
+import com.facebook.appevents.AppEventsLogger
 import com.facebook.shimmer.Shimmer
 import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.android.gms.ads.AdSize
@@ -64,6 +65,8 @@ class CoreAds private constructor(
     private var analytics: FirebaseAnalytics = Firebase.analytics
     private var _enableDebug = false
     private var _initialized = false
+
+    private val fbLogger: AppEventsLogger by lazy { AppEventsLogger.newLogger(appContext) }
 
     var bannerContainer: FrameLayout?
         get() = _bannerContainer
@@ -1507,6 +1510,10 @@ class CoreAds private constructor(
 
     fun logFirebaseEvent(event: String, param: Bundle? = null){
         if (event.isNotBlank()) analytics.logEvent(event, param)
+    }
+
+    fun logFbEvent(event: String, value: Double, param: Bundle? = null) {
+        if (event.isNotBlank()) fbLogger.logEvent(event, value, param)
     }
 
     private fun getProcessName(context: Context): String? {

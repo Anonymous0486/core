@@ -3,6 +3,7 @@ package org.app.core.ads.nativeads
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
+import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
@@ -15,6 +16,8 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.annotation.LayoutRes
 import androidx.appcompat.content.res.AppCompatResources
+import com.facebook.appevents.AppEventsConstants.EVENT_NAME_AD_IMPRESSION
+import com.facebook.appevents.AppEventsConstants.EVENT_PARAM_CURRENCY
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdLoader
 import com.google.android.gms.ads.AdRequest
@@ -26,10 +29,12 @@ import com.google.android.gms.ads.nativead.NativeAdView
 import org.app.core.R
 import org.app.core.ads.CoreAds
 import org.app.core.ads.base.NativeAds
+import org.app.core.ads.openads.AdapterOpenAppManager
 import org.app.core.ads.remoteconfig.CoreRemoteConfig
 import org.app.core.ads.remoteconfig.config.BackupAds
 import org.app.core.ads.remoteconfig.type.BackupType
 import org.app.core.ads.utils.convertToCamelCase
+import timber.log.Timber
 import java.util.concurrent.LinkedBlockingQueue
 
 @SuppressLint("LogNotTimber")
@@ -93,8 +98,14 @@ class AdapterNativeAds(
             ads?.addView(layoutAd)
             
             nativeAd.setOnPaidEventListener { adValue ->
-                Log.i(TAG, "NativeAdmob onPaidEvent $adId")
                 logEvent("Paid")
+
+                val value = (adValue.valueMicros / 1000000.0)
+                Timber.tag("NativeAdmob").i("$adId onPaidEvent -> ${adValue.valueMicros} - $value - ${adValue.currencyCode}")
+
+                val params = Bundle()
+                params.putString(EVENT_PARAM_CURRENCY, "USD")
+                CoreAds.instance.logFbEvent(EVENT_NAME_AD_IMPRESSION, value, params)
             }
             
             Log.i(TAG, "NativeAdmob: In init should show: ${container != null} -> $alreadyShown")
@@ -238,8 +249,13 @@ class AdapterNativeAds(
             ads?.addView(layoutAd)
 
             nativeAd.setOnPaidEventListener { adValue ->
-                Log.i(TAG, "NativeAdmob onPaidEvent $backupId")
                 logEvent("PaidBackupId")
+
+                val value = (adValue.valueMicros / 1000000.0)
+                Timber.tag("NativeAdmob").i("$adId onPaidEventBackupId -> ${adValue.valueMicros} - $value - ${adValue.currencyCode}")
+                val params = Bundle()
+                params.putString(EVENT_PARAM_CURRENCY, "USD")
+                CoreAds.instance.logFbEvent(EVENT_NAME_AD_IMPRESSION, value, params)
             }
 
             Log.i(TAG, "NativeAdmob: multiple-load in init should not show Native ${container == null} -> $backupId")

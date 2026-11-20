@@ -1,6 +1,7 @@
 package org.app.core.ads.nativeads
 
 import android.content.Context
+import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
@@ -12,6 +13,8 @@ import android.widget.TextView
 import androidx.annotation.LayoutRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.facebook.appevents.AppEventsConstants.EVENT_NAME_AD_IMPRESSION
+import com.facebook.appevents.AppEventsConstants.EVENT_PARAM_CURRENCY
 import com.facebook.shimmer.Shimmer
 import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.android.gms.ads.AdListener
@@ -112,8 +115,13 @@ data class AdmobNativeAds(
 
         val builder = AdLoader.Builder(context, adUnitId).forNativeAd { nativeAd: NativeAd ->
             nativeAd.setOnPaidEventListener { adValue ->
-                Timber.tag(TAG).d("onPaidEvent $adUnitId : ${adValue.valueMicros}")
                 logEvent("Paid")
+
+                val value = (adValue.valueMicros / 1000000.0)
+                Timber.tag(TAG).i("$adUnitId onPaidEvent -> ${adValue.valueMicros} - $value - ${adValue.currencyCode}")
+                val params = Bundle()
+                params.putString(EVENT_PARAM_CURRENCY, "USD")
+                CoreAds.instance.logFbEvent(EVENT_NAME_AD_IMPRESSION, value, params)
             }
 
             _nativeAd = nativeAd
@@ -197,8 +205,13 @@ data class AdmobNativeAds(
         val builder = AdLoader.Builder(context, backupId)
             .forNativeAd { nativeAd: NativeAd ->
                 nativeAd.setOnPaidEventListener { adValue ->
-                    Timber.tag(TAG).d("onPaidEvent backupId $backupId : ${adValue.valueMicros}")
                     logEvent("PaidBackupId")
+
+                    val value = (adValue.valueMicros / 1000000.0)
+                    Timber.tag(TAG).i("$backupId onPaidEvent backupId -> ${adValue.valueMicros} - $value - ${adValue.currencyCode}")
+                    val params = Bundle()
+                    params.putString(EVENT_PARAM_CURRENCY, "USD")
+                    CoreAds.instance.logFbEvent(EVENT_NAME_AD_IMPRESSION, value, params)
                 }
 
                 _nativeAd = nativeAd

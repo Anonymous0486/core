@@ -147,6 +147,9 @@ dependencies {
     implementation("com.google.api-client:google-api-client-android:1.30.7")
     implementation("com.google.apis:google-api-services-drive:v3-rev188-1.25.0")
 
+    implementation("com.facebook.android:facebook-core:19.0.1")
+    implementation("com.facebook.android:facebook-android-sdk:19.0.1")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

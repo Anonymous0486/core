@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import com.facebook.appevents.AppEventsConstants.EVENT_NAME_AD_IMPRESSION
+import com.facebook.appevents.AppEventsConstants.EVENT_PARAM_CURRENCY
 import com.google.android.gms.ads.*
 import org.app.core.ads.base.InterAds
 import com.google.android.gms.ads.AdError
@@ -192,8 +194,13 @@ class AdapterInterstitialAds(context: Context,
 
     private inner class AdmobPaidEventCallback : OnPaidEventListener{
         override fun onPaidEvent(adValue: AdValue) {
-            Log.i(TAG, "$tag onPaidEvent")
+            val value = (adValue.valueMicros / 1000000.0)
+            Log.i(TAG, "$tag onPaidEvent -> ${adValue.valueMicros} - $value - ${adValue.currencyCode}")
             logEvent("Paid")
+
+            val params = Bundle()
+            params.putString(EVENT_PARAM_CURRENCY, "USD")
+            CoreAds.instance.logFbEvent(EVENT_NAME_AD_IMPRESSION, value, params)
         }
     }
 }

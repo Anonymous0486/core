@@ -4,15 +4,16 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.res.Resources
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.DisplayMetrics
 import android.util.Log
-import android.view.View
 import android.widget.FrameLayout
+import androidx.core.view.isEmpty
 import androidx.core.view.updateLayoutParams
+import com.facebook.appevents.AppEventsConstants.EVENT_NAME_AD_IMPRESSION
+import com.facebook.appevents.AppEventsConstants.EVENT_PARAM_CURRENCY
 import com.google.ads.mediation.admob.AdMobAdapter
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
@@ -20,19 +21,15 @@ import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.OnPaidEventListener
-import org.app.core.ads.CoreAds.Companion
 import org.app.core.ads.base.BannerAds
 import org.app.core.ads.base.CollapsibleType
 import org.app.core.ads.callback.AdsCallback
-import org.app.core.ads.nativeads.AdapterNativeAdView
 import org.app.core.ads.remoteconfig.CoreRemoteConfig
 import org.app.core.ads.remoteconfig.config.BackupAds
 import org.app.core.ads.remoteconfig.type.BackupType
 import timber.log.Timber
-import java.util.ArrayList
 import java.util.UUID
 import java.util.concurrent.LinkedBlockingQueue
-import androidx.core.view.isEmpty
 
 @SuppressLint("LogNotTimber")
 class AdapterBannerAds(
@@ -146,8 +143,13 @@ class AdapterBannerAds(
             }
         }
         ads!!.onPaidEventListener = OnPaidEventListener { adValue ->
-            Timber.tag("BannerAdmob").i( "$adId onPaidEvent")
             logEvent("Paid")
+
+            val value = (adValue.valueMicros / 1000000.0)
+            Timber.tag("BannerAdmob").i("$adId onPaidEvent -> ${adValue.valueMicros} - $value - ${adValue.currencyCode}")
+            val params = Bundle()
+            params.putString(EVENT_PARAM_CURRENCY, "USD")
+            CoreAds.instance.logFbEvent(EVENT_NAME_AD_IMPRESSION, value, params)
         }
     }
 
@@ -330,8 +332,13 @@ class AdapterBannerAds(
             }
         }
         ads!!.onPaidEventListener = OnPaidEventListener { adValue ->
-            Log.d(TAG, "BannerAdmob $backupId onPaidEventBackupId")
             logEvent("PaidBackupId")
+
+            val value = (adValue.valueMicros / 1000000.0)
+            Timber.tag("BannerAdmob").i("$adId onPaidEventBackupId -> ${adValue.valueMicros} - $value - ${adValue.currencyCode}")
+            val params = Bundle()
+            params.putString(EVENT_PARAM_CURRENCY, "USD")
+            CoreAds.instance.logFbEvent(EVENT_NAME_AD_IMPRESSION, value, params)
         }
 
         val adRequest = AdRequest.Builder()
