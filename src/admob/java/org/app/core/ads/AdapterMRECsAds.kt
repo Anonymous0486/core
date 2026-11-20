@@ -8,6 +8,8 @@ import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
 import android.widget.FrameLayout
+import com.facebook.appevents.AppEventsConstants.EVENT_NAME_AD_IMPRESSION
+import com.facebook.appevents.AppEventsConstants.EVENT_PARAM_CURRENCY
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
@@ -17,6 +19,7 @@ import com.google.android.gms.ads.OnPaidEventListener
 import org.app.core.ads.base.BannerAds
 import org.app.core.ads.callback.AdsCallback
 import org.app.core.ads.openads.AdapterOpenAppManager
+import timber.log.Timber
 
 class AdapterMRECsAds(
     context: Context,
@@ -83,7 +86,12 @@ class AdapterMRECsAds(
             }
         }
         ads!!.onPaidEventListener = OnPaidEventListener { adValue ->
-            Log.d(TAG, "BannerAdmob onPaidEvent")
+            val value = (adValue.valueMicros / 1000000.0)
+            Timber.tag(TAG).i("AdapterMRECsAds onPaidEvent -> ${adValue.valueMicros} - $value - ${adValue.currencyCode}")
+
+            val params = Bundle()
+            params.putString(EVENT_PARAM_CURRENCY, "USD")
+            CoreAds.instance.logFbEvent(EVENT_NAME_AD_IMPRESSION, value, params)
         }
     }
     

@@ -4,11 +4,14 @@ import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
+import com.facebook.appevents.AppEventsConstants.EVENT_NAME_AD_IMPRESSION
+import com.facebook.appevents.AppEventsConstants.EVENT_PARAM_CURRENCY
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import org.app.core.ads.openads.AdapterOpenAppManager
 import org.app.core.ads.base.RewardAds
+import timber.log.Timber
 
 class AdapterRewardAds(context: Context, adId: String, private val eventId: String) :
     RewardAds<RewardedAd?>(context, adId) {
@@ -104,7 +107,12 @@ class AdapterRewardAds(context: Context, adId: String, private val eventId: Stri
 
     private inner class AdmobPaidEventCallback : OnPaidEventListener {
         override fun onPaidEvent(adValue: AdValue) {
-            Log.d(TAG, "RewardAdmob onPaidEvent")
+            val value = (adValue.valueMicros / 1000000.0)
+            Timber.tag(TAG).i("AdapterRewardAds onPaidEvent -> ${adValue.valueMicros} - $value - ${adValue.currencyCode}")
+
+            val params = Bundle()
+            params.putString(EVENT_PARAM_CURRENCY, "USD")
+            CoreAds.instance.logFbEvent(EVENT_NAME_AD_IMPRESSION, value, params)
         }
     }
 }
