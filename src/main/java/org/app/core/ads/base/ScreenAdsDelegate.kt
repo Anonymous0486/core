@@ -56,6 +56,14 @@ class ScreenAdsDelegate(
         owner.lifecycle.addObserver(this)
     }
 
+    override fun onStart(owner: LifecycleOwner) {
+        super.onStart(owner)
+        val adShown = showAds(showLoading = initializeLoading())
+        if (adShown && _hasNativeAds) {
+            startSmartRefreshTimer()
+        }
+    }
+
     override fun onResume(owner: LifecycleOwner) {
         if (CoreAds.instance.isHideAds) {
             _hasNativeAds = false
@@ -66,10 +74,6 @@ class ScreenAdsDelegate(
 
         if (_firstDisplay) {
             _firstDisplay = false
-            val adShown = showAds(showLoading = initializeLoading())
-            if (adShown && _hasNativeAds) {
-                startSmartRefreshTimer()
-            }
         } else {
             if (_hasNativeAds) {
                 if (shouldRefreshAds()) {

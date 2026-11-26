@@ -165,9 +165,6 @@ data class AdmobNativeAds(
                     _isLoading = false
                     logEvent("Loaded")
                     loadCallback?.onLoadSuccess()
-                    if (_displayWhenLoaded) {
-                        CoreAds.instance.updateTimestamp(System.currentTimeMillis())
-                    }
                 }
 
                 override fun onAdClosed() {
@@ -254,9 +251,6 @@ data class AdmobNativeAds(
                     _isLoading = false
                     logEvent("LoadedBackupId")
                     loadCallback?.onLoadSuccess()
-                    if (_displayWhenLoaded) {
-                        CoreAds.instance.updateTimestamp(System.currentTimeMillis())
-                    }
                 }
 
                 override fun onAdClosed() {
