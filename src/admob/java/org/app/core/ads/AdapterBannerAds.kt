@@ -274,7 +274,6 @@ class AdapterBannerAds(
                         container?.addView(ads)
                         logEvent("ShownBackupId")
                     } else {
-                        CoreAds.instance.updateTimestamp(System.currentTimeMillis())
                         onLoadSuccess()
                     }
                 } catch (_: Exception) {}

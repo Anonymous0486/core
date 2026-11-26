@@ -97,14 +97,6 @@ class CoreAds private constructor(
 
     //TODO: New functions for new concept load and show native ads
     private val _nativeAdsList = mutableListOf<AdmobNativeAds>()
-    private val _nativeLoadedTs = MutableStateFlow(0L)      // Timestamp saved of last native ads loaded
-    val nativeLoadedTs = _nativeLoadedTs.asStateFlow()
-
-    fun updateTimestamp(timestamp: Long) {
-        if (_isHideAds) return
-
-        _nativeLoadedTs.tryEmit(timestamp)
-    }
 
     fun releaseNativeAds(requestId: String) {
         if (requestId.isBlank()) return
@@ -1333,6 +1325,7 @@ class CoreAds private constructor(
             val ads = _nativeAdsList.firstOrNull { it.isAvailable() || it.isLoading() }
             if (ads != null) {
                 //TODO: Has at least 1 available ads or loading ads
+                Timber.tag(TAG).d("Already has ready ads -> No need to request new ads!!!")
                 return
             }
         }
